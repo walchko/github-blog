@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel='stylesheet' type='text/css' href='https://cdn.rawgit.com/MarsUniversity/ece387/master/website/pandoc.css'>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    	<link href="https://cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css" rel="stylesheet">
+    	<link href="https://cdn.rawgit.com/walchko/font-linux/v0.7.2/assets/font-linux.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    	<link href="https://cdn.rawgit.com/walchko/pelican/master/themes/kevin2/static/css/site.css" rel="stylesheet">
+    	<link href="https://cdn.rawgit.com/walchko/pelican/master/themes/kevin2/static/css/pygments.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [["$","$"],["\\(","\\)"]]
+          }
+        });
+      </script>
+    </head>
+    <body>
+      <div id="outer-wrapper">
+
+          <%- include('/Users/kevin/tmp/rst-pandoc/test/header') %>
+
+          <div id="main">
+            <% if (TOC) { %>
+              <% TOC.forEach(function(f){ %>
+                <h3><%- f[0] %></h3>
+                <ul>
+                <% f[1].forEach(function(page){ %>
+                  <li><a href="<%- page.path %>"> <%- page.name %>  </a></li>
+                <% }); %>
+              </ul>
+              <% }); %>
+            <% } %>
+            <% if (info) { %>
+              <%- info %>
+            <% } %>
+          </div>
+
+        </div>
+    </body>
+
+    <%- include('/Users/kevin/tmp/rst-pandoc/test/footer') %>
+
+</html>

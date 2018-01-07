@@ -1,0 +1,38 @@
+os: osx
+sudo: false
+osx_image: xcode9.2
+git:
+  depth: 1
+
+before_install:
+    - echo ">>>>>>>> SETUP <<<<<<<<<<<"
+    - brew update
+    # - brew upgrade
+    - brew install pandoc
+    # - brew outdated node || brew upgrade node
+    - node --version
+    - npm --version
+    - brew cask install basictex
+    # - brew cask install wkhtmltopdf
+    - export PATH=/usr/local/bin:$PATH
+    - export PATH=$PATH:/Library/TeX/texbin
+
+install: true
+
+script:
+    - echo ">>>>>>>> START <<<<<<<<<<<"
+    - brew update
+    - brew outdated node || brew upgrade node
+    - export PATH=$PATH:/Library/TeX/texbin
+    - export PATH=/usr/local/bin:$PATH
+    # - env
+    # - alias node=/usr/local/bin/node
+    # - alias npm=/usr/local/bin/npm
+    - env
+    - which node
+    - node --version
+    - npm --version
+    - npm install
+    - node build.js
+    - chmod a+x deploy.sh
+    - ./deploy.sh
