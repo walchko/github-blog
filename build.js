@@ -170,7 +170,7 @@ function build(templateFile, directory, output){
 
   // get template
   var ejs_string = fs.readFileSync(templateFile, 'utf8');
-  var template = ejs.compile(ejs_string);
+  var template = ejs.compile(ejs_string,{filename: __dirname + '/' + templateFile});
 
   // build topic page
   buildTOC(directory + '/blog', template);
