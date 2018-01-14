@@ -7,7 +7,7 @@ dpkt Cheatsheet
 dpkt is a python library for manipulating packets and although it is a good library it is
 very poorly documented.
 
-.. figure:: {filename}/blog/cyber/pics/TCP-IP-model-vs-OSI-model.png
+.. figure:: pics/TCP-IP-model-vs-OSI-model.png
    :align: center
 
 Useful Ports

@@ -5,7 +5,7 @@ Linux Kernel
 :date: 2014-10-26
 :summary: Configuring and updating the linux kernal for the RPi
 
-.. figure:: {filename}/blog/raspbian/pics/linux.jpg
+.. figure:: pics/linux.jpg
    :width: 200px
    :align: center
 

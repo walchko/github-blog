@@ -14,7 +14,7 @@ can use avahi to zeroconfig, but don't use netatalk to do file sharing.
 Avahi
 ~~~~~~~
 
-.. figure:: {filename}/blog/raspbian/pics/avahi.png
+.. figure:: pics/avahi.png
 	:width: 200px
 	:align: center
 

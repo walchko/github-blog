@@ -5,7 +5,7 @@ SD Card
 :date: 2015-06-10
 :summary: Setting up an SD card for RPi
 
-.. figure:: {filename}/blog/raspbian/pics/sd.jpg
+.. figure:: pics/sd.jpg
 	:width: 200px
 	:align: center
 

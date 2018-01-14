@@ -4,7 +4,7 @@ Hardware
 :date: 2016-02-28
 :summary: Accessing RPi hardware
 
-.. figure:: {filename}/blog/raspbian/pics/rpi.png
+.. figure:: pics/rpi.png
     :width: 200px
     :align: center
 
@@ -16,7 +16,7 @@ pinouts for the different versions. A great resource is
 `Pinout <http://pi.gadgetoid.com/pinout>`__ to figur out what pin is
 what.
 
-.. figure:: {filename}/blog/raspbian/pics/pinout.jpeg
+.. figure:: pics/pinout.jpeg
     :width: 300px
 
 Lights

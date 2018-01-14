@@ -51,7 +51,7 @@ Now you have to reboot so the system gets setup correctly (remember, these are b
 Now connect the amp to the rpi where Vin is 5V:
 
 ===== ====== ======
-      BCM    Pi
+Pin   BCM    Pi
 ===== ====== ======
 DIN   21     40
 BCLK  18     12
@@ -160,7 +160,7 @@ Or use `sox`::
 Alsa Mixer
 -------------
 
-.. figure:: {filename}/blog/raspbian/pics/alsamixer.png
+.. figure:: pics/alsamixer.png
 	:align: center
 
 To see what you have access to::

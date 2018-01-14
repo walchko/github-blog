@@ -6,7 +6,7 @@ OpenCV
 :modified: 2016-12-30
 :summary: Setting up OpenCV
 
-.. figure:: {filename}/blog/raspbian/pics/opencv.png
+.. figure:: pics/opencv.png
    :width: 200px
    :align: center
 

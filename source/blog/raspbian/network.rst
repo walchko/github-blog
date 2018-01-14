@@ -8,7 +8,7 @@ Networking
 WiFi
 ----
 
-.. figure:: {filename}/blog/raspbian/pics/wifi.png
+.. figure:: pics/wifi.png
 	:width: 200px
 	:align: center
 

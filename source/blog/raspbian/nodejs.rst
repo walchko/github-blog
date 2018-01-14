@@ -6,7 +6,7 @@ Node.js
 :summary: Install and use Node.js
 :modified: 2016-12-30
 
-.. figure:: {filename}/blog/raspbian/pics/nodejs.png
+.. figure:: pics/nodejs.png
 	:width: 200px
 	:align: center
 

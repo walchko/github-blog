@@ -144,7 +144,7 @@ macOS
 
 Also make sure SMB sharing is turned on (should be):
 
-.. image:: {filename}/blog/raspbian/pics/sharing_files.png
+.. image:: pics/sharing_files.png
 	:width: 400px
 	:align: center
 
@@ -160,7 +160,7 @@ You should see something like (look for the smb entry)::
 If not, go into ``options`` and turn on SMB. Also I had to check the box next
 to my username.
 
-.. image:: {filename}/blog/raspbian/pics/sharing_options.png
+.. image:: pics/sharing_options.png
 	:width: 400px
 	:align: center
 

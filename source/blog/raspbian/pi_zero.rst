@@ -4,10 +4,10 @@ Install Raspberry Pi (RPi) Zero
 :date: 2017-04-30
 :summary: Installing Rasbian on Pi Zero W
 
-.. figure:: {filename}/blog/raspbian/pics/rpi-org.png
+.. figure:: pics/rpi-org.png
 	:width: 200px
 	:align: center
-  
+
 You need to make a couple changes before you put the SD card into the Pi.
 
 In ``config.txt``, add the following to the bottom::

@@ -4,7 +4,7 @@ SSH
 :date: 2012-09-10
 :summary: SSH usage
 
-.. figure:: {filename}/blog/computers/pics/ssh.jpg
+.. figure:: pics/ssh.jpg
     :width: 200px
     :align: center
 
@@ -158,7 +158,7 @@ a ``~/.ssh/config`` file.  Example::
 	Host bitbucket.org
 	 IdentityFile ~/.ssh/bitbucket_rsa
 	Host github.com
-	 IdentityFile ~/.ssh/github_rsa	
+	 IdentityFile ~/.ssh/github_rsa
 
 
 16 SSH Hacks

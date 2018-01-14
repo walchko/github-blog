@@ -5,7 +5,7 @@ Install Raspberry Pi (RPi)
 :summary: Installing Rasbian
 :modified: 2016-11-27
 
-.. figure:: {filename}/blog/raspbian/pics/rpi-org.png
+.. figure:: pics/rpi-org.png
 	:width: 200px
 	:align: center
 
@@ -39,7 +39,7 @@ Note this output doesn't really tell you much other than it is ARMv6.
 Copying an image to the SD Card in Mac OS X
 -------------------------------------------
 
-.. figure:: {filename}/blog/raspbian/pics/sd.jpg
+.. figure:: pics/sd.jpg
    :width: 200px
    :alt: sd logo
 

@@ -31,7 +31,7 @@ Chopping a large network up into smaller pieces is subnetworking.
 
 You need to chop along clean binary division as shown below:
 
-.. figure:: {filename}/blog/cyber/pics/subnetting_b.png
+.. figure:: pics/subnetting_b.png
    :alt:
 
 `Network Classes <http://en.wikipedia.org/wiki/Classful_network#Introduction_of_address_classes>`__
@@ -51,7 +51,7 @@ You need to chop along clean binary division as shown below:
 | E       | 240.0.0.0 to 255.255.255.255   | undefined     | undefined   | everything remaining                             |
 +---------+--------------------------------+---------------+-------------+--------------------------------------------------+
 
-.. figure:: {filename}/blog/cyber/pics/subnetting_h.png
+.. figure:: pics/subnetting_h.png
    :alt:
 
 `Private Subnetworks <http://en.wikipedia.org/wiki/Private_network>`__
@@ -81,10 +81,10 @@ Address Bits
 -  10 bits = 1024 addresses
 -  11 bits = 2048 addresses
 
-.. figure:: {filename}/blog/cyber/pics/subnetting_a.png
+.. figure:: pics/subnetting_a.png
    :alt:
 
-.. figure:: {filename}/blog/cyber/pics/subnetting_c.png
+.. figure:: pics/subnetting_c.png
    :alt:
 
 Masks

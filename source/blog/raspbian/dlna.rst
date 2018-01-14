@@ -6,7 +6,7 @@ DLNA
 :date: 2015-07-23
 :summary: Using linux to serve up videos using DLNA
 
-.. image:: {filename}/blog/raspbian/pics/dlna.jpg
+.. image:: pics/dlna.jpg
 	:width: 200px
 	:align: center
 

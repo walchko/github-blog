@@ -7,7 +7,7 @@ Bluetooth
 :modified: 2017-01-06
 :summary: Working with bluetooth on linux.
 
-.. image:: {filename}/blog/raspbian/pics/bluetooth.png
+.. image:: pics/bluetooth.png
 	:width: 100px
 	:align: center
 

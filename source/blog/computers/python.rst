@@ -4,7 +4,7 @@ Python Setup
 :date: 2012-12-22
 :summary: Python setup
 
-.. figure:: {filename}/blog/computers/pics/python.png
+.. figure:: pics/python.png
     :width: 200px
     :align: center
 

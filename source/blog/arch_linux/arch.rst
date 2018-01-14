@@ -4,7 +4,7 @@ Arch Linux
 :date: 2015-12-13
 :summary: How to install Arch Linux and setup
 
-.. figure:: {filename}/blog/arch_linux/pics/arch_linux.png
+.. figure:: pics/arch_linux.png
    :width: 200px
    :align: center
 

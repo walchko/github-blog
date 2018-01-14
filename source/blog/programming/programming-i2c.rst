@@ -14,7 +14,7 @@ I2C is spelled I2C (pronounced I-two-C) or IIC (pronounced I-I-C).
 Addressing is based of a 7-bit addressing system, where each data packet looks like:
 
 
-.. figure:: {filename}/blog/programming/pics/7-bit-address-i2c.png
+.. figure:: pics/7-bit-address-i2c.png
     :align: center
     :width: 600px
 

@@ -7,7 +7,7 @@ PS4 Controller Setup on Mac macOS
 
 You can use bluetooth, SDL2, and python to talk with a controller.
 
-.. figure:: {filename}/blog/macOS/pics/ps4-controller.jpg
+.. figure:: pics/ps4-controller.jpg
    :alt:
 
 First we need to pair the controller with your Mac:
@@ -18,7 +18,7 @@ First we need to pair the controller with your Mac:
 4. Click System Report.
 5. Choose USB and look for Wireless Controller under USB. If you can see Wireless Controller (it's called "wireless" even though it's connected via a cable), then your PS4 controller is connected to the Mac.
 
-.. figure:: {filename}/blog/macOS/pics/sys-info.jpg
+.. figure:: pics/sys-info.jpg
    :alt:
 
 Next, connect the controller via bluetooth:

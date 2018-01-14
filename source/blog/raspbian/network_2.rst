@@ -164,6 +164,6 @@ Wavemon
 
 Install ``wavemon`` with: ``sudo apt install wavemon``
 
-.. image:: {filename}/blog/raspbian/pics/wavemon.png
+.. image:: pics/wavemon.png
 	:width: 500px
 	:align: center

@@ -19,7 +19,7 @@ iBeacon
 --------
 
 
-.. figure:: {filename}/blog/raspbian/pics/ibeacon.png
+.. figure:: pics/ibeacon.png
 	:width: 200px
 	:align: center
 
@@ -111,7 +111,7 @@ Eddystone
 ----------
 
 
-.. figure:: {filename}/blog/raspbian/pics/eddystone.png
+.. figure:: pics/eddystone.png
 	:width: 200px
 	:align: center
 

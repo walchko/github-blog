@@ -59,14 +59,14 @@ Preferences
 
 Preferences Accessibility
 
-.. figure:: {filename}/blog/macOS/pics/Preferences-Accessibility.png
+.. figure:: pics/Preferences-Accessibility.png
    :align: center
 
 Step 2: On the left panel of the next window, scroll down and select the Mouse & Trackpad option. There, click on the Trackpad Options… button.
 
 Mouse and Trackpad
 
-.. image:: {filename}/blog/macOS/pics/Mouse-and-Trackpad.png
+.. image:: pics/Mouse-and-Trackpad.png
    :align: center
 
 This will bring down an options panel.

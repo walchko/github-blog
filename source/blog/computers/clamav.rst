@@ -4,7 +4,7 @@ Clamav
 :date: 2015-12-15
 :summary: Virus scanning on linux and macOS
 
-.. figure:: {filename}/blog/computers/pics/clamav.png
+.. figure:: pics/clamav.png
     :width: 200px
     :align: center
 

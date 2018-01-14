@@ -7,7 +7,7 @@ BitTorrent Sync
 :summary: Sync'ing files across machines without the cloud.
 
 
-.. figure:: {filename}/blog/raspbian/pics/bt-sync.png
+.. figure:: pics/bt-sync.png
 	:width: 200px
 	:align: center
 

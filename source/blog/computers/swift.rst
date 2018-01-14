@@ -4,7 +4,7 @@ Swift Setup
 :date: 2015-12-24
 :summary: How to setup swift
 
-.. figure:: {filename}/blog/computers/pics/swift.png
+.. figure:: pics/swift.png
     :width: 200px
     :align: center
 

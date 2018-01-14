@@ -6,7 +6,7 @@ External USB Drive
 :modified: 2016-09-04
 :summary: Setting up a hard drive to work with Raspbian
 
-.. figure:: {filename}/blog/raspbian/pics/usb.png
+.. figure:: pics/usb.png
 	:width: 200px
 	:align: center
 
@@ -162,7 +162,7 @@ For a USB thumb drive formated in ``vfat`` you can do::
 	# <file system> <mount pt>     <type>   <options>                  <dump>  <pass>
 	/dev/sda1       /mnt/usbdisk    auto    auto,user,uid=1000,gid=1000  0       2
 
-Since I leave the usb drive in all the time, I have the option ``auto`` to always mount it. 
+Since I leave the usb drive in all the time, I have the option ``auto`` to always mount it.
 When the drive is mounted, user ``pi`` has ownership with the ``uid`` and ``gid``
 options. How do you find the user/grp id? ::
 

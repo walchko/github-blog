@@ -5,7 +5,7 @@ Git
 :modified: 2017-01-12
 :summary: Using ``git``
 
-.. figure:: {filename}/blog/computers/pics/github.png
+.. figure:: pics/github.png
     :width: 200px
     :align: center
 

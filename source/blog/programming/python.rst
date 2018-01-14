@@ -162,7 +162,7 @@ Get IP Address from Interface
 Networking
 -------------
 
-A really good resource for network programming with python is `here <{filename}/blog/programming/static/PythonNetBinder.pdf>`_
+A really good resource for network programming with python is `here <static/PythonNetBinder.pdf>`_
 
 References
 -------------

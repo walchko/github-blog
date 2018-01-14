@@ -4,7 +4,7 @@ FFMPEG
 :date: 2015-01-23
 :summary: Using ``ffmpeg`` to convert video formats
 
-.. figure:: {filename}/blog/computers/pics/ffmpeg.png
+.. figure:: pics/ffmpeg.png
     :width: 200px
     :align: center
 
