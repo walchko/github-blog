@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var pandoc = require('./pandoc.js')
 var fs = require('fs')
 var path = require('path')
