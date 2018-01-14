@@ -4,13 +4,13 @@ Dead Reckoning and Encoders
 :date: 2017-06-11
 :summary: How to use wheel encoders to determine distance travelled
 
-.. figure:: {filename}/blog/robots/pics/usdigital_encoder.jpg
+.. figure:: pics/usdigital_encoder.jpg
 	:align: center
 
 There are many types of encoders, above is a US Digital encoder designed to
 be mounted on a motor shaft.
 
-.. figure:: {filename}/blog/robots/pics/quadrature_encoder.gif
+.. figure:: pics/quadrature_encoder.gif
 	:align: center
 
 The optical encoder, shines a series of lights through an encoder disk and
@@ -19,13 +19,13 @@ by some photoreceptors. A quadrature encoder has 2 signals, A and B, which
 are phased such that they are *never* high or low at the same time. Depending
 on the phase of the signals, the direction can be determined.
 
-.. figure:: {filename}/blog/robots/pics/quadrature_animation.gif
+.. figure:: pics/quadrature_animation.gif
 	:align: center
 
 The animation shows the signals produced from the movement of the motor
 shaft, with the encoder disk attached to it.
 
-.. figure:: {filename}/blog/robots/pics/quadrature_waveform.gif
+.. figure:: pics/quadrature_waveform.gif
 	:align: center
 
 Again, the wave form from A and B tells us if the wheel (motor shaft
@@ -34,7 +34,7 @@ forward/reverse are arbitrary and the engineer needs to determine
 if CW or CCW is forward or reverse depending on how the sensor was
 mounted to the robot.
 
-.. figure:: {filename}/blog/robots/pics/quadrature_resolution.gif
+.. figure:: pics/quadrature_resolution.gif
 	:align: center
 
 The resolution of the encoder is determine by how the 2 signals are

@@ -8,7 +8,7 @@ RC Servo
 ---------
 
 
-.. figure:: {filename}/blog/robots/pics/rc_servo.jpg
+.. figure:: pics/rc_servo.jpg
     :align: center
     :width: 300px
 
@@ -21,7 +21,7 @@ software libraries to do that. However, that consumes a small amount of overhead
 power) and you may not want that.
 
 
-.. figure:: {filename}/blog/robots/pics/servo_controller_9685.jpg
+.. figure:: pics/servo_controller_9685.jpg
     :align: center
     :width: 300px
 
@@ -34,7 +34,7 @@ does a great job of showing how to hook this up and the python library is
 
 I used it to make a simple 4 legged (quadruped) robot.
 
-.. figure:: {filename}/blog/robots/pics/rc-spider-1.jpg
+.. figure:: pics/rc-spider-1.jpg
     :align: center
     :width: 400px
 

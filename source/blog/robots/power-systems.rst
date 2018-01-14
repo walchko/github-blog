@@ -15,7 +15,7 @@ way is to design your circuit so it prevents this.
 Diodes
 -------
 
-.. image:: {filename}/blog/robots/pics/reverse_polarity_protection.jpg
+.. image:: pics/reverse_polarity_protection.jpg
 
 
 Using a diode is one easy way to prevent current in your system from flowing in
@@ -38,4 +38,4 @@ this a little more. It also explains why you *might* have to include a resistor 
 diode to clamp the voltage, depending on the MOSFET you select.
 
 
-.. image:: {filename}/blog/robots/pics/reverse_polarity_protection_2.png
+.. image:: pics/reverse_polarity_protection_2.png

@@ -26,7 +26,7 @@ travel in any direction and immediately change its position and orientation is
 much more desirable. There are a variety of different wheels which make this
 type of robot possible such as mecanum or omni wheels (\figref{wheel}). [#wheel_slip]_ [#wheel_slip2]_
 
-.. figure:: {filename}/blog/robots/pics/holonomic_robot.png
+.. figure:: pics/holonomic_robot.png
    :align: center
    :width: 300px
 
@@ -39,7 +39,7 @@ a series of smaller wheels which ring the main wheel and allow the wheel to
 slip in the direction of the motor rotational axis. Note that no force is
 produced parallel to the motor axis, just slippage.
 
-.. figure:: {filename}/blog/robots/pics/omni_wheel.jpg
+.. figure:: pics/omni_wheel.jpg
    :align: center
    :width: 300px
 
@@ -48,14 +48,14 @@ produced parallel to the motor axis, just slippage.
 Omni wheels allow you to decouple position and orientation. These are common in
 soccer robots.
 
-.. figure:: {filename}/blog/robots/pics/omni_wheel_control.png
+.. figure:: pics/omni_wheel_control.png
    :align: center
    :width: 500px
 
 Holonomic Dynamics
 -------------------
 
-.. figure:: {filename}/blog/robots/pics/robot_cs.png
+.. figure:: pics/robot_cs.png
    :align: center
    :width: 500px
 
@@ -273,13 +273,13 @@ not 4 motors.
 Holonomic Robot Kinematics
 ----------------------------
 
-.. figure:: {filename}/blog/robots/pics/force_cs.png
+.. figure:: pics/force_cs.png
    :align: center
    :width: 500px
 
    Configuration of three groups of motors where :math:`\phi` is 30, 45, and 60 degrees.
 
-.. figure:: {filename}/blog/robots/pics/equiv_motors.png
+.. figure:: pics/equiv_motors.png
    :align: center
 
    Number of equivalent motors for any direction under linear movement only, no rotational movement allowed.

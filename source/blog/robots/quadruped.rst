@@ -5,7 +5,7 @@ Quadruped Robot
 :modified: 2016-07-31
 :summary: Simple quadruped made from a 3d printed body and 9 gram micro servos (TG9e).
 
-.. figure:: {filename}/blog/robots/pics/rc-spider-1.jpg
+.. figure:: pics/rc-spider-1.jpg
 	:align: center
 	:width: 400
 
@@ -15,7 +15,7 @@ Kinematics
 Useful Trigonometry
 ---------------------
 
-.. figure:: {filename}/blog/robots/pics/law_cosines.png
+.. figure:: pics/law_cosines.png
 	:align: center
 
 The **law of cosines** for calculating one side of a triangle when the angle
@@ -37,7 +37,7 @@ Femur       :math:`L_{femur}` or :math:`L_f` 45 mm
 Tibia       :math:`L_{tibia}` or :math:`L_t` 63 mm
 =========== ================================ ============
 
-.. figure:: {filename}/blog/robots/pics/Robot_Leg.png
+.. figure:: pics/Robot_Leg.png
 	:align: center
 
 	The figure on the left is for the forward kinematics, while the figure

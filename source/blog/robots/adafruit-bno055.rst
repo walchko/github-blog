@@ -5,7 +5,7 @@ Adafruit BNO055 (IMU)
 :modified: 2016-08-22
 :summary: Getting Adafruit's AHRS (BNO055 IMU) working with RPi3
 
-.. figure:: {filename}/blog/robots/pics/bno055.jpg
+.. figure:: pics/bno055.jpg
     :align: center
     :width: 300px
 

@@ -4,7 +4,7 @@ Analog-to-Digital Conversion
 :date: 2016-04-17
 :summary: Hooking up an MCP3008 or MCP3208 ADC to an RPi
 
-.. figure:: {filename}/blog/robots/pics/MCP3008_MCP3208.jpg
+.. figure:: pics/MCP3008_MCP3208.jpg
 	:align: center
 	:width: 400px
 

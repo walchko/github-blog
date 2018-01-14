@@ -26,7 +26,7 @@ Kidnapped Robot
     Although a robot will probably not be kidnapped, the realistic situation is  a robot whose global localization has failed. Thus, the robot thinks it is somewhere it is not. Eventually, sensor readings will appear that will force the robot to realize it doesn't know where it is. Therefore, a robot must be able to recover from a failure of this type.
 
 
-.. figure:: {filename}/blog/robots/pics/monte-carlo.png
+.. figure:: pics/monte-carlo.png
     :align: center
 
 :math:`p(x_i | z)` posterior distribution given measurement z
@@ -34,7 +34,7 @@ Kidnapped Robot
 Inaccurate Robot Motion
 -------------------------
 
-.. figure:: {filename}/blog/robots/pics/bad_robot_motion.png
+.. figure:: pics/bad_robot_motion.png
     :align: center
     :width: 500px
 
@@ -44,7 +44,7 @@ Inaccurate Robot Motion
     p(x_{i+1} | x_i) = 0.1
     p(x_{i+3} | x_i) = 0.1
 
-.. figure:: {filename}/blog/robots/pics/robot_state_transition.png
+.. figure:: pics/robot_state_transition.png
     :align: center
     :width: 500px
 
@@ -73,7 +73,7 @@ Simple Example
 
 Taken from **Probabilistic Robots**, the figure below shows how a robot figures out globally where it is.
 
-.. figure:: {filename}/blog/robots/pics/markov_localization.jpg
+.. figure:: pics/markov_localization.jpg
     :align: center
 
 * The first position, the robot doesn't know where it is, so the belief (:math:`overline{bel}_0(x)` is set equally for all locations
