@@ -7,6 +7,8 @@
 # fix: git push origin master --force
 #      where master is the branch name
 
+./build.js github
+
 # repo and branch to save website too
 REPO="github.com/MarsUniversity/ece382"
 BRANCH="gh-pages"

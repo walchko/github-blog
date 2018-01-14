@@ -1,7 +1,32 @@
+#!/usr/bin/env node
+
 var pandoc = require('./pandoc.js')
 var fs = require('fs')
 var path = require('path')
 var ejs = require('ejs');
+// var program = require('commander');
+
+const args = process.argv;
+// console.log(args);
+
+var BASE_PATH;
+
+// push to webserver
+if(args.length == 3){
+  if(args[2] === 'surge'){
+    console.log('Deploying to surge');
+    BASE_PATH = 'https://walchko.surge.sh';
+  }
+  else if (args[2] === 'github'){
+    console.log('Deploying to github');
+    BASE_PATH = 'https://walchko.github.io';
+  }
+}
+// just local testing
+else {
+  console.log('Local deployment');
+  BASE_PATH = __dirname + '/html';
+}
 
 
 // function readAsciiFile(file){
@@ -46,7 +71,9 @@ function convertToHtml(inFile, template, outFile) {
     {
       TOC: false,
       info: result,
-      path: __dirname + '/html'
+      // path: __dirname + '/html'
+      // path: 'html'
+      path: BASE_PATH
     }
   );
   fs.writeFileSync(htmlFile, html);
@@ -156,7 +183,8 @@ function buildTOC(source, template){
     toc.push(sfolder);
 
     // console.log(toc);
-    var html = template({TOC: toc, info: false, path: __dirname + '/html'});
+    // var html = template({TOC: toc, info: false, path: __dirname + '/html'});
+    var html = template({TOC: toc, info: false, path: BASE_PATH});
     fs.writeFileSync('html/topics.html', html);
   }
 }
