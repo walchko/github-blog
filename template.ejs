@@ -3,7 +3,7 @@
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel='stylesheet' type='text/css' href='https://cdn.rawgit.com/MarsUniversity/ece387/master/website/pandoc.css'>
+      <!-- <link rel='stylesheet' type='text/css' href='https://cdn.rawgit.com/MarsUniversity/ece387/master/website/pandoc.css'> -->
       <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
     	<link href="https://cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css" rel="stylesheet">
     	<link href="https://cdn.rawgit.com/walchko/font-linux/v0.7.2/assets/font-linux.css" rel="stylesheet">
@@ -11,6 +11,8 @@
     	<link href="https://cdn.rawgit.com/walchko/pelican/master/themes/kevin2/static/css/site.css" rel="stylesheet">
     	<link href="https://cdn.rawgit.com/walchko/pelican/master/themes/kevin2/static/css/pygments.css" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+      <link href="<%- path %>/site.css" rel="stylesheet" type="text/css" />
+    	<link href="<%- path %>/pygments.css" rel="stylesheet" type="text/css" />
       <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
           tex2jax: {
@@ -21,8 +23,7 @@
     </head>
     <body>
       <div id="outer-wrapper">
-
-          <%- include('header') %>
+        <%- include('header') %>
 
           <div id="main">
             <% if (TOC) { %>
