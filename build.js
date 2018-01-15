@@ -26,7 +26,7 @@ if(args.length == 3){
 // just local testing
 else {
   console.log('Local deployment');
-  BASE_PATH = __dirname + '/html';
+  BASE_PATH = __dirname + '/docs';
 }
 
 
@@ -272,7 +272,7 @@ function buildTOC(source, template){
 		toc.push(sfolder);
 
 		var html = template({TOC: toc, info: false, path: BASE_PATH});
-		fs.writeFileSync('html/topics.html', html);
+		fs.writeFileSync('docs/topics.html', html);
 	}
 }
 
@@ -344,4 +344,4 @@ function build(templateFile, directory, output){
 	recursiveBuild(directory, template, output);
 }
 
-build('template/template.ejs', 'source', 'html');
+build('template/template.ejs', 'source', 'docs');

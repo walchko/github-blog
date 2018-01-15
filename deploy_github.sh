@@ -10,8 +10,9 @@
 ./build.js github
 
 # repo and branch to save website too
-REPO="github.com/walchko/github-blog"
-BRANCH="gh-pages"
+REPO="github.com/walchko/walchko.github.io"
+# BRANCH="gh-pages"
+BRANCH="master"
 
 # setup travis or local env for pushing html to webpage
 if [[ ${TRAVIS} ]]; then
@@ -26,7 +27,7 @@ if [[ ${TRAVIS} ]]; then
 # setup for local manual push
 else
 	TMP="/var/tmp/tmpdir"
-	REMOTE="git@github.com:walchko/github-blog.git"
+	REMOTE="git@github.com:walchko/walchko.github.io.git"
 	rm -fr ${TMP}
 fi
 
