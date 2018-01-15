@@ -38,14 +38,6 @@ A simple python script is:
 
 - `pyserial docs <http://pyserial.readthedocs.io>`_
 
-Setup (old)
---------------
-
-Depending, if you don't have permission to open the serial port and are forced
-to use ``sudo``, add your user to the ``tty`` group::
-
-	sudo usermod -a -G tty pi
-
 RPi3
 ------
 

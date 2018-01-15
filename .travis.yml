@@ -34,5 +34,5 @@ script:
     - npm --version
     - npm install
     - node build.js
-    - chmod a+x deploy.sh
-    - ./deploy.sh
+    - chmod a+x deploy_github.sh
+    # - ./deploy_github.sh

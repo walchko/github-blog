@@ -39,8 +39,8 @@ I used it to make a simple 4 legged (quadruped) robot.
     :width: 400px
 
 
-Python
---------
+Python Software Servo with RPi.GPIO
+-------------------------------------
 
 You can also control servos from python via a variety of methods, one is:
 

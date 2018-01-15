@@ -1,16 +1,13 @@
-About Me
-========================
+# About Me
 
-Research
-----------
+## Research
 
 * Robotics
 * Space
 * Network security
 * Programming: C/C++, javascript, python
 
-Interests
-----------
+## Interests
 
 * Sci-Fi
 * Fantasy

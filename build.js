@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
-var pandoc = require('./pandoc.js')
-var fs = require('fs')
-var path = require('path')
+var jupyter = require('./jupyter.js');
+var pandoc = require('./pandoc.js');
+var fs = require('fs');
+var path = require('path');
 var ejs = require('ejs');
 // var program = require('commander');
 
@@ -189,23 +190,105 @@ function buildTOC(source, template){
   }
 }
 
+
+function convertJupyterToHtml(folder, template, output){
+	// var save_loc;
+	jupyter.zipFolder(folder, output);
+
+    try {
+      files = fs.readdirSync(folder);
+    }
+    catch (err) {
+      console.log(err);
+    }
+	for (var i = 0; i < files.length; i++) {
+        var currentFile = files[i];
+		console.log('currentFile: ' + currentFile);
+
+        switch (path.extname(currentFile)) {
+            case '.ipynb':
+				var nb = jupyter.convertToHTML(folder + '/' + currentFile);
+				var html = template({TOC: false, info: nb, path: BASE_PATH});
+
+				var save_loc = output + '/' + path.basename(currentFile, '.ipynb') + '.html';
+				fs.writeFileSync(save_loc, html);
+                break;
+			case '':
+			// case '.DS_Store':
+				console.log('>> skip currentFile: ' + currentFile);
+				break;
+            default:
+                // copy to output directory
+                var cp = output + '/' + currentFile;
+                fs.copyFileSync(folder + '/' + currentFile, cp);
+                console.log('Copied: ' + cp);
+                break;
+        }
+    }
+}
+
+function buildJupyter(folder, template, output){
+	fs.mkdirSync(output);
+
+    try {
+      files = fs.readdirSync(folder);
+    }
+    catch (err) {
+      console.log(err);
+    }
+	for (var i = 0; i < files.length; i++) {
+        var currentFile = files[i];
+		console.log('currentFile: ' + currentFile);
+
+        switch (path.extname(currentFile)) {
+            // case '.ipynb':
+			// 	var nb = jupyter.convertToHTML(folder + '/' + currentFile);
+			// 	var html = template({TOC: false, info: nb, path: BASE_PATH});
+            //
+			// 	var save_loc = output + '/' + path.basename(currentFile, '.ipynb') + '.html';
+			// 	fs.writeFileSync(save_loc, html);
+            //     break;
+			case '':
+				if(currentFile === '.DS_Store'){
+					console.log('>> skip currentFile: ' + currentFile);
+					break;
+				}
+				fs.mkdirSync(output + '/' + currentFile);
+				convertJupyterToHtml(folder + '/' + currentFile, template, output + '/' + currentFile);
+				break;
+			// case '.DS_Store':
+			// 	console.log('>> skip currentFile: ' + currentFile);
+			// 	break;
+            // default:
+            //     // copy to output directory
+            //     var cp = output + '/' + currentFile;
+            //     fs.copyFileSync(folder + '/' + currentFile, cp);
+            //     console.log('Copied: ' + cp);
+            //     break;
+        }
+    }
+}
+
 function build(templateFile, directory, output){
-  // delete old build and recreate it so we always have a clean build
-  var execSync = require('child_process').execSync;
-  execSync('rm -rf ' + output);
+	// delete old build and recreate it so we always have a clean build
+	var execSync = require('child_process').execSync;
+	execSync('rm -rf ' + output);
 
-  fs.mkdirSync(output);
+	fs.mkdirSync(output);
 
-  // get template
-  var ejs_string = fs.readFileSync(templateFile, 'utf8');
-  var template = ejs.compile(ejs_string,{filename: __dirname + '/' + templateFile});
+	// get template
+	var ejs_string = fs.readFileSync(templateFile, 'utf8');
+	var template = ejs.compile(ejs_string,{filename: __dirname + '/' + templateFile});
 
-  // build topic page
-  buildTOC(directory + '/blog', template);
+	// build topic page
+	// buildTOC(directory + '/blog', template);
 
-  // search through source and build html
-  recursiveBuild(directory, template, output);
-
+	// search through source and build html
+	// recursiveBuild(directory, template, output);
+	// fs.mkdirSync(output + '/jupyter');
+	// fs.mkdirSync(output + '/jupyter/face_detection');
+	// convertJupyterToHtml('source/jupyter/face_detection', template, output + '/jupyter/face_detection');
+	buildJupyter(directory + '/jupyter', template, output + '/jupyter');
 }
 
 build('template.ejs', 'source', 'html');

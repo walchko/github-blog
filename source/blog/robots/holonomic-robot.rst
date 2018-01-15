@@ -71,9 +71,8 @@ directional wheels (can be derived using Euler-Largrange (:math:`\mathcal{L}`) w
 defines a system's kinectic (:math:`T`) and potential (:math:`V`) energies in relation to a
 set of generalized coordinates (:math:`q`) and generalized forces (:math:`Q`):
 
-.. math::
 
-    \newcommand{\dpar}[2]{\frac{\partial #1}{\partial #2}}
+:math:`\newcommand{\dpar}[2]{\frac{\partial #1}{\partial #2}}`
 
 .. math::
 	\mathcal{L}=T-V \\
@@ -206,9 +205,9 @@ referenced :math:`x` and :math:`y` directions and the torque about the
 
 .. math::
 
-	\sum F_x=f_1 \sin(\phi) - f_2 \sin(\phi) - f_3 \sin(\phi) + f_4 \sin(\phi)  \label{two} \\
-	\sum F_y=f_1 \cos(\phi) + f_2 \cos(\phi) - f_3 \cos(\phi) - f_4 \cos(\phi) \label{three} \\
-	\sum T=L(f_1+f_2+f_3+f_4) \label{four}
+	\sum F_x=f_1 \sin(\phi) - f_2 \sin(\phi) - f_3 \sin(\phi) + f_4 \sin(\phi)  \\
+	\sum F_y=f_1 \cos(\phi) + f_2 \cos(\phi) - f_3 \cos(\phi) - f_4 \cos(\phi) \\
+	\sum T=L(f_1+f_2+f_3+f_4)
 
 
 Additionally, we can simplify this by assuming all of the angles are the same
@@ -216,6 +215,7 @@ Additionally, we can simplify this by assuming all of the angles are the same
 matrix form:
 
 .. math::
+
 	\begin{bmatrix}
 		F_x \\
 		F_y \\
