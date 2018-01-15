@@ -25,11 +25,14 @@ exports.convertToHTML = function(inFile){
 	}
 }
 
-exports.zipFolder = function(folder, output){
-	const cmd = 'zip -r jupyter.zip ' + folder;
+exports.zipFolder = function(file, folder, output){
+	// file: zip file name
+	// folder: path to folder to zip
+	// output: where to move zip file to when done
+	const cmd = 'zip -r ' + file +'.zip ' + folder;
 	try {
 		execSync(cmd);
-		fs.renameSync('jupyter.zip', output + '/' + 'jupyter.zip');
+		fs.renameSync(file + '.zip', output + '/' + file + '.zip');
 	}
 	catch(err) {
 		console.log('JUPYTER ERROR: ', err);

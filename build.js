@@ -281,12 +281,11 @@ function build(templateFile, directory, output){
 	var template = ejs.compile(ejs_string,{filename: __dirname + '/' + templateFile});
 
 	// build topic page
-	// buildTOC(directory + '/blog', template);
+	buildTOC(directory + '/blog', template);
 
 	// search through source and build html
-	// recursiveBuild(directory, template, output);
-	// fs.mkdirSync(output + '/jupyter');
-	// fs.mkdirSync(output + '/jupyter/face_detection');
+	recursiveBuild(directory, template, output);
+  
 	// convertJupyterToHtml('source/jupyter/face_detection', template, output + '/jupyter/face_detection');
 	buildJupyter(directory + '/jupyter', template, output + '/jupyter');
 }
