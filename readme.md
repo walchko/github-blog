@@ -1,64 +1,85 @@
-# My Blog
+![](pics/ship.jpg)
 
-- `build.js` builds the website
-- `deploy_github.sh` performs the process of copying the website to `gh-pages` and publishes the updated website.
-- `deploy_surge.sh` performs a deployment to surge.sh. **Warning:** having issue with deploying pdf files.
+This is the Repo that feeds my personal github page. This has the ability to
+build a website from a combination of:
 
-## Setup Github
+- [reStructuredText](http://docutils.sourceforge.net/rst.html)
+- [Markdown](http://pandoc.org/MANUAL.html#pandocs-markdown)
+- [Jupyter Notebooks](https://jupyter.org/)
 
-You will probably have to create a `gh-pages` branch. Then double check in the setting for the repo, that source is the `gh-pages branch`.
+I use to use Pelican, but that had issues with latex equations and took months
+for them to fix. Also, I never founds a nice way to do jupyter with it.
 
-## Travis-CI
-
-Grant access to your github repo so travis can clone and build it. You will also need to grant access for travis to write back to the repo under the `gh-pages` branch.
-
-### Grant Push Access
-
-- Generate a [Personal Access Token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) on github, make sure to select **public_repo**.
-- Add it to your travis account settings by setting [environment variable](https://docs.travis-ci.com/user/environment-variables#Defining-Variables-in-Repository-Settings) called GITHUB_TOKEN with a value of the personal access token (lots of numbers)
-
-# Build Locally
+# Setup
 
 First you need to install:
 
-1. gitbash
-1. node
-1. pandoc
-1. basictex (if we have latex equations or you are building pdfs)
-1. jupyter notebooks (if you are using them)
+1. `brew install pandoc node python matplotlib`
+1. `npm  install`
+1. `pip install -U jupyter matplotlib numpy`
 
-## Build
+# Build
 
 1. Open a terminal window and navigate to the repo
-1. run: `npm install`
-    1. This installs ejs, you only have to do this once or again to update the library
-1. run: `build.js`
+1. run: `./build.js`
 1. Look in the `html` folder and the website should be there
 
 During the build process, you should see:
 
 ```bash
-kevin@Dalek ece382 $ node build.js
+kevin@Dalek github-blog $ ./deploy_github.sh
+Deploying to github
+ * Wrote colophon: html/colophon.html
 -------------------------------------------
 Searching: source
 -------------------------------------------
-Searching: source/admin
-Wrote: html/admin/c_style_guide.html
-Wrote: html/admin/course_goals.html
-Wrote: html/admin/course_letter.html
+Searching: source/Publications
+ * Copied: html/Publications/AIAA-Reconfigurable-AUV.pdf
+ * Copied: html/Publications/AUVSI-2001.pdf
+ * Copied: html/Publications/AUVSI-2002.pdf
+ * Copied: html/Publications/Optimal-geo-lasercom.pdf
+ * Copied: html/Publications/embeded_linux_CF.pdf
+ * Copied: html/Publications/mimo-fuzzy-FCRAR.pdf
+ * Copied: html/Publications/subjugator-FCRAR.pdf
+ * Copied: html/Publications/subjugator-sinkin-is-easy.pdf
+ * Copied: html/Publications/walchko-GSRP.pdf
+ * Copied: html/Publications/walchko-INS-FCRAR-2003.pdf
+ * Copied: html/Publications/walchko-MS-EE.pdf
+ * Copied: html/Publications/walchko-MS-ME.pdf
+ * Copied: html/Publications/walchko-PhD-ME.pdf
+ * Copied: html/Publications/walchko-SM-FCRAR-2003.pdf
+ * Copied: html/Publications/walchko-nav-FCRAR.pdf
+ * Wrote: html/about.html
 -------------------------------------------
-Searching: source/admin/final_resources
-Copied: html/admin/final_resources/ADC10AE0.jpg
-Copied: html/admin/final_resources/ADC10CTL0_1.jpg
-Copied: html/admin/final_resources/ADC10CTL0_2.jpg
-Copied: html/admin/final_resources/ADC10CTL0_3.jpg
-Copied: html/admin/final_resources/ADC10CTL1_1.jpg
-Copied: html/admin/final_resources/ADC10CTL1_2.jpg
+Searching: source/blog
+-------------------------------------------
+Searching: source/blog/Arch_Linux
+ * Wrote: html/blog/Arch_Linux/arch.html
+-------------------------------------------
+Searching: source/blog/Arch_Linux/pics
+ * Copied: html/blog/Arch_Linux/pics/arch_linux.png
+-------------------------------------------
+Searching: source/blog/Computer_Vision
+ >> skip: .ipynb_checkpoints
+ * Wrote: html/blog/Computer_Vision/jupyter/Feature_Detection/Feature_Detection.html
+ * Copied: html/blog/Computer_Vision/jupyter/Feature_Detection/afa.jpg
+ * Copied: html/blog/Computer_Vision/jupyter/Feature_Detection/balls.jpg
+ * Copied: html/blog/Computer_Vision/jupyter/Feature_Detection/calibration.jpg
+ * Copied: html/blog/Computer_Vision/jupyter/Feature_Detection/coins.jpg
+ * Copied: html/blog/Computer_Vision/jupyter/Feature_Detection/dnd.jpg
 ...
 ```
+# Deployment
 
+There are a couple scripts that allow you to deploy to multiple locations.
 
-# [Surge](http://surge.sh/) Deployment
+- `build.js` builds the website. If no args are given, then it builds it locally to `html` folder.
+- `deploy_github.sh` performs a deployment to the `master` branch of a github pages repo. Github forces you to use the `master` branch on a personal website.
+- `deploy_surge.sh` performs a deployment to surge.sh.
+
+## [Surge](http://surge.sh/) Deployment
+
+**Warning:** having issue with deploying pdf files.
 
 Install surge: `npm install --global surge`
 

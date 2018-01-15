@@ -26,7 +26,7 @@ if(args.length == 3){
 // just local testing
 else {
   console.log('Local deployment');
-  BASE_PATH = __dirname + '/docs';
+  BASE_PATH = __dirname + '/html';
 }
 
 
@@ -272,7 +272,7 @@ function buildTOC(source, template){
 		toc.push(sfolder);
 
 		var html = template({TOC: toc, info: false, path: BASE_PATH});
-		fs.writeFileSync('docs/topics.html', html);
+		fs.writeFileSync('html/topics.html', html);
 	}
 }
 
@@ -303,7 +303,12 @@ function convertJupyterToHtml(folder, template, output){
 			case '.ipynb':
 				var filename = path.basename(currentFile, '.ipynb');
 				jupyter.zipFolder(filename, folder, output);
-				var nb = jupyter.convertToHTML(folder + '/' + currentFile);
+
+                // append a link to the jupyter code at the top of the page
+                var link = '<center><h3><a href="' + filename + '.zip"> Jupyter Source Code </a></h3></center>';
+
+                // generate the html and put it into the tempate
+                var nb = link + jupyter.convertToHTML(folder + '/' + currentFile);
 				var html = template({TOC: false, info: nb, path: BASE_PATH});
                 var loc = output + '/' + filename + '.html';
 				fs.writeFileSync(loc, html);
@@ -344,4 +349,4 @@ function build(templateFile, directory, output){
 	recursiveBuild(directory, template, output);
 }
 
-build('template/template.ejs', 'source', 'docs');
+build('template/template.ejs', 'source', 'html');

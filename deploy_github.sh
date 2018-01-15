@@ -54,7 +54,7 @@ echo "  Redoing git"
 echo "======================"
 
 # create readme with data
-echo "deployed at `date`" > README.md
+echo "deployed at `date`" > readme.md
 
 # setup new git repo
 git init
