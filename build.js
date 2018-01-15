@@ -79,6 +79,29 @@ function convertToHtml(inFile, template, outFile) {
 
 }
 
+function convertReadmeToHtml(inFile, template, outFile) {
+  /*
+  * Generic conversion function
+  * - inFile: markdown or rst text filename
+  * - template
+  * - outFile: output file path
+  */
+
+  var result = pandoc.convertToHTML(inFile);
+  var ext = path.extname(inFile);
+  var htmlFile = outFile + '/colophon.html';
+  console.log('Wrote: ' + htmlFile);
+  var html = template(
+	{
+	  TOC: false,
+	  info: result,
+	  path: BASE_PATH
+	}
+  );
+  fs.writeFileSync(htmlFile, html);
+
+}
+
 function convertToPDF(inFile, outFile) {
   /*
    * Generic conversion function
@@ -343,6 +366,9 @@ function build(templateFile, directory, output){
 	// get template
 	var ejs_string = fs.readFileSync(templateFile, 'utf8');
 	var template = ejs.compile(ejs_string,{filename: __dirname + '/' + templateFile});
+
+    // build readme
+    convertReadmeToHtml('readme.md', template, output);
 
 	// build topic page
 	buildTOC2(directory + '/blog', template);
