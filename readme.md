@@ -1,12 +1,8 @@
-# ECE 382
-
-[![Build Status](https://travis-ci.org/MarsUniversity/ece382.svg?branch=master)](https://travis-ci.org/MarsUniversity/ece382)
-
-The website is built using [travis-ci](https://travis-ci.org), [pandoc](http://pandoc.org/no) and [nodejs](https://nodejs.org/en/). We are also using a templating system (probably not necessary) called ejs which is found on [npm](https://www.npmjs.com/). Finally, we are using [Bootstrap](http://getbootstrap.com/) to produce a nice HTML5 navigation bar across the top of the page.
+# My Blog
 
 - `build.js` builds the website
-- `.travis.yml` the setup file for travis-ci and tells it how to build the website
-- `deploy.sh` performs the process of copying the website to `gh-pages` and publishes the updated website.
+- `deploy_github.sh` performs the process of copying the website to `gh-pages` and publishes the updated website.
+- `deploy_surge.sh` performs a deployment to surge.sh. **Warning:** having issue with deploying pdf files.
 
 ## Setup Github
 
@@ -29,13 +25,14 @@ First you need to install:
 1. node
 1. pandoc
 1. basictex (if we have latex equations or you are building pdfs)
+1. jupyter notebooks (if you are using them)
 
 ## Build
 
 1. Open a terminal window and navigate to the repo
 1. run: `npm install`
     1. This installs ejs, you only have to do this once or again to update the library
-1. run: `node build.js`
+1. run: `build.js`
 1. Look in the `html` folder and the website should be there
 
 During the build process, you should see:
@@ -64,10 +61,6 @@ Copied: html/admin/final_resources/ADC10CTL1_2.jpg
 # [Surge](http://surge.sh/) Deployment
 
 Install surge: `npm install --global surge`
-
-or
-
-Embed in your project: `npm install --save-dev surge`
 
 ```bash
 kevin@dalek html $ surge
