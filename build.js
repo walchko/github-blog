@@ -65,9 +65,10 @@ function convertToHtml(inFile, template, outFile) {
   */
 
   var result = pandoc.convertToHTML(inFile);
-  var ext = path.extname(inFile);
-  var htmlFile = outFile + '/' + path.basename(inFile, ext) + '.html';
-  console.log('Wrote: ' + htmlFile);
+  // var ext = path.extname(inFile);
+  // var htmlFile = outFile + '/' + path.basename(inFile, ext) + '.html';
+  var htmlFile = cat(outFile, ext(inFile, '.html'));
+  console.log(' * Wrote: ' + htmlFile);
   var html = template(
 	{
 	  TOC: false,
@@ -79,18 +80,17 @@ function convertToHtml(inFile, template, outFile) {
 
 }
 
+/*
+* Generic conversion function
+* - inFile: markdown or rst text filename
+* - template
+* - outFile: output file path
+*/
 function convertReadmeToHtml(inFile, template, outFile) {
-  /*
-  * Generic conversion function
-  * - inFile: markdown or rst text filename
-  * - template
-  * - outFile: output file path
-  */
-
   var result = pandoc.convertToHTML(inFile);
-  var ext = path.extname(inFile);
+  // var ext = path.extname(inFile);
   var htmlFile = outFile + '/colophon.html';
-  console.log('Wrote: ' + htmlFile);
+  console.log(' * Wrote colophon: ' + htmlFile);
   var html = template(
 	{
 	  TOC: false,
@@ -102,30 +102,38 @@ function convertReadmeToHtml(inFile, template, outFile) {
 
 }
 
-function convertToPDF(inFile, outFile) {
-  /*
-   * Generic conversion function
-   * - inFile: markdown or rst text filename
-   * - outFile: output file path
-   */
 
-   // read the file and get the raw text
-	var result;
-	switch(path.extname(inFile)){
-	  case ".md":
-		result = pandoc.convertMarkdown2(inFile, 'pdf');
-		break;
-	  case ".rst":
-		result = pandoc.convertRST(inFile, 'pdf');
-		break;
-	}
-	var ext = path.extname(inFile);
-	var pdfFile = outFile + '/' + path.basename(inFile, ext) + '.pdf';
-	console.log('Wrote: ' + pdfFile);
-	fs.writeFileSync(pdfFile, result);
+/*
+* Generic conversion function
+* - inFile: markdown or rst text filename
+* - outFile: output file path
+*/
+// function convertToPDF(inFile, outFile) {
+//    // read the file and get the raw text
+// 	var result;
+// 	switch(path.extname(inFile)){
+// 	  case ".md":
+// 		result = pandoc.convertMarkdown2(inFile, 'pdf');
+// 		break;
+// 	  case ".rst":
+// 		result = pandoc.convertRST(inFile, 'pdf');
+// 		break;
+// 	}
+// 	var ext = path.extname(inFile);
+//
+//     // var pdfFile = cat(outFile, ext(inFile, '.pdf'));
+// 	var pdfFile = outFile + '/' + path.basename(inFile, ext) + '.pdf';
+// 	console.log(' * Wrote: ' + pdfFile);
+// 	fs.writeFileSync(pdfFile, result);
+// }
 
+// useful?
+function ext(file, new_ext){
+    const ext = path.extname(file);
+    return path.basename(file, ext) + new_ext;
 }
 
+// useful?
 function cat(a, b){
 	return a + '/' + b;
 }
@@ -139,7 +147,7 @@ function forEachFolder(topFolder, func, template, output){
 	}
 	for (var i = 0; i < subFolder.length; i++) {
 		var folder = subFolder[i];
-		console.log('folder: ' + folder);
+		// console.log('folder: ' + folder);
 
 		switch (path.extname(folder)) {
 			case '':
@@ -178,7 +186,7 @@ function recursiveBuild(directory, template, output){
 
 				// if jupyter build
 				if (files[i] === 'jupyter'){
-				  console.log('<<< parse jupyter >>>');
+				  // console.log('<<< parse jupyter >>>');
 				  // convertJupyterToHtml(currentFile, template, output + '/' + files[i]);
 				  forEachFolder(currentFile, convertJupyterToHtml, template, output + '/' + files[i]);
 				}
@@ -192,69 +200,25 @@ function recursiveBuild(directory, template, output){
 			  // copy to output directory
 			  var cp = output + '/' + files[i];
 			  fs.copyFileSync(currentFile, cp);
-			  console.log('Copied: ' + cp);
+			  console.log(' * Copied: ' + cp);
 			  break;
 	  }
   }
 }
 
+
 function buildTOC(source, template){
-  const dirs = p => fs.readdirSync(p).filter(f => fs.statSync(path.join(p, f)).isDirectory());
-  const folders = dirs(source);
-  console.log(folders);
-  console.log('-------------------------------------------')
-  console.log('Searching for Topics: ');
-
-  var toc = [];
-
-  for (var i in folders){
-	var folder = folders[i]
-	console.log('folder: ' + folder);
-	// toc[folder] = [];
-	var sfolder = [folder];
-	var sfiles = [];
-	var files;
-
-	try {
-	  files = fs.readdirSync(source + '/' + folder);
-	}
-	catch (err) {
-	  console.log(err);
-	}
-	for (var j in files){
-	  var f = files[j];
-	  // console.log(f);
-	  switch (path.extname(f)){
-		case '.rst':
-		  f = path.basename(f, '.rst');
-		case '.md':
-		  f = path.basename(f, '.md');
-		  console.log('Found: ' + f);
-		  // toc[folder].push({'name': f, 'path': source + '/' + folder + '/' + f});
-		  sfiles.push({'name': f.replace('_', ' ').replace('-', ' '), 'path': 'blog/' + folder + '/' + f + '.html'});
-		  break;
-	  }
-	}
-	sfolder.push(sfiles);
-	toc.push(sfolder);
-
-	var html = template({TOC: toc, info: false, path: BASE_PATH});
-	fs.writeFileSync('html/topics.html', html);
-  }
-}
-
-function buildTOC2(source, template){
 	const dirs = p => fs.readdirSync(p).filter(f => fs.statSync(path.join(p, f)).isDirectory());
 	const folders = dirs(source);
-	console.log(folders);
-	console.log('-------------------------------------------')
-	console.log('Searching for Topics: ');
+	// console.log(folders);
+	// console.log('-------------------------------------------')
+	// console.log('Searching for Topics: ');
 
 	var toc = [];
 
 	for (var i in folders){
 		var folder = folders[i]
-		console.log('folder: ' + folder);
+		// console.log('folder: ' + folder);
 
 		// toc[folder] = [];
 		var sfolder = [folder.replace('_', ' ').replace('-', ' ')];
@@ -275,11 +239,12 @@ function buildTOC2(source, template){
 					f = path.basename(f, '.rst');
 				case '.md':
 					f = path.basename(f, '.md');
-					console.log('Found: ' + f);
+
+					// console.log('Found: ' + f);
 					// toc[folder].push({'name': f, 'path': source + '/' + folder + '/' + f});
 					sfiles.push(
 						{
-							'name': f.replace('_', ' ').replace('-', ' '),
+							'name': f.replace(/[-_]/g,' '),
 							'path': 'blog/' + folder + '/' + f + '.html'
 						}
 					);
@@ -289,12 +254,12 @@ function buildTOC2(source, template){
 					if (fs.statSync(ff).isDirectory() == true && f === 'jupyter'){
 						// var sf = cat(ff, 'jupyter');
 						const subfolders = dirs(ff);
-						console.log(subfolders);
+						// console.log(subfolders);
 						for(var k in subfolders){
 							var sub = subfolders[k];
 							sfiles.push(
 								{
-									'name': '[Jupyter notebook] ' + sub.replace('_', ' ').replace('-', ' '),
+									'name': '[Jupyter notebook] ' + sub.replace(/[-_]/g,' '),
 									'path': 'blog/' + folder + '/' + f  + '/' + sub + '/' + sub + '.html'
 								}
 							);
@@ -320,9 +285,9 @@ template: html template
 output: destination to write html to when done
 */
 function convertJupyterToHtml(folder, template, output){
-	console.log('output: ' + output);
+	// console.log('output: ' + output);
 	fs.mkdirSync(output);
-	console.log('folder: ' + folder);
+	// console.log('folder: ' + folder);
 
 	try {
 	  files = fs.readdirSync(folder);
@@ -332,7 +297,7 @@ function convertJupyterToHtml(folder, template, output){
 	}
 	for (var i = 0; i < files.length; i++) {
 		var currentFile = files[i];
-		console.log('currentFile: ' + currentFile);
+		// console.log('currentFile: ' + currentFile);
 
 		switch (path.extname(currentFile)) {
 			case '.ipynb':
@@ -340,17 +305,19 @@ function convertJupyterToHtml(folder, template, output){
 				jupyter.zipFolder(filename, folder, output);
 				var nb = jupyter.convertToHTML(folder + '/' + currentFile);
 				var html = template({TOC: false, info: nb, path: BASE_PATH});
-				fs.writeFileSync(output + '/' + filename + '.html', html);
+                var loc = output + '/' + filename + '.html';
+				fs.writeFileSync(loc, html);
+                console.log(' * Wrote: ' + loc);
 				break;
 			case '':
 			// case '.DS_Store':
-				console.log('>> skip currentFile: ' + currentFile);
+				console.log(' >> skip: ' + currentFile);
 				break;
 			default:
 				// copy to output directory
 				var cp = output + '/' + currentFile;
 				fs.copyFileSync(folder + '/' + currentFile, cp);
-				console.log('Copied: ' + cp);
+				console.log(' * Copied: ' + cp);
 				break;
 		}
 	}
@@ -371,7 +338,7 @@ function build(templateFile, directory, output){
     convertReadmeToHtml('readme.md', template, output);
 
 	// build topic page
-	buildTOC2(directory + '/blog', template);
+	buildTOC(directory + '/blog', template);
 
 	// search through source and build html
 	recursiveBuild(directory, template, output);

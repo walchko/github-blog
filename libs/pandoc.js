@@ -26,99 +26,6 @@ exports.cleanAscii = function(file){
   }
 }
 
-// pandoc  -f rst --mathjax test.rst -t html5-smart -o index.html -s -c pygment.css
-// exports.convertMarkdown = function(input, output_type, args, callback) {
-//   // console.log('DEBUG: ' + input);
-//   // cleanAscii(input);
-//
-//   var cmd;
-//   switch (output_type) {
-//     case 'html':
-//       cmd = pandocPath + ' -f markdown -t html5 ' + input;
-//     case 'pdf':
-//       cmd = pandocPath + ' -V geometry:margin=1in -s -o ' + path.basename(input, '.md') + '.pdf ' + input;
-//   }
-//
-//   // console.log('DEBUG: ' + cmd);
-//
-//   try {
-//     var ret = execSync(cmd).toString();
-//     // console.log(ret);
-//     callback(null, ret);
-//   }
-//   catch(err) {
-//     console.log('PANDOC ERROR: ', err);
-//     callback(err, null);
-//   }
-// };
-
-// pandoc  -f rst --mathjax test.rst -t html5-smart -o index.html -s -c pygment.css
-// exports.convertMarkdown2 = function(input, output_type) {
-//   // console.log('DEBUG: ' + input);
-//   // cleanAscii(input);
-//
-//   // find out if args was passed to function
-//   // if (typeof(args) === 'undefined'){
-//   //   console.log('no optional args passed');
-//   //   args = args || ' ';  // need better
-//   // }
-//
-//   var cmd;
-//   switch (output_type) {
-//     case 'html':
-//       cmd = pandocPath + ' -f markdown -t html5-smart ' + input;
-//       break;
-//     case 'pdf':
-//       cmd = pandocPath + ' -f markdown -V geometry:margin=1in -s -o ' + path.basename(input, '.md') + '.pdf ' + input;
-//       break;
-//   }
-//
-//   // console.log('DEBUG: ' + cmd);
-//
-//   try {
-//     var ret = execSync(cmd).toString();
-//     // console.log(ret);
-//     return ret;
-//   }
-//   catch(err) {
-//     console.log('PANDOC ERROR: ', err);
-//     throw err;
-//   }
-// };
-
-// exports.convertRST = function(input, output_type) {
-//   // console.log('DEBUG: ' + input);
-//   // cleanAscii(input);
-//
-//   // find out if args was passed to function
-//   // if (typeof(args) === 'undefined'){
-//   //   console.log('no optional args passed');
-//   //   args = args || ' ';  // need better
-//   // }
-//
-//   var cmd;
-//   switch (output_type) {
-//     case 'html':
-//       cmd = pandocPath + ' -f rst -t html5-smart ' + input;
-//       break;
-//     case 'pdf':
-//       cmd = pandocPath + ' -f rst -V geometry:margin=1in -s -o ' + path.basename(input, '.rst') + '.pdf ' + input;
-//       break;
-//   }
-//
-//   // console.log('DEBUG: ' + cmd);
-//
-//   try {
-//     var ret = execSync(cmd).toString();
-//     // console.log(ret);
-//     return ret;
-//   }
-//   catch(err) {
-//     console.log('PANDOC ERROR: ', err);
-//     throw err;
-//   }
-// };
-
 exports.convertToHTML = function(inFile) {
 
   var output_type;
@@ -133,6 +40,7 @@ exports.convertToHTML = function(inFile) {
       throw "convertHTML: unknown file extention, must be md or rst";
   }
 
+  // add --quiet to surpress warnings
   var cmd = pandocPath + ' -f ' + output_type + ' -t html5-smart ' + inFile;
 
   try {

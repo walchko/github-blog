@@ -5,7 +5,9 @@ PS4 Controller
 :modified: 2016-07-28
 :summary: How to hook up your PS4 controller to Raspbian.
 
-
+.. image:: pics/ps4.jpg
+	:width: 75%
+	:align: center
 
 Setup Bluetooth
 ----------------------
@@ -204,7 +206,7 @@ You should see some strange characters appear as you use the joystick.
 	sudo apt-get install joystick
 	jstest /dev/input/js0
 
-	
+
 Finally Got Working
 ---------------------
 
