@@ -12,27 +12,41 @@ SD Card
 Backup and Restore
 --------------------
 
+A good cross platform explanation is `here <https://thepihut.com/blogs/raspberry-pi-tutorials/17789160-backing-up-and-restoring-your-raspberry-pis-sd-card>`_
+
+macOS
+------------
+
+Find the disk you want to copy using ``diskutil list``.
+
+.. figure:: pics/diskutil.png
+	:width: 300px
+	:align: center
+
 Use the ``dd`` command to make a full backup of the image:
 
 ::
 
-    dd if=/dev/sdx of=/path/to/image
-
-or for compression:
-
-::
-
-    dd if=/dev/sdx | gzip > /path/to/image.gz
-
-Where sdx is your SD card and the target could be
-~/raspbian\_wheezy\_\ ``date "+%Y%m%d_%T"``. This will save it to your
-home directory and append the current date and time on the end of the
-filename.
+    sudo dd if=/dev/disk2 of=~/Desktop/backup.dmg
 
 To restore the backup you reverse the commands::
 
-    dd if=/path/to/image of=/dev/sdx
+    sudo dd if=/path/to/backup.dmg of=/dev/disk2
 
-or when compressed::
+Then eject the disk::
 
-    gzip -dc /path/to/image.gz | dd of=/dev/sdx
+	sudo diskutil eject /dev/rdisk2
+
+Windows
+--------------
+
+On windows, you can use Win32 Disk Imager from `Sourceforge <https://sourceforge.net/projects/win32diskimager/files/latest/download>`_.
+
+.. figure:: pics/win32-disk-imager.png
+	:width: 300px
+	:align: center
+
+Insert the SD card into your computer, then run the disk imager. Set the SD card location under the Device drop down and set the image file location next to the blue folder icon. Then: 
+
+- **Copy:** Press *Read* to make a copy of the device drive to the image file
+- **Write:** Press *Write* to copy the image file to the device drive
