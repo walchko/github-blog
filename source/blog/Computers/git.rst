@@ -15,7 +15,7 @@ Git is a version control system (VCS).
 large files, so you have to install an extension to github. If you don't, it
 can be painful to work with github from the command line.
 
-For OSX::
+For macOS::
 
     brew install git-lfs
 
@@ -170,6 +170,37 @@ Read `this <http://rogerdudler.github.io/git-guide/>`__ awesome guide
 To undo what you have committed already and basically create an anti-patch for each commit ::
 
     git revert 0766c053 25eee4ca a867b4af
+
+Git Pull Script
+------------------
+
+.. code-block:: bash
+
+	#!/bin/bash
+	#
+	# Update a bunch of git repos on command
+	#
+
+	set -e
+
+	# get a list of non-hidden directories
+	shopt -u dotglob
+
+	# iterate through list
+	for d in */; do
+	  echo "========================"
+	  echo " ${d%/}"
+	  echo "========================"
+	  cd ${d%/}
+	  if [[ -d ".git" ]]; then
+	    git pull
+	    git status
+	  fi
+	  cd ..
+	  echo ""
+	  echo ""
+	done
+
 
 Submodules
 ------------
