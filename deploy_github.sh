@@ -7,6 +7,8 @@
 # fix: git push origin master --force
 #      where master is the branch name
 
+set -e
+
 ./build.js github
 
 # repo and branch to save website too
@@ -33,8 +35,6 @@ fi
 
 # website data is stored here:
 FOLDER="html"
-
-set -e
 
 mkdir -p ${TMP}
 
