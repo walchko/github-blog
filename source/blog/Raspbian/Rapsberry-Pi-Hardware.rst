@@ -19,6 +19,12 @@ what.
 .. figure:: pics/pinout.jpeg
     :width: 300px
 
+.. figure:: pics/pi-zero-pinout.jpeg
+    :width: 300px
+
+.. figure:: pics/pi-zero-bcm-pinout.jpeg
+    :width: 300px
+
 Lights
 ------
 
