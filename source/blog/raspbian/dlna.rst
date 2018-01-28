@@ -10,6 +10,15 @@ DLNA
 	:width: 200px
 	:align: center
 
+Update
+-------
+
+I now use `Plex <https://www.plex.tv`_ to serve up media at home on my Raspberry
+Pi.
+
+Original Article
+------------------
+
 `source <http://www.htpcguides.com/install-readymedia-minidlna-1-1-4-raspberry-pi/>`__
 
 Digital Living Network Alliance (`DLNA <http://www.dlna.org/>`__ ) servers allow you to

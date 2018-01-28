@@ -14,20 +14,9 @@ OpenCV
 Rasbian
 --------
 
-::
-
-	pi@zoidberg ~ $ apt-cache search opencv
-	libopencv-core-dev - development files for libopencv-core
-	python-opencv - Python bindings for the computer vision library
-	libopencv-dev - kevin - installs opencv 3.1.0 and dev stuff
-
-::
-
-	sudo apt-get update
-	sudo apt-get upgrade
-	sudo apt-get install libopencv-dev
-	cd /usr/local/lib
-	sudo ldconfig
+Linux seems to hate OpenCV and never has a current debian package of it. Go
+`here <https://github.com/MomsFriendlyRobotCompany/dpkg_opencv>`_ to get
+a current version.
 
 OSX
 -----
