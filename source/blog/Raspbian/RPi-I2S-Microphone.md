@@ -11,7 +11,13 @@
 
 ![](pics/rpi-i2s-mic-mono.png)
 
+Setting on mic `SEL` pin HIGH and the other LOW will put them on different channels, either right or left.
+
 ![](pics/rpi-i2s-mic-stereo.png)
+
+## Software
+
+TBD
 
 # References
 
