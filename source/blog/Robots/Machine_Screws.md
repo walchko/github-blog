@@ -1,13 +1,10 @@
-Machine Screws
-================
+# Machine Screws
 
 :date: 2017-01-16
-:summary: Info about standard bolts or machine screws
 
-.. figure:: pics/machine_screws.jpg
-    :align: center
+![](pics/machine_screws.jpg)
 
-A good table of sizes is `here <static/TapDrillSizes.pdf>`_
+A good table of sizes is [here](static/TapDrillSizes.pdf)
 
 **STANDARD** thread size refers to a thread measurement system commonly
 used in the United States called the \'Unified Thread Standard\'. This
