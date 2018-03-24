@@ -17,6 +17,21 @@
         - Windows 10: `C:\Users\Nathan\AppData\Roaming\kicad\fp-lib-table`
         - macOS: it is in the same folder as the project (\*.pro)
 
+# Making a Gerber File for Production
+
+[PCBWay tutorial](https://www.pcbway.com/blog/help_center/Generate_Gerber_file_from_Kicad.html)
+
+1. From the project, open the pcb editor
+    ![](pics/project.jpg)
+1. In the pcb editor, select the plotter
+    ![](pics/pcb-editor.jpg)
+1. Select the following layers
+    ![](pics/plotter.jpg)
+1. Then generate a drill file
+    ![](pics/drill.jpg)
+1. Now take all of the files and zip them up. You can use a gerber viewer
+to double check everything looks ok
+
 # Gerber Viewer
 
 Plot your PCB designs and zip up the files. Then drag/drop them on to: https://gerber-viewer.easyeda.com/
