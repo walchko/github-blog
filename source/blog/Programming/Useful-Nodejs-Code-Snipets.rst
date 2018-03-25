@@ -5,6 +5,8 @@ Programming Node.js
 :modified: 2017-05-21
 :summary: Node.js/javascript snipets and useful libraries
 
+- `JS Cheatsheet <static/nodejs-cheatsheet.js>`_
+
 Libraries
 ------------
 

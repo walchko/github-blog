@@ -1,3 +1,5 @@
+<img src="pics/python-snake.jpg" width="100%">
+
 Programming I2C
 =====================
 
