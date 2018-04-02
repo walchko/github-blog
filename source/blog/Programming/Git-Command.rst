@@ -115,34 +115,6 @@ if you accidentally clone the ``https`` one, you can switch to ``ssh`` by ::
 
     git remote set-url origin git@github.com:walchko/soccer2.git
 
-Simple Update
----------------
-
-.. code-block:: bash
-	#!/bin/bash
-	#
-	# Update a bunch of git repos on command
-	#
-
-	set -e
-
-	# get a list of non-hidden directories
-	shopt -u dotglob
-
-	# iterate through list
-	for d in */; do
-	  echo "========================"
-	  echo " ${d%/}"
-	  echo "========================"
-	  cd ${d%/}
-	  if [[ -d ".git" ]]; then
-	    git pull
-	    git status
-	  fi
-	  cd ..
-	  echo ""
-	  echo ""
-	done
 
 
 Git Workflow
@@ -204,32 +176,10 @@ To undo what you have committed already and basically create an anti-patch for e
 Git Pull Script
 ------------------
 
-.. code-block:: bash
+.. raw:: html
 
-	#!/bin/bash
-	#
-	# Update a bunch of git repos on command
-	#
+	<script src="https://gist.github.com/walchko/cfd14e89dbedf8f4b3bd52d5b90806cd.js"></script>
 
-	set -e
-
-	# get a list of non-hidden directories
-	shopt -u dotglob
-
-	# iterate through list
-	for d in */; do
-	  echo "========================"
-	  echo " ${d%/}"
-	  echo "========================"
-	  cd ${d%/}
-	  if [[ -d ".git" ]]; then
-	    git pull
-	    git status
-	  fi
-	  cd ..
-	  echo ""
-	  echo ""
-	done
 
 
 Submodules

@@ -248,12 +248,12 @@ html, body {
   cursor: -moz-zoom-in;
   cursor: -webkit-zoom-in;
 }
-/* #main ul {
+#main ul {
   margin: 1em 0px;
 }
 #main ol, #main li {
   margin-left: 1em;
-} */
+}
 #main img[alt="many"] {
   display: inline;
   margin: 1em 0;
@@ -306,26 +306,26 @@ html, body {
 #main a:visited {
   color: #7e7e96;
 }
-table {
+#main table {
   width: 100%;
   max-width: 100%;
   border-collapse: collapse;
   margin: 2% 0;
   border: #c9c9c9;
 }
-table th {
+#main table th {
   background: #F5F5F5;
 }
-th, td {
+#main th, #main td {
   text-align: left;
   padding: 0.313em 0.625em;
-  /* border: 1px solid #CCCCCC; */
+  border: 1px solid #CCCCCC;
 }
-dt {
+#main dt {
   color: #444;
   font-weight: 700;
 }
-dd {
+#main dd {
   margin-left: 1em;
 }
 /*

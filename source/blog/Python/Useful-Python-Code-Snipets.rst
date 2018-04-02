@@ -12,17 +12,9 @@ A useful reference is `Python Module of the Week <https://pymotw.com/2/contents.
 Simple hello world
 ---------------------
 
-```python
-#!/usr/bin/env python2
-from __future__ import division
-from __future__ import print_function
+.. raw:: html
 
-def main():
-	print('Hello World!')
-
-if __name__ == "__main__":
-	main()
-```
+	<script src="https://gist.github.com/walchko/7dea22efcab640d0094e8e90fb851301.js"></script>
 
 Linux Fixing Python Path
 ----------------------------

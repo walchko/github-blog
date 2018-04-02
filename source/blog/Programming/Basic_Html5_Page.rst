@@ -10,32 +10,9 @@ you should use it when possible (avoiding horrible things like Adobe Flash).
 Simple Example
 -----------------
 
-.. code-block:: html
+.. raw:: html
 
-	<!DOCTYPE html>
-	<html>
-	<header></header>
-	<body>
-
-		<p>Embed a PDF in an html page</p>
-		<object width="400" height="400" data="test.pdf"></object>
-
-	</body>
-	</html>
-
-iFrame
---------
-
-.. code-block:: html
-
-	<!DOCTYPE html>
-	<html>
-	<body>
-
-	<iframe src="http://www.google.com" height="400" width="250"></iframe>
-
-	</body>
-	</html>
+	<script src="https://gist.github.com/walchko/6980af137e6f84572be0c5e4c5b6e348.js"></script>
 
 
 Resources
