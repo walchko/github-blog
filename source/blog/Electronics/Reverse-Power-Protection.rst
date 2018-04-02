@@ -1,5 +1,5 @@
-Power Systems
-==============
+Reverse Polarity Protection for Power Systems
+=================================================
 
 :date: 2016-04-17
 :summary: Power system design notes
