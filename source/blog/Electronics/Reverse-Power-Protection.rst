@@ -17,6 +17,8 @@ Diodes
 
 .. image:: pics/reverse_polarity_protection.jpg
 
+MOSFET
+-------
 
 Using a diode is one easy way to prevent current in your system from flowing in
 the wrong direction. However, they have a forward voltage drop which both reduces
@@ -39,3 +41,18 @@ diode to clamp the voltage, depending on the MOSFET you select.
 
 
 .. image:: pics/reverse_polarity_protection_2.png
+
+Sizing MOSFET
+~~~~~~~~~~~~~~~~~
+
+If the values for Diodes Inc DMP2045U P-Channel MOSFET are:
+
+- Max temp = 125C
+- Ambient temp = 25C
+- $R_{DS(ON)}$ = 90 m$\omega$
+
+$$
+\Delta T = T_{max} - T_{min} = P_D R_{\thetaJA} \\
+P_D = R_{DS(ON)} I^2_{rms} \\
+I = 4.48A
+$$
