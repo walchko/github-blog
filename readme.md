@@ -15,7 +15,7 @@ for them to fix. Also, I never founds a nice way to do jupyter with it.
 First you need to install:
 
 1. `brew install pandoc node python matplotlib`
-1. `npm  install`
+1. `npm  install ejs`
 1. `pip install -U jupyter matplotlib numpy`
 
 # Build
@@ -102,3 +102,9 @@ kevin@dalek html $ surge
 
     Success! Project is published and running at walchko.surge.sh
 ```
+
+# ToDo
+
+- jupyter headings have an annoyting &#182; which is the paragraph symbol ... I want to remove it
+- move more code to gists so it displays nicely
+- make it easier to swap out templates
