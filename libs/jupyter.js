@@ -16,6 +16,7 @@ exports.convertToHTML = function(inFile){
 
 	try {
 		var ret = execSync(cmd).toString();
+		// ret.replace(/[^\x00-\x7F]/g, "");
 		// console.log(ret);
 		return ret;
 	}
