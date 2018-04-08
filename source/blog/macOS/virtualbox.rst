@@ -44,9 +44,9 @@ Virtualbox+Extension pack for your platform move on to step 2.
 6. Now open up the setting for the VM you just created. The only setting
    you MUST change:
 
--  storage
--  networking
--  video
+	-  storage
+	-  networking
+	-  video
 
 7. Go to the storage tab and click the little CD icon. Add the iso you
    downloaded earlier from Ubuntu. This will only effect this boot

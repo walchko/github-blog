@@ -9,6 +9,7 @@
   "author": "Kevin J. Walchko",
   "license": "MIT",
   "dependencies": {
-    "ejs": "*"
+    "ejs": "*",
+    "npm": "^5.8.0"
   }
 }
