@@ -32,6 +32,6 @@ Oh well, it is free and works pretty good, so I can't complain too much.
 Grab Speech
 -------------
 
-Now you have to write your own code to grabe speech (which is fine) and you can
+Now you have to write your own code to grab speech (which is fine) and you can
 use `sox <https://wit.ai/docs/http/20141022#streaming-audio>`_ per the example
 on their website. Then ship it off to there servers to figure out what it means.
