@@ -2,9 +2,6 @@
 SD Card
 =======
 
-:date: 2015-06-10
-:summary: Setting up an SD card for RPi
-
 .. figure:: pics/sd.jpg
 	:width: 200px
 	:align: center
@@ -23,15 +20,17 @@ Find the disk you want to copy using ``diskutil list``.
 	:width: 300px
 	:align: center
 
-Use the ``dd`` command to make a full backup of the image:
+**Do not eject**, but unmount::
 
-::
+	sudo diskutil unmountDisk /dev/disk2
 
-    sudo dd if=/dev/disk2 of=~/Desktop/backup.dmg
+Use the ``dd`` command to make a full backup of the image::
+
+    sudo dd if=/dev/rdisk2 of=~/Desktop/backup.img
 
 To restore the backup you reverse the commands::
 
-    sudo dd if=/path/to/backup.dmg of=/dev/disk2
+    sudo dd if=/path/to/backup.img of=/dev/rdisk2
 
 Then eject the disk::
 
