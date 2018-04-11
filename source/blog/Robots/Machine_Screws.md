@@ -60,10 +60,10 @@ thread, which is basically the distance from any one point on a thread
 to a corresponding point on the next thread. Following is a cross
 reference chart showing how pitch relates to threads per inch (25.4mm):
 
--------- -------- -------- --------
-0.30mm   84 3/4   0.60mm   42 1/4
-0.35mm   72 1/2   0.70mm   36 1/4
-0.40mm   63 1/2   0.75mm   33 3/4
-0.45mm   56 1/2   0.80mm   31 3/4
-0.50mm   50 3/4                 
--------- -------- -------- --------
+Threads per inch (TPI) | Pitch | TPI | Pitch
+--------|--------|--------|--------
+0.30mm |  84 3/4 |  0.60mm  | 42 1/4
+0.35mm |  72 1/2 |  0.70mm  | 36 1/4
+0.40mm |  63 1/2 |  0.75mm  | 33 3/4
+0.45mm |  56 1/2 |  0.80mm  | 31 3/4
+0.50mm |  50 3/4 |          |      
