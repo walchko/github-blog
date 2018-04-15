@@ -37,6 +37,39 @@ These are::
     LNK (green): The network cable is connected (blinks off when transferring data to/from the network)
     10M (yellow): Lit when the board is using a 100Mbps link, not lit when using a 10Mbps
 
+Temperature
+-------------
+
+You can check the temperature by::
+
+    vcgencmd measure_temp
+
+You can setup a fan to turn on/off with this little `program <https://hackernoon.com/raspberry-pi-temperature-controlled-fan-2aa0de72a564>`_:
+
+.. code-block:: bash
+
+    #!/bin/sh
+    timestamp() {
+        date +”%Y-%m-%d %T”
+    }
+    LOGDIR=”/var/log/fan.log”
+    VALUE=42
+    TEMP=`vcgencmd measure_temp | cut -c6,7`
+    STATUS=`cat /sys/class/gpio/gpio2/value`
+
+    echo `timestamp` ” Info: Temperature: $TEMP”>>$LOGDIR
+
+    if [ $TEMP -ge $VALUE ] && [ $STATUS -eq 0 ]; then
+        echo `timestamp` ” Warning: Fan started.”>>$LOGDIR
+        echo ”1”>/sys/class/gpio/gpio2/value
+    elif [ $TEMP -le $VALUE ] && [ $STATUS -eq 1 ]; then
+        echo `timestamp` ” Warning: Fan stopped.”>>$LOGDIR
+        echo ”0”>/sys/class/gpio/gpio2/value
+    fi
+
+There is also a Node.js `version <https://www.npmjs.com/package/rpi-fan-controller>`_
+that does a similar thing.
+
 Power
 ------
 

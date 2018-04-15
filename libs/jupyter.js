@@ -4,7 +4,9 @@ var fs = require('fs');
 var childProcess = require('child_process');
 var execSync = childProcess.execSync;
 
-var w = execSync('which jupyter').toString();
+// Fucking idiots changed the executeable from jupyter notebook to jupyter-notebook
+// Now everything has a "-" in it. 
+var w = execSync('which jupyter-notebook').toString();
 
 if (typeof(w) !== 'string'){
 	throw 'Is jupyter installed?';
@@ -12,7 +14,9 @@ if (typeof(w) !== 'string'){
 var jupyterPath = w.substr(0, w.length - 1);  // remove return
 
 exports.convertToHTML = function(inFile){
-	const cmd = jupyterPath + ' nbconvert --template basic --log-level=0 --stdout ' + inFile;
+	var w = execSync('which jupyter-nbconvert').toString();
+	var nbpath = w.substr(0, w.length - 1);  // remove return
+	const cmd = nbpath + ' --template basic --log-level=0 --stdout ' + inFile;
 
 	try {
 		var ret = execSync(cmd).toString();
