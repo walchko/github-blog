@@ -9,6 +9,9 @@ This is a much shorter version of this [tutorial](https://www.wayneandlayne.com/
 ![](pics/fills_click_board_corner.png)
 
 - Highlight the area you want the copper pour to fill
+
+![](pics/fills_props.png)
+
 - Select the front of back copper fill and tie it to ground (GND)
 
 ![](pics/fills_hatching.png)
