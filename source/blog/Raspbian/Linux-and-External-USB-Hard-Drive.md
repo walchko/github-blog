@@ -5,9 +5,7 @@
 :modified: 2016-09-04
 :summary: Setting up a hard drive to work with Raspbian
 
-.. figure:: pics/usb.png
-	:width: 200px
-	:align: center
+![](pics/usb.png){width 200px}
 
 ## References:
 
