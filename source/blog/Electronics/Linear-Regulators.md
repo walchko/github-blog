@@ -1,4 +1,4 @@
-# Power Connectors
+# Linear Regulators
 
 to do
 
