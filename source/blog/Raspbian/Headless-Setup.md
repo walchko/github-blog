@@ -4,7 +4,9 @@ After you burn a Raspbian Image, you should see the `boot` directory on your des
 
 ## Enable SSH
 
-  touch <path-to-boot-dir> ssh
+```bash
+touch <path-to-boot-dir> ssh
+```
 
 ## Setup Wifi
 
