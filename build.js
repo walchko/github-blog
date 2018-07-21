@@ -190,6 +190,9 @@ function recursiveBuild(directory, template, output){
 				  // convertJupyterToHtml(currentFile, template, output + '/' + files[i]);
 				  forEachFolder(currentFile, convertJupyterToHtml, template, output + '/' + files[i]);
 				}
+        else if (files[i] === 'do_not_backup'){
+          console.log(" - Skipping: " + files[i]);
+        }
 				else { // recursively search
 				  recursiveBuild(currentFile, template, output + '/' + files[i]);
 				}

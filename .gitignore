@@ -6,3 +6,4 @@ html/*
 *.html
 docs/*
 .ipynb_checkpoints
+do_not_backup

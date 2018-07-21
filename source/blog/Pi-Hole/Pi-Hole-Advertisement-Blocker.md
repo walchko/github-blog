@@ -84,6 +84,12 @@ address and set it as the default DNS for everything on the network.
 
 You can repair things if they go wonky with: `pihole -r`
 
+When I played around with Pi 3, Pi Zero W, and finally Pi Zero, if I moved the
+SD card between these pi's everything *but* pi-hole worked. There seems to be
+something HW specific ... so I had to do `pihole -r` to repair it. It could have
+been something else I did, but I am not sure, I was testing a bunch of stuff
+to see performance.
+
 If everything is really bad, you can uninstall with: `pihole uninstall`
 
 # Warning
