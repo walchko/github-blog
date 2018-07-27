@@ -1,5 +1,5 @@
-Compare File Saving
-========================
+# Compare File Saving
+
 
 :date: 2017-08-09
 :summary: Compare file saving (shelve, json, gzip, and pickle) in python
@@ -18,6 +18,19 @@ use it on macOS was a pain.
 The simple test below compares pickle, pickle with gzip, and json. Json was the
 the easiest and performed just as well.
 
+```bash
+./test.py
+test.pickle: 2128 kb
+test2.pickle: 105 kb
+test3.json: 105 kb
+------------------------------
+ a: 10000
+ c: 30000
+ b: 20000
+ d: 2000000
+```
+
+
 ```python
 #!/usr/bin/env python
 
@@ -28,22 +41,7 @@ except:
 	import pickle
 import gzip
 import os
-
 import simplejson as json
-
-
-"""
-./test.py
-test.pickle: 2128 kb
-test2.pickle: 105 kb
-test3.json: 105 kb
-------------------------------
- a: 10000
- c: 30000
- b: 20000
- d: 2000000
-"""
-
 
 class Database(object):
 	"""
