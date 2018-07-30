@@ -19,7 +19,7 @@ Using the `SyncManager`, you can provide a shared namespace between running
 processes. Data in the namespace is automagically updated when a new assignment
 is made.
 
-- Data needs to be **picklable**, so objects that do hardware I/O aren't picklible. Therefore, things like i2c, serial, etc won't work in namespaces
+- Data needs to be **picklable**, so objects that do hardware I/O aren't picklable. Therefore, things like i2c, serial, etc won't work in namespaces
    - You need to keep any classes/functions/whatever that talk to hardware in one process. You cannot have multiple processes read/write to them.
    - You can have the hardware code read dat into a namespace variable or grad data from a namespace and write it out to hardware. I do not know what the latency of something like that is.
 - Updates namespace on assignment: namespace.data = new_data

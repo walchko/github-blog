@@ -1,5 +1,9 @@
 # Setting Up an RPi as a Kiosk
 
+## Assembly
+
+![](pics/lcd-assembly.jpg)
+
 ## Kiosk Mode for LightDM
 
 ```bash

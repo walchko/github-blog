@@ -4,7 +4,7 @@ Hardware
 :date: 2016-02-28
 :summary: Accessing RPi hardware
 
-.. figure:: pics/rpi.png
+.. figure:: pics/pi3+.jpg
     :width: 200px
     :align: center
 
