@@ -175,9 +175,18 @@ def build_toc(template):
     for b in blog:
         dirs, files = getDirFile(b + '/*')
         jup = []
+        # get folders with jupyter notebooks in them
         if dirs:
             for d in dirs:
                 jj = glob(d + '/*.ipynb')
+                for j in jj:
+                    jup.append(j)
+        toc[b.replace('blog/', '')] = files + jup
+        # get folders with markdown in them
+        # jup = []
+        if dirs:
+            for d in dirs:
+                jj = glob(d + '/*.md')
                 for j in jj:
                     jup.append(j)
         toc[b.replace('blog/', '')] = files + jup
