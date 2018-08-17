@@ -178,9 +178,19 @@ def build_toc(template):
         # get folders with jupyter notebooks in them
         if dirs:
             for d in dirs:
-                jj = glob(d + '/*.ipynb')
-                for j in jj:
-                    jup.append(j)
+                for ext in ['ipynb', 'md', 'rst']:
+                    jj = glob(d + '/*.{}'.format(ext))
+                    for j in jj:
+                        jup.append(j)
+
+                # jj = glob(d + '/*.md')
+                # for j in jj:
+                #     jup.append(j)
+                #
+                # jj = glob(d + '/*.rst')
+                # for j in jj:
+                #     jup.append(j)
+
         toc[b.replace('blog/', '')] = files + jup
         # get folders with markdown in them
         # jup = []

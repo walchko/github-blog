@@ -1,14 +1,14 @@
+.. figure:: pics/opencv.png
+   :width: 200px
+   :align: center
 
+   
 OpenCV
 ============
 
 :date: 2016-02-28
 :modified: 2016-12-30
 :summary: Setting up OpenCV
-
-.. figure:: pics/opencv.png
-   :width: 200px
-   :align: center
 
 
 Rasbian

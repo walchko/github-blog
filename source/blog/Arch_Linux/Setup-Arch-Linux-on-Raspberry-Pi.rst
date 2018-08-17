@@ -1,8 +1,3 @@
----
-title: Arch Linux
-date: 2015-12-13
-abstract: How to install Arch Linux and setup
-...
 
 .. figure:: pics/arch_linux.png
    :width: 200px

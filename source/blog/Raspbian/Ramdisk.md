@@ -1,3 +1,5 @@
+![](pics/rpi-org.png){width=300px}
+
 # Creating a RAM Disk
 
 ## Create Mount Point
@@ -18,6 +20,6 @@ tmpfs /ram tmpfs defaults,user,noatime,nosuid,mode=0755,size=100m 0 0
 - `user` alows `pi` to mount/unmount it
 - `size=100m` limits the max size to 100 MB so we don't consume all of our memory
 - `noatime` option fully disables writing file access times to the drive every time you read a file
-- `nosuid` specifies that the filesystem cannot contain set userid files. This prevents setuid binaries 
-  on a world-writable filesystem and makes sense because there's a risk of root escalation or other 
+- `nosuid` specifies that the filesystem cannot contain set userid files. This prevents setuid binaries
+  on a world-writable filesystem and makes sense because there's a risk of root escalation or other
   awfulness there.
