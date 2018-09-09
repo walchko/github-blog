@@ -10,7 +10,7 @@ way is to design your circuit so it prevents this.
 
 ## Diodes
 
-![](pics/reverse_polarity_protection.jpg)
+![](reverse_polarity_protection.jpg)
 
 ## MOSFET
 
@@ -33,7 +33,7 @@ this a little more. It also explains why you *might* have to include a resistor 
 diode to clamp the voltage, depending on the MOSFET you select.
 
 
-![](pics/reverse_polarity_protection_2.png)
+![](reverse_polarity_protection_2.png)
 
 ### Sizing MOSFET
 
@@ -44,11 +44,11 @@ If the values for Diodes Inc DMP2045U P-Channel MOSFET are:
 - $R_{DS(ON)}$ = 90 m$\omega$
 
 $$
-\Delta T = T_{max} - T_{min} = P_D R_{\thetaJA} \\
+\Delta T = T_{max} - T_{min} = P_D R_{\theta J A} \\
 P_D = R_{DS(ON)} I^2_{rms} \\
 I = 4.48A
 $$
 
 # References
 
-- [TI reverse power protection](static/mosfet-reverse-polarity.pdf)
+- [TI reverse power protection](mosfet-reverse-polarity.pdf)

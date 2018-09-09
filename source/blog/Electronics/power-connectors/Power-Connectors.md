@@ -1,6 +1,6 @@
 # Power Connectors
 
-![](pics/power-connectors.jpg)
+![](power-connectors.jpg)
 
 ## B1 - Deans (T) type main connector
 

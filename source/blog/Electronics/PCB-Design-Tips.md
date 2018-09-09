@@ -10,7 +10,7 @@ Some of these tips are geared towards [KiCad](http://kicad-pcb.org)
 - If possible, have data lines run left-to-right on one side of a board and have them run top-to-bottom on the other. This helps to reduce cross talk. Put another way, have your signal lines running in different directions on different layers of the board
 - Distance between traces: 0.010" - 0.007"
 - Avoid traces that turn 90 degrees, always curve them
-- For debugging, make signal pads easily accessable to debugging
+- For debugging, make signal pads easily accessible to debugging
 - Keep power and control grounds separate
 - Keep digital and analog grounds separate
     - Probably want to have a filter on the analog ground, especially if you cannot keep them separate
@@ -29,11 +29,10 @@ Some of these tips are geared towards [KiCad](http://kicad-pcb.org)
 
     | Width | Amps |
     |-------|------|
-    |0.010 | 0.3A |
-    |0.015 | 0.4A |
-    |0.020 | 0.7A |
-    |0.025 | 1.0A |
-    |0.050 | 2.0A |
-    |0.100 | 4.0A |
-    |0.150 | 6.0A |
-
+    |0.010  | 0.3A |
+    |0.015  | 0.4A |
+    |0.020  | 0.7A |
+    |0.025  | 1.0A |
+    |0.050  | 2.0A |
+    |0.100  | 4.0A |
+    |0.150  | 6.0A |
