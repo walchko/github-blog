@@ -69,12 +69,14 @@ omni directional wheels (can be derived using Euler-Largrange
 ($V$) energies in relation to a set of generalized coordinates ($q$) and
 generalized forces ($Q$):
 
-$\newcommand{\dpar}[2]{\frac{\partial #1}{\partial #2}}$
+\newcommand{\dpar}[2]{\frac{\partial #1}{\partial #2}}
 
-$$\mathcal{L}=T-V \\
- \frac{d}{dt} \left\{ \dpar{ \mathcal{L} }{\dot q} \right\} - \dpar{ \mathcal{L} }{q} = Q \\
- T = \frac{1}{2}M v_w^2+ \frac{1}{2}J \dot \psi^2 + \frac{1}{2} J_w (\dot \theta_1^2 + \dot \theta_2^2 + \dot \theta_3^2 + \dot \theta_4^2) \\
- V = 0$$
+$$
+\mathcal{L} = T - V \\
+\frac{d}{dt} \left\{ \dpar{ \mathcal{L} }{\dot q} \right\} - \dpar{ \mathcal{L} }{q} = Q \\
+T = \frac{1}{2}M v_w^2+ \frac{1}{2}J \dot \psi^2 + \frac{1}{2} J_w (\dot \theta_1^2 + \dot \theta_2^2 + \dot \theta_3^2 + \dot \theta_4^2) \\
+V = 0
+$$
 
 However, the dynamics must be calculated from an inertial reference
 frame (${W}$) and take into account the rotating body frame dynamics
@@ -82,48 +84,55 @@ frame (${W}$) and take into account the rotating body frame dynamics
 CM) by $x_m$ and $y_m$ which compose a vector $r_m$. Thus the velocity
 of the robot in the rotating frame would be:
 
-$$v_w = v_{B'} + \dot \psi \times r_m \\
- v_w = v_{B'} +
- \begin{bmatrix}
+$$
+v_w = v_{B'} + \dot \psi \times r_m \\
+v_w = v_{B'} +
+\begin{bmatrix}
      0 & 0 & \dot \psi
- \end{bmatrix}^T
- \times
- \begin{bmatrix}
+\end{bmatrix}^T
+\times
+\begin{bmatrix}
      x_m & y_m & 0
- \end{bmatrix}^T
- =
- \begin{bmatrix}
+\end{bmatrix}^T
+=
+\begin{bmatrix}
      \dot x & \dot y & 0
- \end{bmatrix}^T +
- \begin{bmatrix}
+\end{bmatrix}^T +
+\begin{bmatrix}
      -y_m \dot \psi & x_m \dot \psi & 0
- \end{bmatrix}^T \\
- v_{B'} = \begin{bmatrix}
+\end{bmatrix}^T \\
+v_{B'} = \begin{bmatrix}
      \dot x & \dot y & 0
- \end{bmatrix}^T$$
+\end{bmatrix}^T
+$$
 
 where $v_{B'}$ is the speed of the body frame. Now substituting that
 into the above kinetic energy equation $T$, we get:
 
-$$T = \frac{1}{2}M( ( \dot x - \dot \psi y )^2 + (\dot y + \dot \psi x)^2)+ \dots \\
+$$
+T = \frac{1}{2}M( ( \dot x - \dot \psi y )^2 + (\dot y + \dot \psi x)^2)+ \dots \\
  T = \frac{1}{2}M( \dot x^2 - 2 \dot \psi y_m \dot x +\dot \psi^2 y_m^2 + \dot y^2 + 2 \dot \psi x_m \dot y + \dot \psi^2 x_m^2)+ \frac{1}{2}J \dot \psi^2 + \frac{1}{2} J_w (\dot \theta_1^2 + \dot \theta_2^2 + \dot \theta_3^2 + \dot \theta_4^2)  \\
  \frac{d}{dt} \left\{ \dpar{ \mathcal{L} }{\dot x} \right\} = M ( \ddot x - \ddot \psi y - \dot \psi \dot y ) \hspace{1cm} \dpar{ \mathcal{L} }{x} = M(\dot \psi \dot y + \dot \psi^2 x) \\
  \frac{d}{dt} \left\{ \dpar{ \mathcal{L} }{\dot y} \right\} = M (\ddot y + \ddot \psi x + \dot \psi \dot x) \hspace{1cm} \dpar{ \mathcal{L} }{y} = M( -\dot \psi \dot x + \dot \psi^2 y) \\
  \frac{d}{dt} \left\{ \dpar{ \mathcal{L} }{\dot \psi} \right\} = J \ddot \psi \hspace{1cm} \dpar{ \mathcal{L} }{\phi} = 0 \\
- \frac{d}{dt} \left\{ \dpar{ \mathcal{L} }{\dot \theta} \right\} = J_w \sum \limits_{i=1}^4 \ddot \theta_i \hspace{1cm} \dpar{ \mathcal{L} }{\theta} = 0$$
+ \frac{d}{dt} \left\{ \dpar{ \mathcal{L} }{\dot \theta} \right\} = J_w \sum \limits_{i=1}^4 \ddot \theta_i \hspace{1cm} \dpar{ \mathcal{L} }{\theta} = 0
+$$
 
 Now we make the following assumptions: ${B'}$ is coincident with ${B}$,
 $x_m = 0$, $y_m = 0$, $\dot x = v_x$, $\dot y = v_y$
 
-$$F_x = M (\ddot x - 2 \dot \psi \dot y ) \\
+$$
+F_x = M (\ddot x - 2 \dot \psi \dot y ) \\
  F_y = M (\ddot y + 2 \dot \psi \dot x) \\
  T = J \ddot \psi \\
  \tau_w = J_w \ddot \theta_1 \hspace{1cm}
  \tau_w = J_w \ddot \theta_2 \hspace{1cm}
  \tau_w = J_w \ddot \theta_3 \hspace{1cm}
- \tau_w = J_w \ddot \theta_4$$
+ \tau_w = J_w \ddot \theta_4
+$$
 
-$$\begin{bmatrix}
+$$
+\begin{bmatrix}
      F_x \\
      F_y \\
      T
@@ -148,7 +157,8 @@ $$\begin{bmatrix}
      \dot y \\
      \dot \psi
  \end{bmatrix}
- = \mathcal{M} \ddot X + \mathcal{O} \dot X = Q$$
+ = \mathcal{M} \ddot X + \mathcal{O} \dot X = Q
+$$
 
 World Coordinates
 -----------------
@@ -158,7 +168,8 @@ stop here and develop a controller which performs velocity control.
 However, position control is more useful and a transform needs to be
 performed to move the velocities and accelerations into the world frame.
 
-$$\dot X^W = R_B^W \dot X^B \\
+$$
+\dot X^W = R_B^W \dot X^B \\
 R_B^W =
 \begin{bmatrix}
     \cos \psi & \sin \psi & 0 \\
@@ -171,13 +182,16 @@ R_B^W =
     \sin \psi & -\cos \psi & 0 \\
     \cos \psi & \sin \psi & 0 \\
     0 & 0 & 1
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 Now, substituting this into the dynamics, gives dynamics in the world
 coordinate system of:
 
-$$F = \mathcal{M} (\dot R \dot X + R \ddot X )  + \mathcal{O} R \dot X \\
-F = \mathcal{M} R \ddot X + (\mathcal{M}  \dot R + \mathcal{O} R) \dot X$$
+$$
+F = \mathcal{M} (\dot R \dot X + R \ddot X )  + \mathcal{O} R \dot X \\
+F = \mathcal{M} R \ddot X + (\mathcal{M}  \dot R + \mathcal{O} R) \dot X
+$$
 
 External Forces and Torques
 ---------------------------
@@ -186,15 +200,18 @@ Now looking at figure ref{robot} and summing the forces into their body
 referenced $x$ and $y$ directions and the torque about the $z$ axis,
 gives us:
 
-$$\sum F_x=f_1 \sin(\phi) - f_2 \sin(\phi) - f_3 \sin(\phi) + f_4 \sin(\phi)  \\
+$$
+\sum F_x=f_1 \sin(\phi) - f_2 \sin(\phi) - f_3 \sin(\phi) + f_4 \sin(\phi)  \\
 \sum F_y=f_1 \cos(\phi) + f_2 \cos(\phi) - f_3 \cos(\phi) - f_4 \cos(\phi) \\
-\sum T=L(f_1+f_2+f_3+f_4)$$
+\sum T=L(f_1+f_2+f_3+f_4)
+$$
 
 Additionally, we can simplify this by assuming all of the angles are the
 same (e.g., $\phi_1 = \phi_2 = \phi_3 = \phi_4$) and can now put this
 into a matrix form:
 
-$$\begin{bmatrix}
+$$
+\begin{bmatrix}
     F_x \\
     F_y \\
     T
@@ -214,7 +231,8 @@ $$\begin{bmatrix}
     f_2 \\
     f_3 \\
     f_4
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 where $\phi$ is again the angle of the motors as defined in
 figref{robot}, $f_i$ is the magnitude of the force produced by the
@@ -224,7 +242,8 @@ where $pinv()$[^6]is defined as the pseudoinverse since A(\\phi) is not
 a square matrix. Finally, substituting these into the original equation,
 we can calculate the torques given the desired accelerations.
 
-$$\begin{bmatrix} \tau_1 \\  \tau_2 \\  \tau_3 \\  \tau_4 \end{bmatrix} = \frac {M r_w} {4}
+$$
+\begin{bmatrix} \tau_1 \\  \tau_2 \\  \tau_3 \\  \tau_4 \end{bmatrix} = \frac {M r_w} {4}
 \begin{bmatrix}
     -1 & 1 & 1 \\
     -1 & -1 & 1 \\
@@ -240,7 +259,8 @@ $$\begin{bmatrix} \tau_1 \\  \tau_2 \\  \tau_3 \\  \tau_4 \end{bmatrix} = \frac 
     a_x \\
     a_y \\
     R \dot \omega
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 Now looking at this equation, we notice that $\phi$ can not be equal to
 0, 90, 180, 270, or 360 otherwise we get a singularity in the $A(\phi)$
@@ -263,7 +283,8 @@ looking at coordinate, the velocity of motor 1is given by
 $v_1 = -\sin(\phi) v_x + \cos(\phi) v_y + R \omega$. Performing this for
 each wheel gives:
 
-$$\begin{bmatrix}
+$$
+\begin{bmatrix}
     v_1 \\
     v_2 \\
     v_3 \\
@@ -295,7 +316,8 @@ $$\begin{bmatrix}
     v_x \\
     v_y \\
     \omega
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 Now setting $\omega$ to zero and calculating only linear movement, we
 can determine the number of equivalent motors as shown in
@@ -339,7 +361,7 @@ References
         vol. 22, no. 4, pp. 295-301, 1987.
 
 [^4]: Alexander Gloye, Raul Rojas, Holonomic Control of a Robot with an
-    Omnidirectional Drive, accepted for publication by Künstliche
+    Omnidirectional Drive, accepted for publication by Knstliche
     Intelligenz, Springer-Verlag, 2006.
 
 [^5]: <http://www.kornylak.com>
