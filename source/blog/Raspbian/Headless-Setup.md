@@ -24,5 +24,6 @@ network={
     ssid="YourNetworkSSID"
     psk="password"
     key_mgmt=WPA-PSK
+    priority = 1
 }
 ```
