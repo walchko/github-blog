@@ -27,3 +27,22 @@ network={
     priority = 1
 }
 ```
+
+# Loggin In
+
+On OSX install `ssh-copy-id` via `brew` and in a terminal window on OSX:
+
+```bash
+    ssh-copy-id pi@raspberry.local
+```
+
+## Bypass known_hosts
+
+Since all RPi's hostname are raspberrypi.local, it **sucks** when you try to connect
+to a new one and you get the man-in-the-middle attack warning.
+
+You can disable the check with:
+
+```bash
+	ssh -o UserKnownHostsFile=/dev/null pi@raspberrypi.local
+```

@@ -2,7 +2,7 @@
    :width: 200px
    :align: center
 
-   
+
 OpenCV
 ============
 
@@ -23,7 +23,7 @@ OSX
 
 ::
 
-    brew install opencv3
+    brew install opencv
 
 
 Windoze
