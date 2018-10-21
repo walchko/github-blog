@@ -43,7 +43,7 @@ def zip_this_folder(folder, dest):
 def jupyter(f, dest, template, format, to_main, file):
     # zip_this_folder()
     # print("[[jupyter]] zip this path: {}".format(os.getcwd()))
-    zip_this_folder(os.getcwd(), dest)
+    # zip_this_folder(os.getcwd(), dest)
     cmd = "jupyter-nbconvert  --template basic --log-level=0 --stdout {}".format(file)
     html = run(cmd)
     html = template.render(info=html.decode('utf8'), path=to_main)
