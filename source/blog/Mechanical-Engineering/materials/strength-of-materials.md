@@ -5,6 +5,8 @@
 - [Wikipedia: strength of materials](https://en.wikipedia.org/wiki/Strength_of_materials)
 - [Wikipedia: engineering yield](https://en.wikipedia.org/wiki/Yield_(engineering))
 - [Wikipedia: mechanical properties](https://en.wikipedia.org/wiki/List_of_materials_properties#Mechanical_properties)
+- [Wikipedia: ultimate tensile strength](https://en.wikipedia.org/wiki/Ultimate_tensile_strength)
+- [Wikipedia: elasticity](https://en.wikipedia.org/wiki/Elasticity_(physics))
 
 ## Stress
 
@@ -32,8 +34,18 @@ The **highest** point of the stress-strain curve is the UTS.
 
 # PLA vs ABS
 
+**ABS** plastic filament stands for acrylonitrile butadiene styrene. 
+It is a sturdy and strong plastic that is oil-based.
+
+**PLA** filament is made from sugarcane and cornstarch which are organic 
+materials called  polylactic acid. Unlike ABS, PLA has a crystaline 
+structure (due to sugar and cornstarch) which makes it brittle. Any cracks
+that form tend to propagate easily. Also, under the right compost conditions,
+PLA is biodegradable.
+
 - Average tensile strengths of 28.5 MPa for ABS and 56.6 MPa for PLA
 - Average elastic moduli of 1807 MPA for ABS and 3368 MPa for PLA
+    - This is looking at a material's ability to resist distortion and returning to its original shape *after* a load is removed
 
 So what you can take away from this is, PLA is stronger, but more brittle (likely
 to fracture especially under impact loads).
