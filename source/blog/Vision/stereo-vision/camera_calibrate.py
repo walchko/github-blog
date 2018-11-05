@@ -34,13 +34,13 @@ end_header
             f.write(self.ply_header.format(len(verts)))
             np.savetxt(f, verts, fmt='%f %f %f %d %d %d ')
 
-            
+
 class Rectify(object):
     def __init__(self, filename, alpha=0.5):
         self.info = self.__read(filename)
         self.alpha = alpha # 0=full crop, 1=no crop
         self.maps_read = False
-        
+
 #         # use stereoRectify to calculate what we need to rectify stereo images
 #         M1 = self.info["cameraMatrix1"]
 #         d1 = self.info["distCoeffs1"]
@@ -50,7 +50,7 @@ class Rectify(object):
 #         R = self.info['R']
 #         T = self.info['T']
 #         R1, R2, self.P1, self.P2, self.Q, roi1, roi2 = cv2.stereoRectify(M1, d1, M2, d2, size, R, T, alpha=alpha)
-        
+
 #         # these return undistortion and rectification maps which are both stored in maps_x for
 #         # camera 1 and 2
 #         self.maps_1 = cv2.initUndistortRectifyMap(M1, d1, R1, P1, size, cv2.CV_16SC2)  # CV_32F?
@@ -61,7 +61,7 @@ class Rectify(object):
             data = handler.load(f)
         # print(data)
         return data
-    
+
     def __fix2(self, image, maps, inter=cv2.INTER_LANCZOS4):
         return cv2.remap(image, maps[0], maps[1], inter)
 
@@ -90,15 +90,15 @@ class Rectify(object):
         dist = self.info['distCoeffs']
         return self.__fix(image, mtx, dist)
 
-#     def undistortLeft(self, image):
-#         mtx = self.info['cameraMatrix1']
-#         dist = self.info['distCoeffs1']
-#         return self.__fix(image, mtx, dist)
-
-#     def undistortRight(self, image):
-#         mtx = self.info['cameraMatrix2']
-#         dist = self.info['distCoeffs2']
-#         return self.__fix(image, mtx, dist)
+    # def undistortLeft(self, image):
+    #     mtx = self.info['cameraMatrix1']
+    #     dist = self.info['distCoeffs1']
+    #     return self.__fix(image, mtx, dist)
+    #
+    # def undistortRight(self, image):
+    #     mtx = self.info['cameraMatrix2']
+    #     dist = self.info['distCoeffs2']
+    #     return self.__fix(image, mtx, dist)
 
     def undistortStereo(self, left, right):
         # return self.undistortLeft(left), self.undistortRight(right)
@@ -110,24 +110,24 @@ class Rectify(object):
             d1 = self.info["distCoeffs1"]
             M2 = self.info["cameraMatrix2"]
             d2 = self.info["distCoeffs2"]
-            size = self.info['size']
+            size = self.info['imageSize']
             R = self.info['R']
             T = self.info['T']
-            R1, R2, self.P1, self.P2, self.Q, roi1, roi2 = cv2.stereoRectify(M1, d1, M2, d2, size, R, T, alpha=alpha)
+            R1, R2, self.P1, self.P2, self.Q, roi1, roi2 = cv2.stereoRectify(M1, d1, M2, d2, size[:2], R, T, alpha=self.alpha)
 
             # these return undistortion and rectification maps which are both stored in maps_x for
             # camera 1 and 2
-            self.maps_1 = cv2.initUndistortRectifyMap(M1, d1, R1, P1, size, cv2.CV_16SC2)  # CV_32F?
-            self.maps_2 = cv2.initUndistortRectifyMap(M2, d2, R2, P2, size, cv2.CV_16SC2)
-            
-        return self.__fix2(left, self.maps_l), self.__fix2(right, self.maps_r)
-    
+            self.maps_1 = cv2.initUndistortRectifyMap(M1, d1, R1, self.P1, size[:2], cv2.CV_16SC2)  # CV_32F?
+            self.maps_2 = cv2.initUndistortRectifyMap(M2, d2, R2, self.P2, size[:2], cv2.CV_16SC2)
+
+        return self.__fix2(left, self.maps_1), self.__fix2(right, self.maps_2)
+
     def printStereoParams(self):
         pass
-    
+
     def printParams(self):
         pass
-    
+
     def project3d(self, disparity):
         if not self.maps_read:
             print('*** WARNING: You need to call undistortStereo() first so a Q matrix is calculated ***')
@@ -138,8 +138,8 @@ class Rectify(object):
 class SCamera(object):
     """
     rename StereoCamera or EX8029
-    
-    This is for the eYs3D Stereo Camera - EX8029 which can be purchased from 
+
+    This is for the eYs3D Stereo Camera - EX8029 which can be purchased from
     https://www.sparkfun.com/products/14726
     """
     def imshow(self, imgs, scale=3, msec=500):
@@ -170,7 +170,7 @@ class SCamera(object):
                 #    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
                 # print("[{}]:{} ({}, {})".format(i, f, *img.shape))
                 h, w = img.shape[:2]
-                
+
                 if gray:
                     if len(img.shape) > 2:
                         img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -179,7 +179,7 @@ class SCamera(object):
                 else:
                     l = img[:, :w//2, :]
                     r = img[:, w//2:, :]
-                    
+
                 imgs_l.append(l)
                 imgs_r.append(r)
         # print('-'*40)
@@ -243,7 +243,7 @@ class CameraCalibration(object):
                  cv2.drawChessboardCorners(tmp, self.marker_size, corners, True)
 
                  # draw the axes
-                 self.drawAxes()
+                 # self.drawAxes()
                  self.save_cal_imgs.append(tmp)
              else:
                  print('[{}] - Could not find markers'.format(cnt))
@@ -426,8 +426,12 @@ if __name__ == '__main__':
         # scam.imshow(sc.save_cal_imgs, msec=1500)
 
         rec = Rectify(fname, alpha=1)
-        for img in imgs_l:
-            cv2.imshow('image', rec.undistortLeft(img))
-            cv2.waitKey(1000)
+        l, r = rec.undistortStereo(imgs_l[0],imgs_r[0])
+        re
+        # for l,r in zip(imgs_l, imgs_r):
+        #     l,r = rec.undistortStereo(l,r)
+        #     h = np.hstack((l,r))
+        #     cv2.imshow('image', h)
+        #     cv2.waitKey(1000)
     else:
         print("Crap ... failure")
