@@ -3,15 +3,19 @@
 import cv2
 import time
 
-# windows 10
+# windows 10 (usb2/3)
 # 0: black image
 # usb2: color image: 1 left (as you look at it)
 
-# macos
-# usb3: (720, 2560, 3) 0
-# usb3: 1 is built-in camera
+# macbook (usb3)
+# 0: (720, 2560, 3)
+# 1: is built-in camera
 # can't find depth camera
-camera = cv2.VideoCapture(0)
+
+# old imac (usb2)
+# 0: built-in camera
+# 1: nothing ... doesn't come up
+camera = cv2.VideoCapture(2)
 
 cnt = 0
 
