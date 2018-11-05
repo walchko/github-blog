@@ -7,20 +7,63 @@ from enum import Enum
 import time
 import pickle
 
-
+# change these? circles asym_circles ???
 Markers = Enum('Markers', 'checkerboard circle acircle')
 
+class PLY(object):
+    """
+    This is a modified version of the code in an opencv tutorial
+    """
+    ply_header = """ply
+format ascii 1.0
+element vertex {}
+property float x
+property float y
+property float z
+property uchar red
+property uchar green
+property uchar blue
+end_header
+"""
 
+    def write(self, fname, verts, colors):
+        verts = verts.reshape(-1, 3)
+        colors = colors.reshape(-1, 3)
+        verts = np.hstack([verts, colors])
+        with open(fname, 'w') as f:
+            f.write(self.ply_header.format(len(verts)))
+            np.savetxt(f, verts, fmt='%f %f %f %d %d %d ')
+
+            
 class Rectify(object):
     def __init__(self, filename, alpha=0.5):
         self.info = self.__read(filename)
-        self.alpha = alpha
+        self.alpha = alpha # 0=full crop, 1=no crop
+        self.maps_read = False
+        
+#         # use stereoRectify to calculate what we need to rectify stereo images
+#         M1 = self.info["cameraMatrix1"]
+#         d1 = self.info["distCoeffs1"]
+#         M2 = self.info["cameraMatrix2"]
+#         d2 = self.info["distCoeffs2"]
+#         size = self.info['size']
+#         R = self.info['R']
+#         T = self.info['T']
+#         R1, R2, self.P1, self.P2, self.Q, roi1, roi2 = cv2.stereoRectify(M1, d1, M2, d2, size, R, T, alpha=alpha)
+        
+#         # these return undistortion and rectification maps which are both stored in maps_x for
+#         # camera 1 and 2
+#         self.maps_1 = cv2.initUndistortRectifyMap(M1, d1, R1, P1, size, cv2.CV_16SC2)  # CV_32F?
+#         self.maps_2 = cv2.initUndistortRectifyMap(M2, d2, R2, P2, size, cv2.CV_16SC2)
 
     def __read(self, filename, handler=pickle):
         with open(filename, 'rb') as f:
             data = handler.load(f)
         # print(data)
         return data
+    
+    def __fix2(self, image, maps, inter=cv2.INTER_LANCZOS4):
+        return cv2.remap(image, maps[0], maps[1], inter)
 
     def __fix(self, image, m, d):
         """
@@ -47,28 +90,65 @@ class Rectify(object):
         dist = self.info['distCoeffs']
         return self.__fix(image, mtx, dist)
 
-    def undistortLeft(self, image):
-        mtx = self.info['cameraMatrix1']
-        dist = self.info['distCoeffs1']
-        return self.__fix(image, mtx, dist)
+#     def undistortLeft(self, image):
+#         mtx = self.info['cameraMatrix1']
+#         dist = self.info['distCoeffs1']
+#         return self.__fix(image, mtx, dist)
 
-    def undistortRight(self, image):
-        mtx = self.info['cameraMatrix2']
-        dist = self.info['distCoeffs2']
-        return self.__fix(image, mtx, dist)
+#     def undistortRight(self, image):
+#         mtx = self.info['cameraMatrix2']
+#         dist = self.info['distCoeffs2']
+#         return self.__fix(image, mtx, dist)
 
     def undistortStereo(self, left, right):
-        return self.undistortLeft(left), self.undistortRight(right)
+        # return self.undistortLeft(left), self.undistortRight(right)
+        if not self.maps_read:
+            # clear init flag
+            self.maps_read = True
+            # use stereoRectify to calculate what we need to rectify stereo images
+            M1 = self.info["cameraMatrix1"]
+            d1 = self.info["distCoeffs1"]
+            M2 = self.info["cameraMatrix2"]
+            d2 = self.info["distCoeffs2"]
+            size = self.info['size']
+            R = self.info['R']
+            T = self.info['T']
+            R1, R2, self.P1, self.P2, self.Q, roi1, roi2 = cv2.stereoRectify(M1, d1, M2, d2, size, R, T, alpha=alpha)
+
+            # these return undistortion and rectification maps which are both stored in maps_x for
+            # camera 1 and 2
+            self.maps_1 = cv2.initUndistortRectifyMap(M1, d1, R1, P1, size, cv2.CV_16SC2)  # CV_32F?
+            self.maps_2 = cv2.initUndistortRectifyMap(M2, d2, R2, P2, size, cv2.CV_16SC2)
+            
+        return self.__fix2(left, self.maps_l), self.__fix2(right, self.maps_r)
+    
+    def printStereoParams(self):
+        pass
+    
+    def printParams(self):
+        pass
+    
+    def project3d(self, disparity):
+        if not self.maps_read:
+            print('*** WARNING: You need to call undistortStereo() first so a Q matrix is calculated ***')
+            return None
+        return cv2.reprojectImageTo3D(disparity, self.Q)
 
 
 class SCamera(object):
+    """
+    rename StereoCamera or EX8029
+    
+    This is for the eYs3D Stereo Camera - EX8029 which can be purchased from 
+    https://www.sparkfun.com/products/14726
+    """
     def imshow(self, imgs, scale=3, msec=500):
         for i, img in enumerate(imgs):
             h,w = img.shape[:2]
             cv2.imshow('image-{}'.format(i), cv2.resize(img, (w//scale,h//scale)))
             cv2.waitKey(msec)
 
-    def get_images(self, path):
+    def get_images(self, path, gray=False):
         """
         Given a path, it reads all images. This uses glob to grab file names
         and excepts wild cards *
@@ -82,16 +162,24 @@ class SCamera(object):
         # print('-'*40)
 
         for i, f in enumerate(files):
-            img = cv2.imread(f, 0)
+            img = cv2.imread(f)
             if img is None:
-                raise Exception('>> Could not read: {}'.format(f))
+                print('>> Could not read: {}'.format(f))
             else:
-                if len(img.shape) > 2:
-                    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+                # if gray and len(img.shape) > 2:
+                #    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
                 # print("[{}]:{} ({}, {})".format(i, f, *img.shape))
-                h, w = img.shape
-                l = img[:, :w//2]
-                r = img[:, w//2:]
+                h, w = img.shape[:2]
+                
+                if gray:
+                    if len(img.shape) > 2:
+                        img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+                    l = img[:, :w//2]
+                    r = img[:, w//2:]
+                else:
+                    l = img[:, :w//2, :]
+                    r = img[:, w//2:, :]
+                    
                 imgs_l.append(l)
                 imgs_r.append(r)
         # print('-'*40)
