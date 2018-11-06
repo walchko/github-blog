@@ -385,7 +385,7 @@ class StereoCalibration(object):
             'date': time.strftime("%a, %d %b %Y %H:%M:%S", time.localtime()),
             'markerType': marker_type,
             'markerSize': marker_size,
-            'imageSize': imgs_l[0].shape,
+            'imageSize': imgs_l[0].shape[:2],
             'cameraMatrix1': M1,
             'cameraMatrix2': M2,
             'distCoeffs1': d1,
@@ -427,7 +427,7 @@ if __name__ == '__main__':
 
         rec = Rectify(fname, alpha=1)
         l, r = rec.undistortStereo(imgs_l[0],imgs_r[0])
-        re
+        
         # for l,r in zip(imgs_l, imgs_r):
         #     l,r = rec.undistortStereo(l,r)
         #     h = np.hstack((l,r))
