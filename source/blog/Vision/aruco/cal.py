@@ -25,6 +25,7 @@ def get_images(path, gray=False):
     """
     imgs = []
     files = glob(path)
+    files.sort()
 
     print("Found {} images at {}".format(len(tuple(files)), path))
     # print('-'*40)
@@ -50,10 +51,11 @@ def getPose(im, board, m, d):
     else:
         gray = im
     parameters = aruco.DetectorParameters_create()
-    corners, ids, rejectedImgPoints = aruco.detectMarkers(gray, dictionary, parameters=parameters)
+    # corners, ids, rejectedImgPoints = aruco.detectMarkers(gray, dictionary, parameters=parameters)
+    corners, ids, rejectedImgPoints = aruco.detectMarkers(gray, dictionary)
     ret, chcorners, chids = aruco.interpolateCornersCharuco(corners, ids, gray, board)
     ret, rvecs, tvecs = aruco.estimatePoseCharucoBoard(chcorners, chids, board,m,d)
-    aruco.drawAxis(im, m,d,rvecs,tvecs,0.5)
+    im = aruco.drawAxis(im, m, d, rvecs, tvecs,0.5)
     cv2.imshow('markers', im)
     cv2.waitKey()
 
@@ -73,21 +75,24 @@ calids = []
 
 for im in imgs:
     gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
-    corners, ids, rejectedImgPoints = aruco.detectMarkers(gray, dictionary, parameters=parameters)
+    # corners, ids, rejectedImgPoints = aruco.detectMarkers(gray, dictionary, parameters=parameters)
+    corners, ids, rejectedImgPoints = aruco.detectMarkers(gray, dictionary)
+    # print('ids 1:', len(ids))
     if len(ids) > 0:
         # print(corners, ids, rejectedImgPoints)
         ret, chcorners, chids = aruco.interpolateCornersCharuco(corners, ids, gray, board)
         calcorners.append(chcorners)
         calids.append(chids)
-        # aruco.estimatePoseCharucoBoard(chcorners, chids, board)
-        aruco.drawDetectedCornersCharuco(im, chcorners, chids)
-        aruco.drawDetectedMarkers(im, rejectedImgPoints, borderColor=(100, 0, 240))
 
-        cv2.imshow('markers', im)
-        cv2.waitKey(100)
+        im2 = im.copy()
+        aruco.drawDetectedCornersCharuco(im2, chcorners, chids)
+        aruco.drawDetectedMarkers(im2, rejectedImgPoints, borderColor=(100, 0, 240))
+
+        cv2.imshow('markers', im2)
+        cv2.waitKey(10)
 
 ret, cameraMatrix, distCoeffs, rvecs, tvecs = aruco.calibrateCameraCharuco(calcorners, calids, board, gray.shape[::-1], None, None)
-print(ret)
+print('rms', ret)
 print(cameraMatrix)
 print(distCoeffs)
 
@@ -101,6 +106,6 @@ cam_params = {
 }
 # im = cv2.cvtColor(imgs[0], cv2.COLOR_GRAY2BGR)
 # print(im.shape)
-getPose(imgs[0], board, cameraMatrix, distCoeffs)
+getPose(imgs[9], board, cameraMatrix, distCoeffs)
 
 cv2.destroyAllWindows()
