@@ -50,7 +50,7 @@ def getPose(im, board, m, d):
         gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
     else:
         gray = im
-    parameters = aruco.DetectorParameters_create()
+    # parameters = aruco.DetectorParameters_create()
     # corners, ids, rejectedImgPoints = aruco.detectMarkers(gray, dictionary, parameters=parameters)
     corners, ids, rejectedImgPoints = aruco.detectMarkers(gray, dictionary)
     ret, chcorners, chids = aruco.interpolateCornersCharuco(corners, ids, gray, board)
