@@ -15,19 +15,20 @@ import time
 # old imac (usb2)
 # 0: built-in camera
 # 1: nothing ... doesn't come up
-camera = cv2.VideoCapture(0)
+camera = cv2.VideoCapture(2)
 
 cnt = 0
 
 while True:
     ok, frame = camera.read()
     if ok:
-        # print(frame.shape)
+        print(frame.shape)
         h, w, d = frame.shape
-        # frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        frame = cv2.cvtColor(frame, cv2.COLOR_YCrCb2BGR)
         # frame = cv2.resize(frame, (w//2,h//2))
         # frame = cv2.equalizeHist(frame)
-        cv2.imshow("img", cv2.resize(frame, (w//3,h//3)))
+        # cv2.imshow("img", cv2.resize(frame, (w//3,h//3)))
+        cv2.imshow("img", frame)
 
         key = cv2.waitKey(1)
 

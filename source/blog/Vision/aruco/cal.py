@@ -78,6 +78,7 @@ for im in imgs:
     # corners, ids, rejectedImgPoints = aruco.detectMarkers(gray, dictionary, parameters=parameters)
     corners, ids, rejectedImgPoints = aruco.detectMarkers(gray, dictionary)
     # print('ids 1:', len(ids))
+    # if ids were found, then
     if len(ids) > 0:
         # print(corners, ids, rejectedImgPoints)
         ret, chcorners, chids = aruco.interpolateCornersCharuco(corners, ids, gray, board)
@@ -86,10 +87,10 @@ for im in imgs:
 
         im2 = im.copy()
         aruco.drawDetectedCornersCharuco(im2, chcorners, chids)
-        aruco.drawDetectedMarkers(im2, rejectedImgPoints, borderColor=(100, 0, 240))
+        # aruco.drawDetectedMarkers(im2, rejectedImgPoints, borderColor=(100, 0, 240))
 
         cv2.imshow('markers', im2)
-        cv2.waitKey(10)
+        cv2.waitKey()
 
 ret, cameraMatrix, distCoeffs, rvecs, tvecs = aruco.calibrateCameraCharuco(calcorners, calids, board, gray.shape[::-1], None, None)
 print('rms', ret)

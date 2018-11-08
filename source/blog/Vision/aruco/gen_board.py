@@ -33,7 +33,7 @@ if __name__ == "__main__":
     parser.add_argument("--marker_size", "-m", help="edge length of marker blocks, default: 0.75", type=float, default=0.75)
     parser.add_argument("--square_size", "-s", help="edge length of square blocks, default: 1.0", type=float, default=1.0)
     parser.add_argument("--dict", "-d", help="dictionary, default: aruco.DICT_4X4_50", default=aruco.DICT_4X4_50)
-    parser.add_argument("--dpi", help="dots per inch, default: 100", default=100)
+    parser.add_argument("--dpi", help="dots per inch, default: 100", type=int, default=100)
     args = parser.parse_args()
 
     run(
