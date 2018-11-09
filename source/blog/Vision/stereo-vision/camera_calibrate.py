@@ -113,12 +113,13 @@ class Rectify(object):
             size = self.info['imageSize']
             R = self.info['R']
             T = self.info['T']
-            R1, R2, self.P1, self.P2, self.Q, roi1, roi2 = cv2.stereoRectify(M1, d1, M2, d2, size[:2], R, T, alpha=self.alpha)
+            h, w = size[:2]
+            R1, R2, self.P1, self.P2, self.Q, roi1, roi2 = cv2.stereoRectify(M1, d1, M2, d2, (w,h), R, T, alpha=self.alpha)
 
             # these return undistortion and rectification maps which are both stored in maps_x for
             # camera 1 and 2
-            self.maps_1 = cv2.initUndistortRectifyMap(M1, d1, R1, self.P1, size[:2], cv2.CV_16SC2)  # CV_32F?
-            self.maps_2 = cv2.initUndistortRectifyMap(M2, d2, R2, self.P2, size[:2], cv2.CV_16SC2)
+            self.maps_1 = cv2.initUndistortRectifyMap(M1, d1, R1, self.P1, (w,h), cv2.CV_16SC2)  # CV_32F?
+            self.maps_2 = cv2.initUndistortRectifyMap(M2, d2, R2, self.P2, (w,h), cv2.CV_16SC2)
 
         return self.__fix2(left, self.maps_1), self.__fix2(right, self.maps_2)
 
@@ -427,7 +428,7 @@ if __name__ == '__main__':
 
         rec = Rectify(fname, alpha=1)
         l, r = rec.undistortStereo(imgs_l[0],imgs_r[0])
-        
+
         # for l,r in zip(imgs_l, imgs_r):
         #     l,r = rec.undistortStereo(l,r)
         #     h = np.hstack((l,r))
