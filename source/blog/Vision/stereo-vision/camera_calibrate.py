@@ -6,9 +6,10 @@ from glob import glob
 from enum import Enum
 import time
 import pickle
+import cv2.aruco as aruco
 
 # change these? circles asym_circles ???
-Markers = Enum('Markers', 'checkerboard circle acircle')
+Markers = Enum('Markers', 'checkerboard circle acircle aruco charuco')
 
 class PLY(object):
     """
@@ -189,6 +190,13 @@ class SCamera(object):
 
 class CameraCalibration(object):
     def __init__(self):
+        self.dictionary = aruco.Dictionary_get(aruco.DICT_4X4_50)
+        x = 5  # horizontal
+        y = 7  # vertical
+        sqr = 0.254  # solid black squares
+        mrk = 0.23 # markers, must be smaller than squares
+        self.board = aruco.CharucoBoard_create(x,y,sqr,mrk,self.dictionary)
+
         # termination criteria
         self.criteria = (cv2.TERM_CRITERIA_EPS +
                          cv2.TERM_CRITERIA_MAX_ITER, 30, 0.001)
@@ -288,6 +296,11 @@ class CameraCalibration(object):
             elif self.marker_type is Markers.acircle:
                 flags=cv2.CALIB_CB_ASYMMETRIC_GRID
                 ret, corners = cv2.findCirclesGrid(gray, self.marker_size, flags=flags)
+            elif self.marker_type is Markers.charuco:
+                corners, ids, rejectedImgPoints = aruco.detectMarkers(gray, self.dictionary)
+                # ret = True if len(ids) > 0 else False
+                if len(ids) > 0:
+                    ret, corners, ids = aruco.interpolateCornersCharuco(corners, ids, gray, self.board)
             else:
                 raise Exception("invalid marker type: {}".format(self.marker_type))
 
@@ -403,12 +416,18 @@ class StereoCalibration(object):
 
 if __name__ == '__main__':
 
-    if True:
+    if False:
         path = 'checkerboard-imgs/*.png'
         marker = Markers.checkerboard
         dims = (7,10)
         scale = 0.02  # 2 cm on each side
         fname = 'cb_camera_model.pickle'
+    elif True:
+        path = 'aruco-imgs/*.png'
+        marker = Markers.charuco
+        dims = (5,7)
+        scale = 0.254  # 1 in or 2.54 cm on each side
+        fname = 'charuo_camera_model.pickle'
     else:
         path = 'acircle-imgs/*.png'
         marker = Markers.acircle
@@ -417,7 +436,7 @@ if __name__ == '__main__':
         fname = 'ac_camera_model.pickle'
 
     scam = SCamera()
-    imgs_l, imgs_r = scam.get_images(path)
+    imgs_l, imgs_r = scam.get_images(path, gray=True)
 
     sc = StereoCalibration()
     ok = sc.stereo_calibrate(imgs_l, imgs_r, marker, dims, marker_scale=scale)
