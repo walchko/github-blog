@@ -296,11 +296,11 @@ class CameraCalibration(object):
             elif self.marker_type is Markers.acircle:
                 flags=cv2.CALIB_CB_ASYMMETRIC_GRID
                 ret, corners = cv2.findCirclesGrid(gray, self.marker_size, flags=flags)
-            elif self.marker_type is Markers.charuco:
-                corners, ids, rejectedImgPoints = aruco.detectMarkers(gray, self.dictionary)
-                # ret = True if len(ids) > 0 else False
-                if len(ids) > 0:
-                    ret, corners, ids = aruco.interpolateCornersCharuco(corners, ids, gray, self.board)
+            # elif self.marker_type is Markers.charuco:
+            #     corners, ids, rejectedImgPoints = aruco.detectMarkers(gray, self.dictionary)
+            #     # ret = True if len(ids) > 0 else False
+            #     if len(ids) > 0:
+            #         ret, corners, ids = aruco.interpolateCornersCharuco(corners, ids, gray, self.board)
             else:
                 raise Exception("invalid marker type: {}".format(self.marker_type))
 
