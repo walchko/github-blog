@@ -4,6 +4,7 @@ test
 .DS_Store
 html/*
 *.html
-docs/*
 .ipynb_checkpoints
 do_not_backup
+__pycache__
+*.pyc
