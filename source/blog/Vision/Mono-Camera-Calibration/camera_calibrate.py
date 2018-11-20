@@ -137,55 +137,55 @@ class Rectify(object):
         return cv2.reprojectImageTo3D(disparity, self.Q)
 
 
-# class SCamera(object):
-#     """
-#     rename StereoCamera or EX8029
-#
-#     This is for the eYs3D Stereo Camera - EX8029 which can be purchased from
-#     https://www.sparkfun.com/products/14726
-#     """
-#     def imshow(self, imgs, scale=3, msec=500):
-#         for i, img in enumerate(imgs):
-#             h,w = img.shape[:2]
-#             cv2.imshow('image-{}'.format(i), cv2.resize(img, (w//scale,h//scale)))
-#             cv2.waitKey(msec)
-#
-#     def get_images(self, path, gray=False):
-#         """
-#         Given a path, it reads all images. This uses glob to grab file names
-#         and excepts wild cards *
-#         Ex. cal.getImages('./images/*.jpg')
-#         """
-#         imgs_l = []
-#         imgs_r = []
-#         files = glob(path)
-#
-#         print("Found {} images at {}".format(len(tuple(files)), path))
-#         # print('-'*40)
-#
-#         for i, f in enumerate(files):
-#             img = cv2.imread(f)
-#             if img is None:
-#                 print('>> Could not read: {}'.format(f))
-#             else:
-#                 # if gray and len(img.shape) > 2:
-#                 #    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-#                 # print("[{}]:{} ({}, {})".format(i, f, *img.shape))
-#                 h, w = img.shape[:2]
-#
-#                 if gray:
-#                     if len(img.shape) > 2:
-#                         img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-#                     l = img[:, :w//2]
-#                     r = img[:, w//2:]
-#                 else:
-#                     l = img[:, :w//2, :]
-#                     r = img[:, w//2:, :]
-#
-#                 imgs_l.append(l)
-#                 imgs_r.append(r)
-#         # print('-'*40)
-#         return imgs_l, imgs_r
+class SCamera(object):
+    """
+    rename StereoCamera or EX8029
+
+    This is for the eYs3D Stereo Camera - EX8029 which can be purchased from
+    https://www.sparkfun.com/products/14726
+    """
+    def imshow(self, imgs, scale=3, msec=500):
+        for i, img in enumerate(imgs):
+            h,w = img.shape[:2]
+            cv2.imshow('image-{}'.format(i), cv2.resize(img, (w//scale,h//scale)))
+            cv2.waitKey(msec)
+
+    def get_images(self, path, gray=False):
+        """
+        Given a path, it reads all images. This uses glob to grab file names
+        and excepts wild cards *
+        Ex. cal.getImages('./images/*.jpg')
+        """
+        imgs_l = []
+        imgs_r = []
+        files = glob(path)
+
+        print("Found {} images at {}".format(len(tuple(files)), path))
+        # print('-'*40)
+
+        for i, f in enumerate(files):
+            img = cv2.imread(f)
+            if img is None:
+                print('>> Could not read: {}'.format(f))
+            else:
+                # if gray and len(img.shape) > 2:
+                #    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+                # print("[{}]:{} ({}, {})".format(i, f, *img.shape))
+                h, w = img.shape[:2]
+
+                if gray:
+                    if len(img.shape) > 2:
+                        img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+                    l = img[:, :w//2]
+                    r = img[:, w//2:]
+                else:
+                    l = img[:, :w//2, :]
+                    r = img[:, w//2:, :]
+
+                imgs_l.append(l)
+                imgs_r.append(r)
+        # print('-'*40)
+        return imgs_l, imgs_r
 
 
 class CameraCalibration(object):
@@ -270,7 +270,7 @@ class CameraCalibration(object):
              'date': time.strftime("%a, %d %b %Y %H:%M:%S", time.localtime()),
              'markerType': marker_type,
              'markerSize': marker_size,
-             'imageSize': images[0].shape,
+             'imageSize': imgs_l[0].shape,
              'cameraMatrix': mtx,
              'distCoeffs': dist,
              'rms': rms,
@@ -413,45 +413,45 @@ class CameraCalibration(object):
 #         }
 #
 #         return ret
-#
-# if __name__ == '__main__':
-#
-#     if False:
-#         path = 'checkerboard-imgs/*.png'
-#         marker = Markers.checkerboard
-#         dims = (7,10)
-#         scale = 0.02  # 2 cm on each side
-#         fname = 'cb_camera_model.pickle'
-#     elif True:
-#         path = 'aruco-imgs/*.png'
-#         marker = Markers.charuco
-#         dims = (5,7)
-#         scale = 0.254  # 1 in or 2.54 cm on each side
-#         fname = 'charuo_camera_model.pickle'
-#     else:
-#         path = 'acircle-imgs/*.png'
-#         marker = Markers.acircle
-#         dims = (4,11)
-#         scale = 0.01  # 1 cm diameter
-#         fname = 'ac_camera_model.pickle'
-#
-#     scam = SCamera()
-#     imgs_l, imgs_r = scam.get_images(path, gray=True)
-#
-#     sc = StereoCalibration()
-#     ok = sc.stereo_calibrate(imgs_l, imgs_r, marker, dims, marker_scale=scale)
-#     if ok:
-#         sc.save(fname)
-#
-#         # scam.imshow(sc.save_cal_imgs, msec=1500)
-#
-#         rec = Rectify(fname, alpha=1)
-#         l, r = rec.undistortStereo(imgs_l[0],imgs_r[0])
-#
-#         # for l,r in zip(imgs_l, imgs_r):
-#         #     l,r = rec.undistortStereo(l,r)
-#         #     h = np.hstack((l,r))
-#         #     cv2.imshow('image', h)
-#         #     cv2.waitKey(1000)
-#     else:
-#         print("Crap ... failure")
+
+if __name__ == '__main__':
+
+    if False:
+        path = 'checkerboard-imgs/*.png'
+        marker = Markers.checkerboard
+        dims = (7,10)
+        scale = 0.02  # 2 cm on each side
+        fname = 'cb_camera_model.pickle'
+    elif True:
+        path = 'aruco-imgs/*.png'
+        marker = Markers.charuco
+        dims = (5,7)
+        scale = 0.254  # 1 in or 2.54 cm on each side
+        fname = 'charuo_camera_model.pickle'
+    else:
+        path = 'acircle-imgs/*.png'
+        marker = Markers.acircle
+        dims = (4,11)
+        scale = 0.01  # 1 cm diameter
+        fname = 'ac_camera_model.pickle'
+
+    scam = SCamera()
+    imgs_l, imgs_r = scam.get_images(path, gray=True)
+
+    sc = StereoCalibration()
+    ok = sc.stereo_calibrate(imgs_l, imgs_r, marker, dims, marker_scale=scale)
+    if ok:
+        sc.save(fname)
+
+        # scam.imshow(sc.save_cal_imgs, msec=1500)
+
+        rec = Rectify(fname, alpha=1)
+        l, r = rec.undistortStereo(imgs_l[0],imgs_r[0])
+
+        # for l,r in zip(imgs_l, imgs_r):
+        #     l,r = rec.undistortStereo(l,r)
+        #     h = np.hstack((l,r))
+        #     cv2.imshow('image', h)
+        #     cv2.waitKey(1000)
+    else:
+        print("Crap ... failure")
