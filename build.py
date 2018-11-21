@@ -223,13 +223,13 @@ def build_toc(template):
 
     mkdir('../html/blog')
 
-    pprint(toc)
-    print('='*50)
+    # pprint(toc)
+    # print('='*50)
 
     # put the toc in alphabetical order so you can find things easier
     toc = OrderedDict(sorted(toc.items()))
 
-    pprint(toc)
+    # pprint(toc)
     # exit(0)
 
     html = template.render(TOC=toc, path='.')
