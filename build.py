@@ -7,6 +7,7 @@ import shutil          # move and delete files/folders
 from glob import glob  # get contents of folder
 from jinja2 import Environment, FileSystemLoader  # html templating
 from collections import OrderedDict  # put toc in alphebetical order
+from pprint import pprint
 
 devnull = open(os.devnull, 'w')
 
@@ -131,26 +132,27 @@ def pandoc(file, dest, template=None, format='html', to_main='.'):
 def build_toc(template):
     toc = {}
 
-    def getDir(path):
-        """
-        Get and return a list of directories in this path
-
-        redundant with below?
-        """
-        files = glob(path)
-        ret = []
-        for f in files:
-            if os.path.isdir(f):
-                ret.append(f)
-        if len(ret) == 0:
-            ret = None
-        return ret
+    # def getDir(path):
+    #     """
+    #     Get and return a list of directories in this path
+    #
+    #     redundant with below?
+    #     """
+    #     files = glob(path)
+    #     ret = []
+    #     for f in files:
+    #         if os.path.isdir(f):
+    #             ret.append(f)
+    #     if len(ret) == 0:
+    #         ret = None
+    #     return ret
 
     def getDirFile(path):
         """
         Get and return a list of files and directories in this path
         """
         objs = glob(path)
+        objs.sort()
         dirs = []
         files = []
         for o in objs:
@@ -162,18 +164,21 @@ def build_toc(template):
                     dirs.append(o)
             elif os.path.isfile(o):
                 files.append(o)
+            else:
+                print("*** Unknown: {} ***".format(o))
 
-        if len(dirs) == 0:
-            dirs = None
-
-        if len(files) == 0:
-            files = None
+        # if len(dirs) == 0:
+        #     dirs = None
+        #
+        # if len(files) == 0:
+        #     files = None
 
         return dirs, files
 
-    blog = getDir('blog/*')
+    blog, _ = getDirFile('blog/*')
     for b in blog:
         dirs, files = getDirFile(b + '/*')
+        print(dirs, files)
         jup = []
         # get folders with jupyter notebooks in them
         if dirs:
@@ -190,16 +195,17 @@ def build_toc(template):
                 # jj = glob(d + '/*.rst')
                 # for j in jj:
                 #     jup.append(j)
-
-        toc[b.replace('blog/', '')] = files + jup
+        tmp = files + jup
+        # print('tmp\n', tmp)
+        toc[b.replace('blog/', '')] = tmp
         # get folders with markdown in them
         # jup = []
-        if dirs:
-            for d in dirs:
-                jj = glob(d + '/*.md')
-                for j in jj:
-                    jup.append(j)
-        toc[b.replace('blog/', '')] = files + jup
+        # if dirs:
+        #     for d in dirs:
+        #         jj = glob(d + '/*.md')
+        #         for j in jj:
+        #             jup.append(j)
+        # toc[b.replace('blog/', '')] = files + jup
 
     for key in toc.keys():
         links = toc[key]
@@ -217,8 +223,14 @@ def build_toc(template):
 
     mkdir('../html/blog')
 
+    pprint(toc)
+    print('='*50)
+
     # put the toc in alphabetical order so you can find things easier
     toc = OrderedDict(sorted(toc.items()))
+
+    pprint(toc)
+    # exit(0)
 
     html = template.render(TOC=toc, path='.')
     with open('../html/topics.html', 'w') as fd:
