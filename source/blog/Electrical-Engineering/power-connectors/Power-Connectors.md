@@ -48,13 +48,14 @@ Used for high current draw battery connections
 
 [Original Reference](https://www.hobbywingdirect.com/blogs/news/14906981-rc-101-battery-balance-connector-type)
 
-## XL30 Connectors
+## XT30 Connectors
 
 These are the smaller version of the XL60 connector and only support 30A, but
-the connector is also smaller. Best to use it with 16/18 gauge wire:
+the connector is also smaller. Note there is both a version for wires and one for PCBs.
+Best to use it with 16/18 gauge wire:
 
 ![](xl30-models.jpg)
 
-![](xl30u-dimensions.jpg)
+![](xt30u-dimensions.jpg)
 
 ![](xl30-specs.jpg)
