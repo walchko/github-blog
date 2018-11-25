@@ -34,6 +34,8 @@ connector so many different companies make this connector. It is easier to solde
 wires to and due to the better design, the metal connectors don't slip out of the
 plastic holder like the Deans connector.
 
+There is also an XT30 (30A) which is smaller and an XT90 (90A) which is larger.
+
 ## B8 - EC3 Connectors
 
 Used for high current draw battery connections
