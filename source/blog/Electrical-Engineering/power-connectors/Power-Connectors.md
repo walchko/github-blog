@@ -4,7 +4,8 @@
 
 ## B1 - Deans (T) type main connector
 
-Used for main connection to speed controllers and motors. Used for medium to high current draw.
+Used for main connection to speed controllers and motors. Used for medium to high current draw. They can be hard to solder (needs lots of heat) and sometimes
+the metal connector eventually slips through the plastic holder.
 
 ## B2 - JST / BEC type main connector
 
@@ -28,7 +29,10 @@ Mainly used on high current draw car and boat batteries
 
 ## B7 - XT60 Connectors
 
-Used for high current draw battery connections
+Used for high current (60A) draw battery connections. There is no patient on the
+connector so many different companies make this connector. It is easier to solder
+wires to and due to the better design, the metal connectors don't slip out of the
+plastic holder like the Deans connector.
 
 ## B8 - EC3 Connectors
 
@@ -43,3 +47,14 @@ Used for high current draw battery connections
 ## B12 - JST-EHR (EH) LiPo Balance Charger plug
 
 [Original Reference](https://www.hobbywingdirect.com/blogs/news/14906981-rc-101-battery-balance-connector-type)
+
+## XL30 Connectors
+
+These are the smaller version of the XL60 connector and only support 30A, but
+the connector is also smaller. Best to use it with 16/18 gauge wire:
+
+![](xl30-models.jpg)
+
+![](xl30u-dimensions.jpg)
+
+![](xl30-specs.jpg)
