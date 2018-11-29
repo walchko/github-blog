@@ -15,6 +15,7 @@ Some of these tips are geared towards [KiCad](http://kicad-pcb.org)
 - Keep digital and analog grounds separate
     - Probably want to have a filter on the analog ground, especially if you cannot keep them separate
 - When you test continuity, be **aware** that a good connection should have < 1 ohm of resistance. However, it will still beep with > 1 ohm of resistance which really indicates a cold solder joint. This joint *will* fail at some point.
+
 ## Power
 
 - Avoid daisy chaining part's power together; instead, make power rails and branch each part off of the main
@@ -27,12 +28,12 @@ Some of these tips are geared towards [KiCad](http://kicad-pcb.org)
 - For high current applications, like feeding motors/actuators, put capacitors as close to the motor/actuator as possible and use 10uF-100uF as buffers
 - Traces widths (use the calculator in KiCad):
 
-    | Width | Amps |
-    |-------|------|
-    |0.010  | 0.3A |
-    |0.015  | 0.4A |
-    |0.020  | 0.7A |
-    |0.025  | 1.0A |
-    |0.050  | 2.0A |
-    |0.100  | 4.0A |
-    |0.150  | 6.0A |
+    | Width [in] | Width [mm]| Amps |
+    |------------|-----------|------|
+    |0.010       | 0.254     | 0.3A |
+    |0.015       | 0.381     | 0.4A |
+    |0.020       | 0.508     | 0.7A |
+    |0.025       | 0.635     | 1.0A |
+    |0.050       | 1.27      | 2.0A |
+    |0.100       | 2.54      | 4.0A |
+    |0.150       | 3.81      | 6.0A |
