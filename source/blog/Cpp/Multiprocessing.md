@@ -2,6 +2,16 @@
 
 # Multiprocessing
 
+You can create multiple processes using the `fork` command. Basically the program is
+run multiple times and if:
+
+- `pid` = 0: this is the child process
+- `pid` > 0: this is the parent process and the `pid` is for a child process
+
+<script src="https://gist.github.com/walchko/72a0c837e8de32bd0173097bbea97395.js"></script>
+
+# References
+
 - [A great overview](static/multiprocessing.pdf)
 - [another reg](https://www.usna.edu/Users/cs/aviv/classes/ic221/s16/lec/14/lec.html)
 - [ref](https://ece.uwaterloo.ca/~dwharder/icsrts/Tutorials/fork_exec/)
