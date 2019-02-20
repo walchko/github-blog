@@ -56,6 +56,10 @@ Install: `brew install capnp` or `pip install pycapnp`
 
 Similar to Cap'n Proto (already serialized) but also get Protobuf benefits. Used by [Facebook](https://code.fb.com/android/improving-facebook-s-performance-on-android-with-flatbuffers/).
 
+Languages: C++, Python
+
+Install: `brew info flatbuffers` or `pip install flatbuffers`
+
 ## MessagePack
 
 MessagePack is an efficient binary serialization format. It lets you exchange data among multiple languages like JSON. But it's faster and smaller. Small integers are encoded into a single byte, and typical short strings require only one extra byte in addition to the strings themselves.
