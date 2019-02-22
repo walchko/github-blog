@@ -38,12 +38,12 @@ Install: `brew install capnp` or `pip install pycapnp`
 ## Cap'n Proto
 
 - The Cap’n Proto encoding is appropriate both as a data interchange format and an in-memory representation, so once your structure is built, you can simply write the bytes straight out to disk!
-
 - Inter-process communication: Multiple processes running on the same machine can share a Cap’n Proto message via shared memory. No need to pipe data through the kernel. Calling another process can be just as fast and easy as calling another thread.
-
 - Created by the Google project manager for protobuf version 2. He tried to fix things he didn't like and get rid of the pack/unpack time
-
 - Random access: You can read just one field of a message without parsing the whole thing.
+- Really designed for its own RPC system more scope than just message serialization
+- Awkward interfacing with zmq. In memory data structure unable to put into zmq without resorting to in memory copy which seems to negate the capability of storing data in memory the same as on wire
+- Cmake support for building messages in c++
 
 - Dislikes
   - Focus seems to be c++, python support spotty
@@ -55,6 +55,8 @@ Install: `brew install capnp` or `pip install pycapnp`
 ## Google Flatbuffers
 
 Similar to Cap'n Proto (already serialized) but also get Protobuf benefits. Used by [Facebook](https://code.fb.com/android/improving-facebook-s-performance-on-android-with-flatbuffers/).
+- Zmq example: https://stackoverflow.com/questions/40053351/simple-flatbuffer-over-zeromq-c-example-copying-struct-to-flatbuffer-over-zm
+- Seems to have cmake support in c++
 
 Languages: C++, Python
 
@@ -63,6 +65,7 @@ Install: `brew info flatbuffers` or `pip install flatbuffers`
 ## MessagePack
 
 MessagePack is an efficient binary serialization format. It lets you exchange data among multiple languages like JSON. But it's faster and smaller. Small integers are encoded into a single byte, and typical short strings require only one extra byte in addition to the strings themselves.
+- Adding compression for small messages seems unnecessary (small size savings for cpu cycles) or in some cases has resulted in a larger compressed message
 
 - Dislikes
   - Json has no understanding of python tuples, only arrays, so you are limited between one or the other, not both
