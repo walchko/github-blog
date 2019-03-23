@@ -118,9 +118,9 @@ $ od -v -t x1z users.avro
 0000460 62 bf 68 95 a2 ab 42 ef 24                       >b.h...B.$<
 0000471
 ```
-
-[Apache Avro Wikipedia Reference](https://en.wikipedia.org/wiki/Apache_Avro)
   
 Languages: C++, Python
 
 Install: `brew install avro-cpp avro-tools` or `pip install avro`
+
+Reference: [Apache Avro Wikipedia](https://en.wikipedia.org/wiki/Apache_Avro)
