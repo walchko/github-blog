@@ -63,7 +63,7 @@ def markdown(f, dest, template, format, to_main, fmt):
         if template is None:
             raise Exception("*** You need to pass a template to convert Markdown to HTML ***")
         # creates the html5 from markdown and sets pandoc.css to look pretty!
-        html = run('pandoc --highlight-style=pygments -t html5-smart {}.{}'.format(f, fmt))
+        html = run('pandoc --highlight-style=pygments -t html5 {}.{}'.format(f, fmt))
         html = template.render(info=html.decode('utf8'), path=to_main)
         with open(dest + '/' + f + '.html', 'w') as fd:
             fd.write(html)
