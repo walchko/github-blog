@@ -80,14 +80,46 @@ Install: `brew install msgpack` or `pip install msgpack`
 
 Apache Avro is a data serialization system. Avro provides:
 
-- Rich data structures (XML)
+- Schema based, with ability to evolve
 - A compact, fast, binary data format.
 - A container file, to store persistent data.
 - Remote procedure call (RPC).
 - Simple integration with dynamic languages. Code generation is not required to read or write data files nor to use or implement RPC protocols. Code generation as an optional optimization, only worth implementing for statically typed languages.
 
-- Dislikes
-  - XML
+## Wikipedia Example
+
+Here is the example:
+
+<script src="https://gist.github.com/walchko/8d3f9edd5ac3d8170cfbbf80bf65a485.js"></script>
+
+When you look the file you can see the avro header, schema, and data:
+
+```
+$ od -v -t x1z users.avro 
+0000000 4f 62 6a 01 04 14 61 76 72 6f 2e 63 6f 64 65 63  >Obj...avro.codec<
+0000020 08 6e 75 6c 6c 16 61 76 72 6f 2e 73 63 68 65 6d  >.null.avro.schem<
+0000040 61 ba 03 7b 22 74 79 70 65 22 3a 20 22 72 65 63  >a..{"type": "rec<
+0000060 6f 72 64 22 2c 20 22 6e 61 6d 65 22 3a 20 22 55  >ord", "name": "U<
+0000100 73 65 72 22 2c 20 22 6e 61 6d 65 73 70 61 63 65  >ser", "namespace<
+0000120 22 3a 20 22 65 78 61 6d 70 6c 65 2e 61 76 72 6f  >": "example.avro<
+0000140 22 2c 20 22 66 69 65 6c 64 73 22 3a 20 5b 7b 22  >", "fields": [{"<
+0000160 74 79 70 65 22 3a 20 22 73 74 72 69 6e 67 22 2c  >type": "string",<
+0000200 20 22 6e 61 6d 65 22 3a 20 22 6e 61 6d 65 22 7d  > "name": "name"}<
+0000220 2c 20 7b 22 74 79 70 65 22 3a 20 5b 22 69 6e 74  >, {"type": ["int<
+0000240 22 2c 20 22 6e 75 6c 6c 22 5d 2c 20 22 6e 61 6d  >", "null"], "nam<
+0000260 65 22 3a 20 22 66 61 76 6f 72 69 74 65 5f 6e 75  >e": "favorite_nu<
+0000300 6d 62 65 72 22 7d 2c 20 7b 22 74 79 70 65 22 3a  >mber"}, {"type":<
+0000320 20 5b 22 73 74 72 69 6e 67 22 2c 20 22 6e 75 6c  > ["string", "nul<
+0000340 6c 22 5d 2c 20 22 6e 61 6d 65 22 3a 20 22 66 61  >l"], "name": "fa<
+0000360 76 6f 72 69 74 65 5f 63 6f 6c 6f 72 22 7d 5d 7d  >vorite_color"}]}<
+0000400 00 05 f9 a3 80 98 47 54 62 bf 68 95 a2 ab 42 ef  >......GTb.h...B.<
+0000420 24 04 2c 0c 41 6c 79 73 73 61 00 80 04 02 06 42  >$.,.Alyssa.....B<
+0000440 65 6e 00 0e 00 06 72 65 64 05 f9 a3 80 98 47 54  >en....red.....GT<
+0000460 62 bf 68 95 a2 ab 42 ef 24                       >b.h...B.$<
+0000471
+```
+
+[Apache Avro Wikipedia Reference](https://en.wikipedia.org/wiki/Apache_Avro)
   
 Languages: C++, Python
 
