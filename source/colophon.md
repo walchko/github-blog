@@ -13,14 +13,22 @@ for them to fix it (sort of). Basically Pelican is a mass of crap that
 limps along for people who cannot program. Also, I never founds a nice way to
 include jupyter notebook content with it.
 
-## Setup
+## Setup macOS
 
-You need:
+I also setup a virtual environment for my python, so I don't collide
+with my distro's python version.
 
 ```bash
 brew install pandoc python
 brew cask install basictex
-pip install jinja2
+pip install jinja2 matplotlib numpy jupyter opencv-contrib-python
+```
+
+## Setup Linux
+
+```bash
+sudo apt install pandoc texlive python3
+pip install jinja2 matplotlib numpy jupyter opencv-contrib-python
 ```
 
 ## Build
