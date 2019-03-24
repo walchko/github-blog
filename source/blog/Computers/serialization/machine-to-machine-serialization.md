@@ -123,4 +123,7 @@ Languages: C++, Python
 
 Install: `brew install avro-cpp avro-tools` or `pip install avro`
 
-Reference: [Apache Avro Wikipedia](https://en.wikipedia.org/wiki/Apache_Avro)
+Reference: 
+
+- [Apache Avro Wikipedia](https://en.wikipedia.org/wiki/Apache_Avro)
+- [Safari Books chapter excerpt on Thrift, Protocol Buffers, Avros](serialization.pdf)
