@@ -1,3 +1,5 @@
+![](pics/linux-banner.png)
+
 # Home Libraries and Binaries
 
 In order to not polute my system libraries with binaries/libraries 
