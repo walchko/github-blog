@@ -26,3 +26,24 @@ Then adjust your `.bash_profile` or `.bashrc`:
     source /home/kevin/.venv/bin/activate
 
 To exit the environment: `$ deactivate`
+
+# Upgrading to a Newer Version of Python
+
+So on Ubuntu, the default is 3.6, but there is a package for 3.7.
+To set it to the new version, I re-ran the command:
+
+```
+python3.7 -m venv /home/kevin/.venv
+```
+
+Then I had to change the pointers in `~/.venv/bin` to:
+
+```
+ln -s /usr/bin/python3.7 python
+ln -s /usr/bin/python3.7 python3
+```
+
+The system still had `python3` pointing to the 3.6 version. I didn't want
+to change my system at all.
+
+Also, this caused me to have to re-install all of my packages.
