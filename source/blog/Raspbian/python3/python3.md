@@ -1,4 +1,12 @@
-# Python 3.7.x
+# Adding Testing to Apt
+
+Sometimes you want access to new software. Adding testing to your repos allows you
+to get access to newer software.
+
+```
+sudo apt search gcc -t testing
+sudo apt install gcc -t testing
+```
 
 `sources.list`:
 
