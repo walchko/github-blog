@@ -3,3 +3,5 @@
 ![](one.gif)
 
 ![](two.gif)
+
+![](three.jpg)
