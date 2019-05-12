@@ -1,5 +1,10 @@
 # INS Errors
 
+12 May 2019
+
+This is just a quick summary of error an IMU would see and some great tables
+I found in the reference website below. 
+
 ## Accelerometers
 
 - Sensitivity of a sensor to x-axis inputs ($S_x$), this is repeated for y and z-axis
