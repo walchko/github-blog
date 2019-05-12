@@ -11,3 +11,4 @@
 - [px4 auto pilot](https://github.com/PX4)
 - [quad KF 22 state](https://github.com/priseborough/InertialNav/blob/master/derivations/GenerateEquations22states.m)
 - [quad ins](https://github.com/priseborough/InertialNav)
+- [digital compass calibration](https://thecavepearlproject.org/2015/05/22/calibrating-any-compass-or-accelerometer-for-arduino/)
