@@ -9,6 +9,8 @@ I found in the reference website below.
 
 - Sensitivity of a sensor to x-axis inputs ($S_x$), this is repeated for y and z-axis
 - Sensitivity of a sensor to x-axis and y-axis inputs ($M_{xy}$), this is repeated for all axis combinations
+- Bias along x-axis ($B_x$)
+- Sensor measurement along x-axis ($V_x$)
 
 ![](pics/sensor-model-equations---figure-1.png)
 
