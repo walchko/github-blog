@@ -2,8 +2,8 @@
 
 # Lidar
 
-[rplidar driver]()
+[rplidar driver](https://github.com/MomsFriendlyRobotCompany/rplidar)
 
 [ydlidar driver](https://github.com/MomsFriendlyRobotCompany/lds-lidar)
 
-[lds lidar driver]()
+[lds lidar driver](https://github.com/MomsFriendlyRobotCompany/lds-lidar)
