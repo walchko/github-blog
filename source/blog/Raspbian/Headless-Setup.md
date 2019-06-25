@@ -26,7 +26,7 @@ network={
     ssid="YourNetworkSSID"
     psk="password"
     key_mgmt=WPA-PSK
-    priority = 1
+    priority=1
 }
 ```
 
@@ -55,7 +55,7 @@ ssh -o UserKnownHostsFile=/dev/null pi@raspberrypi.local
 
 Unfortunately the morons that make decisions in the linux world have changed things
 and the old `ifup`/`ifdown` stuff is broken. If you make changes to your network
-and get an error talking about *unknown interface* with `wlan0` (and maybe others), 
+and get an error talking about *unknown interface* with `wlan0` (and maybe others),
 try:
 
 ```
