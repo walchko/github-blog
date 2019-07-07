@@ -8,5 +8,5 @@ Using Adafruit's gps library for CircuitPython on normal python, I can parse the
 ## References
 
 - [Datasheet](GlobalTop-FGPMMOPA6H-Datasheet-V0A.pdf)
-- [NMEA0183 reference](NMEA0183.pdf)
+- [NMEA0183 protocol reference](NMEA0183.pdf)
 - [Datasheet](PMTK_A11.pdf)
