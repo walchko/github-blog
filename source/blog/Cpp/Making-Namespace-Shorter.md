@@ -1,4 +1,7 @@
-# Making C++ Namespaces easier to Work With
+---
+title: Making C++ Namespaces easier to Work With
+date: 4 Apr 2019
+---
 
 ```cpp
 #include <iostream>

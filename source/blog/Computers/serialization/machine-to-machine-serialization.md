@@ -1,6 +1,7 @@
-# Machine to Machine Serialization
-
+---
+title: Machine to Machine Serialization
 date: 20 Feb 2019
+---
 
 - [MessagePack](https://msgpack.org)
 - [Google Flatbuffers](https://google.github.io/flatbuffers/)
@@ -44,10 +45,9 @@ Install: `brew install capnp` or `pip install pycapnp`
 - Really designed for its own RPC system more scope than just message serialization
 - Awkward interfacing with zmq. In memory data structure unable to put into zmq without resorting to in memory copy which seems to negate the capability of storing data in memory the same as on wire
 - Cmake support for building messages in c++
-
 - Dislikes
   - Focus seems to be c++, python support spotty
-  
+
 Languages: C++, Python
 
 Install: `brew install capnp` or `pip install pycapnp`
@@ -55,6 +55,7 @@ Install: `brew install capnp` or `pip install pycapnp`
 ## Google Flatbuffers
 
 Similar to Cap'n Proto (already serialized) but also get Protobuf benefits. Used by [Facebook](https://code.fb.com/android/improving-facebook-s-performance-on-android-with-flatbuffers/).
+
 - Zmq example: https://stackoverflow.com/questions/40053351/simple-flatbuffer-over-zeromq-c-example-copying-struct-to-flatbuffer-over-zm
 - Seems to have cmake support in c++
 
@@ -95,7 +96,7 @@ Here is the example:
 When you look the file you can see the avro header, schema, and data:
 
 ```
-$ od -v -t x1z users.avro 
+$ od -v -t x1z users.avro
 0000000 4f 62 6a 01 04 14 61 76 72 6f 2e 63 6f 64 65 63  >Obj...avro.codec<
 0000020 08 6e 75 6c 6c 16 61 76 72 6f 2e 73 63 68 65 6d  >.null.avro.schem<
 0000040 61 ba 03 7b 22 74 79 70 65 22 3a 20 22 72 65 63  >a..{"type": "rec<
@@ -118,12 +119,12 @@ $ od -v -t x1z users.avro
 0000460 62 bf 68 95 a2 ab 42 ef 24                       >b.h...B.$<
 0000471
 ```
-  
+
 Languages: C++, Python
 
 Install: `brew install avro-cpp avro-tools` or `pip install avro`
 
-Reference: 
+# Reference:
 
 - [Apache Avro Wikipedia](https://en.wikipedia.org/wiki/Apache_Avro)
 - [Safari Books chapter excerpt on Thrift, Protocol Buffers, Avros](serialization.pdf)

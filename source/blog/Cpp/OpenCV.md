@@ -1,4 +1,7 @@
-# OpenCV
+---
+title: OpenCV
+date: 5 May 2019
+---
 
 A simple example:
 

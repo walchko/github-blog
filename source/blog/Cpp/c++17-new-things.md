@@ -1,4 +1,9 @@
-# Some Cool c++17 Things
+---
+title: Some Cool c++17 Things
+date: 4 Jun 2019
+abstract: Some cool things with C++17
+author: Kevin Walchko
+---
 
 ## Various New Things
 
