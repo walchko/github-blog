@@ -7,11 +7,12 @@ import shutil          # move and delete files/folders
 from glob import glob  # get contents of folder
 from jinja2 import Environment, FileSystemLoader  # html templating
 from collections import OrderedDict  # put toc in alphebetical order
-from pprint import pprint
+# from pprint import pprint
 
 devnull = open(os.devnull, 'w')
 
 SKIP_FOLDERS = ['old', 'do_not_backup', 'deleteme']
+
 
 def run(cmd):
     # given a command string, it runs it
@@ -63,7 +64,10 @@ def markdown(f, dest, template, format, to_main, fmt):
         if template is None:
             raise Exception("*** You need to pass a template to convert Markdown to HTML ***")
         # creates the html5 from markdown and sets pandoc.css to look pretty!
-        html = run('pandoc -s -r markdown+simple_tables+table_captions+yaml_metadata_block --highlight-style=pygments -t html5 {}.{}'.format(f, fmt))
+        if fmt == "md":
+            html = run('pandoc -s -r markdown+simple_tables+table_captions+yaml_metadata_block --highlight-style=pygments -t html5 {}.{}'.format(f, fmt))
+        else:
+            html = run('pandoc --highlight-style=pygments -t html5 {}.{}'.format(f, fmt))
         html = template.render(info=html.decode('utf8'), path=to_main)
         with open(dest + '/' + f + '.html', 'w') as fd:
             fd.write(html)
@@ -83,7 +87,7 @@ def pandoc(file, dest, template=None, format='html', to_main='.'):
             # 'a.b'
             f = '.'.join(file.split('.')[:-1])
             ext = file.split('.')[-1]
-        except:
+        except Exception:
             print('*** this file has an issue name.ext: {} ***'.format(file))
             exit(1)
 
