@@ -1,5 +1,15 @@
 # C++17 Map
 
+- **begin():** Returns an iterator to the first element in the map
+- **end():** Returns an iterator to the theoretical element that follows last element in the map
+- **size():** Returns the number of elements in the map
+- **max_size():** Returns the maximum number of elements that the map can hold
+- **empty():** Returns whether the map is empty
+- **pair insert(keyvalue, mapvalue):** Adds a new element to the map
+- **erase(iterator position):** Removes the element at the position pointed by the iterator
+- **erase(const g):** Removes the key value `g` from the map
+- **clear():** Removes all the elements from the map
+
 ```cpp
 #include <map>
 #include <iostream>
@@ -21,3 +31,7 @@ int main(){
     return 0;
 }
 ```
+
+# Reference
+
+- [std::map<A, B>](https://www.geeksforgeeks.org/map-associative-containers-the-c-standard-template-library-stl/)
