@@ -19,3 +19,18 @@ std:for_each(v.begin(),v.end(),ff);
 
 cout << a << endl; // sum(5) => 15
 ```
+
+```cpp
+map<int,int> dd{{1,11},{2,22},{3,33}};
+
+// more complex lambda
+// capture: grab dd
+// parameters: given a key value
+// definition: search for key, return -1 if not found, otherwise return value
+auto f = [dd](int key){
+    auto it = dd.find(key);
+    return (it == dd.end() ? -1 : it->second);
+};
+
+cout << f(22) << endl; // should return -1, no 22 key
+```
