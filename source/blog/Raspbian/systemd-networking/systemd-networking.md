@@ -1,4 +1,7 @@
-# Systemd Networking
+---
+title: Systemd Networking
+date: 1 May 2017
+---
 
 Most of my systems are tied to mobile robots
 

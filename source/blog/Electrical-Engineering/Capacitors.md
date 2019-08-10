@@ -1,4 +1,6 @@
-# Types of capacitors
+---
+title: Types of capacitors
+---
 
 - Ceramic capacitor:   The ceramic capacitor is a type of capacitor that is used in many applications from audio to RF. Values range from a few picofarads to around 0.1 microfarads. Ceramic capacitor types are by far the most commonly used type of capacitor being cheap and reliable and their loss factor is particularly low although this is dependent on the exact dielectric in use. In view of their constructional properties, these capacitors are widely used both in leaded and surface mount formats
 - Electrolytic capacitor:   Electrolytic capacitors are a type of capacitor that is polarised. They are able to offer high capacitance values - typically above 1μF, and are most widely used for low frequency applications - power supplies, decoupling and audio coupling applications as they have a frequency limit if around 100 kHz.

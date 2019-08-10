@@ -1,4 +1,6 @@
-# Linear Regulators
+---
+title: Linear Regulators
+---
 
 to do
 

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- <link rel='stylesheet' type='text/css' href='https://cdn.rawgit.com/MarsUniversity/ece387/master/website/pandoc.css'> -->
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    	<link href="https://cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css" rel="stylesheet">
+    	<link href="https://cdn.rawgit.com/walchko/font-linux/v0.7.2/assets/font-linux.css" rel="stylesheet">
+      <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous"> -->
+      <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+      <link href="{{ path }}/site.css" rel="stylesheet" type="text/css" />
+      <!-- <link href="../../site.css" rel="stylesheet" type="text/css" /> -->
+    	<!-- <link href="<%- path %>/pygments.css" rel="stylesheet" type="text/css" /> -->
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [["$","$"],["\\(","\\)"]]
+          }
+        });
+      </script>
+
+	  <!-- code pulled from jupyter nbconvert for syntax coloring -->
+	  <style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
+
+    </head>
+    <body>
+      <div id="outer-wrapper">
+          <div id="header-wrapper">
+            <div class="title xtralarge bold"><a href="{{ path }}/index.html">Planet Express</a></div>
+            <div class="normal small"> Our crew is replaceable. Your package isn't. </div>
+
+            <div class="nav normal">
+              <a class="logo" href="{{ path }}/index.html">Home</a>
+              <a class="logo" href="{{ path }}/colophon.html">Colophon</a>
+              <a class="logo" href="{{ path }}/about.html">About</a>
+              <a class="logo" href="{{ path }}/topics.html">Topics</a>
+            </div>
+          </div>
+
+          <div id="main">
+            {% if TOC %}
+              {% for topic, pages in TOC.items() %}
+                <h3>{{ topic }}</h3>
+                <ul>
+                {% for page in pages %}
+
+                  <li><a href="{{ page[0] }}.html"> {{ page[1] }}  </a></li>
+                {% endfor %}
+              </ul>
+              {% endfor %}
+            {% endif %}
+            {% if info %}
+              {{ info }}
+            {% endif %}
+          </div>
+
+        </div>
+    </body>
+<div id="footer-wrapper">
+
+  <div class="logo"></div>
+
+  <div class="logo">
+    <a class="logo" href="http://github.com/walchko"><i class="fl-github fl-36"></i></a>
+    <a class="logo" href="http://stackoverflow.com/users/5374768/kevin"><i class="fl-stackoverflow fl-36"></i></a>
+    <a class="logo" href="http://raspberrypi.stackexchange.com/users/1677/kevin"><i class="fl-stackexchange fl-36"></i></a>
+    <a class="logo" href="https://www.npmjs.com/~kevin.walchko"><i class="fl-npm fl-36"></i></a>
+    <a class="logo" href="https://pypi.python.org/pypi"><i class="fl-python fl-36"></i></a>
+    <a class="logo" href="https://bitbucket.org/walchko/"><i class="fl-bitbucket fl-36"></i></a>
+  </div>
+
+  <div class="logo">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+      <i class="cc cc-by-sa cc-lg"></i>
+    </a>
+  </div>
+
+  <div class="pure-u-1">
+    <a class="logo" href="https://github.com/walchko/github-blog">&copy;&nbsp;2016&nbsp;Kevin J. Walchko</a>
+  </div>
+
+</div>
+
+</html>

@@ -1,4 +1,6 @@
-# Surface Mount Devices (SMD)
+---
+title: Surface Mount Devices (SMD)
+---
 
 ![](pics/smd-1.jpg)
 ![](pics/smd-2.jpg)

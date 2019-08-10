@@ -1,4 +1,6 @@
-# PCB Design Tips
+---
+title: PCB Design Tips
+---
 
 Some of these tips are geared towards [KiCad](http://kicad-pcb.org)
 

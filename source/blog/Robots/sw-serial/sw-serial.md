@@ -1,4 +1,6 @@
-# Software Serial on RPi
+---
+title: Software Serial on RPi
+---
 
 If you need an extra serial port, you do a SW serial port
 using `pigpio` like this:

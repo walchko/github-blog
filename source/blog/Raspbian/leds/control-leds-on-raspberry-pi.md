@@ -1,4 +1,7 @@
-# Controlling the LEDs on an RPi
+---
+title: Controlling the LEDs on an RPi
+date: 1 Dec 2018
+---
 
 The green OK LED can be controlled from software. It's available as
 `/sys/class/leds/led0/`
