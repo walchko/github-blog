@@ -11,7 +11,7 @@ from collections import OrderedDict  # put toc in alphebetical order
 
 devnull = open(os.devnull, 'w')
 
-SKIP_FOLDERS = ['old', 'do_not_backup', 'deleteme']
+SKIP_FOLDERS = ['old', 'do_not_backup', 'deleteme', 'large_dataset']
 
 
 def run(cmd):
@@ -201,7 +201,11 @@ def build_toc(template):
                 #     jup.append(j)
         tmp = files + jup
         # print('tmp\n', tmp)
-        toc[b.replace('blog/', '')] = tmp
+        key = b.replace('blog/', '')
+        key = key.replace('-', ' ').replace('_', ' ')
+        key = key[0].upper() + key[1:]
+        # print("DEBUG: key ", key)
+        toc[key] = tmp
         # get folders with markdown in them
         # jup = []
         # if dirs:
@@ -220,8 +224,11 @@ def build_toc(template):
             pretty = pretty.replace('.md', '').replace('.rst', '').replace('.ipynb', '')
             pretty = pretty.replace('-', ' ').replace('_', ' ')
             pretty = pretty.title()  # capitalize first letter each word
+            # print("DEBUG: pretty ", pretty)
 
             link = link.replace('.md', '').replace('.rst', '').replace('.ipynb', '')
+            # print("DEBUG: link ", link)
+
             value.append((link, pretty))
         toc[key] = value
 
@@ -240,6 +247,7 @@ def build_toc(template):
     with open('../html/topics.html', 'w') as fd:
         fd.write(html)
     print(">> Made {}".format('topics.html'))
+    # exit(0)
 
 
 def main():

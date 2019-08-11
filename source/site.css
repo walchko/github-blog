@@ -13,10 +13,11 @@ vmin	Relative to 1% of viewport's* smaller dimension Try it
 vmax	Relative to 1% of viewport's* larger dimension
 */
 
+/* messing up bullets
 * {
 	margin: 0;
 	padding: 0;
-}
+} */
 
 html, body {
 	height: 100%;
@@ -252,7 +253,7 @@ table {
   margin: 2% 0;
   border: #c9c9c9;
 }
- 
+
 tr.header {
   background-color: #3399ff;
   color: #fff;
