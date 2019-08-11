@@ -12,11 +12,9 @@ optional<int> func(){
 
 int main(){
     auto i = func();
-    cout << i.auto() << endl;
-    
-    auto ii = func();
-    cout << ii.value_or(21) << endl;
-    
+    cout << i.auto() << endl;        // compiler takes care of it
+    cout << i.value_or(21) << endl;  // default if nothing returnd
+
     return 0;
 }
 ```

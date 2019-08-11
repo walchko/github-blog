@@ -49,7 +49,7 @@ to another framework.
 - **Microsoft Cognitive Toolkit (CNTK):** not maintained anymore after version
 2.7 based on disclaimer on github site. They suggest using ONNX
 - **Tencent/ncnn:** A NN for cellphone/embedded systems
-    - https://github.com/Tencent/ncnn
+    - [github repo](https://github.com/Tencent/ncnn)
 
 ## Tools
 

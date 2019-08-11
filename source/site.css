@@ -2,105 +2,118 @@
 /*
 https://www.w3schools.com/cssref/css_units.asp
 
-Unit	Description
-em	Relative to the font-size of the element (2em means 2 times the size of the current font) Try it
-ex	Relative to the x-height of the current font (rarely used) Try it
-ch	Relative to width of the "0" (zero)
-rem	Relative to font-size of the root element
-vw	Relative to 1% of the width of the viewport* Try it
-vh	Relative to 1% of the height of the viewport* Try it
-vmin	Relative to 1% of viewport's* smaller dimension Try it
-vmax	Relative to 1% of viewport's* larger dimension
+Unit    Description
+--------------------------------------------
+em    Relative to the font-size of the element (2em means 2 times the size of the current font) Try it
+ex    Relative to the x-height of the current font (rarely used) Try it
+ch    Relative to width of the "0" (zero)
+rem    Relative to font-size of the root element
+vw    Relative to 1% of the width of the viewport* Try it
+vh    Relative to 1% of the height of the viewport* Try it
+vmin    Relative to 1% of viewport's* smaller dimension Try it
+vmax    Relative to 1% of viewport's* larger dimension
+*/
+
+/*
+KEY
+--------------------------------------------
+#wrapper -> <div id="wrapper">
+.wrapper -> <div class="wrapper">
 */
 
 /* messing up bullets
 * {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 } */
 
 html, body {
-	height: 100%;
-	color: #424141;
-	background-color: #FFFFFF;
+    height: 100%;
+    color: #424141;
+    background-color: #FFFFFF;
 }
 
 .small {
-	font-size: 80%;
+    font-size: 80%;
 }
 
 .large {
-	font-size: 150%;
+    font-size: 150%;
 }
 
 .xtralarge {
-	font-size: 250%;
+    font-size: 250%;
 }
 
 .normal {
-	font-weight: normal;
+    font-weight: normal;
 }
 
 .bold {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 .logo {
-	padding: 10px;
+    padding: 10px;
 }
 
 .title {
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 }
 .title a {
-	font-family: 'Source Serif Pro', serif;
-	text-align: center;
-	text-decoration: none;
-	color: #FFFFFF;
+    font-family: 'Source Serif Pro', serif;
+    text-align: center;
+    text-decoration: none;
+    color: #FFFFFF;
 }
 .title a:hover {
-	color: #CCCCCC;
+    color: #CCCCCC;
 }
 
 /*Keep these -----*/
 #outer-wrapper {
-	position: relative;
-	width: 100%;
-	/*font: normal 17px/1.524 "Noto Sans";*/
-	font-family: 'Source Serif Pro', serif;
-	line-height: 140%;
-	min-height: 100%;
+    position: relative;
+    width: 100%;
+    /*font: normal 17px/1.524 "Noto Sans";*/
+    font-family: 'Source Serif Pro', serif;
+    line-height: 140%;
+    min-height: 100%;
 }
 
-* html #outer-wrapper {
-  height: 100%;
-}
+/* * html #outer-wrapper {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+} */
 
 /*------------------*/
 
 #header-wrapper {
-	color: #ffffff;
-	vertical-align: middle;
-	text-align: center;
-	background: #1a1a1a;
-	height: 100px;
-	padding: 1em 1em 1em 1em;
+    color: #ffffff;
+    vertical-align: middle;
+    text-align: center;
+    background: #1a1a1a;
+    /* background: #888; */
+    height: 100px;
+    padding: 1em 1em 1em 1em;
+
+    margin: -10px; /* want header to go to the edges */
 }
 
 #header-wrapper .nav {
-  margin: 0 auto;
-  max-width: 100%;
-  font-family: 'Source Serif Pro', serif;
+    /* margin: 0 auto; */
+    max-width: 100%;
+    font-family: 'Source Serif Pro', serif;
 }
 
 #header-wrapper .nav a {
-	color: #FFFFFF;
-	text-decoration: none;
-	font-size: 140%;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 140%;
 }
 #header-wrapper .nav a:hover {
-	color: #CCCCCC;
+    color: #CCCCCC;
 }
 
 
@@ -108,22 +121,26 @@ html, body {
 /*Footer --------------------------------*/
 
 #footer-wrapper {
-	position: relative;
-	text-align: center;
-	background-color: #3399ff;
-	font-family: 'Source Serif Pro', serif;
-	bottom: 0;
-	height: 200px;
-	width: 100%;
+    position: relative;
+    text-align: center;
+    background-color: #3399ff;
+    font-family: 'Source Serif Pro', serif;
+    bottom: 0;
+    height: 200px;
+    width: 110%;
+    margin: -10px; /* want footer to go to the edges */
 }
 #footer-wrapper a {
-	text-decoration: none;
-	color: #cce6ff;
+    text-decoration: none;
+    color: #cce6ff;
+}
+#footer-wrapper a:hover {
+    color: #CCCCCC;
 }
 
 
 .push {
-	height: 600px;
+    height: 600px;
 }
 
 /*Main handles all fo the body pages*/
@@ -137,11 +154,11 @@ html, body {
 }
 
 #main {
-	width: 75%;
-	max-width: 960px;
-	margin: 0 auto;
-	position: relative;
-	min-height: 100%;
+    width: 75%;
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 100%;
 }
 
 #main h1, #main h2, #main h3, #main h4, #main h5, #main h6 {
@@ -223,9 +240,9 @@ html, body {
   font-style: italic;
 }
 #main a {
-	/*color: #8eb6cb;*/
-	color: #7e7e96;
-	text-decoration: none;
+    /*color: #8eb6cb;*/
+    color: #7e7e96;
+    text-decoration: none;
 }
 #main a:hover {
   color: #688fad;
