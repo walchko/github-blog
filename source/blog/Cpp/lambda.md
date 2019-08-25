@@ -1,5 +1,5 @@
 ---
-# Lambdas
+title: C++ Lambdas
 date: 3 Aug 2019
 ---
 
