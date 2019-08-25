@@ -1,4 +1,7 @@
-# How To Design 3d Printer Parts for Mechanical Fasteners
+---
+title: How To Design 3d Printer Parts for Mechanical Fasteners
+date: 24 Aug 2019
+---
 
 #### 3d Printer Dimensions for Fasteners [mm]
 
