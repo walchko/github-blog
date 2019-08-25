@@ -1,4 +1,7 @@
-# Inter Process Communications: Shared Memory
+---
+title: Inter Process Communications: Shared Memory
+date: 3 Oct 2018
+---
 
 ![](virtualmemory.png)
 
