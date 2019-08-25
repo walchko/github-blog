@@ -20,8 +20,8 @@ constexpr int bob {27}; // bob initialized at compile-time to 27
 
 bob = 30;  // illegal since bob is a const/constexpr
 ```
-Since `const` and `constexpr` follow the normal scoping, degubber can't follow, there is less of a 
-chance you will accidentally clobber something else accidentally.
+Since `const` and `constexpr` follow the normal scoping, degubber can follow, there is less of a 
+chance you will accidentally clobber something else in your code base.
  
 ```cpp
 # constants.h
