@@ -1,4 +1,7 @@
-# Constants in C++
+---
+title: Constants in C++
+date: 25 Aug 2019
+---
 
 - **Bad:** `#define my_value 300.0`
     - This is bad because it is done at compile time, no type checking can be done
