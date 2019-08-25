@@ -1,5 +1,5 @@
 ---
-tite: Pi-Hole: Home Network Advertisement Blocker
+tite: Pi-Hole, Home Network Advertisement Blocker
 date: 21 July 2018
 ---
 
