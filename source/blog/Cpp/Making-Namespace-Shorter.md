@@ -1,5 +1,5 @@
 ---
-title: Making C++ Namespaces easier to Work With
+title: Making C++ Namespaces Easier to Work With
 date: 4 Apr 2019
 ---
 
