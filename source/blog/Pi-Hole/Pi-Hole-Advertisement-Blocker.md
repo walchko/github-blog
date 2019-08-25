@@ -1,6 +1,9 @@
-![](pics/pi-hole-logo.png)
+---
+tite: Pi-Hole: Home Network Advertisement Blocker
+date: 21 July 2018
+---
 
-# Pi-Hole: Home Network Advertisement Blocker
+![](pics/pi-hole-logo.png){width=200px}
 
 Website: [Pi-Hole](https://pi-hole.net/)
 
