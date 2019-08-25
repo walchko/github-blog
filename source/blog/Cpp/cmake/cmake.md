@@ -1,4 +1,7 @@
-# CMake
+---
+title: CMake
+date: 15 Jun 2019
+---
 
 Here are some commonly use `cmake` things I use:
 
