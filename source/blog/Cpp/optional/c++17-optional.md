@@ -1,4 +1,7 @@
-# C++17 Optional
+---
+title: C++17 Optional Keyword
+date: 12 Aug 2019
+---
 
 ```cpp
 #include <optional>
