@@ -3,10 +3,14 @@ title: Creating a Custom Raspbian Image
 date: 30 Aug 2019
 ---
 
+This assumes you have already setup a "gold" copy of the image you
+want. Now let's make a copy of that image so you can easily replicate
+on other SD cards.
+
 1. Setup an image on an SD card
 1. Clone the image: `sudo dd if=/dev/sdb of=/path/to/image.img`
 1. Shrink the image
-    1. Get the shrink script and make it executable:
+    1. Get the [shrink script](https://github.com/Drewsif/PiShrink) and make it executable:
     ```
     wget  https://raw.githubusercontent.com/Drewsif/PiShrink/master/pishrink.sh
     chmod +x pishrink.sh
