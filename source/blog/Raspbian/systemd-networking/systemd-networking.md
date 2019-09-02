@@ -16,6 +16,7 @@ there is no infrastructure around
 ip addr
 sudo ip link set eth0 up
 sudo ip link set <interface> <up|down>
+```
 
 ## References
 
