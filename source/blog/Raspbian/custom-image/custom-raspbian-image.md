@@ -22,7 +22,7 @@ once it is made.
     chmod +x pishrink.sh
     ```
     2. `sudo pishrink.sh /path/to/image.img /path/to/shrunk/image/img`
-1. *[Optional]* Further compression can be done with: `gzip -9 /path/to/shrunk/image.img`
+1. *[Optional]* Further compression can be done with: `gzip -9 -c /path/to/shrunk/image.img > image.img.gz`
 
 ## References
 
