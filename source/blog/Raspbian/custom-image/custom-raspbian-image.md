@@ -11,6 +11,7 @@ on other SD cards.
 once it is made.
 
 1. Setup an image on an SD card and  insert it into the computer
+1. Install needed  software: `sudo apt install parted`
 1. Do `df -h` or `sudo fdisk -l` to see what new mounts are there
     1. You cannot copy a mounted drive, so you will have to do `umount /dev/sdbX`
     1. On linux, both the boot and root partitions will be mounted, so unmount both of them
