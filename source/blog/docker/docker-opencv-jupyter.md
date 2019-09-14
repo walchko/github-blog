@@ -1,6 +1,9 @@
-![](pics/docker.png)
+---
+title: Setting Up a Docker Container with OpenCV and Jupyter Notebooks
+date: 4 Mar 2017
+---
 
-# Docker
+![](pics/docker.png)
 
 Here is a `Dockerfile` to build a container with opencv, python, and jupyter:
 
