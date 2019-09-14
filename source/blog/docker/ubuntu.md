@@ -18,7 +18,40 @@ for the Community Edition (CE). The basics are:
 1. `sudo apt update`
 1. Install latest version: `sudo apt install docker-ce docker-ce-cli containerd.io`
     1. Apparently there were some name changes, docker is now `docker-ce`
-    
+
+Make sure the daemon is running:
+
+```
+$ service docker status
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: e
+   Active: active (running) since Sat 2019-09-14 09:27:39 EDT; 34min ago
+     Docs: https://docs.docker.com
+ Main PID: 19165 (dockerd)
+    Tasks: 13
+   Memory: 56.6M
+   CGroup: /system.slice/docker.service
+           └─19165 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/contai
+
+Sep 14 09:27:34 dalek dockerd[19165]: time="2019-09-14T09:27:34.799641714-04:00"
+Sep 14 09:27:34 dalek dockerd[19165]: time="2019-09-14T09:27:34.799655354-04:00"
+Sep 14 09:27:34 dalek dockerd[19165]: time="2019-09-14T09:27:34.799668573-04:00"
+Sep 14 09:27:34 dalek dockerd[19165]: time="2019-09-14T09:27:34.799988416-04:00"
+Sep 14 09:27:35 dalek dockerd[19165]: time="2019-09-14T09:27:35.368428381-04:00"
+Sep 14 09:27:35 dalek dockerd[19165]: time="2019-09-14T09:27:35.533850622-04:00"
+Sep 14 09:27:38 dalek dockerd[19165]: time="2019-09-14T09:27:38.487402589-04:00"
+Sep 14 09:27:38 dalek dockerd[19165]: time="2019-09-14T09:27:38.487588431-04:00"
+Sep 14 09:27:39 dalek dockerd[19165]: time="2019-09-14T09:27:39.332237091-04:00"
+Sep 14 09:27:39 dalek systemd[1]: Started Docker Application Container Engine.
+```
+
+To prevent issues with not being able to connect to the daemon, do:
+
+```
+sudo usermod -aG docker $(whoami)
+```
+Note, you may need to log out and back in again.
+
 # References
 
 - [18.04 setup](https://phoenixnap.com/kb/how-to-install-docker-on-ubuntu-18-04)
