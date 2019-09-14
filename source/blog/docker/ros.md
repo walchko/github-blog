@@ -8,6 +8,7 @@ ros wiki website.
 
 1. If you haven't already, get the latest ros: `docker pull ros`
     1. If you need an older version you identify it and pull it ... I just use the latest
+    1. What are the [versions of ros?](http://wiki.ros.org/Distributions)
 1. Start it and get a command line inside the container: `docker run -it ros`
 1. See the container started:
     ```
@@ -20,3 +21,4 @@ ros wiki website.
 1. You will need to setup the environment: `source ros_entrypoint.sh`
 1. See if you can see things: `rostopic list`
     1. Note, if `roscore` isn't running then it will complain about no master
+1. Also update ros: `rosdep update`
