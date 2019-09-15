@@ -23,9 +23,13 @@ runtime, libraries, environment variables, and config files. Available for both
 Linux and Windows based apps, containerized software will always run the same,
 regardless of the environment.
 
-## Steps
+## Scripts
 
 You are probably already logged into Docker Cloud, but if not: `docker login`.
+
+Unfortunately docker is a nightmare of commands and hidden things you have to
+pry out with a crowbar. Here are some scripts I have used. They are helpful
+but not all powerful ... YMMV.
 
 - **Build:** 
     ```
@@ -50,7 +54,8 @@ You are probably already logged into Docker Cloud, but if not: `docker login`.
     docker images prune -a
     docker volume prune -f
     docker container prune -f
-    docker rmi $(docker ps -q)
+    # docker rmi $(docker ps -q)
+    docker rmi $(docker images -a -q)
     echo "*** Done ***"
     echo ""
     echo "*** List All Images ***"
@@ -86,6 +91,8 @@ You are probably already logged into Docker Cloud, but if not: `docker login`.
     # print some stuff
     docker history --human rpi:${VER}
     ```
+- **Test:** Download and run an image, but nothing is kept on
+your machine: `docker run -ti --rm debian:stretch /bin/bash`
 
 ## Run
 
