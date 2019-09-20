@@ -3,11 +3,11 @@ title: Docker Notes
 date: 3 Apr 2017
 ---
 
-![](pics/docker.png)
+![](pics/container.png)
 
 ## Definitions
 
-![](pics/container.png)
+![](pics/docker.png)
 
 - **Container:** A container is a runtime instance of an image—what the image
 becomes in memory when actually executed. It runs completely isolated from the
@@ -31,7 +31,7 @@ Unfortunately docker is a nightmare of commands and hidden things you have to
 pry out with a crowbar. Here are some scripts I have used. They are helpful
 but not all powerful ... YMMV.
 
-- **Build:** 
+- **Build:**
     ```
     #!/bin/bash
     #
@@ -41,7 +41,7 @@ but not all powerful ... YMMV.
 
     docker build -t rpi --squash .
     ```
-- **Cean Up:** 
+- **Cean Up:**
     ```
     #!/bin/bash
 
@@ -75,7 +75,7 @@ but not all powerful ... YMMV.
 
     docker run -ti -p 8888:8888  -v `pwd`/notebooks:/notebooks rpi /bin/bash
     ```
-- **Push Image:** 
+- **Push Image:**
     ```
     #!/bin/bash
 
