@@ -1,10 +1,11 @@
-# Ubiquity ROS SD Images for RPi
-
-**Written:** 10 Nov 2018
+---
+title: Ubiquity ROS SD Images for RPi
+date: 21 Sep 2019
+---
 
 ## Images
 
-Ubiquity Robotics has created SD card images with ROS already installed. You can [download here](https://downloads.ubiquityrobotics.com/pi.html). They are based on Ubuntu rather than Raspbian
+Ubiquity Robotics has created SD card images with ROS already installed. You can [download here](https://downloads.ubiquityrobotics.com/pi.html). They are based on Ubuntu 16.04 rather than Raspbian
 
 1. Burn image to SD card
 1. In the boot volume, do `touch ssh` to enable ssh connections
@@ -70,14 +71,17 @@ curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-## Install Atom.io
+## Mote Fixes
 
-I don't think there is an RPi version, just x86 ... maybe someday
+So these are already in [mote](https://github.com/MomsFriendlyRobotCompany/mote) in the ros folder.
 
-```
-sudo add-apt-repository ppa:webupd8team/atom
-sudo apt update; sudo apt install atom
-```
+- change default password
+- change hostname
+- turn off default robot launch file
+- kill x windows
+
+run sshd 1022
+iptables -I INPUT -p tcp --dport 1022 -j ACCEPT
 
 # Nodes
 
