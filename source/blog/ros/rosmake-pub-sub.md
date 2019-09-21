@@ -8,6 +8,11 @@ Note: I am using docker on Ubuntu with ros melodic
 Note: it seems really easy to get kicked out of the container
 and dumped into the host env if a command fails.
 
+I really hate catkin, the old cmake way was better! catkin imposes too many
+requirements (like how your folder structure is setup) that makes it a pain
+in the ass. Unfortunately, ros should be a lightweight library, but instead
+it is setup as the center of the universe.
+
 ## Setup
 
 **Window 1**
