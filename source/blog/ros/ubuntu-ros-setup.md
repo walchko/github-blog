@@ -1,6 +1,46 @@
 ---
 title: ROS Setup Using Vanilla Ubuntu Image
+date: 22 Sept 2019
+---
 
+So the [ros wiki](http://wiki.ros.org/Installation/Ubuntu) shows that
+melodic packages are built for Ubuntu and armhf (RPi) automatically.
+Unfortunately, there are not official raspbian packages, so if you 
+want easy, you have to use Ubuntu.
+
+Install ubuntu mate (18.04 at the time of this writing) from [raspberrypi.org](https://www.raspberrypi.org/downloads/).
+Unfortunately, they do not allow headless install because they are
+stupid.
+
+1. download and burn image to SD card
+1. insert SD card, hookup keyboard/mouse/monitor, and power on
+    1. Hey Ubuntu Mate idiots, you do realize that IoT are often headless ... right?
+    Thank goodness you don't support Arduino, otherwise we would have to do the same
+    ... thanks a lot for extra complexity ... you suck! Oh, this also doesn't make
+    anything safer or more secure!
+1. Then following the ros ubuntu install directions, use a script like below and
+run: `sudo ./install_ros.sh`
+    ```
+    #!/bin/bash
+    # http://wiki.ros.org/melodic/Installation/Ubuntu
+
+    echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list
+    apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+    apt-get update
+    # apt-get install ros-melodic-desktop-full -y
+    # apt-get install ros-melodic-desktop -y
+    apt-get install ros-melodic-ros-base -y
+    rosdep init
+    rosdep update
+    #echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+    #source ~/.bashrc
+    apt-get install python-rosinstall python-rosinstall-generator python-wstool build-essential
+    ```
+
+
+## Services
+
+Here are some example systemd scripts examples I found online.
 
 ```
 $ cat /etc/systemd/system/roscore.service 
