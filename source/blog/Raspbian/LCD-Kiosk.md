@@ -71,7 +71,7 @@ Note, if sshing in do: `DISPLAY=:0.0 xinput ...`
 
 # Disable Touchscreen
 
-To disable the touchscreen capability do add `tbd` to `/boot/config.txt`.
+To disable the touchscreen capability do add `disable_touchscreen=1` to `/boot/config.txt`.
 
 # nodm Config
 
