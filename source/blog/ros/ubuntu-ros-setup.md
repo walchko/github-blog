@@ -8,6 +8,10 @@ melodic packages are built for Ubuntu and armhf (RPi) automatically.
 Unfortunately, there are not official raspbian packages, so if you 
 want easy, you have to use Ubuntu.
 
+- Ubuntu server images are [here](https://wiki.ubuntu.com/ARM/RaspberryPi) built
+for the RPi 2/3/3+ (no 4 yet).
+    - These appear to have user ubuntu and password ubuntu
+
 Install ubuntu mate (18.04 at the time of this writing) from [raspberrypi.org](https://www.raspberrypi.org/downloads/).
 Unfortunately, they do not allow headless install because they are
 stupid.
