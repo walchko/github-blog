@@ -1,16 +1,21 @@
-
-# External USB Drive
-
-:date: 2015-11-28
-:modified: 2016-09-04
-:summary: Setting up a hard drive to work with Raspbian
+---
+title: External USB Drive and the Raspberry Pi
+date: 28 Nov 2015
+---
 
 ![](pics/usb.png){width 200px}
 
+This is for booting off an SD card, but having an external HD for
+mass storage. 
+
+However, there is a reference below for booting from a
+USB3 HD on a RPi 4 and not having an SD card installed.
+
 ## References:
 
-- [here](http://devtidbits.com/2013/03/21/using-usb-external-hard-disk-flash-drives-with-to-your-raspberry-pi/) 
-- [here](https://dottheslash.wordpress.com/2011/11/29/deleting-all-partitions-on-a-usb-drive/)
+- [Using external HD with RPi](http://devtidbits.com/2013/03/21/using-usb-external-hard-disk-flash-drives-with-to-your-raspberry-pi/) 
+- [Deleting partitions on a drive](https://dottheslash.wordpress.com/2011/11/29/deleting-all-partitions-on-a-usb-drive/)
+- [Tom's hardware: how to boot from HD on RPi 3/4](https://www.tomshardware.com/news/boot-raspberry-pi-from-usb,39782.html)
 
 ## Setup
 
