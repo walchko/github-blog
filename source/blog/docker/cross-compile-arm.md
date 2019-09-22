@@ -24,7 +24,9 @@ Steps:
     BUG_REPORT_URL="https://bugs.debian.org/"
     ```
 
-The balenalib/raspberrypi3-debian is a stripped down image, no python or gcc
+The `balenalib/raspberrypi3-debian:latest` is a stripped down image, no python or gcc. The
+`balenalib/raspberrypi3-debian-build` has a lot of development tools/libries installed.
+
 
 # References
 
