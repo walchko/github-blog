@@ -13,3 +13,8 @@ Here are some some cool containers to play with:
 - [octoprint: 3d printing](https://github.com/OctoPrint/docker)
 
 For the containers I have tested, I noted with *works*, but my testing was rather simple.
+
+My uses are:
+
+- Cross compiling OpenCV and building debian packages
+- Octoprint
