@@ -1,4 +1,7 @@
-# Setting Up an RPi as a Kiosk
+---
+title: Setting Up an RPi as a Kiosk with the RPi Foundation LCD
+date: 12 Sept 2018
+---
 
 ## Assembly
 
@@ -47,7 +50,15 @@ echo 50 > /sys/class/backlight/rpi_backlight/brightness
 
 # Rotating Display
 
-Final solution:
+## Simple Flip
+
+Generally you end up with the LCD mounted upside-down because people don't
+pay attention to details. Simple solution to flip the LCD is to
+put `lcd_rotate=2` in `/boot/config.txt` and the screen will turn upside-down.
+
+## Portrait View (90 degree rotation)
+
+However I wanted to put it into portrait view (90 deg turn):
 
 ```bash
 xinput --set-prop 'FT5406 memory based driver' 'Coordinate Transformation Matrix' 0 1 0 -1 0 1 0 0 1
@@ -58,10 +69,14 @@ Note, if sshing in do: `DISPLAY=:0.0 xinput ...`
 - [fixing touch screen](https://www.raspberrypi.org/forums/viewtopic.php?f=108&t=120793)
 - [final solution](https://www.raspberrypi.org/forums/viewtopic.php?t=172025)
 
+# Disable Touchscreen
+
+To disable the touchscreen capability do add `tbd` to `/boot/config.txt`.
+
 # nodm Config
 
 I disabled the virtual keyboard because it takes up a lot of screen and isn't
-really useful (big fingers and small keys). I type one letter very 10 seconds. :)
+really useful (big fingers and small keys). I type one letter every 10 seconds. :)
 
 The file is located: `/home/pi/.xsession`
 
