@@ -31,6 +31,8 @@
 * 2004 Air and Space Basic Course, residence
 
 ### Publications
+
+* Thomas B., Bracamonte, M., Kim H., Talosaga A., and Walchko K., "R2D2 Capstone Project", 15th Annual CSURF, Colorado Springs, CO, 28 April 2019.  
 * [Hindman, C., Engberg, B., Hunt, J., and Walchko, K., "Optimal GEO Lasercomm Terminal Field of View for LEO Link Support";, SPIE Free-space Laser Communications Technologies XVIII, 2006.](Publications/Optimal-geo-lasercom.pdf)
 * [Hindman, C., Walchko, K., and Spratley, C., "Point-ahead Tracking for Space to Air Laser Pointing", MSS Active Electro-Optic Sensor Systems Conference, Columbia, MD, 2005.](Publications/unknown.pdf)
 * [Grzywna, J., Walchko, K., and Nechyba, M., Subjugator: A Reconfigurable AUV, 2nd AIAA Systems, Technologies, and Operations Aerospace, Land, and Sea Conference and Workshop & Exhibit, San Diego, CA, Sept 15-18, 2003.](Publications/AIAA-Reconfigurable-AUV.pdf)
