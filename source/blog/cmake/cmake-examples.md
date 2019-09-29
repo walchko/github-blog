@@ -71,7 +71,7 @@ option(BUILD_MSGPACK "Build the message pack messages" ON)
 ```
 ## Packaging and Version
 
-```
+```cmake
 cmake_minimum_required(VERSION 3.10)
 PROJECT("test" VERSION 1.2.3 LANGUAGES CXX)
 
@@ -83,7 +83,7 @@ include(CPack)
 
 ## Install
 
-```
+```cmake
 set(BIN_DESTINATION /my_dir/bin)
 # set other paths
 
@@ -117,7 +117,7 @@ install(FILES
 
 Run script during install
 
-```
+```cmake
 install(CODE "execute_process(COMMAND my_script.sh)")
 ```
 
