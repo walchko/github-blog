@@ -14,3 +14,7 @@ Simple cheatsheet
     - Run `git rm --cached pathtosubmodule` (no trailing slash)
     - Commit the super project.
     - Delete the now untracked submodule files.
+
+# References
+
+- [remove a submodule](https://gist.github.com/myusuf3/7f645819ded92bda6677)
