@@ -80,3 +80,47 @@ set(CPACK_PACKAGE_VERSION_MINOR ${PROJECT_VERSION_MINOR})
 set(CPACK_PACKAGE_VERSION_PATCH ${PROJECT_VERSION_PATCH})
 include(CPack)
 ```
+
+## Install
+
+```
+set(BIN_DESTINATION /my_dir/bin)
+# set other paths
+
+install(PROGRAMS
+  scripts/my_python_script
+  DESTINATION ${BIN_DESTINATION}
+)
+
+install(TARGETS ${PROJECT_NAME}_node
+  RUNTIME DESTINATION ${BIN_DESTINATION}
+)
+
+install(TARGETS ${PROJECT_NAME}
+  ARCHIVE DESTINATION ${LIB_DESTINATION}  # static libraries
+  LIBRARY DESTINATION ${LIB_DESTINATION}  # shared libraries
+  RUNTIME DESTINATION ${BIN_DESTINATION}  # executables
+)
+
+install(DIRECTORY include/${PROJECT_NAME}/
+  DESTINATION ${INCLUDE_DESTINATION}
+  FILES_MATCHING PATTERN "*.hpp"
+  PATTERN ".git" EXCLUDE
+)
+
+install(FILES
+  myfile1.json
+  myfile2.yaml
+  DESTINATION ${SHARE_DESTINATION}
+)
+```
+
+Run script during install
+
+```
+install(CODE "execute_process(COMMAND my_script.sh)")
+```
+
+# References
+
+- [cmake install docs](https://cmake.org/cmake/help/v3.0/command/install.html)
