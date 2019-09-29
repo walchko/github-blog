@@ -5,8 +5,11 @@ date: 15 Jun 2019
 
 Here are some commonly use `cmake` things I use:
 
-- `PROJECT_SOURCE_DIR`: gives access to top level source directory
+- Useful variable: `${VAR}`
+    - `PROJECT_SOURCE_DIR`: gives access to top level source directory
+    - `CMAKE_CURRENT_SOURCE_DIR`: gives access to the current directory
 - `$ENV{HOME}`: grab environmental variables like `${HOME}` path
+- `project(name VERSION 1.2.3 LANGUAGES CXX) 
 - `include_directories(path)`: manually add include path
 - `link_directories(path)`: manually add link path
 - `set(VARIABLE value)`: set a variable
@@ -55,4 +58,15 @@ endforeach()
 ```cmake
 # turn this on with cmake -DBUILD_MSGPACK=ON
 option(BUILD_MSGPACK "Build the message pack messages" ON)
+```
+## Packaging and Version
+
+```
+cmake_minimum_required(VERSION 3.10)
+PROJECT("test" VERSION 1.2.3 LANGUAGES CXX)
+
+set(CPACK_PACKAGE_VERSION_MAJOR ${PROJECT_VERSION_MAJOR})
+set(CPACK_PACKAGE_VERSION_MINOR ${PROJECT_VERSION_MINOR})
+set(CPACK_PACKAGE_VERSION_PATCH ${PROJECT_VERSION_PATCH})
+include(CPack)
 ```
