@@ -3,6 +3,8 @@ title: Installing ROS2 on Ubuntu
 date: 5 Oct 2019
 ---
 
+![](ros2.png)
+
 As of this, ROS2 Dashing Diamenata is the latest [release](https://index.ros.org/doc/ros2/Releases/)
 
 **WARNING:** the install instructions are crap. I originally use install linux, but only later noticed
