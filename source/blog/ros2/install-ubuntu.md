@@ -24,6 +24,10 @@ sudo apt install ros-dashing-desktop
 
 Now do `source /opt/ros/dashing/setup.bash` to setup your `env` properly.
 
+## Other Errors
+
+- rosbag2: `sudo apt install ros-dashing-rosbag2*`
+
 ## Cross-Compiling for ARM
 
 There are [directions](https://index.ros.org/doc/ros2/Tutorials/Cross-compilation/) for using
