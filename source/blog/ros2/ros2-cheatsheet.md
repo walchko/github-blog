@@ -3,6 +3,8 @@ title: ROS2 Cheatsheet
 date: 5 Oct 2019
 ---
 
+![](ros2.png)
+
 Most of the commands have changed for ros2:
 
 - rosbag: `ros2 bag play|record`
