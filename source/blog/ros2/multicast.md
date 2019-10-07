@@ -1,5 +1,5 @@
 ---
-title: ROS2 and Multicast
+title: ROS2 and Multicast Testing
 date: 6 Oct 2019
 ---
 
@@ -11,6 +11,8 @@ connectivity with `iperf`. Although other addresses worked on linux-to-linux (i.
 
 - macOS: `brew install iperf`
 - linux: `sudo apt install iperf`
+
+**note:** firewalls on macos and linux (ufw) didn't seem to be an issue.
 
 ## Client (send)
 
