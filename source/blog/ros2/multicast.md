@@ -135,6 +135,15 @@ if len(sys.argv) == 2:
         print("unknown command:", cmd)
 ```  
 
+# Firewalls
+
+You might have to poke holes in your firewall to make it work:
+
+```
+sudo ufw allow in proto udp to 224.0.0.0/4
+sudo ufw allow in proto udp from 224.0.0.0/4
+```
+
 # References
 
 - [pymotw multicast article](https://pymotw.com/2/socket/multicast.html)
