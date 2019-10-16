@@ -1,6 +1,9 @@
-![](zero-w-camera.jpg){width=75%}
+---
+title: Raspberry Pi Camera
+date: 20 Nov 2014
+---
 
-# Raspberry Pi Camera
+![](zero-w-camera.jpg){width=75%}
 
 ## Zero
 
@@ -65,3 +68,5 @@ Grab a still image:
 Grab video:
 
 	raspivid -o vid.h264
+
+![](camera-desk.jpg)
