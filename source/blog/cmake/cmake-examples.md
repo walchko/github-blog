@@ -10,8 +10,13 @@ Here are some commonly use `cmake` things I use:
     - `CMAKE_CURRENT_SOURCE_DIR`: gives access to the current directory
 - `$ENV{HOME}`: grab environmental variables like `${HOME}` path
 - `project(name VERSION 1.2.3 LANGUAGES CXX) 
-- `include_directories(path)`: manually add include path
-- `link_directories(path)`: manually add link path
+    - `PROJECT_NAME` set by above
+- Global:
+    - `include_directories(path)`: manually add include path
+    - `link_directories(path)`: manually add link path
+- Targets:
+    - `target_link_libraries(TARGET PUBLIC|PRIVATE dirs)`: link libraries per target
+    - `target_include_directories(TARGET PUBLIC|PRIVATE libs)`: set include path per target
 - `set(VARIABLE value)`: set a variable
 - `list(APPEND VAR_NAME "${STUFF}")`: create a list
 - `message(STATUS "my message ${some_variable}")`: print a message
@@ -78,7 +83,6 @@ PROJECT("test" VERSION 1.2.3 LANGUAGES CXX)
 set(CPACK_PACKAGE_VERSION_MAJOR ${PROJECT_VERSION_MAJOR})
 set(CPACK_PACKAGE_VERSION_MINOR ${PROJECT_VERSION_MINOR})
 set(CPACK_PACKAGE_VERSION_PATCH ${PROJECT_VERSION_PATCH})
-include(CPack)
 ```
 
 ## Library
