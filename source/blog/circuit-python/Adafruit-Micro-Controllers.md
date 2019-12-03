@@ -1,4 +1,7 @@
-# Adafruit Microcontrollers and Circuitpython
+---
+title: Adafruit Microcontrollers and Circuitpython
+date: 20 Nov 2019
+---
 
 Adafruit's more advanced micro controllers come with a version of
 [MicroPython](http://micropython.org/) installed on them called
@@ -20,12 +23,32 @@ There are a lot of libraries available:
 - [Adafruit's github repos](https://github.com/adafruit/Adafruit_CircuitPython_Bundle)
 - [HCSR-04 drivers](https://github.com/mmabey/CircuitPython_HCSR04)
 
+## USB Serial Connection to REPL
 
-# Boards
+You can interact with the board's REPL using `screen /dev/tty* 115200`. Linux serial is typically `/dev/ttyACM*` and Apple is `/dev/usbmodem*`. You can stop `screen` with `Ctl-a` then `k`.
+
+# Adafruit CircuitPython Boards
+
+|   | [Trinket M0](https://www.adafruit.com/product/3500) | [ItsyBitsy M0](https://www.adafruit.com/product/3727) | [ItsyBitsy M4](https://www.adafruit.com/product/3800) |
+|---|---|---|---|
+| Processor | ATSAMD21E18 32-bit Cortex M0+ | ATSAMD21G18 32-bit Cortex M0+ | ATSAMD51 32-bit Cortex M4 |
+| MHz | 48 | 48 | 120 |
+| RAM | 32KB | 32KB | 192 KB |
+| ROM | 256KB | 256KB | 192KB |
+| GPIO | 5 | 23 | 23 |
+| 12b ADC | 3 | 11 | 12 |
+| PWM | 2 | 13 | 18 |
+| SPI FLASH | N/A | 2MB | 2MB |
+| Price | $8.95 | $11.95 | $14.95 |
 
 ## Trinket M0
 
 <img src="pics/Trinket_M0.png" width="500px">
 
-The [Trinket M0](https://www.adafruit.com/product/3500) is a tiny microcontroller
-board, built around the Atmel ATSAMD21, a little chip with a lot of power.
+## ItsyBitsy M0
+
+<img src="pics/Trinket_M0.png" width="500px">
+
+## ItsyBitsy M4
+
+<img src="pics/Trinket_M0.png" width="500px">
