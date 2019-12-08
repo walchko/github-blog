@@ -3,6 +3,8 @@ title: Using Neopixels with CircuitPython
 date: 7 Dec 2019
 ---
 
+![](rgb-neopixel.jpg)
+
 ```python
 import time
 import board
@@ -51,6 +53,10 @@ while True:
         p.fill(c)
         time.sleep(1)
 ```
+
+## Raspberry Pi
+
+![](rpi.png)
 
 ## References
 
