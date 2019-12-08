@@ -34,7 +34,7 @@ You can interact with the board's REPL using `screen /dev/tty* 115200`. Linux se
 | Processor | ATSAMD21E18 32-bit Cortex M0+ | ATSAMD21G18 32-bit Cortex M0+ | ATSAMD51 32-bit Cortex M4 |
 | MHz | 48 | 48 | 120 |
 | RAM | 32KB | 32KB | 192 KB |
-| ROM | 256KB | 256KB | 192KB |
+| ROM | 256KB | 256KB | 512KB |
 | GPIO | 5 | 23 | 23 |
 | 12b ADC | 3 | 11 | 12 |
 | PWM | 2 | 13 | 18 |

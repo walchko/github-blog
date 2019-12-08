@@ -11,7 +11,7 @@ from collections import OrderedDict  # put toc in alphebetical order
 
 devnull = open(os.devnull, 'w')
 
-SKIP_FOLDERS = ['old', 'do_not_backup', 'deleteme', 'large_dataset']
+SKIP_FOLDERS = ['old', 'do_not_backup', 'deleteme', 'large_dataset', 'draft']
 
 
 def run(cmd):
@@ -37,12 +37,18 @@ def rmdir(path):
 
 
 def zip_this_folder(folder, dest):
+    """
+    zip a folder
+    """
     run('zip -r jupyter.zip {}'.format(folder))
     shutil.move('jupyter.zip', dest)
     print(">> Zipped jupyter and moved to: {}".format(dest))
 
 
 def jupyter(f, dest, template, format, to_main, file):
+    """
+    handle a jupyter notebook
+    """
     # zip_this_folder()
     # print("[[jupyter]] zip this path: {}".format(os.getcwd()))
     # zip_this_folder(os.getcwd(), dest)
@@ -55,6 +61,14 @@ def jupyter(f, dest, template, format, to_main, file):
 
 
 def markdown(f, dest, template, format, to_main, fmt):
+    """
+    handle a markdown document
+     f- file
+     dest - destination
+     format - output: pdf or html
+     to_main - path back to source folder
+     fmt - ????
+    """
     if format == 'pdf':
         run('pandoc -V geometry:margin=1in -s -o {}.pdf {}.{}'.format(f, f, fmt))
         shutil.move(f + '.pdf', dest + '/' + f + '.pdf')
@@ -75,9 +89,14 @@ def markdown(f, dest, template, format, to_main, fmt):
 
 
 def pandoc(file, dest, template=None, format='html', to_main='.'):
-    # need to keep track of folder stucture for navigation bar across
-    # the top of the page
-
+    """
+    dest - where html blog goes
+    template - html template
+    format - doing html
+    to_main - get back to source directory. need to keep track of folder
+    stucture for navigation bar across the top of the page
+    """
+    # handle files
     if os.path.isfile(file):
         try:
             # some files have multiple . in them and it is hard to get the ext
