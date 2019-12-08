@@ -3,7 +3,13 @@ title: How To Design 3d Printer Parts for Mechanical Fasteners
 date: 24 Aug 2019
 ---
 
-#### 3d Printer Dimensions for Fasteners [mm]
+## Dimensions for Self Tapping Screws
+
+- **M3:** 2.5mm (tight) or 2.75mm hole
+    - using M3x12mm on a 2mm thick surface
+    - repeated removal loosens them up ... so 2.5mm might be best over time
+
+## 3d Printer Dimensions for Fasteners [mm]
 
 | Type | Screw Dia. | Print Dia. | CS Dia. | CS Depth |
 |---|---|---|---|---|
@@ -12,7 +18,7 @@ date: 24 Aug 2019
 | 2-56 Pan | 2.18 | 2.5 | 6 | 2 |
 | 4-40 Pan | 2.845 | 3.5 | 8.5 | 2 |
 
-- **CS:** Counter Sink, so machine screw head is flush with surface
+- **CS:** Counter Sink, so machine screw head is flush with surface (well sort of)
 - **Pan:** Pan phillips head (+) screw
 
 ```openscad
@@ -55,7 +61,7 @@ module M3(t){
 }
 ```
 
-#### Imperial Standard to Metric Conversion
+## Imperial Standard to Metric Conversion
 
 | Guage               | Decimal             | Metric              |
 |---------------------|---------------------|---------------------|
