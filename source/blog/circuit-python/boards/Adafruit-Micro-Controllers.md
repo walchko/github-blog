@@ -23,6 +23,10 @@ There are a lot of libraries available:
 - [Adafruit's github repos](https://github.com/adafruit/Adafruit_CircuitPython_Bundle)
 - [HCSR-04 drivers](https://github.com/mmabey/CircuitPython_HCSR04)
 
+## Boot
+
+![](boot.png)
+
 ## USB Serial Connection to REPL
 
 You can interact with the board's REPL using `screen /dev/tty* 115200`. Linux serial is typically `/dev/ttyACM*` and Apple is `/dev/usbmodem*`. You can stop `screen` with `Ctl-a` then `k`.
@@ -43,7 +47,7 @@ You can interact with the board's REPL using `screen /dev/tty* 115200`. Linux se
 
 ## Trinket M0
 
-<img src="pics/Trinket_M0.png" width="500px">
+<img src="Trinket_M0.png" width="500px">
 
 ## ItsyBitsy M0
 
