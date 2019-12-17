@@ -5,7 +5,7 @@ date: 12 Aug 2019
 
 ## Neural Netowrk (NN) Types
 
-### Convolutional NN (CNN)
+### Convolutional Neural Network (CNN)
 
 The heart of this is convolution:
 
@@ -23,7 +23,7 @@ The heart of this is convolution:
     There are many different normalizing layer topologies like ReLU.
 - Common uses: object identification in computer vision
 
-### Recursive NN (RNN)
+### Recursive Neural Network (RNN)
 
 - Similar to CNN, but RNNs have a feedback capability
 - RNNs concider both the current and previous inputs
@@ -60,6 +60,18 @@ to another framework.
     - Adopted by CERN and NASA
 - **pyTorch:** Highlevel NN tools written in python and C++
     - Supports CUDA (NVIDIA GPU)
+
+|          | Keras  | pyTorch | Tensorflow |
+|----------|--------|---------|------------|
+| Language | python | c++, python, CUDA (NVIDIA GPU) | python, c++ |
+| Support  | Tensorflow, CNTK or Theano as the backend NN | | |
+| Funding  | Google, Apple supports CoreML integration for iOS | | |
+| Notes    | Adopted by CERN and NASA | now contains Caffe2 | came from Google Research |
+
+- AI
+    - ML: machine learing, supervised and unsupervised
+        - DL: deep learning, supervised NN learning
+- Tensor: multidimensional array or list
 
 ## Pre-trained
 
