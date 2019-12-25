@@ -3,6 +3,8 @@ title: Robotic Smart Servos
 date: 22 Dec 2019
 ---
 
+<img src="ax-12a.jpg" width="200px"><img src="lx-16a.jpg" width="200px"><img src="lx-15d.jpg" width="200px">
+
 There are various smart servos out there now, I am use to using
 Dynamixel servos.
 
