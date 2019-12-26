@@ -20,6 +20,8 @@ make. We had a 3d printer lab and made lots of stuff for our capstone classes.
 Has some good colors: blue, green, purple, pink, red. Like the cutouts in the side to see how much
 filament is left.
 
+- [![](https://img.youtube.com/vi/4eJZJZKKBhM/0.jpg)](https://www.youtube.com/watch?v=4eJZJZKKBhM)
+
 - Not used yet
 
 **Cost:** $$
@@ -28,6 +30,7 @@ filament is left.
 
 Not as neatly wound as Prusa PLA, but works good. Limited colors though I like (*personal opinion*).
 
+- [![](https://img.youtube.com/vi/SoKIjjtm7eo/0.jpg)](https://www.youtube.com/watch?v=SoKIjjtm7eo)
 - Black: good
 
 **Cost:** $$
