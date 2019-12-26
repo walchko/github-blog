@@ -6,7 +6,7 @@ date: 18 Aug 2019
 I just got my printer and it works great! (Even 6 months later)
 
 - building and calibration: 1.5 days
-    - but I could do it faster next time, this was the first building the kit
+    - but I could do it faster next time, this was my first time building a printer kit
 - First layer print z-offset: -1.200 mm
 
 ## Reviews
