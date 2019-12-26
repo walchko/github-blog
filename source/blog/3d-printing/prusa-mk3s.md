@@ -34,3 +34,5 @@ I just got my printer and it works great! (Even 6 months later)
     - Turn off ceiling fans helps too
     - I haven't gone as far as using a printer enclosure, but that might be
     the next step if I continue to have problems with parts
+        - Nope, above temperature fixes work ... also like to keep door closed
+        during winter :smile:
