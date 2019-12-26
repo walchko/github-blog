@@ -9,6 +9,10 @@ I just got my printer and it works great! (Even 6 months later)
     - but I could do it faster next time, this was the first building the kit
 - First layer print z-offset: -1.200 mm
 
+## Reviews
+
+[![](https://img.youtube.com/vi/M73uIMDlvvk/0.jpg)](https://www.youtube.com/watch?v=M73uIMDlvvk)
+
 ## Thoughts
 
 - Very quiet compared to the Lulzbot TAZ 6 we had at the Air Force Academy
