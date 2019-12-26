@@ -3,6 +3,8 @@ title: Prusa MK3S
 date: 18 Aug 2019
 ---
 
+![](https://cdn.shop.prusa3d.com/1303-home_default/original-prusa-i3-mk3-kit.jpg)
+
 I just got my printer and it works great! (Even 6 months later)
 
 - building and calibration: 1.5 days
