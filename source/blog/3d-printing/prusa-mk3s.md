@@ -3,7 +3,7 @@ title: Prusa MK3S
 date: 18 Aug 2019
 ---
 
-I just got my printer and it works great!
+I just got my printer and it works great! (Even 6 months later)
 
 - building and calibration: 1.5 days
     - but I could do it faster next time, this was the first building the kit
@@ -17,6 +17,9 @@ I just got my printer and it works great!
 
 # Lessons Learned
 
+- z-setting for first layer: -1.200 mm
+- sensative to brown outs when printing from Octoprint or the SD card ... will go nuts
+    - plugged into powercell helps little power hickups
 - Temperature sensative even using normal PLA 
     - Only a concern on robotic parts requiring high mechanical accuracy
     - Setting a 10 mm brim around your parts will help them stick to the bed 
