@@ -12,6 +12,8 @@ way is to design your circuit so it prevents this.
 
 ![](reverse_polarity_protection.jpg)
 
+- [electronics-stackexchange](https://electronics.stackexchange.com/a/104545)
+
 ## MOSFET
 
 Using a diode is one easy way to prevent current in your system from flowing in
