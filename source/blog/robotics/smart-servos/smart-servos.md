@@ -36,3 +36,60 @@ Dynamixel servos.
 - [PyLX-16A github](https://github.com/ethanlipson/PyLX-16A)
 - [lewansoul-lx16a](https://github.com/maximkulkin/lewansoul-lx16a) which you can get from [pypi](https://pypi.org/project/lewansoul-lx16a/) using `pip`
 - [SGVHAK rover](https://github.com/Roger-random/SGVHAK_Rover) has an lx-16a driver in its source code
+
+## LX-16A Test (Review?)
+
+This is a test of the motor mode for the servos. 
+
+- They perform much like standard RC servos I have hacked to run 
+continuously. There is a very high pitch nose to them and they are 
+slow ... seemly slower than the datasheet specifies. 
+- Also, they are very easy to trip into current shutdown. The 
+slightest force seems to stop them ... not sure how they would perform 
+as wheel motors.
+- Finally, once you have tripped them into an error state, it is seemly
+imposible to get them out. The error light keeps blinking no matter what
+I do. The motors operate fine, but the error light keeps blinking and
+the `get_led_errors()` function keeps returning `7` to indicate all
+thresholds were breached (current, temperature, and voltage). I hooked up
+a volt meter and only saw 7.4V that I was putting in. Setting it to current
+also showed no excessive current.
+- Install: `pip install lewansoul_lx16a`
+
+```python
+#!/usr/bin/env python
+
+import serial
+import time
+from lewansoul_lx16a import ServoController
+
+port = '/dev/serial/by-id/usb-1a86_USB2.0-Serial-if00-port0'
+s = serial.Serial(port, 115200, timeout=1)
+c = ServoController(s, timeout=5)
+
+print(">> mode [0-servo, 1-motor]:", c.get_mode(1))
+print(">> motor on (should be off):", c.is_motor_on(1))
+print("------------------------------------")
+print(">> max temperature[C]:", c.get_max_temperature_limit(1))
+print(">> temperature[C]:", c.get_temperature(1))
+print("------------------------------------")
+print(">> max voltage[mV]:", c.get_voltage_limits(1))
+print(">> voltage[mV]:", c.get_voltage(1))
+
+
+# simple ramp up and then down
+for x in range(0, 1000, 100):
+    c.set_motor_mode(1, x)
+    time.sleep(0.75)
+
+for x in range(1000, 0, -100):
+    c.set_motor_mode(1, x)
+    time.sleep(0.75)
+
+print(">> led errors:", c.get_led_errors(1))
+
+c.set_motor_mode(1, 0)
+```
+
+Honestly, I was realy excited about a cheaper AX-12A servo, but these don't
+seem to be reliable and capable enough. 
