@@ -31,7 +31,10 @@ filament is left.
 Not as neatly wound as Prusa PLA, but works good. Limited colors though I like (*personal opinion*).
 
 - [![](https://img.youtube.com/vi/SoKIjjtm7eo/0.jpg)](https://www.youtube.com/watch?v=SoKIjjtm7eo)
-- Black: good
+- Black: 
+    - good
+    - grips to MK3S bed well, no need for excessive brim (10mm) that I used on Prusa filament
+    - shiny part
 
 **Cost:** $$
 
@@ -40,6 +43,8 @@ Not as neatly wound as Prusa PLA, but works good. Limited colors though I like (
 The spool of filament that came with my MK3S was really good. The windings were very 
 straight and tight with no issues caused by the filament. 
 
-- Silver: good results
+- Silver: 
+    - good results
+    - shinny part
 
 **Cost:** $$$$ (hard to find in US, shipping expensive)
