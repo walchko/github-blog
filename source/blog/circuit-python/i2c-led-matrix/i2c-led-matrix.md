@@ -47,3 +47,4 @@ matrix.blink_rate = 0 # no blinking
 # References
 
 - Adafruit LED Backpack [Tutorial](https://learn.adafruit.com/micropython-hardware-led-backpacks-and-featherwings?view=all)
+- Github: [ht16k33.py](https://github.com/adafruit/Adafruit_CircuitPython_HT16K33/blob/master/adafruit_ht16k33/ht16k33.py)
