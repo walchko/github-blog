@@ -36,7 +36,7 @@ Not as neatly wound as Prusa PLA, but works good. Limited colors though I like (
     - grips to MK3S bed well, no need for excessive brim (10mm) that I used on Prusa filament
     - shiny part
     - after a couple weeks, around the last 1/3 of the spool, the filament became very **brittle**
-    and broke. Usually it broke when in between print jobs when it was sitting for ~12hrs at night
+    and broke. Usually it broke in between print jobs when it was sitting for ~12hrs at night
     but not during a print. It usually snapped around the entrance to the print head where the filament
     is forced to straighten out which puts stress on the usually curved filament.
 
