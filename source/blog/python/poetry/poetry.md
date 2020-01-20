@@ -8,7 +8,7 @@ date: 20 Jan 2020
 Nice things
 
 - Reduces all of the various config files (`setup.py`, `requirements.txt`, `setup.cfg`, etc) 
-to one `pyproject.toml` in [PEP18](https://www.python.org/dev/peps/pep-0518/) so it is *official*
+to one `pyproject.toml` in [PEP518](https://www.python.org/dev/peps/pep-0518/) so it is *official*
 - Poetry is designed to use the new toml file and reduce the headache of packaging
 
 Not so nice things
