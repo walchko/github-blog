@@ -3,14 +3,18 @@ title: Secure Shell (ssh)
 date: 2012-09-10
 ---
 
+
+
 ![](pics/ssh.jpg)
 
 | Command     | Example                        | Use                       |
 | ----------- | ------------------------------ | ------------------------- |
-| ssh         | ssh <kevin@thor.local>         | login to a computer       |
+| ssh         | ssh <user@email>               | login to a computer       |
 | ssh-keygen  | ssh-keygen                     | generate an ssh key       |
 | ssh-keygen  | ssh-keygen -lvf                | view the key finger print |
-| ssh-copy-id | ssh-copy-id <kevin@loki.local> | copy key to remote server |
+| ssh-copy-id | ssh-copy-id <user@email>       | copy key to remote server |
+
+## Generate Key
 
 ```
 kevin@dalek ~ $ ssh-keygen -t ed25519 -a 100
@@ -35,6 +39,8 @@ The key's randomart image is:
 |       ..      . |
 +----[SHA256]-----+
 ```
+
+## Get a Fingerprint
 
 ```
 [kevin@Tardis ~]$ ssh-keygen -lf .ssh/test_rsa_key.pub
