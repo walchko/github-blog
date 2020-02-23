@@ -16,7 +16,7 @@ You can see the libraries at [kicad.github.io](https://kicad.github.io/).
 
 ## Github Layout
 
-![](user-paths.png)
+![](user-github.png)
 
 Good [reference](https://forum.kicad.info/t/library-management-in-kicad-version-5/14636)
 
