@@ -18,8 +18,6 @@ You can see the libraries at [kicad.github.io](https://kicad.github.io/).
 
 ![](user-github.png)
 
-Good [reference](https://forum.kicad.info/t/library-management-in-kicad-version-5/14636)
-
 From *kicad main window* -> *preferences* -> *configure paths*
 
 - KICAD_SYBMOL_DIR: symbols for schematic (`.lib`, `.dcm`)
@@ -31,3 +29,7 @@ From *kicad main window* -> *preferences* -> *configure paths*
 **Note:** Make sure to copy the `fp-lib-table` from `kicad-footprints` to your 
 project folder, otherwise you won't have footprints (so what do the preferences
 do?)
+
+# References
+
+- Good [reference](https://forum.kicad.info/t/library-management-in-kicad-version-5/14636) from kicad forum
