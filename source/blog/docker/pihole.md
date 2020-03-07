@@ -47,3 +47,22 @@ services:
       - NET_ADMIN
     restart: unless-stopped
 ```
+
+## Systemd
+
+```
+[Unit]
+Description=Some service
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker start -a container_name
+ExecStop=/usr/bin/docker stop -t 2 container_name
+
+[Install]
+WantedBy=multi-user.target
+```
+
+- [askubuntu](https://askubuntu.com/questions/620930/how-do-i-autostart-docker-container-at-system-reboot)
