@@ -8,6 +8,10 @@ but the name kept changing. So I was able to use `pihole`'s regex command to ide
 the pattern and block it.
 
 ```regex
+(^|\.)nonamehxr5\.live$
+```
+
+```regex
 /^mobile(.*)noname(.*)live$/gi
 ```
 
