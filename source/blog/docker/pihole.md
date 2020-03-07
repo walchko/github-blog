@@ -3,7 +3,7 @@ title: Pi-Hole Docker
 date: 7 Mar 2020
 ---
 
-So I haven't settled on doing this, my 2010 iMac running Ubuntu 19.10 seems to 
+So I haven't settled on doing this, to some extent, it is easier to just let the raspberry pi do it. :)
 
 Official [directions](https://github.com/pi-hole/docker-pi-hole) are here, pay close attention
 to the Ubuntu steps if running it on that linux OS.
