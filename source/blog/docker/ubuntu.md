@@ -1,5 +1,5 @@
 ---
-title: Ubuntu Setup
+title: Setup Docker on Ubuntu
 date: 14 Sept 2019
 ---
 
