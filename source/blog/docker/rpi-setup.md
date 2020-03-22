@@ -1,5 +1,5 @@
 ---
-title: Install and Setup Docker on RPi
+title: Setup Docker on RPi
 date: 22 Sept 2019
 ---
 
