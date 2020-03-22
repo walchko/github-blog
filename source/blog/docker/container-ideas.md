@@ -7,8 +7,8 @@ Here are some some cool containers to play with:
 
 - [plex media server](https://github.com/plexinc/pms-docker)[*works*]
 - [ros: robotic operating system](http://wiki.ros.org/docker/Tutorials/Docker)[*works*]
-- [pihole: ad/tracker blocker](https://github.com/pi-hole/docker-pi-hole)
-    - difficulty getting it to work ... won't bind correctly
+- [pihole: ad/tracker blocker](https://github.com/pi-hole/docker-pi-hole) [*works*]
+    - difficulty getting it to work Ubuntu, but works with some changes
 - [droppy: nodejs web based fileserver](https://github.com/silverwind/droppy)
     - not sure how useful this is ... samba is really all I need
 - [cloudcmd: nodejs web based fileserver](https://github.com/coderaiser/cloudcmd)[*works*]
@@ -24,3 +24,4 @@ My uses are:
     - this is really slow ... not sure it is any faster
     - trying to get [this working](https://github.com/MomsFriendlyRobotCompany/dpkg_opencv) better
 - Octoprint
+- pi-hole
