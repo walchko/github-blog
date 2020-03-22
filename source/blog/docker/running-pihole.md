@@ -1,5 +1,5 @@
 ---
-title: Pi-Hole Docker
+title: Running Pi-Hole Docker
 date: 7 Mar 2020
 ---
 
