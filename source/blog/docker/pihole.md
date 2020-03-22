@@ -3,7 +3,8 @@ title: Pi-Hole Docker
 date: 7 Mar 2020
 ---
 
-So I haven't settled on doing this, to some extent, it is easier to just let the raspberry pi do it. :)
+So I run pi-hole on my Ubuntu desktop in a docker container and a second pi-hole on
+a Raspberry Pi Zero (connected to my network via USB ethernet) for backup.
 
 Official [directions](https://github.com/pi-hole/docker-pi-hole) are here, pay close attention
 to the Ubuntu steps if running it on that linux OS.
@@ -48,21 +49,4 @@ services:
     restart: unless-stopped
 ```
 
-## Systemd
 
-```
-[Unit]
-Description=Some service
-Requires=docker.service
-After=docker.service
-
-[Service]
-Restart=always
-ExecStart=/usr/bin/docker start -a container_name
-ExecStop=/usr/bin/docker stop -t 2 container_name
-
-[Install]
-WantedBy=multi-user.target
-```
-
-- [askubuntu](https://askubuntu.com/questions/620930/how-do-i-autostart-docker-container-at-system-reboot)
