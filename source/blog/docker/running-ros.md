@@ -1,5 +1,5 @@
 ---
-title: Docker and ROS
+title: Running ROS in a Docker Container
 date: 14 Sept 2019
 ---
 
