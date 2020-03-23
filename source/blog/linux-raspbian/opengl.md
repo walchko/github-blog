@@ -3,6 +3,8 @@ title: OpenGL on the Raspberry Pi
 date: 23 Mar 2020
 ---
 
+![](https://upload.wikimedia.org/wikipedia/en/thumb/3/3f/OpenGL_ES_logo_%28Nov14%29.svg/320px-OpenGL_ES_logo_%28Nov14%29.svg.png)
+
 The GPU bundled with **Raspberry Pi 4** is a VideoCore VI capable of OpenGL ES 3.2, 
 a significant step above the VideoCore IV present in **Raspberry Pi 3** which could only do 
 OpenGL ES 2.0. 
@@ -37,3 +39,6 @@ $ ls /opt/vc/include
 bcm_host.h  EGL  GLES  GLES2  IL  interface  KHR  vcinclude  VG  WF
 ```
 
+# References
+
+- [Raspberrypi.com: OpenGl Drivers Update](https://www.raspberrypi.org/blog/vc4-and-v3d-opengl-drivers-for-raspberry-pi-an-update/)
