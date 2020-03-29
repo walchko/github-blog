@@ -61,6 +61,28 @@ The key's randomart image is:
 	- Ed25519 is the EdDSA signature scheme using SHA-512 (SHA-2) and Curve25519
 - Else, use RSA, 4096 bits: `ssh-keygen -t rsa -b 4096 
 
+# Disabling Host Key Check
+
+Why?? Well, when you build a lot of raspberry pi computers and the key keeps changing, it is
+annoying to keep fixing it.
+
+From the command line: `$ ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" pi@raspberrypi.local`.
+
+To perminately change it, create a `~/.ssh/config` file with:
+
+```
+Host *
+   StrictHostKeyChecking no
+   UserKnownHostsFile=/dev/null
+```
+
+Or (maybe safer)
+
+```
+Host raspberrypi.local
+   StrictHostKeyChecking no
+   UserKnownHostsFile=/dev/null
+```
 
 # References
 
