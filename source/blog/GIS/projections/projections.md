@@ -35,13 +35,15 @@ Common coordinate reference systems (CRS) used are:
         AXIS["Y",NORTH]]
     ```
 
-## Some Useful Ones
+# WGS-84 (EPSG:4326)
 
-### EPSG:4326 
+### References
 
-wikipeidia: [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System)
-spatialreference.org: [EPSG:4326](https://spatialreference.org/ref/epsg/4326/)
-epsg.io: [EPSG:4326](https://epsg.io/4326)
+- wikipeidia: [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System)
+- spatialreference.org: [EPSG:4326](https://spatialreference.org/ref/epsg/4326/)
+- epsg.io: [EPSG:4326](https://epsg.io/4326)
+
+### Details
 
 - WGS84 Bounds: -180.0000, -90.0000, 180.0000, 90.0000
 - Projected Bounds: -180.0000, -90.0000, 180.0000, 90.0000
