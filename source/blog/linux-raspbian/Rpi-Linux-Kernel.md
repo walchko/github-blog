@@ -43,3 +43,11 @@ Try:
     - `sudo CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt rpi-update`
         - `export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt`
         - `sudo rpi-update`
+
+Also:
+
+```
+sudo apt-get install ca-certificates
+sudo apt-get install ntpdate
+sudo ntpdate -u ntp.ubuntu.com
+```
