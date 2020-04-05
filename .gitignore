@@ -9,3 +9,4 @@ do_not_backup
 large_dataset
 __pycache__
 *.pyc
+._*
