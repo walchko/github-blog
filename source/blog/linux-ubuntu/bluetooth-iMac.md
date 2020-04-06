@@ -1,5 +1,5 @@
 ---
-title: Bluetooth and iMac
+title: Ubuntu Bluetooth and iMac
 date: 5 Apr 2020
 ---
 
