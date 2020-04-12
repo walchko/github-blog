@@ -5,6 +5,7 @@ import os
 import tempfile
 import shutil
 import time
+from colorama import Fore
 
 
 def run(cmd):

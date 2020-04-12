@@ -8,6 +8,7 @@ from glob import glob  # get contents of folder
 from jinja2 import Environment, FileSystemLoader  # html templating
 from collections import OrderedDict  # put toc in alphebetical order
 # from pprint import pprint
+from colorama import Fore
 
 devnull = open(os.devnull, 'w')
 
@@ -40,9 +41,9 @@ def zip_this_folder(folder, dest):
     """
     zip a folder
     """
-    run('zip -r jupyter.zip {}'.format(folder))
+    run(f'zip -r jupyter.zip {folder}')
     shutil.move('jupyter.zip', dest)
-    print(">> Zipped jupyter and moved to: {}".format(dest))
+    print(f">> Zipped jupyter and moved to: {dest}")
 
 
 def jupyter(f, dest, template, format, to_main, file):
@@ -52,12 +53,12 @@ def jupyter(f, dest, template, format, to_main, file):
     # zip_this_folder()
     # print("[[jupyter]] zip this path: {}".format(os.getcwd()))
     # zip_this_folder(os.getcwd(), dest)
-    cmd = "jupyter-nbconvert  --template basic --log-level=0 --stdout {}".format(file)
+    cmd = f"jupyter-nbconvert  --template basic --log-level=0 --stdout {file}"
     html = run(cmd)
     html = template.render(info=html.decode('utf8'), path=to_main)
     with open(dest + '/' + f + '.html', 'w') as fd:
         fd.write(html)
-    print(">> Made {}".format(f + '.html'))
+    print(f"{Fore.MAGENTA}>> Made {f}.html{Fore.RESET}")
 
 
 def markdown(f, dest, template, format, to_main, fmt):
@@ -72,7 +73,7 @@ def markdown(f, dest, template, format, to_main, fmt):
     if format == 'pdf':
         run('pandoc -V geometry:margin=1in -s -o {}.pdf {}.{}'.format(f, f, fmt))
         shutil.move(f + '.pdf', dest + '/' + f + '.pdf')
-        print(">> Made {}".format(f + '.pdf'))
+        print(f">> Made {f}.pdf")
 
     elif format == 'html':
         if template is None:
@@ -85,7 +86,7 @@ def markdown(f, dest, template, format, to_main, fmt):
         html = template.render(info=html.decode('utf8'), path=to_main)
         with open(dest + '/' + f + '.html', 'w') as fd:
             fd.write(html)
-        print(">> Made {}".format(f + '.html'))
+        print(f"{Fore.MAGENTA}>> Made {f}.html{Fore.RESET}")
 
 
 def pandoc(file, dest, template=None, format='html', to_main='.'):
@@ -107,7 +108,7 @@ def pandoc(file, dest, template=None, format='html', to_main='.'):
             f = '.'.join(file.split('.')[:-1])
             ext = file.split('.')[-1]
         except Exception:
-            print('*** this file has an issue name.ext: {} ***'.format(file))
+            print(f'{Fore.RED}*** this file has an issue name.ext: {file} ***{Fore.RESET}')
             exit(1)
 
         ext = ext.lower()
@@ -116,24 +117,24 @@ def pandoc(file, dest, template=None, format='html', to_main='.'):
             markdown(f, dest, template, format, to_main, ext)
 
         elif ext == 'html':
-            print("*** {}: left over html? You should erase it ***".format(file))
+            print(f"{Fore.RED}*** {file}: left over html? You should erase it ***{Fore.RESET}")
 
         elif ext == 'ipynb':
             jupyter(f, dest, template, format, to_main, file)
 
         else:
             path = dest + '/' + file
-            print('>> Copying file {}'.format(file))
+            print(f'{Fore.CYAN}>> Copying file {file}{Fore.RESET}')
             shutil.copy(file, path)
 
     # let's handle directories
     elif os.path.isdir(file):
         if file.lower() in SKIP_FOLDERS:
-            print('>> Skipping folder {}'.format(file))
+            print(f'{Fore.YELLOW}>> Skipping folder {file}{Fore.RESET}')
             return
 
         # this must be a directory, let's change into it
-        print('==[{:15}] ==============================='.format(file))
+        print(f'==[{file:15}] ===============================')
 
         # make the destination path have the same folder
         path = dest + '/' + file
@@ -147,7 +148,7 @@ def pandoc(file, dest, template=None, format='html', to_main='.'):
         os.chdir('../')
     else:
         print('***********************************')
-        print('*** Unknown File Type: {}'.format(file))
+        print(f'*** Unknown File Type: {file}')
         print('***********************************')
         # raise Exception()
 
@@ -188,7 +189,7 @@ def build_toc(template):
             elif os.path.isfile(o):
                 files.append(o)
             else:
-                print("*** Unknown: {} ***".format(o))
+                print(f"{Fore.RED}*** Unknown: {o} ***{Fore.RESET}")
 
         # if len(dirs) == 0:
         #     dirs = None
@@ -265,7 +266,7 @@ def build_toc(template):
     html = template.render(TOC=toc, path='.')
     with open('../html/topics.html', 'w') as fd:
         fd.write(html)
-    print(">> Made {}".format('topics.html'))
+    print(f"{Fore.CYAN}>> Made topics.html{Fore.RESET}")
     # exit(0)
 
 
