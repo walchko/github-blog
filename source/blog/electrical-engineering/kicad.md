@@ -1,6 +1,6 @@
-![](pics/kicad.png)
-
-# KiCad
+---
+title: KiCad
+---
 
 ## Adding Libraries
 

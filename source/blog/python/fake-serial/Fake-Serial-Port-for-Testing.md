@@ -1,6 +1,6 @@
-![](../pics/python-snake.jpg){width=100%}
-
-# Creating a Fake Serial Port for Testing
+---
+tile: Creating a Fake Serial Port for Testing
+---
 
 ## `pyserial`
 

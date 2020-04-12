@@ -1,7 +1,9 @@
-# Various Licenses
+---
+title: Various Licenses
+---
 
-There are so many types of open source licenses, it is hard to keep track 
-of them. Here is a nice summary from 
+There are so many types of open source licenses, it is hard to keep track
+of them. Here is a nice summary from
 [choosealicense.com](https://choosealicense.com/appendix/). If you click
 on any of the licenses, a description with clear summary (not shown below
 because it is javascript I think) appears along with the a template
@@ -9,9 +11,9 @@ of the actual license
 
 ## [MIT](https://choosealicense.com/licenses/mit/)
 
-A short and simple permissive license with conditions only requiring 
-preservation of copyright and license notices. Licensed works, 
-modifications, and larger works may be distributed under different terms and 
+A short and simple permissive license with conditions only requiring
+preservation of copyright and license notices. Licensed works,
+modifications, and larger works may be distributed under different terms and
 without source code.
 
 ```bash
@@ -37,7 +39,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-
-
-
-

@@ -1,15 +1,14 @@
-# Updating Raspbian
-
-
-:date: 2017-10-08
-:summary: Keeping Raspbian updated
+---
+title: Automatically Updating Raspbian with a Service
+date: 2017-10-08
+---
 
 # My Current Method
 
 I wrote a bash script called `setup-auto-upgrade.sh` (shown below) that:
 - creates a service which runs weekly
     - the service calls a script located in the `pi` home directory called
-	`autoupgrade.sh` ... you will need to change this location for your system 
+	`autoupgrade.sh` ... you will need to change this location for your system
 - updates:
     - the OS using `apt-get`
     - python 2 libraries using `pip`

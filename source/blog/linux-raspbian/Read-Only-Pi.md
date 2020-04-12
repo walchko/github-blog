@@ -1,4 +1,6 @@
-# Read Only Raspberry Pi
+---
+title: Read Only Raspberry Pi
+---
 
 Apparently the good people over at Adafruit figured out (with some help) how to
 make the raspberry pi a read only system so you don't have to worry about proper

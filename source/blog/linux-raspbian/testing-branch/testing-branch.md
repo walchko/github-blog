@@ -1,4 +1,6 @@
-# Adding Testing to Apt
+---
+title: Adding Testing to Apt
+---
 
 Sometimes you want access to new software. Adding testing to your repos allows you
 to get access to newer software.

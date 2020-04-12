@@ -1,7 +1,7 @@
-# macOS Command Line
-
-:date: 2016-06-25
-:summary: Setting up your command line on macOS
+---
+title: macOS Command Line
+date: 2016-06-25
+---
 
 My `.bash_profile`:
 

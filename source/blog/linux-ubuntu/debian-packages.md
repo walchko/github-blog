@@ -1,4 +1,6 @@
-# Debian Packages
+---
+title: Debian Packages
+---
 
 | Syntax | Description | Exmaple |
 |---|---|---|
@@ -18,7 +20,7 @@
 Here I have built a test package that installs everything to `./tmp`
 
 ```
-kevin@dalek:~/github/gecko/build$ dpkg -c gecko-0.2.0-Linux.deb 
+kevin@dalek:~/github/gecko/build$ dpkg -c gecko-0.2.0-Linux.deb
 drwxr-xr-x root/root         0 2019-04-06 10:10 ./tmp/
 drwxr-xr-x root/root         0 2019-04-06 10:10 ./tmp/bin/
 -rwxr-xr-x root/root     32280 2019-04-06 10:10 ./tmp/bin/echo

@@ -1,8 +1,7 @@
-# Compare File Saving
-
-
-:date: 2017-08-09
-:summary: Compare file saving (shelve, json, gzip, and pickle) in python
+---
+title: Compare File Saving
+date: 2017-08-09
+---
 
 Saving data to disk has several options:
 

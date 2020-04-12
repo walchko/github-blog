@@ -1,5 +1,6 @@
-# Reverse Polarity Protection for Power Systems
-
+---
+title: Reverse Polarity Protection for Power Systems
+---
 
 ## Preventing Reverse Polarity
 

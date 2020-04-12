@@ -1,5 +1,6 @@
-# Github API v3
-
+---
+title: Github API v3
+---
 
 
 - List user public repos: `curl https://api.github.com/users/walchko/repos`

@@ -1,6 +1,6 @@
-![](pics/thumb-drive.png)
-
-# Thumb Drive
+---
+title: Thumb Drive
+---
 
 This is a summary of the reference below. The assumptions are:
 

@@ -1,6 +1,7 @@
-# Setup a New Raspbian Image for Headless Operation
-
-:date: 27 May 2019
+---
+title: Setup a New Raspbian Image for Headless Operation
+date: 27 May 2019
+---
 
 After you burn a Raspbian Image, you should see the `boot` directory on your desktop.
 

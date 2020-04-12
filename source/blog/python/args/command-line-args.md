@@ -1,4 +1,6 @@
-# Python and Command Line Args
+---
+title: Python and Command Line Args
+---
 
 ```python
 import sys

@@ -1,4 +1,6 @@
-# Cool Interactive Bash Setup Script
+---
+title: Cool Interactive Bash Setup Script
+---
 
 I didn't write this, but I like how it is done
 

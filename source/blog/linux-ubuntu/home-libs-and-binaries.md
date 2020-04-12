@@ -1,8 +1,8 @@
-![](pics/linux-banner.png)
+---
+title: Home Libraries and Binaries
+---
 
-# Home Libraries and Binaries
-
-In order to not polute my system libraries with binaries/libraries 
+In order to not polute my system libraries with binaries/libraries
 I build from source. Life would be great if everyone always built packages
 for their software, but that isn't easy.
 

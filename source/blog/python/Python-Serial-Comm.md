@@ -1,6 +1,6 @@
-<img src="pics/python-snake.jpg" width="100%">
-
-# Serial Comm
+---
+title: Serial Communications
+---
 
 A simple python serial example is:
 

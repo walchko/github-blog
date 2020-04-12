@@ -1,3 +1,5 @@
-# Linux Permissions
+---
+title: Linux Permissions
+---
 
 ![](pics/linux-permissions.jpg)

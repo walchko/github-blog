@@ -1,4 +1,6 @@
-# GPS
+---
+title: GPS
+---
 
 Using Adafruit's gps library for CircuitPython on normal python, I can parse the GPS strings.
 

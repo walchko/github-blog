@@ -1,6 +1,7 @@
-# Atom
-
-:date:   2016-03-27
+---
+title: Atom
+date:   2016-03-27
+---
 
 [Atom] editor by Github. It is really good and has a package system to
 support a variety of languages and other things (like rst/latex

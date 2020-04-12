@@ -1,4 +1,6 @@
-# Using the Serial Port from the Command Line
+---
+title: Using the Serial Port from the Command Line
+---
 
 ![](pics/serial-screen.png)
 

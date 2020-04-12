@@ -1,4 +1,6 @@
-# Struct
+---
+title: Struct
+---
 
 ```bash
 >>> import struct

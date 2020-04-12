@@ -13,7 +13,7 @@ DLNA
 Update
 -------
 
-I now use `Plex <https://www.plex.tv`_ to serve up media at home on my Raspberry
+I now use `Plex <https://www.plex.tv>`_ to serve up media at home on my Raspberry
 Pi.
 
 Original Article

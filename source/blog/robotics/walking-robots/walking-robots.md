@@ -1,6 +1,6 @@
-![](gits.gif)
-
-# Walking Robots
+---
+title: Walking Robots
+---
 
 ![](one.gif)
 

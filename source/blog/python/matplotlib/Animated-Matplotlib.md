@@ -1,4 +1,6 @@
-# Matplotlib
+---
+title: Animated Plots in Matplotlib
+---
 
 Sparkfun has a nice tutorial to plot data in real-time with `matplotlib`:
 

@@ -1,6 +1,6 @@
-<img src="pics/python-snake.jpg" width="100%">
-
-# Temporary Files and Folders
+---
+title: Temporary Files and Folders
+---
 
 Create a simple temp file:
 

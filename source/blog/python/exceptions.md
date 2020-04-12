@@ -1,4 +1,6 @@
-# Exceptions
+---
+title: Exceptions
+---
 
 - [Python 3 documentation](https://docs.python.org/3/tutorial/errors.html)
 - [Python 3 Exceptions](https://docs.python.org/3/library/exceptions.html#Exception)

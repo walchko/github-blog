@@ -1,4 +1,6 @@
-# IPv6
+---
+title: IPv6
+---
 
 ![](pics/ipv6.jpg)
 

@@ -1,4 +1,6 @@
-# Binder
+---
+title: Jupyter Notebook Binder and Github
+---
 
 Turn a Git repo into a collection of interactive notebooks
 

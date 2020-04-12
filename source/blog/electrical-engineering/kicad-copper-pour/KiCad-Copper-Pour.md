@@ -1,6 +1,6 @@
-![](../pics/kicad.png)
-
-# Creating a Copper Pour
+---
+title: Creating a Copper Pour
+---
 
 This is a much shorter version of this [tutorial](https://www.wayneandlayne.com/blog/2013/02/26/kicad-tutorial-copper-pours-fills/)
 

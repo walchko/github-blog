@@ -1,6 +1,6 @@
-![](pics/rpi-org.png){width=300px}
-
-# Creating a RAM Disk
+---
+title: Creating a RAM Disk
+---
 
 ## Create Mount Point
 

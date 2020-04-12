@@ -1,4 +1,6 @@
-# Strength of Materials (or Mechanics of Materials)
+---
+title: Strength of Materials (or Mechanics of Materials)
+---
 
 ## References
 
@@ -34,11 +36,11 @@ The **highest** point of the stress-strain curve is the UTS.
 
 # PLA vs ABS
 
-**ABS** plastic filament stands for acrylonitrile butadiene styrene. 
+**ABS** plastic filament stands for acrylonitrile butadiene styrene.
 It is a sturdy and strong plastic that is oil-based.
 
-**PLA** filament is made from sugarcane and cornstarch which are organic 
-materials called  polylactic acid. Unlike ABS, PLA has a crystaline 
+**PLA** filament is made from sugarcane and cornstarch which are organic
+materials called  polylactic acid. Unlike ABS, PLA has a crystaline
 structure (due to sugar and cornstarch) which makes it brittle. Any cracks
 that form tend to propagate easily. Also, under the right compost conditions,
 PLA is biodegradable.

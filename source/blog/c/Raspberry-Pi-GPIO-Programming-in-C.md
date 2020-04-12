@@ -1,6 +1,6 @@
-![](pics/Raspberry-GPIO.jpg)
-
-# Raspberry Pi GPIO Programming in C
+---
+title: Raspberry Pi GPIO Programming in C
+---
 
 I was looking around the interweb for how to program the RPi in C and found a good reference.
 The reference below does a great job about talking about this. There are 3 libraries

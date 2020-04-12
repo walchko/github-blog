@@ -1,4 +1,6 @@
-# Audio Capture in Python
+---
+title: Audio Capture in Python
+---
 
 ## SOX
 

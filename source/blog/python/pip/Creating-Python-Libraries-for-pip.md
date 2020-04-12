@@ -1,7 +1,7 @@
 ---
 title: Python Modules
 date: 2017-06-21
-summary: Making a Python package for Pypi
+abstract: Making a Python package for Pypi
 ---
 
 ![](https://imgs.xkcd.com/comics/python_environment.png)

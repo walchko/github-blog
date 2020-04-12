@@ -1,4 +1,6 @@
-# C and Python Integration
+---
+title: C and Python Integration
+---
 
 | Approach	          | Vintage |	Representative User	| Notable Pros                                          | Notable Cons |
 |---------------------|---------|---------------------|-------------------------------------------------------|--------------|
@@ -20,8 +22,8 @@ import math, time, ctypes
 R = range(100000)
 
 # ctypes.RTLD_GLOBAL: Flag to use as mode parameter.
-# The mode parameter can be used to specify how the library is loaded. For details, 
-# consult the dlopen(3) manpage. On Windows, mode is ignored. On posix systems, 
+# The mode parameter can be used to specify how the library is loaded. For details,
+# consult the dlopen(3) manpage. On Windows, mode is ignored. On posix systems,
 # RTLD_NOW is always added, and is not configurable.
 libc = ctypes.CDLL("libc.dylib", ctypes.RTLD_GLOBAL)
 libc.cos.argtypes = [ctypes.c_double]  # args
@@ -112,15 +114,15 @@ gcc square.o -shared -o square.so # compile to shared object file
 ```python
 import numpy as np
 import ctypes
- 
+
 square = ctypes.cdll.LoadLibrary("./square.so")
- 
+
 n = 5
 a = np.arange(n, dtype=np.double)
- 
+
 aptr = a.ctypes.data_as(ctypes.POINTER(ctypes.c_double))
 square.square(aptr, n)
- 
+
 print(a)
 ```
 

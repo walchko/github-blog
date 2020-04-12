@@ -1,5 +1,6 @@
-# Adjustable Voltage Regulators
-
+---
+title: Adjustable Voltage Regulators
+---
 
 ## LM317/LM338 Adjustable Regulators
 

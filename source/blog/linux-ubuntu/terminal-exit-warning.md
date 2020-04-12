@@ -1,6 +1,8 @@
-# Stop Terminal Exit Warning
+---
+title: Stop Terminal Exit Warning
+---
 
-If you have a program running like `ssh` and try to close a window, it 
+If you have a program running like `ssh` and try to close a window, it
 will warn you the program is still running. To stop the stupid issue:
 
 ```

@@ -1,4 +1,6 @@
-# Adafruit I2S MEMS Microphone Breakout
+---
+title: Adafruit I2S MEMS Microphone Breakout
+---
 
 ![](pics/i2s-mic.jpg)
 

@@ -1,4 +1,6 @@
-# Power Connectors
+---
+title: Power Connectors
+---
 
 ![](power-connectors.jpg)
 

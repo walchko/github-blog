@@ -1,9 +1,10 @@
-# INS Errors
-
-12 May 2019
+---
+title: INS Errors
+date: 12 May 2019
+---
 
 This is just a quick summary of error an IMU would see and some great tables
-I found in the reference website below. 
+I found in the reference website below.
 
 ## Accelerometers
 
@@ -29,7 +30,7 @@ like 4-point or 6-point tumble testing respectively.
 ## Gyroscopes
 
 Gyro errors have the largest impact on INS performance. Gyros have a random walk
-component of error that cannot be calibrated out using standard methods. 
+component of error that cannot be calibrated out using standard methods.
 
 ![](pics/gyroscope-bias---figure-1.png)
 

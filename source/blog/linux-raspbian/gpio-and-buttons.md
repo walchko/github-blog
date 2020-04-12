@@ -1,4 +1,6 @@
-# GPIO and Buttons
+---
+title: GPIO and Buttons
+---
 
 ## Power Button
 
@@ -40,7 +42,7 @@ subprocess.call(['shutdown', '-h', 'now'], shell=False)
 
 ## Temperature Controlled Fan
 
-You can do a similar things with a fan. You can set the pin 
+You can do a similar things with a fan. You can set the pin
 and temperature which it will turn on:
 
 ```

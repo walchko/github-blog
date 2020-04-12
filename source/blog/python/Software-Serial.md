@@ -1,4 +1,6 @@
-# Software Serial Port
+---
+title: Software Serial Port
+---
 
 You can create a software serial port (bit banging) using the `pigpio` library.
 

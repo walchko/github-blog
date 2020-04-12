@@ -1,10 +1,10 @@
-![](pics/c.png){width=200px}
+---
+title: Serial Port
+---
 
-# Serial Port
-
-- **O_NOCTTY:** If pathname refers to a terminal device — it will not become the process's controlling terminal even if the process does not have one. O_NOFOLLOW : If pathname is a symbolic link, then the open fails. 
-- **O_NONBLOCK:** When possible, the file is opened in non-blocking mode. Neither the open() nor any subsequent operations on the file descriptor which is returned will cause the calling process to wait. This option is equivalent to O_NODELAY option. 
-- **O_SYNC:** The file is opened for synchronous I/O. Any write on the resulting file descriptor will block the calling process until the data has been physically written to the underlying hardware. 
+- **O_NOCTTY:** If pathname refers to a terminal device — it will not become the process's controlling terminal even if the process does not have one. O_NOFOLLOW : If pathname is a symbolic link, then the open fails.
+- **O_NONBLOCK:** When possible, the file is opened in non-blocking mode. Neither the open() nor any subsequent operations on the file descriptor which is returned will cause the calling process to wait. This option is equivalent to O_NODELAY option.
+- **O_SYNC:** The file is opened for synchronous I/O. Any write on the resulting file descriptor will block the calling process until the data has been physically written to the underlying hardware.
 
 `gcc -o serial serial.c`
 

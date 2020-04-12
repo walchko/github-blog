@@ -1,4 +1,6 @@
-# RAID
+---
+title: Setting Up RAID
+---
 
 Here I am looking at RAID-1 or mirroring.
 
@@ -26,9 +28,9 @@ pi@plex ~ $ sudo hdparm -t /dev/sda1
 /dev/sda1:
  Timing buffered disk reads:  84 MB in  3.03 seconds =  27.69 MB/sec
  ```
- 
+
  SSD 2.5" drive:
- 
+
  ```bash
 pi@ultron ~ $ sudo hdparm -t /dev/sdb1
 

@@ -1,4 +1,6 @@
-# Submodules
+---
+title: Submodules
+---
 
 Simple cheatsheet
 

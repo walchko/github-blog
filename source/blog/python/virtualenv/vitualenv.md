@@ -1,6 +1,6 @@
-![](virt.jpg)
-
-# Python Virtual Environments
+---
+title: Python Virtual Environments
+---
 
 These virtual environments allow you to keep different libraries separated or
 test out new libraries without polluting your OS `site-packages`.
