@@ -1,5 +1,6 @@
 ---
 title: Software Serial on RPi
+date: 7 Sep 2016
 ---
 
 If you need an extra serial port, you do a SW serial port
