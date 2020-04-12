@@ -1,6 +1,8 @@
-![](mappers.gif)
+---
+title: Lidar Drivers
+---
 
-# Lidar
+![](mappers.gif)
 
 [rplidar driver](https://github.com/MomsFriendlyRobotCompany/rplidar)
 
