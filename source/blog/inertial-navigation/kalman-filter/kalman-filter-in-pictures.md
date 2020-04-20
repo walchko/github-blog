@@ -1,5 +1,5 @@
 ---
-title: Kalman Filter
+title: Bzgard Kalman Filter in Pictures
 date: 10 Aug 2019
 ---
 
@@ -36,6 +36,8 @@ date: 10 Aug 2019
 ![](gauss_14.jpg)
 
 ![](gauss_joint.png)
+
+![](kalflow.png)
 
 # References
 
