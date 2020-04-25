@@ -202,7 +202,7 @@ def build_toc(template):
     blog, _ = getDirFile('blog/*')
     for b in blog:
         dirs, files = getDirFile(b + '/*')
-        print(dirs, files)
+        # print(dirs, files)
         jup = []
         # get folders with jupyter notebooks in them
         if dirs:
