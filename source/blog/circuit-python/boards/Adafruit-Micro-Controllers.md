@@ -49,11 +49,3 @@ You can interact with the board's REPL using `screen /dev/tty* 115200`. Linux se
 ## Trinket M0
 
 <img src="Trinket_M0.png" width="500px">
-
-## ItsyBitsy M0
-
-<img src="pics/Trinket_M0.png" width="500px">
-
-## ItsyBitsy M4
-
-<img src="pics/Trinket_M0.png" width="500px">
