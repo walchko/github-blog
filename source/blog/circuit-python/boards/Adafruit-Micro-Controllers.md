@@ -14,7 +14,8 @@ CircuitPython is a lean and efficient implementation of the Python 3 programming
 
 ## Documentation
 
-[Read the docs](https://circuitpython.readthedocs.io/en/latest/docs/index.html)
+[CircuitPython Latest Docs](https://circuitpython.readthedocs.io/en/latest/docs/index.html)
+[Adafruit CircuitPython Library Bundle Docs](https://circuitpython.readthedocs.io/projects/bundle/en/latest/index.html)
 
 ## Libraries
 
