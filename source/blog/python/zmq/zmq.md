@@ -1,4 +1,6 @@
-# ZeroMQ
+---
+title: ZeroMQ
+---
 
 # Dealer and Router
 
