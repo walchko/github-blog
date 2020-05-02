@@ -19,4 +19,4 @@ date: 28 Dec 2019
 - Great men are forged in fire. It is the privilege of lesser men to light the flame.
 - Never cruel or cowardly. Never give up, never give in.
 - Rest is for the weary, sleep is for the dead.
-- People assume that time is a strict progression of cause to effect, but *actually* from a non-linear, non-subjective viewpoint – it’s more like a big ball of wibbly wobbly… time-y wimey… stuff
+- People assume that time is a strict progression of cause to effect, but *actually* from a non-linear, non-subjective viewpoint, it’s more like a big ball of wibbly wobbly ... timey wimey ... stuff
