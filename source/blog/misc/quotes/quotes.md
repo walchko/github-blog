@@ -7,10 +7,9 @@ date: 28 Dec 2019
 
 - I'm not an engineer but I've been a student of earth's gravity ever since I discovered I could not fly like Superman
 
+## Doctor Who
 
 ![](https://media.giphy.com/media/WjAkQjz7h9ESA/giphy.gif)
-
-## Doctor Who
 
 - Rule 1: The Doctor lies.
 - The way I see it, every life is a pile of good things and… bad things. The good things don’t always soften the bad things, but vice versa, the bad things don’t necessarily spoil the good things or make them unimportant.
