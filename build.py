@@ -37,13 +37,13 @@ def rmdir(path):
         pass
 
 
-def zip_this_folder(folder, dest):
-    """
-    zip a folder
-    """
-    run(f'zip -r jupyter.zip {folder}')
-    shutil.move('jupyter.zip', dest)
-    print(f">> Zipped jupyter and moved to: {dest}")
+# def zip_this_folder(folder, dest):
+#     """
+#     zip a folder
+#     """
+#     run(f'zip -r jupyter.zip {folder}')
+#     shutil.move('jupyter.zip', dest)
+#     print(f">> Zipped jupyter and moved to: {dest}")
 
 
 def jupyter(f, dest, template, format, to_main, file):
@@ -53,7 +53,8 @@ def jupyter(f, dest, template, format, to_main, file):
     # zip_this_folder()
     # print("[[jupyter]] zip this path: {}".format(os.getcwd()))
     # zip_this_folder(os.getcwd(), dest)
-    cmd = f"jupyter-nbconvert  --template basic --log-level=0 --stdout {file}"
+
+    cmd = f"jupyter-nbconvert --to html --template full --log-level=0 --stdout {file}"
     html = run(cmd)
     html = template.render(info=html.decode('utf8'), path=to_main)
     with open(dest + '/' + f + '.html', 'w') as fd:
