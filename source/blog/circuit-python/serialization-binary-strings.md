@@ -42,6 +42,7 @@ h = hexlify(d)
 # on the computer side, unpack h to get output, which itself can
 # be unpacked again with struct.unpack ... holy crap this sucks!
 output = unhexlify(h)
+```
 
 You can also do:
 
