@@ -1,5 +1,5 @@
 ---
-title: ESC
+title: Electronic Speed Control (ESC)
 date: 15 Dec 2019
 ---
 

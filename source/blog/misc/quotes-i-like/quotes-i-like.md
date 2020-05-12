@@ -12,7 +12,7 @@ date: 28 Dec 2019
 ![](https://media.giphy.com/media/WjAkQjz7h9ESA/giphy.gif)
 
 - Rule 1: The Doctor lies.
-- The way I see it, every life is a pile of good things and… bad things. The good things don’t always soften the bad things, but vice versa, the bad things don’t necessarily spoil the good things or make them unimportant.
+- The way I see it, every life is a pile of good things and bad things. The good things don’t always soften the bad things, but vice versa, the bad things don’t necessarily spoil the good things or make them unimportant.
 - Never ignore coincidence. Unless, of course, you’re busy. In which case, always ignore coincidence.
 - There’s something that doesn’t make sense. Let’s go and poke it with a stick.
 - The only water in the forest is the River.
@@ -23,6 +23,6 @@ date: 28 Dec 2019
 
 ## Ghost in the Shell
 
-![](https://i.pinimg.com/originals/92/ac/a5/92aca5c943f306aac225cd6f2839e0bb.gif){width: 400px}
+![](https://i.pinimg.com/originals/92/ac/a5/92aca5c943f306aac225cd6f2839e0bb.gif){width=400px}
 
 - **Tachikoma:** And you know that "existence of God" thing that I had trouble understanding before? I think I am starting to understand it now. Maybe, just maybe, it's a concept that's similar to a zero in mathematics. In other words, it's a symbol that denies the absence of meaning, the meaning that's necessitated by the delineation of one system from another. In analog, that's God. In digital, it's zero. what do you think? Also, our basic construction is digital, right? So for the time being, no matter how much data we accumulate, we'll never have a Ghost. But analog-based people like you, Batou-san, no matter how many digital components you add through cyberization or prosthetics, your Ghost will never be damaged. Plus, you can even die 'cause you've got a Ghost. You're so lucky. Tell me, what's it feel like to have a Ghost?
