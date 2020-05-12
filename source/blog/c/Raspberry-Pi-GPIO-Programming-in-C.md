@@ -225,6 +225,71 @@ int main(int argc, char **argv)
 }
 ```
 
+```c
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <cmath>
+#include <sys/ioctl.h>
+#include <linux/i2c.h>
+#include <linux/i2c-dev.h>
+
+int file = -1;
+
+if ((file=open("/dev/i2c_1", O_RDWR))<0){
+	printf("ERROR openning I2C\n");
+	exit(1);
+}
+
+if (ioctl(file, I2C_SLAVE, HMC5883) < 0) {
+	printf("Can not set device address %d\n", HMC5883);
+	return;
+}
+if (i2c_smbus_write_byte_data(file, 0x02, 0) < 0) {
+	printf("i2c write failed\n"); // mode register, continuous measurement mode
+}
+if (i2c_smbus_write_byte_data(file, 0x01, 0x20) < 0) {
+	print("i2c write failed\n"); // configuration register B, set range to +/-1.3Ga (gain 1090)
+}
+
+int read_magnetometer(float &x, float &y, float &z) {
+    if (ioctl(file, I2C_SLAVE, HMC5883) < 0) {
+        printf("Can not set device address %d", HMC5883);
+        return 0;
+    }
+
+    uint8_t buf[6] = {0};
+    i2c_smbus_read_i2c_block_data(file, 0x03, 6, buf);
+
+    uint16_t ux = ((uint16_t)buf[0] << 8) | ((uint16_t)buf[1]); // big endian [hi_bit, low_bit, hi_bit, low_bit ...]
+    uint16_t uz = ((uint16_t)buf[2] << 8) | ((uint16_t)buf[3]);
+    uint16_t uy = ((uint16_t)buf[4] << 8) | ((uint16_t)buf[5]);
+
+    int16_t xraw = *(int16_t *)(void *)&ux; // why?
+    int16_t yraw = *(int16_t *)(void *)&uy;
+    int16_t zraw = *(int16_t *)(void *)&uz;
+
+    x = float(xraw)/1090. - offset_x;
+    y = float(yraw)/1090. - offset_y;
+    z = float(zraw)/1090. - offset_z;
+
+    return 1;
+}
+
+int get_heading(float &heading) {
+    float x, y, z;
+    int res = read_magnetometer(x, y, z);
+    if (!res) return false;
+
+    heading = atan2(y, x);
+    if (heading < 0     ) heading += 2*M_PI;
+    if (heading > 2*M_PI) heading -= 2*M_PI;
+    heading = heading*180/M_PI;
+    return 1;
+}
+```
+
 # References
 
 - [Raspberry Pi GPIO Programming in C](https://www.bigmessowires.com/2018/05/26/raspberry-pi-gpio-programming-in-c/)
+- [IMU C++ driver](https://github.com/ssloy/quadruped/blob/master/gy-85.cpp)
