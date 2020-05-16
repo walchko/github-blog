@@ -3,15 +3,13 @@ title: Neural Network Overview
 date: 12 Aug 2019
 ---
 
-## Neural Netowrk (NN) Types
-
-### Convolutional Neural Network (CNN)
+## Convolutional Neural Network (CNN)
 
 The heart of this is convolution:
 
 ![](conv.gif)
 
-- CNNs are feedforward systems, meaning, info is fed from one layer to the next
+- CNNs are **feedforward** systems, meaning, info is fed from one layer to the next
 - CNNs only consider the current inputs
 - Layers:
     - *Convolution layer:* most computational heavy lifting layer
@@ -22,14 +20,29 @@ The heart of this is convolution:
     standard deviation of 1. This improves performance and stability of the NN.
     There are many different normalizing layer topologies like ReLU.
 - Common uses: object identification in computer vision
+    - **Convolution** is a standard method in image processing for finding edges or changes
+    in the local gradient
+    - Summing these finding up (from a preceeding convolutional layer) helps the NN to
+    identify features in an image
+    
 
-### Recursive Neural Network (RNN)
+## Recursive Neural Network (RNN)
 
-- Similar to CNN, but RNNs have a feedback capability
+- Similar to CNN, but RNNs have a **feedback** capability
 - RNNs concider both the current and previous inputs
     - can predicct what comes next because it learns order
 - Common uses: stock prediction, trading stock, language, or anyting that
-follows a pattner
+follows a pattern and changes with **time**
+    - Feedback can be from a neuron to itself or to a previous layer
+
+## Autoencoder (Shallow, linear)
+
+- Transform a high dimensional data ($X$) to fewer dimension ($Z$) and then back to a 
+higher dimension ($\hat X$) which is an estimate of $X$
+    - Essentially, implement Principle Component Analysis (PCA)
+    - Allows compression of high dimensional down to the important dimension (PCA)
+    - Can allow better understanding of the information, since it is reduced to fewer 
+    parameters ($Z$) than the original ($X$)
 
 ## Neural Networks (NN) Libraries
 
