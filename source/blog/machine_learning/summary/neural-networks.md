@@ -3,6 +3,17 @@ title: Neural Network Overview
 date: 12 Aug 2019
 ---
 
+Ideally, we want to take first principles (i.e. $F=ma$) and develop a model of a system that we can
+use. However, systems are inherently becoming more complex and more non-linear ($\hat x = f(x,t,u; \beta)$) 
+and we may not be able to develop them from first principles. Thus, we need to take data from sensors
+and try to create a model (preferable lower dimensional and intuitive) that suits our purposes.
+Generally, I am interested in:
+
+- Controls 
+- Estimation (predict future states or guess at unmeasureable states)
+- Anomoly detection
+- Operations in noisy environments
+
 ## Convolutional Neural Network (CNN)
 
 The heart of this is convolution:
