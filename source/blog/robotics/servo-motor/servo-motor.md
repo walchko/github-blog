@@ -62,3 +62,7 @@ GPIO.cleanup()
 
 This will turn an RC servo. Since the timing varies between servos, you
 will have to adjust the duty cycle timing for your exact servo.
+
+# References
+
+- [PCA-9685 board instructions](pca9685.pdf)
