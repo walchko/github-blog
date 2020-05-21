@@ -47,6 +47,12 @@ sudo add-apt-repository "deb [arch=amd64] https://packagecloud.io/AtomEditor/ato
 sudo apt install atom
 ```
 
+Ubuntu 20.04 without having to install python 2.7
+
+```
+sudo snap install atom --classic
+```
+
 ## Node.js
 
 ```
