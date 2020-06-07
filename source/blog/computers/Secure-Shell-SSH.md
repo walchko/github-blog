@@ -44,6 +44,18 @@ The key's randomart image is:
 2048 d0:4a:98:88:95:65:6e:3c:59:7d:10:db:1d:00:10:40  kevin@tardis.local (RSA)
 ```
 
+## Adding Key
+
+```
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+  IdentityFile ~/.ssh/id_rsa # Keep any old key files if you want
+```
+
+Then to update add key to SSH agent: `ssh-add -K ~/.ssh/id_ed25519`
+
 ## Best Practices
 
 - **rsa:** an old algorithm based on the difficulty of factoring large numbers. A key size of at least 2048 bits is recommended for RSA; 4096 bits is better. RSA is getting old and significant advances are being made in factoring. Choosing a different algorithm may be advisable. It is quite possible the RSA algorithm will become practically breakable in the foreseeable future. All SSH clients support this algorithm.
@@ -88,3 +100,4 @@ Host raspberrypi.local
 - [StackExchange: use ed25519](https://security.stackexchange.com/a/144044)
 - [wikipedia: EdDSA](https://en.wikipedia.org/wiki/EdDSA)
 - [ssh.com keygen](https://www.ssh.com/ssh/keygen)
+- Medium: [Upgrade Your SSH Key to Ed25519](https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54)
