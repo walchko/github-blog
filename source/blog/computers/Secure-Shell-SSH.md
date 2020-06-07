@@ -4,9 +4,6 @@ date: 2012-09-10
 ---
 
 
-
-![](pics/ssh.jpg){width=200px}
-
 | Command     | Example                        | Use                       |
 | ----------- | ------------------------------ | ------------------------- |
 | ssh         | ssh <user@email>               | login to a computer       |
