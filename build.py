@@ -9,6 +9,8 @@ from jinja2 import Environment, FileSystemLoader  # html templating
 from collections import OrderedDict  # put toc in alphebetical order
 # from pprint import pprint
 from colorama import Fore
+import pathlib
+from pprint import pprint
 
 devnull = open(os.devnull, 'w')
 
@@ -18,7 +20,7 @@ SKIP_FOLDERS = ['old', 'do_not_backup', 'deleteme', 'large_dataset', 'draft']
 def run(cmd):
     # given a command string, it runs it
     cmds = cmd.split()
-    return check_output(cmds)
+    return check_output(cmds).decode("utf8")
 
 
 def mkdir(path):
@@ -30,12 +32,36 @@ def mkdir(path):
 
 
 def rmdir(path):
+    # if not isinstance(path, list):
+    #     path = [path]
+    # for p in path:
     try:
         shutil.rmtree(path)
     except FileNotFoundError:
         # folder was already deleted or doesn't exist ... it's ok
         pass
 
+def rm(fname):
+    if fname is None:
+        print("no file to remove")
+        return
+    if not isinstance(fname, list):
+        fname = [fname]
+    for f in fname:
+        try:
+            os.remove(f)
+            print(f"{Fore.RED}- {f}{Fore.RESET}")
+        except FileNotFoundError:
+            # folder was already deleted or doesn't exist ... it's ok
+            pass
+
+def find(path, fname):
+    """Given a path, this will recursively search for a file (bob.txt) or
+    pattern (*.txt). It returns an array of found file paths."""
+    fn = []
+    for p in pathlib.Path(path).rglob(fname):
+        fn.append(p)
+    return fn
 
 # def zip_this_folder(folder, dest):
 #     """
@@ -56,7 +82,7 @@ def jupyter(f, dest, template, format, to_main, file):
 
     cmd = f"jupyter-nbconvert --to html --template full --log-level=0 --stdout {file}"
     html = run(cmd)
-    html = template.render(info=html.decode('utf8'), path=to_main)
+    html = template.render(info=html, path=to_main)
     with open(dest + '/' + f + '.html', 'w') as fd:
         fd.write(html)
     print(f"{Fore.MAGENTA}>> Made {f}.html{Fore.RESET}")
@@ -84,7 +110,7 @@ def markdown(f, dest, template, format, to_main, fmt):
             html = run('pandoc -s -r markdown+simple_tables+table_captions+yaml_metadata_block --highlight-style=pygments -t html5 {}.{}'.format(f, fmt))
         else:
             html = run('pandoc --highlight-style=pygments -t html5 {}.{}'.format(f, fmt))
-        html = template.render(info=html.decode('utf8'), path=to_main)
+        html = template.render(info=html, path=to_main)
         with open(dest + '/' + f + '.html', 'w') as fd:
             fd.write(html)
         print(f"{Fore.MAGENTA}>> Made {f}.html{Fore.RESET}")
@@ -154,124 +180,7 @@ def pandoc(file, dest, template=None, format='html', to_main='.'):
         # raise Exception()
 
 
-def build_toc(template):
-    toc = {}
-
-    # def getDir(path):
-    #     """
-    #     Get and return a list of directories in this path
-    #
-    #     redundant with below?
-    #     """
-    #     files = glob(path)
-    #     ret = []
-    #     for f in files:
-    #         if os.path.isdir(f):
-    #             ret.append(f)
-    #     if len(ret) == 0:
-    #         ret = None
-    #     return ret
-
-    def getDirFile(path):
-        """
-        Get and return a list of files and directories in this path
-        """
-        objs = glob(path)
-        objs.sort()
-        dirs = []
-        files = []
-        for o in objs:
-            if os.path.isdir(o):
-                # don't save these folders
-                if o.find('pics') >= 0 or o.find('static') >= 0:
-                    pass
-                else:
-                    dirs.append(o)
-            elif os.path.isfile(o):
-                files.append(o)
-            else:
-                print(f"{Fore.RED}*** Unknown: {o} ***{Fore.RESET}")
-
-        # if len(dirs) == 0:
-        #     dirs = None
-        #
-        # if len(files) == 0:
-        #     files = None
-
-        return dirs, files
-
-    blog, _ = getDirFile('blog/*')
-    for b in blog:
-        dirs, files = getDirFile(b + '/*')
-        # print(dirs, files)
-        jup = []
-        # get folders with jupyter notebooks in them
-        if dirs:
-            for d in dirs:
-                for ext in ['ipynb', 'md', 'rst']:
-                    jj = glob(d + '/*.{}'.format(ext))
-                    for j in jj:
-                        jup.append(j)
-
-                # jj = glob(d + '/*.md')
-                # for j in jj:
-                #     jup.append(j)
-                #
-                # jj = glob(d + '/*.rst')
-                # for j in jj:
-                #     jup.append(j)
-        tmp = files + jup
-        # print('tmp\n', tmp)
-        key = b.replace('blog/', '')
-        key = key.replace('-', ' ').replace('_', ' ')
-        key = key[0].upper() + key[1:]
-        # print("DEBUG: key ", key)
-        toc[key] = tmp
-        # get folders with markdown in them
-        # jup = []
-        # if dirs:
-        #     for d in dirs:
-        #         jj = glob(d + '/*.md')
-        #         for j in jj:
-        #             jup.append(j)
-        # toc[b.replace('blog/', '')] = files + jup
-
-    for key in toc.keys():
-        links = toc[key]
-        value = []
-        for link in links:
-            # print(link)
-            pretty = link.split('/')[-1]
-            pretty = pretty.replace('.md', '').replace('.rst', '').replace('.ipynb', '')
-            pretty = pretty.replace('-', ' ').replace('_', ' ')
-            pretty = pretty.title()  # capitalize first letter each word
-            # print("DEBUG: pretty ", pretty)
-
-            link = link.replace('.md', '').replace('.rst', '').replace('.ipynb', '')
-            # print("DEBUG: link ", link)
-
-            value.append((link, pretty))
-        toc[key] = value
-
-    mkdir('../html/blog')
-
-    # pprint(toc)
-    # print('='*50)
-
-    # put the toc in alphabetical order so you can find things easier
-    toc = OrderedDict(sorted(toc.items()))
-
-    # pprint(toc)
-    # exit(0)
-
-    html = template.render(TOC=toc, path='.')
-    with open('../html/topics.html', 'w') as fd:
-        fd.write(html)
-    print(f"{Fore.CYAN}>> Made topics.html{Fore.RESET}")
-    # exit(0)
-
-
-def main():
+def build_pages(template):
     # delete the old website so we don't miss anything when building
     print('Cleaning out old html ------------------')
     rmdir('html')
@@ -284,10 +193,6 @@ def main():
 
     # don't try to build html from the template, we use it another way!
     files.remove('template.jinja2')
-    template = Environment(loader=FileSystemLoader('.'), trim_blocks=True).get_template('template.jinja2')
-
-    # build toc
-    build_toc(template)
 
     files = glob("*")
 
@@ -301,9 +206,99 @@ def main():
     # done
     os.chdir('..')
 
+def getSubDir(path):
+    # print(f"{Fore.CYAN}>>   {path}{Fore.RESET}")
+    files = {}
+    # os.chdir(path)
+    fs = find(path,"*.html")
+    for f in fs:
+        name = os.path.basename(f).split('.')[0]
+        name = name.replace('-', ' ').replace('_', ' ').title()
+        # print(name,f)
+        files[name] = str(f).split("html/")[1]
+    # return files
+    return OrderedDict(sorted(files.items()))
+
+
+def getDir(path):
+    """
+    Get and return a list of files and directories in this path
+    """
+    # print(f"{Fore.GREEN}>> {path}{Fore.RESET}")
+    objs = glob(path)
+    objs.sort()
+    dirs = []
+    for o in objs:
+        if os.path.isdir(o):
+            # don't save these folders
+            if o.find('pics') >= 0 or o.find('static') >= 0:
+                pass
+            else:
+                dirs.append(o)
+        # elif os.path.isfile(o):
+        #     files.append(o)
+        # else:
+        #     print(f"{Fore.RED}*** Unknown: {o} ***{Fore.RESET}")
+    return dirs
+
+def build_toc2(path, template):
+    # def getDir(path):
+    #     """
+    #     Get and return a list of files and directories in this path
+    #     """
+    #     # print(f"{Fore.GREEN}>> {path}{Fore.RESET}")
+    #     objs = glob(path)
+    #     objs.sort()
+    #     dirs = []
+    #     for o in objs:
+    #         if os.path.isdir(o):
+    #             # don't save these folders
+    #             if o.find('pics') >= 0 or o.find('static') >= 0:
+    #                 pass
+    #             else:
+    #                 dirs.append(o)
+    #         # elif os.path.isfile(o):
+    #         #     files.append(o)
+    #         # else:
+    #         #     print(f"{Fore.RED}*** Unknown: {o} ***{Fore.RESET}")
+    #     return dirs
+
+    toc = {}
+
+    # def getSubDir(path):
+    #     # print(f"{Fore.CYAN}>>   {path}{Fore.RESET}")
+    #     files = {}
+    #     # os.chdir(path)
+    #     fs = find(path,"*.html")
+    #     for f in fs:
+    #         name = os.path.basename(f).split('.')[0]
+    #         name = name.replace('-', ' ').replace('_', ' ').title()
+    #         # print(name,f)
+    #         files[name] = str(f).split("html/")[1]
+    #     # return files
+    #     return OrderedDict(sorted(files.items()))
+
+    dirs = getDir(path + "/*")
+    # print(dirs)
+
+    for d in dirs:
+        dd = os.path.basename(d).replace('-', ' ').replace('_', ' ').title()
+        toc[dd] = getSubDir(d)
+
+    toc = OrderedDict(sorted(toc.items()))
+
+    html = template.render(TOC=toc, path='.')
+    with open('html/topics.html', 'w') as fd:
+        fd.write(html)
+    print(f"{Fore.CYAN}>> Made topics.html{Fore.RESET}")
+    # pprint(toc)
 
 if __name__ == "__main__":
-    # this is a problem on macOS, where these stupid os files get found
-    os.system("find . -type f -name '.DS_Store' -exec rm {} +")
-    os.system("find . -type f -name 'deleteme' -exec rm {} +")
-    main()
+    # clean up the input
+    rm(find("./",".DS_Store"))
+    rm(find("./","deleteme"))
+
+    template = Environment(loader=FileSystemLoader('./source'), trim_blocks=True).get_template('template.jinja2')
+
+    build_pages(template)
+    build_toc2("html/blog",template)

@@ -36,9 +36,9 @@
               {% for topic, pages in TOC.items() %}
                 <h3>{{ topic }}</h3>
                 <ul>
-                {% for page, link in pages.items() %}
+                {% for page in pages %}
 
-                  <li><a href="{{ link }}"> {{ page }}  </a></li>
+                  <li><a href="{{ page[0] }}.html"> {{ page[1] }}  </a></li>
                 {% endfor %}
               </ul>
               {% endfor %}
