@@ -14,7 +14,8 @@ from pprint import pprint
 
 devnull = open(os.devnull, 'w')
 
-SKIP_FOLDERS = ['old', 'do_not_backup', 'deleteme', 'large_dataset', 'draft']
+SKIP_FOLDERS = ['old', 'do_not_backup', 'deleteme',
+    'large_dataset', 'draft', "__pycache__", ".ipynb_checkpoints"]
 
 
 def run(cmd):
@@ -43,7 +44,7 @@ def rmdir(path):
 
 def rm(fname):
     if fname is None:
-        print("no file to remove")
+        print(f"{Fore.RED}*** No file to remove ***{Fore.RESET}")
         return
     if not isinstance(fname, list):
         fname = [fname]
@@ -242,41 +243,8 @@ def getDir(path):
     return dirs
 
 def build_toc2(path, template):
-    # def getDir(path):
-    #     """
-    #     Get and return a list of files and directories in this path
-    #     """
-    #     # print(f"{Fore.GREEN}>> {path}{Fore.RESET}")
-    #     objs = glob(path)
-    #     objs.sort()
-    #     dirs = []
-    #     for o in objs:
-    #         if os.path.isdir(o):
-    #             # don't save these folders
-    #             if o.find('pics') >= 0 or o.find('static') >= 0:
-    #                 pass
-    #             else:
-    #                 dirs.append(o)
-    #         # elif os.path.isfile(o):
-    #         #     files.append(o)
-    #         # else:
-    #         #     print(f"{Fore.RED}*** Unknown: {o} ***{Fore.RESET}")
-    #     return dirs
 
     toc = {}
-
-    # def getSubDir(path):
-    #     # print(f"{Fore.CYAN}>>   {path}{Fore.RESET}")
-    #     files = {}
-    #     # os.chdir(path)
-    #     fs = find(path,"*.html")
-    #     for f in fs:
-    #         name = os.path.basename(f).split('.')[0]
-    #         name = name.replace('-', ' ').replace('_', ' ').title()
-    #         # print(name,f)
-    #         files[name] = str(f).split("html/")[1]
-    #     # return files
-    #     return OrderedDict(sorted(files.items()))
 
     dirs = getDir(path + "/*")
     # print(dirs)
