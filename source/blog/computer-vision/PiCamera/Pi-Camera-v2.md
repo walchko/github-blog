@@ -3,9 +3,39 @@ title: Raspberry Pi Camera
 date: 20 Nov 2014
 ---
 
-![](zero-w-camera.jpg){width=75%}
+# Grabbing Video on a Raspberry Pi
+
+In OpenCV, `cv2.VideoCapture()` command works great on systems where the camera is attached to USB. FYI, the camera built into your laptop is also attached to USB internally. **However**, on the Pi, the camera is attached to a camera bus (like on most cell phones) and the default camera setup generally doesn't work.
+
+Later, when we do image processing on the roomba, you will need to capture video/images like this:
+
+```python
+#!/usr/bin/env python
+
+from __future__ import division, print_function
+import cv2
+import time
+from opencvutils import Camera  # we will use this to capture video/images
+
+if __name__ == "__main__":
+    # You only need this on the raspberry pi
+    cam = Camera(cam='pi')
+    cam.init(win=(640,480))
+    
+    # loop forever
+    while True:
+        # reading the camera returns 2 things:
+        #    good: was the image successfully captured - True/False
+        #    img: if successful, then img is a good/valid image
+        good, img = cam.read()
+        if good:
+            # do something with the image
+            somethingCool(img)
+```
 
 ## Zero
+
+![](zero-w-camera.jpg){width=75%}
 
 ![](camera-short-cable.jpg){width=75%}
 
