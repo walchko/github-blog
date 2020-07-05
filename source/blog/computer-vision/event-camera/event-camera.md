@@ -1,5 +1,13 @@
 # Event Camera
 
+Kevin J. Walchko, Phd
+
+5 July 2020
+
+---
+
+![](ec.png)
+
 ## References
 
 - [uzh-rpg/rpg_dvs_ros](https://github.com/uzh-rpg/rpg_dvs_ros)
