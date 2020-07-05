@@ -10,6 +10,7 @@ Kevin J. Walchko, Phd
 
 ## References
 
+- [Event-based Vision, Event Cameras, Event Camera SLAM](http://rpg.ifi.uzh.ch/research_dvs.html)
 - [uzh-rpg/rpg_dvs_ros](https://github.com/uzh-rpg/rpg_dvs_ros)
 - [Event Cameras](https://www.microsoft.com/en-us/research/uploads/prod/2019/09/Davide_Scaramuzza_UZH.pdf)
 
