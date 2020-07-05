@@ -5,7 +5,11 @@ date: 2017-02-05
 
 First we need to enable i2c with adding `dtparam=i2c_arm=on` to `/boot/config.txt`.
 This defaults the system to 100kHz, but you can change to 400kHz (if your
-sensors support it) by adding `i2c_arm_baudrate=400000` to the file.
+sensors support it) by adding:
+
+```
+dtparam=i2c_arm=on,i2c_arm_baudrate=400000
+```
 
 Now `/dev/i2c-0` and `/dev/i2c-1` should exist. **However**, `/dev/i2c-0`
 is for other things like the VideoCore (PiCamera), so you can't use it.
