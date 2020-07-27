@@ -19,6 +19,13 @@ date: 27 July 2020
 }
 </style>
 
+![](roc.png)
+
+In real life, be afraid of anyone who says *"my model is 90% accurate"*. The reality is
+things are more complicated than that. A ROC curve is one way to show the complex interaction
+between correctly identifying what you want (True Positive (TP)) and falsely what you don't 
+want (False Positive (FP)).
+
 
 ## Terms
 
@@ -31,6 +38,17 @@ Precision = \frac{TP}{TP + FP}
 $$
 
 ## Relations
+
+The following, taken from a great post, I am just putting it here so it doesn't disappear, show
+the interactions of these two parameters and how they produce a ROC curve.
+
+The Area Under the Curve (AUC) provides input as:
+
+- AUC ~1 (100%) is perfect and there is great class sparation ... perfect ability to distinguish 
+between classes
+- AUC = 0.7 means the model has a 70% chance to distinguish between the classes
+- AUC ~0.5 means th emodel has no class separation
+- AUC ~0 means the model is poor and is incorrectly reporting 0's as 1's and 1's as 0's
 
 <div class="row">
   <div class="column">
@@ -73,4 +91,4 @@ $$
 
 ## References
 
-- [AUC - ROC Curve](https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5)
+- Medium: [AUC - ROC Curve](https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5)
