@@ -10,3 +10,6 @@ large_dataset
 __pycache__
 *.pyc
 ._*
+*.s-pickle.bag
+*.s-pickle-gz.bag
+
