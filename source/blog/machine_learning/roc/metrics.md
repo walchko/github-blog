@@ -19,13 +19,10 @@ date: 27 July 2020
 }
 </style>
 
-![](roc.png)
-
 In real life, be afraid of anyone who says *"my model is 90% accurate"*. The reality is
 things are more complicated than that. A ROC curve is one way to show the complex interaction
 between correctly identifying what you want (True Positive (TP)) and falsely what you don't 
 want (False Positive (FP)).
-
 
 ## Terms
 
@@ -34,8 +31,25 @@ TPR = Recall = Sensitivity = \frac{TP}{TP+FN} \\
 Specificity = \frac{TN}{TN + FP} \\
 FPR = 1 - Specificity = \frac{FP}{TN + FP} \\
 Accuracy = \frac{TP + TN}{P + N} \\
-Precision = \frac{TP}{TP + FP}
+Precision = \frac{TP}{TP + FP} \\
+F-Measure = \frac{2*Recall*Precision}{Recall + Precision}
 $$
+
+- **F-Measure:** It is difficult to compare two models with low precision and high recall or vice versa. 
+F-score helps to compare these by measuring Recall and Precision at the same time. It uses Harmonic Mean 
+in place of Arithmetic Mean by punishing the extreme values more.
+
+# Confusion Matrix
+
+A confusion matrix shows the performance measurement for machine learning classification 
+problem where output can be one of two or more classes. An example is shown below with 4 
+different combinations of predicted and actual values for pregnancy.
+
+![](confusion-matrix.png)
+
+# ROC Curve
+
+![](roc.png)
 
 ## Relations
 
@@ -91,4 +105,5 @@ between classes
 
 ## References
 
+- Meduim: [Understanding Confusion Matrix](https://towardsdatascience.com/understanding-confusion-matrix-a9ad42dcfd62)
 - Medium: [AUC - ROC Curve](https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5)
