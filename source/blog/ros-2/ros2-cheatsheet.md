@@ -10,6 +10,13 @@ Most of the commands have changed for ros2:
 - rosbag: `ros2 bag play|record`
 - rostopic: `ros2 topic list|echo|bw`
 - rviz2: `ros2 run rviz2 rviz2`
+- rosmsg: `ros2 interface show std_msgs/Bool` -> `bool data`
+- rossrv: `ros2 interface show std_srvs/srv/Trigger` -> 
+```
+---
+bool success   # indicate successful run of triggered service
+string message # informational, e.g. for error messages
+```
 
 ## Package Creation
 
@@ -61,5 +68,6 @@ def generate_launch_description():
 
 # References
 
+- ros answers: [ROS2 equivalents to ROS1 roscd, rosmsg rossrv...](https://answers.ros.org/question/358573/ros2-equivalents-to-ros1-roscd-rosmsg-rossrv/)
 - [ROS2 colcon tutorial](https://index.ros.org//doc/ros2/Tutorials/Colcon-Tutorial/)
 - [launch system for cpp and python](https://index.ros.org/doc/ros2/Tutorials/Launch-system/)
