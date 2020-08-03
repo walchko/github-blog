@@ -3,6 +3,8 @@ title: Building a New Colcon Python Package
 date: 3 Aug 2020
 ---
 
+![](../ros2.png)
+
 ## Setup Files
 
 ```
