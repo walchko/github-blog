@@ -3,6 +3,8 @@ title: Example Package with Colcon
 date: 2 Aug 2020
 ---
 
+![](../ros2.png)
+
 *Note:* I am using the `zsh` shell instead of `bash`.
 
 Unfortunately the examples are shitty, overly verbose for no reason, leave stuff out and don't make sense.
