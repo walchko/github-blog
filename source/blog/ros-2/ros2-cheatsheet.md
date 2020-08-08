@@ -5,6 +5,10 @@ date: 5 Oct 2019
 
 ![](ros2.png)
 
+## Commands
+
+![](https://index.ros.org/doc/ros2/_images/Nodes-TopicandService.gif)
+
 Most of the commands have changed for ros2:
 
 - rosbag: `ros2 bag play|record`
@@ -16,6 +20,34 @@ Most of the commands have changed for ros2:
 ---
 bool success   # indicate successful run of triggered service
 string message # informational, e.g. for error messages
+```
+
+- Find out what nodes are running: `ros2 node list`
+```
+/listener
+/talker
+```
+- See node services, pub/sub, and actions: `ros2 node info <node>`
+```
+/talker
+  Subscribers:
+
+  Publishers:
+    /chatter: std_msgs/msg/String
+    /parameter_events: rcl_interfaces/msg/ParameterEvent
+    /rosout: rcl_interfaces/msg/Log
+  Service Servers:
+    /talker/describe_parameters: rcl_interfaces/srv/DescribeParameters
+    /talker/get_parameter_types: rcl_interfaces/srv/GetParameterTypes
+    /talker/get_parameters: rcl_interfaces/srv/GetParameters
+    /talker/list_parameters: rcl_interfaces/srv/ListParameters
+    /talker/set_parameters: rcl_interfaces/srv/SetParameters
+    /talker/set_parameters_atomically: rcl_interfaces/srv/SetParametersAtomically
+  Service Clients:
+
+  Action Servers:
+
+  Action Clients:
 ```
 
 ## Package Creation
