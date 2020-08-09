@@ -5,22 +5,18 @@ date: 6 Oct 2019
 
 ## Install
 
-**STUPID F@$KING ASSHOLES:** you are required to attach a keyboard and monitor to your
-headless server ... wtf?
+The arm 64-bit version has `ssh` setup by default and requires a password reset.
 
-- Get [Raspberry Pi 3 (64-bit ARM) preinstalled server image](http://cdimage.ubuntu.com/ubuntu/releases/bionic/release/)
+- Get Raspberry Pi 3 or 4 (64-bit ARM) no config [server image](https://ubuntu.com/download/raspberry-pi) 
+version 20.04 LTS or later
     - username: `ubuntu`  
-    - password: `ubuntu` (which you have to change on login
-- Attach keyboard/monitor and boot the system
+    - password: `ubuntu` (which you have to change on login or ssh)
 
 ## Setup
 
 Unfortunately Ubuntu is setup my an idiot who doesn't use computers, especially
 headless servers.
 
-**STUPID F@$KING ASSHOLES:** there is no smart way to enable `ssh` like raspbian does
-
-- Enable sshd: `sudo apt install openssh-server`
 - Change hostname: `sudo hostnamectl set-hostname <new name>`
     ```
     ~$ hostnamectl 
@@ -46,25 +42,25 @@ headless servers.
         I don't use
         - I kept `nmbd.service` for avahi
 - samba:
-    ```
-    sudo apt install samba
-    sudo ufw allow 'Samba'
-    sudo cp /etc/samba/smb.conf{,.backup}
-    # update smb.conf
-    sudo systemctl restart nmbd
-    ```
-    - add user with: `sudo smbpasswd -a ubuntu`
-    - add user home:
-    ```
-    [ubuntu]
-       comment = Home Directories
-       browseable = yes
-       read only = no
-       create mask = 0700
-       directory mask = 0700
-       valid users = %S
-       path=/home/%S
-   ```
+```
+sudo apt install samba
+sudo ufw allow 'Samba'
+sudo cp /etc/samba/smb.conf{,.backup}
+# update smb.conf
+sudo systemctl restart nmbd
+```
+- add user with: `sudo smbpasswd -a ubuntu`
+- add user home:
+```
+[ubuntu]
+   comment = Home Directories
+   browseable = yes
+   read only = no
+   create mask = 0700
+   directory mask = 0700
+   valid users = %S
+   path=/home/%S
+```
     
 ### Networking
 
