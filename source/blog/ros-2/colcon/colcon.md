@@ -9,10 +9,10 @@ date: 2 Aug 2020
 
 Unfortunately the examples are shitty, overly verbose for no reason, leave stuff out and don't make sense.
 
-1. Source the ros setup file 
-1. Create a workspace (`ros2`) and a source code folder (`src`)
+1. Source the ros setup file from `/opt/ros/.../setup.zsh`
+1. Create a workspace (`ros2`) and a source code folder (`ros2/src`)
 1. Move into the workspace
-1. Clone some example directories
+1. Clone some example directories into `src`
     1. Make sure to check out the correct distro branch 
 1. Build with examples `colcon`, the latest crappy ros build tool
 
@@ -60,6 +60,11 @@ Now run a pub/sub, you need some windows (having run `source install/setup.zsh` 
 - `ros2 run examples_rclpy_minimal_subscriber subscriber_member_function`
 
 Notice, there is a mixture of cpp (`rclcpp`) and python (`rclpy`) in these ... neat!
+
+## Args
+
+- Pass `cmake` any args: `--cmake-args -DCMAKE_PREFIX_PATH=/home/bob/here -DCMAKE_SOMETHING_ELSE`
+- Clean first: `--cmake-clean-first`
 
 ## References
 
