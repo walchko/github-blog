@@ -22,3 +22,7 @@ date: 9 Aug 2020
     - Build ROS2 driver with: `colcon build --symlink-install --cmake-args -DCMAKE_PREFIX_PATH=/home/ubuntu/SDKs`
 
 ## IMU
+
+# References
+
+- [Setting library paths](https://www.cyberciti.biz/faq/linux-setting-changing-library-path/)
