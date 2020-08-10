@@ -20,6 +20,9 @@ date: 9 Aug 2020
         - `cmake -DCMAKE_INSTALL_PREFIX=/home/ubuntu/SDKs -DBUILD_SHARED_LIBS=1 .. && make install` 
         - `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/ubuntu/SDKs/lib`
     - Build ROS2 driver with: `colcon build --symlink-install --cmake-args -DCMAKE_PREFIX_PATH=/home/ubuntu/SDKs`
+    - For some reason, the cmake files are wrong ... change to:
+        - `SET( YDLIDAR_SDK_LIBRARY_DIRS  /home/ubuntu/SDKs/lib CACHE INTERNAL "YDLIDAR_SDK library directories" FORCE )`
+        - Originally the library path `/home/ubuntu/SDKs/lib` was missing, so `${YDLIDAR_SDK_LIBRARY_DIRS}` is empty
 
 ## IMU
 
