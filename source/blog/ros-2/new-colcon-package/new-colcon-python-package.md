@@ -123,7 +123,12 @@ if __name__ == '__main__':
 
 ## Build Package and Run
 
-1. `colcon build --symlink-install`
+| Command                       | Description                             |
+|-------------------------------|-----------------------------------------|
+| `--symlink-install`           | Make links of python files to `install` |
+| `--packages-select <package>` | Build a specific package                |
+
+1. `colcon build --symlink-install --packages-select demo`
 1. `souce install/setup.zsh`
 1. `ros2 run ros2_demo_py demo`
 
