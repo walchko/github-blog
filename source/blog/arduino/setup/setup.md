@@ -25,4 +25,4 @@ TBD
 
 # References
 
-- Adafruit Learn: [Arduino Setup](https://learn.adafruit.com/adafruit-arduino-ide-setup?view=all)
+- Adafruit Learn: [Arduino Setup](https://learn.adafruit.com/adafruit-trinket-m0-circuitpython-arduino/arduino-ide-setup)
