@@ -18,7 +18,11 @@ Here are a few keynotes for installing Arduino
 - Tools, Board Managers, add:
     - Adafruit SAMD Boards
     - Arduino SAMD Boards
-    
-## References
+
+## Serial Port Access
+
+TBD
+
+# References
 
 - Adafruit Learn: [Arduino Setup](https://learn.adafruit.com/adafruit-arduino-ide-setup?view=all)
