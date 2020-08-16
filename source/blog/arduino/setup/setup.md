@@ -21,8 +21,9 @@ Here are a few keynotes for installing Arduino
 
 ## Serial Port Access
 
-TBD
+If you're on Linux, and are seeing multi-second delays connecting to the serial console, or are seeing "AT" and other gibberish when you connect, then the modemmanager service might be interfering. Just remove it; it doesn't have much use unless you're still using dial-up modems. To remove, type this command at a shell: `sudo apt purge modemmanager`
 
 # References
 
 - Adafruit Learn: [Arduino Setup](https://learn.adafruit.com/adafruit-trinket-m0-circuitpython-arduino/arduino-ide-setup)
+- Adafruit Learn: [udev Linux Setup](https://learn.adafruit.com/adafruit-arduino-ide-setup/linux-setup#udev-rules)
