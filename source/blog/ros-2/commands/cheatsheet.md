@@ -11,8 +11,14 @@ date: 5 Oct 2019
 
 Most of the commands have changed for ros2:
 
-- rosbag: `ros2 bag play|record`
-- rostopic: `ros2 topic list|echo|bw`
+- rosbag: 
+    - `ros2 bag record <topic1> <topic2>`
+    - `ros2 bag play <bag_file>`
+    - `ros2 bag info <bag_file>`
+- rostopic: 
+    - `ros2 topic list`
+    - `ros2 topic echo|bw <topic>`
+- image_view: `ros2 run rqt_image_view rqt_image_view`
 - rviz2: `ros2 run rviz2 rviz2`
 - rosmsg: `ros2 interface show std_msgs/Bool` -> `bool data`
 - rossrv: `ros2 interface show std_srvs/srv/Trigger` -> 
@@ -52,6 +58,7 @@ string message # informational, e.g. for error messages
 
 # References
 
+- github: [ros2 cheatsheet](https://github.com/ubuntu-robotics/ros2_cheats_sheet)
 - ros answers: [ROS2 equivalents to ROS1 roscd, rosmsg rossrv...](https://answers.ros.org/question/358573/ros2-equivalents-to-ros1-roscd-rosmsg-rossrv/)
 - [ROS2 colcon tutorial](https://index.ros.org//doc/ros2/Tutorials/Colcon-Tutorial/)
 - [launch system for cpp and python](https://index.ros.org/doc/ros2/Tutorials/Launch-system/)
