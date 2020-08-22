@@ -58,7 +58,7 @@ string message # informational, e.g. for error messages
 
 # References
 
-- github: [ros2 cheatsheet](https://github.com/ubuntu-robotics/ros2_cheats_sheet)
+- github: [ros2 cheatsheet](https://github.com/RecklessTedsFunland/ros2_cheats_sheet)
 - ros answers: [ROS2 equivalents to ROS1 roscd, rosmsg rossrv...](https://answers.ros.org/question/358573/ros2-equivalents-to-ros1-roscd-rosmsg-rossrv/)
 - [ROS2 colcon tutorial](https://index.ros.org//doc/ros2/Tutorials/Colcon-Tutorial/)
 - [launch system for cpp and python](https://index.ros.org/doc/ros2/Tutorials/Launch-system/)
