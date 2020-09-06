@@ -8,8 +8,9 @@ date: 3 Aug 2020
 ## Setup Files
 
 ```
+mkdir -p ros2/src
 cd ros2/src
-ros2 pkg create ros2_demo_py
+ros2 pkg create --build-type ament_python --node-name py_node ros2_demo_py
 ```
 
 ```
