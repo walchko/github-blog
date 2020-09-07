@@ -147,4 +147,5 @@ if __name__ == '__main__':
 
 ## References
 
-- [ROS2 Tutorials](https://www.theconstructsim.com/ros2-tutorials-5-how-to-create-a-ros2-package-for-python-update/)
+- ROS Tutorial: [Creating your first ROS 2 package](https://index.ros.org/doc/ros2/Tutorials/Creating-Your-First-ROS2-Package/)
+- [Creating a ROS2 Python Package](https://www.theconstructsim.com/ros2-tutorials-5-how-to-create-a-ros2-package-for-python-update/)
