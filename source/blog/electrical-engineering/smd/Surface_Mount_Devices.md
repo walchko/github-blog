@@ -5,7 +5,7 @@ date: 5 Jul 2017
 
 ## Resistors and Diodes
 
-The numbers represent their physical sizes in mm, for example,
+The numbers represent their physical sizes in inches, for example,
 a 1206 is 0.125 x 0.060 inch. 
 
 | Num  | Size (mm)   | Difficulty                                                           |
