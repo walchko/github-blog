@@ -10,10 +10,6 @@ date: 15 July 2019
 PLA is polylactic acid which is made from corn starch. This material is made
 from renewable resources and it is compostable.
 
-## PETG
-
-
-
 ## [ABS](https://plastics.ulprospector.com/generics/1/acrylonitrile-butadiene-styrene-abs)
 
 Acrylonitrile Butadiene Styrene (ABS) - This material is a terpolymer of
