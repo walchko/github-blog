@@ -42,4 +42,4 @@ Some of these tips are geared towards [KiCad](http://kicad-pcb.org)
 
 # References
 
-- [Best Practices for Board Layout of Motor Drivers](slva959a.pdf)
+- TI Application Note: [Best Practices for Board Layout of Motor Drivers](slva959a.pdf)
