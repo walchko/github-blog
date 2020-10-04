@@ -39,3 +39,7 @@ Some of these tips are geared towards [KiCad](http://kicad-pcb.org)
     |0.050       | 1.27      | 2.0A |
     |0.100       | 2.54      | 4.0A |
     |0.150       | 3.81      | 6.0A |
+
+# References
+
+- [Best Practices for Board Layout of Motor Drivers](slva959a.pdf)
