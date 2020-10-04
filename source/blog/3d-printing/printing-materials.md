@@ -3,10 +3,16 @@ title: 3d Printing Materials
 date: 15 July 2019
 ---
 
+
+
 ## [PLA](https://plastics.ulprospector.com/generics/34/c/t/polylactic-acid-pla-properties-processing)
 
 PLA is polylactic acid which is made from corn starch. This material is made
 from renewable resources and it is compostable.
+
+## PETG
+
+
 
 ## [ABS](https://plastics.ulprospector.com/generics/1/acrylonitrile-butadiene-styrene-abs)
 
