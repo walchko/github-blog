@@ -98,3 +98,16 @@ c.set_motor_mode(1, 0)
 
 Honestly, I was realy excited about a cheaper AX-12A servo, but these don't
 seem to be reliable and capable enough ... not sure. 
+
+## Protocol
+
+![](a.jpg)
+
+![](b.jpg)
+
+![](table.jpg)
+
+# References
+
+- [tlfong01.blog](https://tlfong01.blog/2020/09/12/lx-224hv-servo-notes/)
+- [LewanSoul Bus Protocol](protocol.pdf)
