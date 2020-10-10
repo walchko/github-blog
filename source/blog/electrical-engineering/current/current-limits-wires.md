@@ -1,5 +1,5 @@
 ---
-title: Wires
+title: Wire Current Limits
 date: 17 Feb 2020
 ---
 
