@@ -17,7 +17,7 @@ isn't a big deal. To reduce the impact of diodes, generally schottky diodes
 are used since they have a lower forward voltage drop than general pn-junction
 diodes.
 
-![](power-supply-5v-adafruit.jpg)
+![](power-supply-5v-adafruit.png)
 
 ## MOSFET
 
