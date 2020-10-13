@@ -12,4 +12,7 @@ __pycache__
 ._*
 *.s-pickle.bag
 *.s-pickle-gz.bag
-
+*.ps
+*.pnm
+*.gz
+*.bag
