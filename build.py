@@ -33,14 +33,14 @@ def mkdir(path):
 
 
 def rmdir(path):
-    # if not isinstance(path, list):
-    #     path = [path]
-    # for p in path:
-    try:
-        shutil.rmtree(path)
-    except FileNotFoundError:
-        # folder was already deleted or doesn't exist ... it's ok
-        pass
+    if not isinstance(path, list):
+        path = [path]
+    for p in path:
+        try:
+            shutil.rmtree(path)
+        except FileNotFoundError:
+            # folder was already deleted or doesn't exist ... it's ok
+            pass
 
 def rm(fname):
     if fname is None:
@@ -149,6 +149,9 @@ def pandoc(file, dest, template=None, format='html', to_main='.'):
 
         elif ext == 'ipynb':
             jupyter(f, dest, template, format, to_main, file)
+
+        elif ext in ["bag", "h5", "ipynb_checkpoints"]:
+            print(f"{Fore.RED}*** {file}: won't copy to website ***{Fore.RESET}")
 
         else:
             path = dest + '/' + file
@@ -264,6 +267,7 @@ def build_toc2(path, template):
 if __name__ == "__main__":
     # clean up the input
     rm(find("./",".DS_Store"))
+    rm(find("./",".ipynb_checkpoints"))
     rm(find("./","deleteme"))
 
     template = Environment(loader=FileSystemLoader('./source'), trim_blocks=True).get_template('template.jinja2')
