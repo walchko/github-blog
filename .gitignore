@@ -6,7 +6,6 @@ html/*
 *.html
 .ipynb_checkpoints
 do_not_backup
-large_dataset
 __pycache__
 *.pyc
 ._*
@@ -15,3 +14,6 @@ __pycache__
 *.ps
 *.pnm
 *.gz
+*.h5
+*.caffemodel
+*.HEIC
