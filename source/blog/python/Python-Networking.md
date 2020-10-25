@@ -33,3 +33,22 @@ title: Networking
 ## Networking
 
 A really good resource for network programming with python is [here](static/PythonNetBinder.pdf)
+
+## Get Host IP Address
+
+```python
+# Get Your External IP Address
+def get_ip():
+	"""
+	Returns the host IP address or None if address could not be discovered.
+	"""
+    ip_addr = None
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+        s.connect(('<broadcast>', 0))
+        ip_addr=s.getsockname()[0]
+    except Exception:
+        pass
+    return ip_addr
+```
