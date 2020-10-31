@@ -2,7 +2,7 @@
 title: Wars of the Future
 ---
 
-![](general.png)
+[![](general.png)](https://youtu.be/oazwTDeqF54)
 
 "The wars of the future will not be fought on the battlefield or at 
 sea. They will be fought in space, or possibly on top of a very 
