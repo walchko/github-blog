@@ -2,7 +2,7 @@
 
 <figure>
     <center><img src="pics/Farnsworth.png"/></center>
-    <center><img src="pics/space.png" style="width: 200px"/></center>
+    <center><img src="pics/space_cmd.png" style="width: 200px"/></center>
     <center><img src="pics/air_assault2.jpg" style="width: 100px"/></center>
     <center><img border="0" src="pics/rack.png" /></center>
 </figure>
