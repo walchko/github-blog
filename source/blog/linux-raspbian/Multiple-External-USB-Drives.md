@@ -1,6 +1,7 @@
-# Multiple External USB Disks
-
-:date: 2018-05-05
+---
+title: Multiple External USB Disks
+date: 2018-05-05
+---
 
 Since USB drives are dynamically assigned drive letters, you need to find the UUID
 number.
