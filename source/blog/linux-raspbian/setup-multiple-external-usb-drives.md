@@ -51,5 +51,12 @@ mmcblk0     179:0    0  14.9G  0 disk
 
 Repeat this for each disk:
 
+- Create mount point: `sudo mkdir /mnt/a`
 - Allow user to own it: `sudo chown pi:pi /mnt/a`
 - Change permissions: `sudo chmod 777 /mnt/a`
+
+When ready, mount everything with:
+
+```
+sudo mount -a
+```
