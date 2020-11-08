@@ -18,7 +18,7 @@ pi@ultron ~ $ sudo blkid
 Here, we see `sda1` and `sdb1` UUID numbers which we can use in `/etc/fstab` to ensure
 we always get the same drive.
 
-## fstab
+## Update `/etc/fstab`
 
 ```bash
 pi@ultron ~ $ cat /etc/fstab
@@ -46,3 +46,10 @@ mmcblk0     179:0    0  14.9G  0 disk
 ├─mmcblk0p1 179:1    0  43.1M  0 part /boot
 └─mmcblk0p2 179:2    0  14.8G  0 part /
 ```
+
+## Fix Permissions
+
+Repeat this for each disk:
+
+- Allow user to own it: `sudo chown pi:pi /mnt/a`
+- Change permissions: `sudo chmod 777 /mnt/a`
