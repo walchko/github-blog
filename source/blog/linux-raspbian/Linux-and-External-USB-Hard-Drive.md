@@ -1,5 +1,5 @@
 ---
-title: External USB Drive and the Raspberry Pi
+title: External USB Drive Setup (Reformat and Automount)
 date: 28 Nov 2015
 ---
 
