@@ -1,5 +1,5 @@
 ---
-title: Multiple External USB Disks
+title: Setup Multiple External USB Disks with Labels
 date: 2018-05-05
 ---
 
