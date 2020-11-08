@@ -1,14 +1,10 @@
 ---
-title: Setting Up RAID
+title: Disk Performance Testing
+date: 8 Nov 2020
 ---
 
-Here I am looking at RAID-1 or mirroring.
-
-## References
-
-- [tecmint](https://www.tecmint.com/create-raid1-in-linux/)
-- [pchelp](https://pchelp.ricmedia.com/build-raspberry-pi3-raid-nas-server/3/)
-- [eltechs](https://eltechs.com/raspberry-pi-nas-guide/)
+This doesn't seem to work really well, the numbers keep going up
+on MB/sec.
 
 # Individual Disk Performance
 
