@@ -3,8 +3,6 @@ title: External USB Drive and the Raspberry Pi
 date: 28 Nov 2015
 ---
 
-![](pics/usb.png){width 200px}
-
 This is for booting off an SD card, but having an external HD for
 mass storage. 
 
