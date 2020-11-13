@@ -3,6 +3,8 @@ title: Arduino-cli
 date: 12 Oct 2020
 ---
 
+![](cli.png)
+
 ## Install and Setup
 
 - Install with: `brew install arduino-cli`
