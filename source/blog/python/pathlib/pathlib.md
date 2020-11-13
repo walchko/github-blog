@@ -42,4 +42,5 @@ Path.is_symlink()
 ## References
 
 - python docs: [pathlib](https://docs.python.org/3/library/pathlib.html)
+- more [pathlib examples](https://rednafi.github.io/digressions/python/2020/04/13/python-pathlib.html)
 
