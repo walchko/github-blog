@@ -191,11 +191,11 @@ def featureTracking(img_1, img_2, p1, world_points):
 
 def run(images, K, baseline):
     '''
-        different ways to initialize the query points and landmark points
-        you can specify the keypoints and landmarks
-        or you can inilize_3D with FAST corner points, then stere match and 
-        then generate 3D points, but not so accurate
-        or you can use the OPENCV feature extraction and matching functions
+    different ways to initialize the query points and landmark points
+    you can specify the keypoints and landmarks
+    or you can inilize_3D with FAST corner points, then stere match and 
+    then generate 3D points, but not so accurate
+    or you can use the OPENCV feature extraction and matching functions
     '''
     
     ret_pos = []
