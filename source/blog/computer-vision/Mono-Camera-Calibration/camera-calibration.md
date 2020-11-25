@@ -123,7 +123,7 @@ So how do we do this? The calibration code for the checkerboard does:
 
 ## Calibration Patterns
 
-What do you want in a calibration patter? Well
+What do you want in a calibration patter?
 
 - 
 
