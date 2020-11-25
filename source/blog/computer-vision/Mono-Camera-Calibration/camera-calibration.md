@@ -1,15 +1,11 @@
 ---
-title: something
-date: today
+title: Mono (Single) Camera Calibration
+date: 27 July 2017
 ---
 
 ![](https://images.pexels.com/photos/1005332/camera-retro-photography-vintage-1005332.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)
 
-# Mono (Single) Camera Calibration
-
 Kevin J. Walchko, Phd 
-
-27 July 2017
 
 [![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
 
@@ -45,6 +41,7 @@ The functions in this section use a so-called pinhole camera model. In this mode
 
 ![Pinhole Camera Model](images/pinhole_camera_model.png)
 
+$$
 \begin{eqnarray}
   s p' = A[R|t]P' \\
   s \begin{bmatrix} u\\ v\\ 1 \end{bmatrix} = 
@@ -56,6 +53,7 @@ The functions in this section use a so-called pinhole camera model. In this mode
   \begin{bmatrix} R_{3x3} & t_{xyz} \end{bmatrix}
   \begin{bmatrix} X \\ Y \\ Z \\ 1 \end{bmatrix}
 \end{eqnarray}
+$$
 
 where:
 
@@ -69,6 +67,7 @@ where:
 
 The matrix of intrinsic parameters does not depend on the scene viewed. So, once estimated, it can be re-used as long as the focal length is fixed (in case of zoom lens). The joint rotation-translation matrix [R|t] is called a matrix of extrinsic parameters. It is used to describe the camera motion around a static scene. That is, [R|t] translates coordinates of a point (X, Y, Z) to a coordinate system, fixed with respect to the camera. The transformation above is equivalent to the following (when $z \ne 0$ ):
 
+$$
 \begin{eqnarray}
   \begin{bmatrix} x \\ y \\ z \end{bmatrix}^{camera} = R_{3x3}
   \begin{bmatrix} X \\ Y \\ Z \end{bmatrix}^{world} + t_{xyz} \\
@@ -77,6 +76,7 @@ The matrix of intrinsic parameters does not depend on the scene viewed. So, once
   u = f_x*x'+c_x \\
   v = f_y*y'+c_y
 \end{eqnarray}
+$$
 
 where (X,Y,Z) are world space coordinates with units of meters, (x,y,z) are rotated/translated to the camera's coordinate system with units of meters, (x',y') are normalized (divided by z, these are unitless) in the camera's FOV, and (u,v) are finally projected onto the camera's image plane with units of pixels. 
 
