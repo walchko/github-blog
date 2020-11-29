@@ -12,10 +12,13 @@ len(sys.argv) - 1  # number args
 
 ```python
 import argparse
+import apt # my cool toolbox
 
 def handle_args():
     parser = argparse.ArgumentParser(description="This is a cool program")
-    parser.add_argument("--width", "-w", help="set output width")
-    parser.add_argument("-V", "--version", help="show program version", action="store_true")
+    parser.add_argument("filename", type=str, help="set filename")                 # manditory
+    parser.add_argument("--width", "-w", type=int, help="set output width")        # optional, int
+    parser.add_argument("-p", "--parse", help="do something", action="store_true") # bool
+    parser.add_argument('-v', '--version', action='version', version=apt.__version__)
     return vars(parser.parse_args())
 ```
