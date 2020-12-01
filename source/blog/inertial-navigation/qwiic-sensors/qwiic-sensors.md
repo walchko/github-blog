@@ -7,13 +7,13 @@ date: 29 Nov 2020
 
 | Sensor               | Bias [mg]  | Bits | Noise Density | RMS[mg] @ 100Hz | mg/LSB @ 2G |
 |----------------------|------------|------|---------------|-----------------|-------------|
-| [NXP_FXOS8700CQ][i1] | 20    | 14   | 126           | 1.11636         | 0.244141    |
-| [LSM6DS33][i2]       | 40    | 16   | 90            | 0.797402        | 0.0610352
-| [LSM6DSOX][i3]       | 20    | 16   | 70            | 0.620202        | 0.0610352
-| [ISM330DHCX][i4]     | Unkn  | 16   | 60            | 0.531601        | 0.0610352
-| [LSM9DS1][i5]        | 90    | 16   | 200           | 1.772           | 0.0610352
-| [ICM-20649][i6]      | Unkn  | 16   | 285           | 2.52511         | 0.0610352
-| [BNO055][i7]         | 80    | 14   | 150           | 1.329           | 0.244141
+| [NXP_FXOS8700CQ][i1] | 20         | 14   | 126           | 1.11636         | 0.244141    |
+| [LSM6DS33][i2]       | 40         | 16   | 90            | 0.797402        | 0.0610352
+| [LSM6DSOX][i3]       | 20         | 16   | 70            | 0.620202        | 0.0610352
+| [ISM330DHCX][i4]     | Unkn       | 16   | 60            | 0.531601        | 0.0610352
+| [LSM9DS1][i5]        | 90         | 16   | 200           | 1.772           | 0.0610352
+| [ICM-20649][i6]      | Unkn       | 16   | 285           | 2.52511         | 0.0610352
+| [BNO055][i7]         | 80         | 14   | 150           | 1.329           | 0.244141
 
 # Gryos
 
@@ -26,15 +26,19 @@ date: 29 Nov 2020
 
 # Pressure
 
-| Sensor       | Absolute Measurement (Pa)/(m) | Range (hPa) |
-|--------------|-------------------------------|-------------|
-| [LPS22][p1]  | 100 / 8.6                     | 260-1260 |
-| [DPS310][p2] | .2 / 0.02                     | 300-1200 |
+| Sensor       | bits | Sampling (Hz) | Abs Accuracy (Pa) | Rel Accuracy (Pa) | Range (hPa) |
+|--------------|------|---------------|-------------------|-------------------|-------------|
+| [LPS22][p1]  |      |               | 100               |                   | 260-1260 |
+| [DPS310][p2] | 24   | 128           | 100               | 6                 | 300-1200 |
+| [BMP390][p3] | 24   | 200           | 50                | 3                 | 300-1250 | 
 
-*Note:* 
+[Altitude][peqn] can be calculated with:
 
-- sea level is 1013.25 hPa
-- 0.1 Pa is an accuracy of 10mm (1cm)
+$$
+altitude = 44330 \left(1-\frac{p}{p_0}^{\frac{1}{5.255}}\
+$$
+
+where $p_0$ (sea level) is 101325 Pa.
 
 ## Terms
 
@@ -76,5 +80,7 @@ ST Magnetometer LIS3MDL
 [i6]: https://www.adafruit.com/product/4464
 [i7]: https://www.adafruit.com/product/4646
 
+[peqn]: https://cdn-shop.adafruit.com/datasheets/BST-BMP180-DS000-09.pdf
 [p1]: https://www.adafruit.com/product/4633
 [p2]: https://www.adafruit.com/product/4494
+[p3]: https://www.adafruit.com/product/4816
