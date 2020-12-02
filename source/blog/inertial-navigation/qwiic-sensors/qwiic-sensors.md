@@ -70,15 +70,15 @@ where $bandwidth$ is half the Output Data Rate (ODR), $filter$ is a low pass fil
 # References
 
 - Mide: [Pressure/Altitude calculator](https://www.mide.com/air-pressure-at-altitude-calculator)
- NXP Accel/Magnetometer: FXOS8700CQ
- NXP Gyro: FXAS21002
-ST Accel/Gyro LSM6DSOX
-ST Accel/Gyro LSM6DS33
-ST Accel/Gyro LSM9DS1 tech notes
-ST Accel/Gyro LSM9DS1
-ST Accel/Gyro ISM330DHCX
-InvenSense Accel/Gyro ICM-20649
-ST Magnetometer LIS3MDL
+- NXP Accel/Magnetometer: [FXOS8700CQ](FXOS8700CQ.pdf)
+- NXP Gyro: [FXAS21002](FXAS21002.pdf)
+- ST Accel/Gyro [LSM6DSOX](lsm6dsox.pdf)
+- ST Accel/Gyro [LSM6DS33](lsm6ds33.pdf)
+- ST Accel/Gyro [LSM9DS1 tech notes](TA0343-LSM9DS1-IMU.pdf)
+- ST Accel/Gyro [LSM9DS1](lsm9ds1.pdf)
+- ST Accel/Gyro [ISM330DHCX](ism330dhcx.pdf)
+- InvenSense Accel/Gyro [ICM-20649](icm-20649.pdf)
+- ST Magnetometer [LIS3MDL](lis3mdl.pdf)
 
 
 [i1]: https://www.adafruit.com/product/3463
