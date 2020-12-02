@@ -58,6 +58,15 @@ where $bandwidth$ is half the Output Data Rate (ODR), $filter$ is a low pass fil
 - 1.11 (2nd order)
 - 1.05(3rd order)
 
+![](https://cdn-shop.adafruit.com/970x728/4209-02.jpg)
+
+## Wiring
+
+- Red: 3.3VDC Power
+- Black: Ground
+- Blue: I2C SDA Data
+- Yellow: I2C SCL Clock
+
 # References
 
 - Mide: [Pressure/Altitude calculator](https://www.mide.com/air-pressure-at-altitude-calculator)
