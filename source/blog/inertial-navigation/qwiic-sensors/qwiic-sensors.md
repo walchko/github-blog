@@ -58,7 +58,7 @@ where $bandwidth$ is half the Output Data Rate (ODR), $filter$ is a low pass fil
 - 1.11 (2nd order)
 - 1.05(3rd order)
 
-![](https://cdn-shop.adafruit.com/970x728/4209-02.jpg)
+![](https://cdn-shop.adafruit.com/413x309/4209-02.jpg)
 
 ## Wiring
 
