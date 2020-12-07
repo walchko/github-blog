@@ -13,7 +13,9 @@ cd ros2/src
 ros2 pkg create --build-type ament_python --node-name py_node ros2_demo_py
 ```
 
-```
+### setup.py
+
+```python
 from setuptools import setup
 
 package_name = 'ros2_demo_py'
@@ -46,6 +48,8 @@ setup(
 )
 ```
 
+### setup.cfg
+
 ```
 [develop]
 script-dir=$base/lib/ros2_demo_py
@@ -53,7 +57,9 @@ script-dir=$base/lib/ros2_demo_py
 install-scripts=$base/lib/ros2_demo_py
 ```
 
-```
+### package.xml
+
+```xml
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="2">
@@ -80,7 +86,9 @@ install-scripts=$base/lib/ros2_demo_py
 </package>
 ```
 
-```
+### Publisher
+
+```python
 import rclpy
 from rclpy.node import Node
 
