@@ -200,7 +200,7 @@ def build_pages(template):
     # don't try to build html from the template, we use it another way!
     files.remove('template.jinja2')
 
-    files = glob("*")
+    # files = glob("*")
 
     # for each file/directory in sourece build it into pdf or copy it
     for f in files:
