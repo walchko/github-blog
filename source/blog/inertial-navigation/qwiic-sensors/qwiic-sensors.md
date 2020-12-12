@@ -5,7 +5,7 @@ date: 29 Nov 2020
 
 # Accels
 
-| Sensor               | Bias [mg]  | Bits | Noise Density | RMS[mg] @ 100Hz | mg/LSB @ 2G |
+| Sensor               | Bias (mg)  | Bits | Noise Density | RMS(mg) @ 100Hz | mg/LSB @ 2G |
 |----------------------|------------|------|---------------|-----------------|-------------|
 | [NXP_FXOS8700CQ][i1] | 20         | 14   | 126           | 1.11636         | 0.244141    |
 | [LSM6DS33][i2]       | 40         | 16   | 90            | 0.797402        | 0.0610352
@@ -17,7 +17,7 @@ date: 29 Nov 2020
 
 # Gryos
 
-| Sensor               | Bits  | Noise Density | Drift | RMS[mdps] @ 100Hz | mdps/LSB @ 1000dps | dps @ 26C |
+| Sensor               | Bits  | Noise Density | Drift | RMS(mdps) @ 100Hz | mdps/LSB @ 1000dps | dps @ 26C |
 |----------------------|-------|---------------|-------|-------------------|--------------------|-----------|
 | [NXP_FXAS21002C][i1] | 16    | 25            | 0.02  | 223.607           | 30.5176            | 0.52 |
 | [LSM6DS33][i2]       | 16    | 7             | 0.05  | 62.6099           | 30.5176            | 1.3 |
@@ -30,12 +30,12 @@ date: 29 Nov 2020
 |--------------|------|---------------|-------------------|-------------------|-------------|
 | [LPS22][p1]  |      |               | 100               |                   | 260-1260 |
 | [DPS310][p2] | 24   | 128           | 100               | 6                 | 300-1200 |
-| [BMP390][p3] | 24   | 200           | 50                | 3                 | 300-1250 | 
+| [BMP390][p3] | 24   | 200           | 50                | 3                 | 300-1250 |
 
 [Altitude][peqn] can be calculated with:
 
 $$
-altitude = 44330 \left(1-\frac{p}{p_0}^{\frac{1}{5.255}}\
+altitude = 44330 [1-\frac{p}{p_0}^{\frac{1}{5.255}}]
 $$
 
 where $p_0$ (sea level) is 101325 Pa.

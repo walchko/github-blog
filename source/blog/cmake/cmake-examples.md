@@ -31,7 +31,7 @@ option(BUILD_MSGPACK "Build the message pack messages" ON)
 
 ## Library
 
-```
+```cmake
 add_library(math SHARED lib.cpp)
 add_library(math STATIC lib.cpp)
 ```

@@ -31,67 +31,77 @@ Unfortunately docker is a nightmare of commands and hidden things you have to
 pry out with a crowbar. Here are some scripts I have used. They are helpful
 but not all powerful ... YMMV.
 
-- **Build:**
-    ```
-    #!/bin/bash
-    #
-    # docker build -t rpi --squash .
-    # -t tag name
-    # --squash get rid of intermediate builds (RUN) and make as small as possible
+### Build
 
-    docker build -t rpi --squash .
-    ```
-- **Cean Up:**
-    ```
-    #!/bin/bash
+```
+#!/bin/bash
+#
+# docker build -t rpi --squash .
+# -t tag name
+# --squash get rid of intermediate builds (RUN) and make as small as possible
 
-    #docker images | egrep "^<none>" | awk '{print $3}' | xargs docker rmi -f
+docker build -t rpi --squash .
+```
 
-    # docker container rm $(docker container ls -a -q)
+### Cean Up
 
-    echo "*** Prune system, containers, images, and volumes ***"
-    docker system prune -a -f
-    docker images prune -a
-    docker volume prune -f
-    docker container prune -f
-    # docker rmi $(docker ps -q)
-    docker rmi $(docker images -a -q)
-    echo "*** Done ***"
-    echo ""
-    echo "*** List All Images ***"
-    docker images -a
-    ```
-- **Run:**
-    ```
-    #!/bin/bash
-    #
-    # docker run -ti -p 8888:8888  -v `pwd`/notebooks:/notebooks rpi /bin/bash
-    # -ti is interactive
-    # -p opens ports <real machine>:<container>
-    # -v mounts real machines file system <real machine>:<container>, note,
-    #    it has to be a complete full path
-    # rpi is the tag name
-    # /bin/bash tells it to run bash
+```
+#!/bin/bash
 
-    docker run -ti -p 8888:8888  -v `pwd`/notebooks:/notebooks rpi /bin/bash
-    ```
-- **Push Image:**
-    ```
-    #!/bin/bash
+#docker images | egrep "^<none>" | awk '{print $3}' | xargs docker rmi -f
 
-    if [[ $# -eq 0 ]]; then
-        echo "Please give a version number\n Ex: ./push-docker.sh 1.2.3\n"
-    fi
+# docker container rm $(docker container ls -a -q)
 
-    VER=$1
+echo "*** Prune system, containers, images, and volumes ***"
+docker system prune -a -f
+docker images prune -a
+docker volume prune -f
+docker container prune -f
+# docker rmi $(docker ps -q)
+docker rmi $(docker images -a -q)
+echo "*** Done ***"
+echo ""
+echo "*** List All Images ***"
+docker images -a
+```
 
-    docker tag rpi walchko/rpi:${VER}
-    docker push walchko/rpi:${VER}
+### Run
 
-    # print some stuff
-    docker history --human rpi:${VER}
-    ```
-- **Test:** Download and run an image, but nothing is kept on
+```
+#!/bin/bash
+#
+# docker run -ti -p 8888:8888  -v `pwd`/notebooks:/notebooks rpi /bin/bash
+# -ti is interactive
+# -p opens ports <real machine>:<container>
+# -v mounts real machines file system <real machine>:<container>, note,
+#    it has to be a complete full path
+# rpi is the tag name
+# /bin/bash tells it to run bash
+
+docker run -ti -p 8888:8888  -v `pwd`/notebooks:/notebooks rpi /bin/bash
+```
+
+### Push Image
+
+```
+#!/bin/bash
+
+if [[ $# -eq 0 ]]; then
+    echo "Please give a version number\n Ex: ./push-docker.sh 1.2.3\n"
+fi
+
+VER=$1
+
+docker tag rpi walchko/rpi:${VER}
+docker push walchko/rpi:${VER}
+
+# print some stuff
+docker history --human rpi:${VER}
+```
+
+### Test
+
+Download and run an image, but nothing is kept on
 your machine: `docker run -ti --rm debian:stretch /bin/bash`
 
 ## Run

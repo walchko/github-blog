@@ -1,16 +1,16 @@
 ---
-title: Complemenatary Filter
+title: Complementary Filter
 date: 31 Aug 2020
 ---
 
 Choosing $\alpha$?
 
 $$
-\alpha = \tau / (\tau + dt) \
+\alpha = \tau / (\tau + dt) \\
 dt = 1/f_s
 $$
 
-where tau is the desired time constant (how fast you want the readings to respond) 
+where $\tau$ is the desired time constant (how fast you want the readings to respond) 
 and $f_s$ is your sampling frequency. This equation is derived from filter/control theory
 
 # References

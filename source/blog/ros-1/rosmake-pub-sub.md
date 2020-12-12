@@ -1,5 +1,5 @@
 ---
-title: Simple Publisher/Subscriber in Python
+title: Simple Publisher and Subscriber in Python
 date: 14 Sep 2019
 ---
 

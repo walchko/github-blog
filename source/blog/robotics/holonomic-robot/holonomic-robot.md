@@ -13,63 +13,63 @@ All of these two wheeled robot are non-holonomic systems.
 
 **Non-Holonomic System**
 
-:   A non-holonomic system in physics and mathematics is a system whose
-    state depends on the path taken to achieve it. An automobile is an
-    example of a non-holonomic vehicle. The vehicle has three degrees of
-    freedom: its position in two axes, and its orientation relative to a
-    fixed heading. Yet it has only two controllable degrees of freedom:
-    acceleration/braking and the angle of the steering wheel---with
-    which to control its position and orientation. [^1]
+A non-holonomic system in physics and mathematics is a system whose
+state depends on the path taken to achieve it. An automobile is an
+example of a non-holonomic vehicle. The vehicle has three degrees of
+freedom: its position in two axes, and its orientation relative to a
+fixed heading. Yet it has only two controllable degrees of freedom:
+acceleration/braking and the angle of the steering wheel with
+which to control its position and orientation. (1)
 
-Due to these constraints, a holonomic robot (figref{soccer\_robot})
+Due to these constraints, a holonomic robot
 which could travel in any direction and immediately change its position
 and orientation is much more desirable. There are a variety of different
 wheels which make this type of robot possible such as mecanum or omni
-wheels (figref{wheel}).[^2][^3]
+wheels.(2)(3)
 
-![Holonomic soccer robot using 4 omni directional wheels and a kicking
-motor used to hit the red ball into a
-goal.[^4]](holonomic_robot.png){.align-center width="300px"}
+![](holonomic_robot.png) Holonomic soccer robot using 4 omni directional
+wheels and a kicking motor used to hit the red ball into a
+goal.(4)
+
 
 Omni wheels operate like standard wheels in that the force is produced
-normal to the motor\'s axis of rotation and as a result of friction.
+normal to the motor's axis of rotation and as a result of friction.
 However, there are a series of smaller wheels which ring the main wheel
 and allow the wheel to slip in the direction of the motor rotational
 axis. Note that no force is produced parallel to the motor axis, just
 slippage.
 
-![Omni directional wheel allows movement in any
-direction.[^5]](omni_wheel.jpg){.align-center width="300px"}
+![](omni_wheel.jpg) Omni directional wheel allows movement in any
+direction. (5)
 
 Omni wheels allow you to decouple position and orientation. These are
 common in soccer robots.
 
-![](omni_wheel_control.png){.align-center width="500px"}
+![](omni_wheel_control.png)
 
-Holonomic Dynamics
-------------------
+## Holonomic Dynamics
 
-![Coordinate system tied to the body of the robot with the origin
+![](robot_cs.png)
+Coordinate system tied to the body of the robot with the origin
 located at the center of mass. Note that the x-axis points straight up
 and the y-axis points to the right. Also, the motor angle $\phi$ is
 defined as the angle measured from the y-axis. The forces ($F$) are the
 results of the motors spinning in the positive direction according to
 the right hand rule. Note also that no force is produced parallel to the
-motor\'s axis of rotation.](robot_cs.png){.align-center
-width="500px"}
+motor's axis of rotation.
 
-The dynamics for a holonomic robot, such as figref{coordinate}, with 4
+The dynamics for a holonomic robot with 4
 omni directional wheels (can be derived using Euler-Largrange
-($\mathcal{L}$) which defines a system\'s kinectic ($T$) and potential
+($\mathcal{L}$) which defines a system's kinectic ($T$) and potential
 ($V$) energies in relation to a set of generalized coordinates ($q$) and
 generalized forces ($Q$):
 
 \newcommand{\dpar}[2]{\frac{\partial #1}{\partial #2}}
 
 $$
-\mathcal{L} = T - V \\
+\mathcal L = T - V \\
 \frac{d}{dt} \left\{ \dpar{ \mathcal{L} }{\dot q} \right\} - \dpar{ \mathcal{L} }{q} = Q \\
-T = \frac{1}{2}M v_w^2+ \frac{1}{2}J \dot \psi^2 + \frac{1}{2} J_w (\dot \theta_1^2 + \dot \theta_2^2 + \dot \theta_3^2 + \dot \theta_4^2) \\
+T = \frac{1}{2} M v_w^2+ \frac{1}{2} J \dot \psi^2 + \frac{1}{2} J_w (\dot \theta_1^2 + \dot \theta_2^2 + \dot \theta_3^2 + \dot \theta_4^2) \\
 V = 0
 $$
 
@@ -155,8 +155,7 @@ $$
  = \mathcal{M} \ddot X + \mathcal{O} \dot X = Q
 $$
 
-World Coordinates
------------------
+## World Coordinates
 
 Now the dynamics derived so far are all in the body frame and we could
 stop here and develop a controller which performs velocity control.
@@ -188,10 +187,9 @@ F = \mathcal{M} (\dot R \dot X + R \ddot X )  + \mathcal{O} R \dot X \\
 F = \mathcal{M} R \ddot X + (\mathcal{M}  \dot R + \mathcal{O} R) \dot X
 $$
 
-External Forces and Torques
----------------------------
+## External Forces and Torques
 
-Now looking at figure ref{robot} and summing the forces into their body
+Now looking at the robot and summing the forces into their body
 referenced $x$ and $y$ directions and the torque about the $z$ axis,
 gives us:
 
@@ -229,11 +227,10 @@ $$
 \end{bmatrix}
 $$
 
-where $\phi$ is again the angle of the motors as defined in
-figref{robot}, $f_i$ is the magnitude of the force produced by the
+where $\phi$ is again the angle of the motors, $f_i$ is the magnitude of the force produced by the
 motors, and $L$ is the radius of the robot.
 
-where $pinv()$[^6]is defined as the pseudoinverse since A(\\phi) is not
+where $pinv()$(^6) is defined as the pseudoinverse since $A(\phi)$ is not
 a square matrix. Finally, substituting these into the original equation,
 we can calculate the torques given the desired accelerations.
 
@@ -263,15 +260,14 @@ matrix. This however is not an issue in the real world, since the motors
 would occupy the same physical space and the robot would essentially
 only have 2 and not 4 motors.
 
-Holonomic Robot Kinematics
---------------------------
+## Holonomic Robot Kinematics
 
-![Configuration of three groups of motors where $\phi$ is 30, 45, and 60
-degrees.](force_cs.png){.align-center width="500px"}
+![](force_cs.png) Configuration of three groups of motors where $\phi$ is 30, 45, and 60
+degrees.
 
-![Number of equivalent motors for any direction under linear movement
+![](equiv_motors.png) Number of equivalent motors for any direction under linear movement
 only, no rotational movement
-allowed.](equiv_motors.png){.align-center}
+allowed.
 
 Now performing a similar exercise for what was done with the dynamics,
 looking at coordinate, the velocity of motor 1is given by
@@ -315,9 +311,8 @@ $$
 $$
 
 Now setting $\omega$ to zero and calculating only linear movement, we
-can determine the number of equivalent motors as shown in
-figref{fig:equivalent\_motors}. For example, setting $\phi$ to 30
-$^\circ$ (the red line in figref{fig:equivalent\_motors}) and traveling
+can determine the number of equivalent motors. For example, setting $\phi$ to 30
+$^\circ$ and traveling
 in the x direction only
 ($\begin{bmatrix} v_x & v_y & \omega \end{bmatrix}^T = \begin{bmatrix}1& 0 & 0 \end{bmatrix}^T$),
 the above equation simplifies to $4 \sin(30)$ or 2 equivalent motors.
@@ -331,7 +326,7 @@ left or right. When the motors are are angled at 45 $^\circ$, movement
 is clearly equally optimized for both forward/backwards and left/right (
 $2 \sin(45)$ is 2.83 motors) movement.
 
-figref{fig:equivalent\_motors} tells us that no mater how the 4 motors
+This tells us that no mater how the 4 motors
 are oriented in a realistic configuration, the robot will never have the
 equivalent use of all 4 motors. Movement in one direction or another can
 be optimized, but then a sacrifice is made in another direction. This
@@ -340,7 +335,7 @@ fact is intuitively obvious.
 Another issue is these results are also ideal. This logic assumes that
 the wheels will not slip and have good traction in any orientation.
 Unfortunately real world results do not mimic this situation and the
-robot\'s performance will be reduced.
+robot's performance will be reduced.
 
 # Additional References
 
@@ -352,22 +347,17 @@ robot\'s performance will be reduced.
 
 # References
 
-[^1]: <http://en.wikipedia.org/wiki/Non-holonomic_system>
-
-[^2]: R.  Balakrishna, Ashitava Ghosal, \"Modeling of Slip for Wheeled
-        Mobile Robots,\" lEEE TRANSACTIONS ON ROBOTICS AND AUTOMATION,
+- 1: <http://en.wikipedia.org/wiki/Non-holonomic_system>
+- 2: R.  Balakrishna, Ashitava Ghosal, "Modeling of Slip for Wheeled
+        Mobile Robots, "lEEE TRANSACTIONS ON ROBOTICS AND AUTOMATION,
         VOL. I I , NO. I , FEBRUARY 1995, pp. 126-132
-
-[^3]: J.  Agullo, S. Cardona, and J. Vivancos, "Kinematics of vehicles
+- 3: J.  Agullo, S. Cardona, and J. Vivancos, "Kinematics of vehicles
         with directional sliding wheels," Mechanisms and Muchine Theory,
         vol. 22, no. 4, pp. 295-301, 1987.
-
-[^4]: Alexander Gloye, Raul Rojas, Holonomic Control of a Robot with an
+- 4: Alexander Gloye, Raul Rojas, Holonomic Control of a Robot with an
     Omnidirectional Drive, accepted for publication by Knstliche
     Intelligenz, Springer-Verlag, 2006.
-
-[^5]: <http://www.kornylak.com>
-
-[^6]: Pseudoinverse: for m \> n: $A_{left}^{-1}=(A^TA)^{-1}A^T$ or m \<
+- 5: <http://www.kornylak.com>
+- 6: Pseudoinverse: for m > n: $A_{left}^{-1}=(A^TA)^{-1}A^T$ or m <
     n: $A_{right}^{-1}=A^T(AA^T)^{-1}$ such that $AA^{-1}=I$ or
     $A^{-1}A=I$

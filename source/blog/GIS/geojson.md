@@ -3,13 +3,13 @@ title: GeoJSON
 date: 19 Nov 2019
 ---
 
-GeoJSON is an open standard format designed for representing simple geographical features, along with 
+GeoJSON is an open standard format designed for representing simple geographical features, along with
 their non-spatial attributes. It is based on the JavaScript Object Notation (JSON) and capabile of
 handling points, linestrings, polygons, and more.
 
 ## Example
 
-```geojson
+```json
 {
   "type": "FeatureCollection",
   "features": [

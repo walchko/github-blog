@@ -1,5 +1,5 @@
 ---
-title: Making a Fake Commandline `argc/v` for Testing
+title: Making a Fake Commandline for Testing
 date: 5 Feb 2019
 ---
 
