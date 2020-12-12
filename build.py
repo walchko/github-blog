@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from subprocess import check_output  # call command line
-from subprocess import Popen, PIPE
+# from subprocess import Popen, PIPE
 import os              # make directories, change current dir, etc
 import platform        # macOS or windows
 import shutil          # move and delete files/folders
@@ -12,7 +12,7 @@ from collections import OrderedDict  # put toc in alphebetical order
 from colorama import Fore,Back
 import pathlib
 from pprint import pprint
-import markdown
+# import markdown
 import pygments
 from nbconvert import HTMLExporter
 import nbformat
@@ -58,54 +58,12 @@ class Jupyter:
         with open(f"{dest}/{fname}.html", 'w') as fd:
             fd.write(html)
 
-        print(f"{Fore.MAGENTA}>> Made {htmlfile}{Fore.RESET}")
+        print(f"{Fore.GREEN}>> Jupyter: {htmlfile}{Fore.RESET}")
 
 
 class Markdown:
-    # https://facelessuser.github.io/pymdown-extensions/
     def __init__(self, template):
         self.template = template
-
-    def yaml_header(self, txt):
-        if txt.find("---") != 0:
-            return txt, {}
-
-        n = txt.find("\n") # ---
-        txt = txt[n+1:]
-
-        yam = {"author": "Kevin J. Walchko, Phd", "date": "", "image": None}
-        while True:
-            n = txt.find("\n")
-
-            # next yaml header line
-            s = txt[:n]
-            txt = txt[n+1:]
-
-            if s.find("---") == 0:
-                break
-
-            try:
-                a,b = s.split(":")
-                a.lower()
-                b = b.lstrip(" ")
-            except:
-                ab = s.split(":")
-                a = ab[0].lower()
-                b = ":".join(ab[1:])
-                b = b.lstrip(" ")
-
-            if a == "title":
-                b = b.title()
-
-            yam[a] = b
-
-        if "title" in yam:
-            s = ""
-            if yam["image"]:
-                s = f"![]({yam['image']})\n\n"
-            txt = f"{s}# {yam['title']}\n\n{yam['author']}\n\n{yam['date']}\n\n----------\n\n" + txt
-
-        return txt, yam
 
     def filter_unicode(self, md):
         """
@@ -116,92 +74,40 @@ class Markdown:
         return ''.join(char for char in md if char in printable)
 
     def extractOneTag(self, text, tag):
-        # return text[:text.find("<"+tag+">")] + text[text.find("</"+tag+">") + len(tag)+3:]
-        return text[text.find("<"+tag+">") + len(tag)+3:text.find("</"+tag+">")]
+        """
+        Given a tag, this will return what is inside of it.
+        """
+        return text[text.find("<"+tag+">") + len("<"+tag+">"):text.find("</"+tag+">")]
 
     def to_html(self, dest, file, to_main):
+        """
+        Generate the html and save to disk
+        """
+        # yaml: sets up date/title ... not sure it is worth it
+        # footnotes: something[^1] ... [^1]: http://somewhere.com
+        # emoji: why not?
+        EXTENTIONS = "markdown\
+        +yaml_metadata_block\
+        +footnotes\
+        +emoji".replace(" ","")
 
-        # with open(file) as fd:
-        #     md = fd.read()
+        TEMPLATE = f"{root}/source/template.markdown.pandoc"
 
-        # md = ''.join(char for char in md if char in printable)
-
-        # md, yam = self.yaml_header(md)
-        # print(yam)
-
-        # html = run('pandoc -s -r markdown+simple_tables+table_captions+yaml_metadata_block --highlight-style=pygments -t html5 {}'.format(file))
-
-        # -s: uses yaml to setup title, but embeds a page within a page ... ick!
-        #
-        html = run(f"pandoc -s -f markdown+yaml_metadata_block -t html5 {file}")
-
-        html = self.extractOneTag(html, "body")
-
+        # generate the body of the html
+        html = run(f"pandoc -f {EXTENTIONS} --template {TEMPLATE} -t html5 {file}")
         html = self.template.render(info=html, path=to_main)
 
-        # if "title" in yam:
-        #     fname = yam["title"].replace(" ","-")
-        # else:
         fname, ext = os.path.splitext(file)
 
         with open(f"{dest}/{fname}.html", 'w') as fd:
             fd.write(html)
-        print(f"{Fore.MAGENTA}>> Made {fname}.html{Fore.RESET}")
-
-    # def to_html(self, dest, file, to_main):
-    #
-    #     with open(file) as fd:
-    #         md = fd.read()
-    #
-    #     md = ''.join(char for char in md if char in printable)
-    #
-    #     md, yam = self.yaml_header(md)
-    #     # print(yam)
-    #
-    #     try:
-    #         html = markdown.markdown(
-    #             md,
-    #             extensions=[
-    #                 'fenced_code',
-    #                 'codehilite',
-    #                 "tables",
-    #                 'pymdownx.emoji',
-    #                 "pymdownx.arithmatex",
-    #                 'footnotes',
-    #             ]
-    #         )
-    #     except Exception as e:
-    #         print(e)
-    #         print(md)
-    #         print(yam)
-    #         print(f"{Fore.RED}*** ERROR: {file} ***{Fore.RESET}")
-    #         # exit(1)
-    #         return
-    #
-    #     html = self.template.render(info=html, path=to_main)
-    #
-    #     if "title" in yam:
-    #         fname = yam["title"].replace(" ","-")
-    #     else:
-    #         fname, ext = os.path.splitext(file)
-    #
-    #     with open(f"{dest}/{fname}.html", 'w') as fd:
-    #         fd.write(html)
-    #     print(f"{Fore.MAGENTA}>> Made {fname}.html{Fore.RESET}")
+        print(f"{Fore.MAGENTA}>> Markdown: {fname}.html{Fore.RESET}")
 
 
 def run(cmd):
     # given a command string, it runs it
     cmd = cmd.split()
     return check_output(cmd).decode("utf8")
-    # p = Popen(cmd, shell=True, stdout=PIPE)
-    # o = p.stdout.read().decode("utf8")
-    # assert p.wait() == 0
-    # return o
-    # p1 = subprocess.Popen(["echo", "This_is_a_testing"], stdout=subprocess.PIPE)
-    # p2 = subprocess.Popen(["grep", "test"], stdin=p1.stdout, stdout=subprocess.PIPE)
-    # return p2.communicate()[0]
-
 
 
 def rmdir(path):
@@ -228,34 +134,19 @@ def pandoc(file, dest, template=None, format='html', to_main='.'):
     # handle files
     if os.path.isfile(file):
         try:
-            # some files have multiple . in them and it is hard to get the ext
-            # >>> '.'.join('a.b'.split('.')[:-1])
-            # 'a'
-            # >>> '.'.join('a.b.c'.split('.')[:-1])
-            # 'a.b'
-            # f = '.'.join(file.split('.')[:-1])
-            # ext = file.split('.')[-1]
             f, ext = os.path.splitext(file)
         except Exception:
-            print(f'{Fore.RED}*** this file has an issue name.ext: {file} ***{Fore.RESET}')
+            print(f'{Fore.RED}*** this file has bad name: {file} ***{Fore.RESET}')
             exit(1)
 
         ext = ext.lower()
 
         if ext in ['.md']:
-            # markdown(f, dest, template, format, to_main, ext)
-            # print(dest, file, to_main)
-            # try:
+            # convert markdown to html
             mark.to_html(dest, file, to_main)
-            # except Exception as e:
-            #     print(f"{Back.RED}*** FAILED: {file} ***{Back.RESET}")
-            #     print(f"*** {e} ***")
-
-        # elif ext == '.html':
-        #     print(f"{Fore.RED}*** {file}: left over html? You should erase it ***{Fore.RESET}")
 
         elif ext == '.ipynb':
-            # jupyter(f, dest, template, format, to_main, file)
+            # generate jupyter to html
             jup.to_html(dest, file, to_main)
 
         elif ext in SKIP_EXT:
@@ -274,7 +165,8 @@ def pandoc(file, dest, template=None, format='html', to_main='.'):
             return
 
         # this must be a directory, let's change into it
-        print(f'==[{file:15}] ===============================')
+        if to_main == "./..":
+            print(f'==[{file:15}] ===============================')
 
         # make the destination path have the same folder
         path = dest + '/' + file
@@ -302,20 +194,16 @@ def build_pages(template):
     # change into source and recursively build website
     os.chdir("source")
 
+    # grab files and folders
     files = glob("*")
+    files.sort()
 
     # don't try to build html from the template, we use it another way!
     files.remove('template.jinja2')
-    files.sort()
-
-    # files = glob("*")
 
     # for each file/directory in sourece build it into pdf or copy it
     for f in files:
         pandoc(f, '../html', template, 'html')
-
-    # make a pdf of the main page
-    # pandoc('index.md', '../html', format='pdf')
 
     # done
     os.chdir('..')
@@ -365,8 +253,8 @@ def build_toc2(path, template):
     # print(dirs)
 
     for d in dirs:
-        # dd = os.path.basename(d).replace('-', ' ').replace('_', ' ').title()
-        dd = os.path.basename(d).replace('-', ' ').replace('_', ' ')
+        dd = os.path.basename(d).replace('-', ' ').replace('_', ' ').title()
+        # dd = os.path.basename(d).replace('-', ' ').replace('_', ' ')
         toc[dd] = getSubDir(d)
 
     toc = OrderedDict(sorted(toc.items()))
@@ -387,7 +275,8 @@ if __name__ == "__main__":
     rmdir(find("./",".ipynb_checkpoints"))
     rmdir(find("./","__pycache__"))
 
-    template = Environment(loader=FileSystemLoader('./source'), trim_blocks=True).get_template('template.jinja2')
+    fs = FileSystemLoader('./source')
+    template = Environment(loader=fs, trim_blocks=True).get_template('template.jinja2')
 
     jup = Jupyter(template)
     mark = Markdown(template)

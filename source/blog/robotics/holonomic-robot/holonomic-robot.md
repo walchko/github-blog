@@ -1,8 +1,10 @@
 ---
 title: Holonomic Robot Equations of Motion
+author: Kevin Walchko, Phd
 date: 2016-03-12
+image: "https://i.pinimg.com/564x/ae/18/7e/ae187ea8eacb0e12189144bdce37636a.jpg"
+image-height: "300px"
 ---
-
 
 Robots come in a variety of types and configurations: wheeled, tracked,
 legs, flying, etc. Common wheeled robots typically have two wheels
@@ -19,17 +21,17 @@ example of a non-holonomic vehicle. The vehicle has three degrees of
 freedom: its position in two axes, and its orientation relative to a
 fixed heading. Yet it has only two controllable degrees of freedom:
 acceleration/braking and the angle of the steering wheel with
-which to control its position and orientation. (1)
+which to control its position and orientation.[^1]
 
 Due to these constraints, a holonomic robot
 which could travel in any direction and immediately change its position
 and orientation is much more desirable. There are a variety of different
 wheels which make this type of robot possible such as mecanum or omni
-wheels.(2)(3)
+wheels.[^2][^3]
 
 ![](holonomic_robot.png) Holonomic soccer robot using 4 omni directional
 wheels and a kicking motor used to hit the red ball into a
-goal.(4)
+goal.[^4]
 
 
 Omni wheels operate like standard wheels in that the force is produced
@@ -40,7 +42,7 @@ axis. Note that no force is produced parallel to the motor axis, just
 slippage.
 
 ![](omni_wheel.jpg) Omni directional wheel allows movement in any
-direction. (5)
+direction.[^5]
 
 Omni wheels allow you to decouple position and orientation. These are
 common in soccer robots.
@@ -230,7 +232,7 @@ $$
 where $\phi$ is again the angle of the motors, $f_i$ is the magnitude of the force produced by the
 motors, and $L$ is the radius of the robot.
 
-where $pinv()$(^6) is defined as the pseudoinverse since $A(\phi)$ is not
+where $pinv()$[^6] is defined as the pseudoinverse since $A(\phi)$ is not
 a square matrix. Finally, substituting these into the original equation,
 we can calculate the torques given the desired accelerations.
 
@@ -337,7 +339,7 @@ the wheels will not slip and have good traction in any orientation.
 Unfortunately real world results do not mimic this situation and the
 robot's performance will be reduced.
 
-# Additional References
+# Additional Youtube References
 
 [![](https://img.youtube.com/vi/r8wRACM_ZbE/0.jpg)](https://www.youtube.com/watch?v=r8wRACM_ZbE)
 
@@ -347,17 +349,16 @@ robot's performance will be reduced.
 
 # References
 
-- 1: <http://en.wikipedia.org/wiki/Non-holonomic_system>
-- 2: R.  Balakrishna, Ashitava Ghosal, "Modeling of Slip for Wheeled
+[^1]: <http://en.wikipedia.org/wiki/Non-holonomic_system>
+[^2]: R.  Balakrishna, Ashitava Ghosal, "Modeling of Slip for Wheeled
         Mobile Robots, "lEEE TRANSACTIONS ON ROBOTICS AND AUTOMATION,
         VOL. I I , NO. I , FEBRUARY 1995, pp. 126-132
-- 3: J.  Agullo, S. Cardona, and J. Vivancos, "Kinematics of vehicles
+[^3]: J.  Agullo, S. Cardona, and J. Vivancos, "Kinematics of vehicles
         with directional sliding wheels," Mechanisms and Muchine Theory,
         vol. 22, no. 4, pp. 295-301, 1987.
-- 4: Alexander Gloye, Raul Rojas, Holonomic Control of a Robot with an
+[^4]: Alexander Gloye, Raul Rojas, Holonomic Control of a Robot with an
     Omnidirectional Drive, accepted for publication by Knstliche
     Intelligenz, Springer-Verlag, 2006.
-- 5: <http://www.kornylak.com>
-- 6: Pseudoinverse: for m > n: $A_{left}^{-1}=(A^TA)^{-1}A^T$ or m <
-    n: $A_{right}^{-1}=A^T(AA^T)^{-1}$ such that $AA^{-1}=I$ or
-    $A^{-1}A=I$
+[^5]: <http://www.kornylak.com>
+[^6]: Pseudoinverse for m > n: $A_{left}^{-1}=(A^TA)^{-1}A^T$ or m <
+    n: $A_{right}^{-1}=A^T(AA^T)^{-1}$ such that $AA^{-1}=I$ or $A^{-1}A=I$

@@ -9,7 +9,7 @@ build a website from a combination of:
 - The build tool is based on Python 3
 
 I use to use Pelican, but that had issues with latex equations and took months
-for them to fix it (sort of). Basically Pelican is a mass of crap that
+for them to fix it (sort of). Basically **Pelican is a mass of crap** that
 limps along for people who cannot program. Also, I never founds a nice way to
 include jupyter notebook content with it.
 
@@ -21,7 +21,7 @@ with my distro's python version.
 ```bash
 brew install pandoc python
 brew cask install basictex
-pip install jinja2 matplotlib numpy jupyter opencv-contrib-python
+pip install jinja2 jupyter
 ```
 
 ## Setup Linux
@@ -77,10 +77,25 @@ Cleaning out old html ------------------
 Now, you also need to do `pip install jupyter numpy matplotlib` if you are going to convert
 jupyter notebooks into html.
 
-## Pygments
+## Pygments (Don't Use This)
 
 To setup the `css` for code, I do:
 
 ```bash
 kevin@Logan $ pygmentize -S default -f html > pygments.css
+```
+
+## Pandoc Template
+
+I created a pandoc template: `template.markdown.pandoc` which allows:
+
+```yaml
+---
+title: Holonomic Robot Equations of Motion
+author: Kevin Walchko, Phd
+date: 2016-03-12
+image: "https://i.pinimg.com/564x/ae/18/7e/ae187ea8eacb0e12189144bdce37636a.jpg"
+image-height: "300px"
+subtitle: Somthing here ... but I don't use it :P
+---
 ```
