@@ -1,9 +1,8 @@
 ---
 title: Dead Reckoning and Encoders
 date: 2017-06-11
+image: "usdigital_encoder.jpg"
 ---
-
-![](usdigital_encoder.jpg)
 
 There are many types of encoders, above is a US Digital encoder designed
 to be mounted on a motor shaft.

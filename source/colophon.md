@@ -1,4 +1,8 @@
-![](pics/ship.jpg)
+---
+title: Colophon
+image: "pics/ship.jpg"
+author: " "
+---
 
 This is the Repo that feeds my personal github page. This has the ability to
 build a website from a combination of:
@@ -94,8 +98,13 @@ I created a pandoc template: `template.markdown.pandoc` which allows:
 title: Holonomic Robot Equations of Motion
 author: Kevin Walchko, Phd
 date: 2016-03-12
+modified: 2020-10-2
 image: "https://i.pinimg.com/564x/ae/18/7e/ae187ea8eacb0e12189144bdce37636a.jpg"
 image-height: "300px"
+image-width: "100%"
 subtitle: Somthing here ... but I don't use it :P
+summary: Something here ... but I don't use it :P
 ---
 ```
+
+:stuck_out_tongue_winking_eye:

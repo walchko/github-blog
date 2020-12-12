@@ -24,7 +24,7 @@ root = path = str(pathlib.Path().absolute())
 
 SKIP_EXT = [
     ".bag", ".h5", ".pickle", ".gz", ".heic", ".old", ".old2",
-    ".caffemodel", ".pnm", ".ps", ".html"
+    ".caffemodel", ".pnm", ".ps", ".html", ".try"
 ]
 
 SKIP_FOLDERS = ['old', 'do_not_backup', 'deleteme',
@@ -45,12 +45,19 @@ class Jupyter:
     def defaults(self):
         pprint(html_exporter.trait_values())
 
+    def extractOneTag(self, text, tag):
+        """
+        Given a tag, this will return what is inside of it.
+        """
+        return text[text.find("<"+tag+">") + len("<"+tag+">"):text.find("</"+tag+">")]
+
     def to_html(self, dest, file, to_main):
         """
         handle a jupyter notebook
         """
         (html, resources) = self.exporter.from_filename(file)
         # pprint(resources)
+        html = self.extractOneTag(html, "body")
         html = self.template.render(info=html, path=to_main)
 
         fname, ext = os.path.splitext(file)
@@ -144,6 +151,10 @@ def pandoc(file, dest, template=None, format='html', to_main='.'):
         if ext in ['.md']:
             # convert markdown to html
             mark.to_html(dest, file, to_main)
+
+        elif ext == ".rst":
+            run(f"pandoc --from rst --to markdown -o {file}.md.try {file}")
+            run(f"mv {file} {file}.old")
 
         elif ext == '.ipynb':
             # generate jupyter to html

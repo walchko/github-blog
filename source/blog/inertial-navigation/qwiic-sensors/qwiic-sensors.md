@@ -1,6 +1,7 @@
 ---
 title: Adafruit Qwiic Sensors for Robotics
 date: 29 Nov 2020
+image: "https://cdn-shop.adafruit.com/970x728/4209-02.jpg"
 ---
 
 # Accels

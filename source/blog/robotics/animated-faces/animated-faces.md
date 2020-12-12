@@ -1,9 +1,8 @@
 ---
 title: LED Faces (Tengu)
 date: 2017-05-21
+image: "tengu.png"
 ---
-
-![image](tengu.png)
 
 Using an LED matrix, you too can make a little tengu like robot.
 

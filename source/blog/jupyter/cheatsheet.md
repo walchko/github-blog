@@ -1,6 +1,8 @@
 ---
 title: Cheatsheet of Useful Jupyter Commands
 date: 8 Nov 2020
+image: "https://i.pinimg.com/564x/f7/6f/61/f76f612d5c5236232259c991806f3504.jpg"
+image-height: "400px"
 ---
 
 ## Reload Imports

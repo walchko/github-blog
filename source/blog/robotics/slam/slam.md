@@ -1,6 +1,7 @@
 ---
 title: Simultaneous Localization and Mapping
 date: 2016-05-01
+image: "https://i.pinimg.com/564x/09/15/01/091501c99c480ad069f369e64a35c271.jpg"
 ---
 
 ![](slam.png)

@@ -18,11 +18,18 @@ $if(title)$
     $if(subtitle)$
         <p class="subtitle">$subtitle$</p>
     $endif$
-    $for(author)$
-        <p class="author">$author$</p>
-    $endfor$
+    $if(author)$
+        $for(author)$
+            <p class="author">$author$</p>
+        $endfor$
+    $else$
+        <p class="author">Kevin J. Walchko, PhD</p>
+    $endif$
     $if(date)$
         <p class="date">$date$</p>
+    $endif$
+    $if(modified)$
+        <p class="date">$modified$</p>
     $endif$
     </header>
     <hr>

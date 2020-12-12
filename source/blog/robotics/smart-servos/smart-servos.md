@@ -1,6 +1,7 @@
 ---
 title: Robotic Smart Servos
 date: 22 Dec 2019
+image: "https://i.pinimg.com/564x/67/38/53/673853d250d1d24a2f85da53ed2e1e1e.jpg"
 ---
 
 <img src="ax-12a.jpg" width="200px"><img src="lx-16a.jpg" width="200px"><img src="lx-15d.jpg" width="200px">
@@ -24,7 +25,7 @@ Dynamixel servos.
 | Feature | LX-xx | AX-12A Dynamixel |
 |---|---|---|
 | **servo horn** | self tapping screws         | M2 machine screws into nuts |
-| **servo horn** | standard metal servo spline | plastic non-standard servo spline that is keyed | 
+| **servo horn** | standard metal servo spline | plastic non-standard servo spline that is keyed |
 | **wiring**     | plastic coated wires        | silicon coated wires (higher current) |
 | **connectors** | LX-16A same as AX-12A, LX-15D unknown | AX-12A same as LX-16A |
 | **datarate**   | 115.2kbps, standard rate, slower | 1Mbps, non-standard rate, fast, can be set to a slower rate if needed |
@@ -42,13 +43,13 @@ Dynamixel servos.
 
 ## LX-16A Test (Review?)
 
-This is a test of the motor mode for the servos. 
+This is a test of the motor mode for the servos.
 
-- They perform much like standard RC servos I have hacked to run 
-continuously. There is a very high pitch nose to them and they are 
-slow ... seemly slower than the datasheet specifies. 
-- Also, they are very easy to trip into current shutdown. The 
-slightest force seems to stop them ... not sure how they would perform 
+- They perform much like standard RC servos I have hacked to run
+continuously. There is a very high pitch nose to them and they are
+slow ... seemly slower than the datasheet specifies.
+- Also, they are very easy to trip into current shutdown. The
+slightest force seems to stop them ... not sure how they would perform
 as wheel motors.
 - Finally, once you have tripped them into an error state, it is seemly
 imposible to get them out. The error light keeps blinking no matter what
@@ -97,7 +98,7 @@ c.set_motor_mode(1, 0)
 ```
 
 Honestly, I was realy excited about a cheaper AX-12A servo, but these don't
-seem to be reliable and capable enough ... not sure. 
+seem to be reliable and capable enough ... not sure.
 
 ## Protocol
 

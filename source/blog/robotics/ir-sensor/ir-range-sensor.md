@@ -1,11 +1,10 @@
 ---
 title: Infrared Sensors
 date: 2017-01-02
+image: "ir_sensors.jpg"
 ---
 
 ## Infrared (IR) Range Sensor
-
-![](ir_sensors.jpg)
 
 A common range sensor is the Sharp IR sensors which almost every
 electronics source sells. These sensors output a beam of modulated light

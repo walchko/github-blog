@@ -1,5 +1,7 @@
 ---
 title: Various Licenses
+image: "https://i.pinimg.com/564x/84/bb/89/84bb8913150b13754c6a2839f49c6300.jpg"
+image-height: "400px"
 ---
 
 There are so many types of open source licenses, it is hard to keep track

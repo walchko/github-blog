@@ -1,9 +1,9 @@
 ---
 title: Using Python to Talk with a PS4 Controller over USB
 date: 4 Jan 2020
+image: "https://images.pexels.com/photos/275033/pexels-photo-275033.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+image-height: "400px"
 ---
-
-![](https://images.pexels.com/photos/275033/pexels-photo-275033.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)
 
 Basically take a look at my code [here](TBD). This will allow you to interact
 with `/dev/js0` or any other linux joystick file descriptor like `/dev/input/by-id/Sony-xxx`

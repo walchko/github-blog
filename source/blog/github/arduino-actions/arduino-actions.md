@@ -1,6 +1,8 @@
 ---
 title: Github Actions for Arduino
 date: 9 Oct 2020
+image: "https://i.pinimg.com/564x/11/80/b9/1180b902d6af59f67bdbf0acc39572a8.jpg"
+image-height: "400px"
 ---
 
 ```yaml
