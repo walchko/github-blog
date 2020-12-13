@@ -1,6 +1,7 @@
 ---
 title: Building Both Shared and Static Libraries
 date: 27 Nov 2019
+image: "https://i.pinimg.com/564x/71/3e/c6/713ec6d27005e599c80294e2c7a6458d.jpg"
 ---
 
 The idea here is build your library *once* but only to the object

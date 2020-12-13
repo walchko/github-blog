@@ -1,9 +1,8 @@
 ---
 title: Pi-Hole, Home Network Advertisement Blocker
 date: 21 July 2018
+image: "pi-hole-logo.png"
 ---
-
-![](pics/pi-hole-logo.png){width=200px}
 
 Website: [Pi-Hole](https://pi-hole.net/)
 
@@ -72,7 +71,7 @@ sudo service pihole-FTL start | restart | stop
 
 ## Web Interface
 
-![](pics/web-interface.png)
+![](web-interface.png)
 
 Just point a browser at: http://pi.hole/admin/
 

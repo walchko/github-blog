@@ -1,5 +1,6 @@
 ---
 title: Exceptions
+image: "https://i.pinimg.com/564x/3e/c5/1c/3ec51c866b4008e0d3c52c6e86af1728.jpg"
 ---
 
 - [Python 3 documentation](https://docs.python.org/3/tutorial/errors.html)

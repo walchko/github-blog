@@ -1,9 +1,8 @@
 ---
 title: IR Camera with Trinket M0 and CircuitPython
 date: 11 Aug 2019
+image: "https://cdn-learn.adafruit.com/assets/assets/000/043/014/medium800/temperature_AMG8833.jpg?1498492692"
 ---
-
-![](https://cdn-learn.adafruit.com/assets/assets/000/043/014/medium800/temperature_AMG8833.jpg?1498492692)
 
 Install the needed libraries in your `library` folder:
 
@@ -19,10 +18,10 @@ import time
 import busio
 import board
 import adafruit_amg88xx
- 
+
 i2c = busio.I2C(board.SCL, board.SDA)
 amg = adafruit_amg88xx.AMG88XX(i2c)
- 
+
 while True:
     for row in amg.pixels:
         # Pad to 1 decimal place

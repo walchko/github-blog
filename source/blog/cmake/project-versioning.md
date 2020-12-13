@@ -1,6 +1,8 @@
 ---
 title: Setting Project Versions
 date: 27 Nov 2019
+image: "https://i.pinimg.com/564x/cc/fb/ed/ccfbed6161acb1a662e3930f090848e6.jpg"
+image-height: "300px"
 ---
 
 ```cmake

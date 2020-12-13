@@ -1,5 +1,7 @@
 ---
 title: Strength of Materials (or Mechanics of Materials)
+image: "https://i.pinimg.com/564x/7b/f4/85/7bf48549e058725b0e930af390fc7e0d.jpg"
+image-height: "400px"
 ---
 
 ## References

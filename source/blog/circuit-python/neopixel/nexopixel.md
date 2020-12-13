@@ -1,9 +1,8 @@
 ---
 title: Using Neopixels with CircuitPython
 date: 7 Dec 2019
+image: "rgb-neopixel.jpg"
 ---
-
-![](rgb-neopixel.jpg)
 
 ```python
 import time

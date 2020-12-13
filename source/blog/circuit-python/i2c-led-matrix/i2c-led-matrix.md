@@ -1,9 +1,8 @@
 ---
 title: I2C Bicolor LED Matrix
 date: 2 Jan 2020
+image: "https://cdn-shop.adafruit.com/970x728/902-00.jpg"
 ---
-
-![](https://cdn-shop.adafruit.com/970x728/902-00.jpg)
 
 I2C address range is 0x70 - 0x77 with 0x70 being the default value for a single matrix.
 
@@ -18,7 +17,7 @@ import board
 import busio as io
 
 i2c = io.I2C(board.SCL, board.SDA)
-import adafruit_ht16k33.matrix 
+import adafruit_ht16k33.matrix
 matrix = adafruit_ht16k33.matrix.Matrix8x8x2(i2c) # single 8x8 bicolor LEDs
 # matrix = adafruit_ht16k33.matrix.Matrix8x8(i2c, address=0x74)  # if you need to change the address
 

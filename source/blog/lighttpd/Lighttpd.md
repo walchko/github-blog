@@ -1,5 +1,7 @@
 ---
 title: Lighttpd Static Page Webserver
+image: "https://i.pinimg.com/564x/47/b6/95/47b695a77bde3b2ad9fd1c8675207cc3.jpg"
+image-height: "300px"
 ---
 
 Security, speed, compliance, and flexibility -- all of these describe lighttpd (pron. lighty) which is rapidly redefining efficiency of a webserver; as it is designed and optimized for high performance environments. With a small memory footprint compared to other web-servers, effective management of the cpu-load, and advanced feature set (FastCGI, SCGI, Auth, Output-Compression, URL-Rewriting and many more) lighttpd is the perfect solution for every server that is suffering load problems. And best of all it's Open Source licensed under the revised BSD license.

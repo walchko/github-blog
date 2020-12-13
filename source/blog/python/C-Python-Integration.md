@@ -1,5 +1,6 @@
 ---
 title: C and Python Integration
+image: "https://i.pinimg.com/564x/45/bc/6f/45bc6f01512339aed405a3aed860d0e8.jpg"
 ---
 
 | Approach	          | Vintage |	Representative User	| Notable Pros                                          | Notable Cons |

@@ -1,6 +1,7 @@
 ---
 title: Machine to Machine Serialization
 date: 20 Feb 2019
+image: "https://i.pinimg.com/564x/c4/ef/72/c4ef722a5951d123900debc282b1fef4.jpg"
 ---
 
 - [MessagePack](https://msgpack.org)

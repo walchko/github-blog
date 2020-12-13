@@ -1,5 +1,6 @@
 ---
 title: Python and Command Line Args
+image: "https://i.pinimg.com/564x/cb/47/c0/cb47c02aa9661d1761006db2c8e122e2.jpg"
 ---
 
 ```python

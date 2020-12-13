@@ -1,6 +1,7 @@
 ---
 title: Display System Info During Build
 date: 27 Nov 2019
+image: "https://i.pinimg.com/564x/f5/ef/9c/f5ef9c24b1754f42a2048c02912e2f89.jpg"
 ---
 
 ```cmake

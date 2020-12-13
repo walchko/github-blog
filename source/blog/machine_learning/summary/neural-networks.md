@@ -1,15 +1,17 @@
 ---
 title: Neural Network Overview
 date: 12 Aug 2019
+image: "https://i.pinimg.com/736x/09/37/a9/0937a96126d7f91fce1e1ecc9e404748.jpg"
+image-height: "400px"
 ---
 
 Ideally, we want to take first principles (i.e. $F=ma$) and develop a model of a system that we can
-use. However, systems are inherently becoming more complex and more non-linear ($\hat x = f(x,t,u; \beta)$) 
+use. However, systems are inherently becoming more complex and more non-linear ($\hat x = f(x,t,u; \beta)$)
 and we may not be able to develop them from first principles. Thus, we need to take data from sensors
 and try to create a model (preferable lower dimensional and intuitive) that suits our purposes.
 Generally, I am interested in:
 
-- Controls 
+- Controls
 - Estimation (predict future states or guess at unmeasureable states)
 - Anomoly detection
 - Operations in noisy environments
@@ -35,7 +37,7 @@ The heart of this is convolution:
     in the local gradient
     - Summing these finding up (from a preceeding convolutional layer) helps the NN to
     identify features in an image
-    
+
 
 ## Recursive Neural Network (RNN)
 
@@ -48,11 +50,11 @@ follows a pattern and changes with **time**
 
 ## Autoencoder (Shallow, linear)
 
-- Transform a high dimensional data ($X$) to fewer dimension ($Z$) and then back to a 
+- Transform a high dimensional data ($X$) to fewer dimension ($Z$) and then back to a
 higher dimension ($\hat X$) which is an estimate of $X$
     - Essentially, implement Principle Component Analysis (PCA)
     - Allows compression of high dimensional down to the important dimension (PCA)
-    - Can allow better understanding of the information, since it is reduced to fewer 
+    - Can allow better understanding of the information, since it is reduced to fewer
     parameters ($Z$) than the original ($X$)
 
 ## Neural Networks (NN) Libraries

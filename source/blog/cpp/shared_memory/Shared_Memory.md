@@ -1,8 +1,10 @@
 ---
 title: Inter Process Communications with Shared Memory
 date: 3 Oct 2018
-image: "virtualmemory.png"
+image: "https://i.pinimg.com/564x/f6/3a/b6/f63ab64c0342526c847c77f15f612999.jpg"
 ---
+
+![](virtualmemory.png)
 
 ```
 shm_fd = shm_open(name, O_CREAT | O_RDRW, 0666);

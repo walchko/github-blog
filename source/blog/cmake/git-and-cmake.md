@@ -1,6 +1,8 @@
 ---
 title: Git and CMake
 date: 26 Nov 2019
+image: "https://i.pinimg.com/564x/86/84/9a/86849aecbb22312ba23cd0506b23dbf4.jpg"
+image-height: "300px"
 ---
 
 Doing `find_package(Git QUIET)` will give you access to:

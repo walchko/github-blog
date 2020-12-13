@@ -1,6 +1,8 @@
 ---
 title: Installing CMake Projects
 date: 27 Nov 2019
+image: "https://i.pinimg.com/564x/25/6b/f0/256bf002a251ffe11b09a4a1020e668e.jpg"
+image-height: "300px"
 ---
 
 ```cmake

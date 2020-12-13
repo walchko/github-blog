@@ -1,6 +1,8 @@
 ---
 title: Software Lines of Code (SLOC)
 date: 25-01-2018
+image: "https://i.pinimg.com/564x/27/36/48/2736485a600121cbd3a2bcdd71ded7fa.jpg"
+image-height: "300px"
 ---
 
 Software lines of code (sloc) is a measure of how large a

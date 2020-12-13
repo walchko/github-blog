@@ -1,6 +1,7 @@
 ---
 title: CMake Examples
 date: 15 Jun 2019
+iamge: "https://i.pinimg.com/564x/49/50/85/495085010a8d10d7dd1e2c048c0d34b3.jpg"
 ---
 
 

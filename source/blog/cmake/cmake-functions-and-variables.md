@@ -1,6 +1,7 @@
 ---
 title: Cmake Functions and Variables
 date: 27 Nov 2019
+image: "https://i.pinimg.com/564x/d9/7c/06/d97c066b78abc3f150bef932a16c726f.jpg"
 ---
 
 Here are some commonly use `cmake` things I use:
@@ -9,7 +10,7 @@ Here are some commonly use `cmake` things I use:
     - `PROJECT_SOURCE_DIR`: gives access to top level source directory
     - `CMAKE_CURRENT_SOURCE_DIR`: gives access to the current directory
 - `$ENV{HOME}`: grab environmental variables like `${HOME}` path
-- `project(name VERSION 1.2.3 LANGUAGES CXX) 
+- `project(name VERSION 1.2.3 LANGUAGES CXX)
     - `PROJECT_NAME` set by above
 - Global:
     - `include_directories(path)`: manually add include path

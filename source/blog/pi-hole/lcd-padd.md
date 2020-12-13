@@ -1,9 +1,8 @@
 ---
 title: Displaying Status of Pi Hole using RPi 7in LCD
 date: 23 Sept 2019
+image: "https://camo.githubusercontent.com/fe3dec9387952987a6a7fd5c7d9f7217a578737a/68747470733a2f2f6a706d636b2e636f6d2f696d672f626c6f672f706164642e706e67"
 ---
-
-![](https://camo.githubusercontent.com/fe3dec9387952987a6a7fd5c7d9f7217a578737a/68747470733a2f2f6a706d636b2e636f6d2f696d672f626c6f672f706164642e706e67)
 
 The software is available [here](https://github.com/jpmck/PADD). Most of the setup
 is explained there, just a few clarifications are added here.
@@ -31,7 +30,7 @@ normal login.
     1. Choose option B1: Desktop / CLI
     1. Choose option B2: Console Autologin
     1. Select Finish, and reboot the pi
-    
+
 Now, you should see `padd.sh` running on the LCD.
 
 ## Brightness
