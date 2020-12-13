@@ -1,6 +1,8 @@
 ---
 title: Constants in C++
 date: 25 Aug 2019
+image: "https://i.pinimg.com/564x/8e/a5/a9/8ea5a98b1e319b190a076c81c7823167.jpg"
+image-height: "400px"
 ---
 
 - **Bad:** `#define my_value 300.0`

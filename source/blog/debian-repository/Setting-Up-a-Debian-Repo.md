@@ -3,6 +3,7 @@ title: Create a Local Repository
 date:   2015-11-28
 modified:   2016-07-28
 summary:   Create a debian package and setup a repository
+image: "https://i.pinimg.com/564x/e6/91/cf/e691cf1dc78ea54cb2be2c5923f9a2f2.jpg"
 ---
 
 *Why would you want to do this?* Because the packages on Raspbian are

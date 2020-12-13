@@ -1,5 +1,5 @@
 ---
-title: CMake
+title: CMake Examples
 date: 15 Jun 2019
 ---
 

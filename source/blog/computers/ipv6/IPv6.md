@@ -1,8 +1,9 @@
 ---
 title: IPv6
+image: "https://i.pinimg.com/564x/bb/94/7f/bb947f0f51dc513a254bad0aa78342b7.jpg"
 ---
 
-![](pics/ipv6.jpg)
+![](ipv6.jpg)
 
 Here are some useful notes:
 

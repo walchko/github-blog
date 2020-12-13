@@ -1,6 +1,8 @@
 ---
 title: Arduino Setup on macOS and Linux
 date: 16 Aug 2020
+image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Arduino_Logo.svg/800px-Arduino_Logo.svg.png"
+image-height: "300px"
 ---
 
 Here are a few keynotes for installing Arduino

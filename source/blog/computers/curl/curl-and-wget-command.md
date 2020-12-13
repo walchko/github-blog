@@ -1,30 +1,23 @@
-Curl and Wget
-=============
+---
+title: Curl and Wget
+date:   2015-06-01
+summary:   Downloading things from the internet via the command line
+image: "https://i.pinimg.com/564x/58/37/6a/58376ab4473c4792c1115038393d3f5a.jpg"
+---
 
-date
-
-:   2015-06-01
-
-summary
-
-:   Downloading things from the internet via the command line
-
-wget
-----
+## `wget`
 
     wget "https://somewhere/file"
 
-curl
-----
+## `curl`
 
-This cheatsheet came from
-[mixu](http://blog.mixu.net/2013/01/29/curl-cheatsheet/).
+This cheatsheet came from [mixu](http://blog.mixu.net/2013/01/29/curl-cheatsheet/).
 
-Simple GET request :
+Simple GET request:
 
     curl -k "https://localhost/foo?bar=baz&amp;abc=def"
 
-JSON POST or PUT request :
+JSON POST or PUT request:
 
     curl -k -H "Content-Type: application/json" -X POST -d '{"accountName":"test","value":"hello"}' https://localhost/foo
 

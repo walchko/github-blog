@@ -2,7 +2,8 @@
 title: Some Cool c++17 Things
 date: 4 Jun 2019
 abstract: Some cool things with C++17
-author: Kevin Walchko
+image: "https://i.pinimg.com/564x/1f/62/72/1f62727375a2741af68b0ad470c53645.jpg"
+image-height: "300px"
 ---
 
 ## Various New Things

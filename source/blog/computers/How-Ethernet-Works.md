@@ -1,16 +1,10 @@
-Ethernet
-========
+---
+title: Ethernet Standard
+date:   2017-06-14
+summary:   How ethernet and cat5 cables work
+---
 
-date
-
-:   2017-06-14
-
-summary
-
-:   How ethernet and cat5 cables work
-
-BaseT
------
+## BaseT
 
 A standard ethernet cable (Cat 5, CAT 5E, or Cat 6) has 4 pairs of
 cables (8 wires total). For 10BaseT (10Mbps) and 100BaseT (100Mbps) they
@@ -37,8 +31,6 @@ out a normal signal over long distances.
 Now for 1000BaseT, it operates the same way, but gigabit uses all 4
 pairs (8 wires) to communicate.
 
-References
-----------
+#References
 
--   [How Gigabit Ethernet
-    Works](http://www.hardwaresecrets.com/how-gigabit-ethernet-works/)
+-   [How Gigabit Ethernet Works](http://www.hardwaresecrets.com/how-gigabit-ethernet-works/)

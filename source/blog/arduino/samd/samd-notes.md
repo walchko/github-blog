@@ -1,11 +1,11 @@
 ---
 title: Adafruit SAMD (Trinket M0 and QT Py) Notes
 date: 4 Oct 2020
+image: "https://cdn-shop.adafruit.com/970x728/4600-06.jpg"
+image-height: "400px"
 ---
 
-![](https://cdn-shop.adafruit.com/970x728/4600-06.jpg)
-
-Adafruit and others are using low cost ARM processors for small, cheap 
+Adafruit and others are using low cost ARM processors for small, cheap
 Arduino boards. The SAMD models made by Adafruit have some differences:
 
 - Enable pull-up resistors: `pinMode(pin, INPUT_PULLUP)`

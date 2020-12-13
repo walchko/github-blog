@@ -4,8 +4,8 @@ title: Adjustable Voltage Regulators
 
 ## LM317/LM338 Adjustable Regulators
 
-![](pics/lm317t.gif)
-![](pics/lm317t.jpg)
+![](lm317t.gif)
+![](lm317t.jpg)
 
 - [Ref](http://www.reuk.co.uk/wordpress/electric-circuit/lm317-voltage-calculator/)
 

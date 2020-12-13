@@ -1,6 +1,7 @@
 ---
 title: Running Pi-Hole Docker
 date: 7 Mar 2020
+image: "https://i.pinimg.com/564x/1c/8b/fd/1c8bfd2b80080c4bbe20feae282f5d31.jpg"
 ---
 
 So I run pi-hole on my Ubuntu desktop in a docker container and a second pi-hole on
@@ -14,7 +15,7 @@ to the Ubuntu steps if running it on that linux OS.
 - Edit `/etc/systemd/resolved.conf` by uncommenting/changing the stub line to: `DNSStubListener=no`
 - Redirect the `/etc/resolv.conf` (`/run/systemd/resolve/stub-resolv.conf`) link by: `ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
 
-## Docker-Compose 
+## Docker-Compose
 
 ```yaml
 version: "3"
@@ -48,5 +49,3 @@ services:
       - NET_ADMIN
     restart: unless-stopped
 ```
-
-

@@ -1,9 +1,8 @@
 ---
 title: Arduino-cli
 date: 12 Oct 2020
+image: "cli.png"
 ---
-
-![](cli.png)
 
 ## Install and Setup
 

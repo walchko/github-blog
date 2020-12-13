@@ -1,5 +1,7 @@
 ---
 title: Capacitors for Decoupling
+image: "https://www.pinterest.com/pin/447967494192391995/"
+image-height: "300px"
 ---
 
 

@@ -1,5 +1,6 @@
 ---
 title: Cool Interactive Bash Setup Script
+image: "https://www.fullstackpython.com/img/logos/bash-wide.jpg"
 ---
 
 I didn't write this, but I like how it is done

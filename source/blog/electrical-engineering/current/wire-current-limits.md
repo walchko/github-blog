@@ -1,6 +1,7 @@
 ---
 title: Wire Current Limits
 date: 17 Feb 2020
+image: "https://www.pinterest.com/pin/447967494192391995/"
 ---
 
 ## Soldering Wires

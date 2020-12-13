@@ -6,4 +6,4 @@ to do
 
 # References
 
-- [Linear Regulators](static/regulator-efficiency.pdf)
+- [Linear Regulators](regulator-efficiency.pdf)

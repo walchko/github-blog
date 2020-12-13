@@ -2,6 +2,7 @@
 title: Some Cool c++17 Things
 date: 11 Aug 2019
 abstract: C++17 std::any
+image: "https://i.pinimg.com/564x/ce/d6/f0/ced6f0e56e64735257df96ba9ee28d6c.jpg"
 ---
 
 `std::any` allows you to ignore the data type:

@@ -6,7 +6,7 @@ date: 5 Jul 2017
 ## Resistors and Diodes
 
 The numbers represent their physical sizes in inches, for example,
-a 1206 is 0.125 x 0.060 inch. 
+a 1206 is 0.125 x 0.060 inch.
 
 | Num  | Size (mm)   | Difficulty                                                           |
 |------|-------------|----------------------------------------------------------------------|
@@ -16,7 +16,7 @@ a 1206 is 0.125 x 0.060 inch.
 | 0402 | 1.00 x 0.50 | never tried, don't have any, I can barely see a 0603 :smile:)        |
 
 
-![](../pics/smd-1.jpg)
+![](smd-1.jpg)
 
 ## Packages
 
@@ -35,7 +35,7 @@ appart ... too small for me.
 
 ### Other
 
-![](../pics/smd-3.png)
+![](smd-3.png)
 
 
 # Wikipedia Info

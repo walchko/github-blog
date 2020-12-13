@@ -1,6 +1,7 @@
 ---
 title: Container Ideas
 date: 14 Sept 2019
+image: "https://i.pinimg.com/564x/1c/ed/40/1ced40963794fb9e4891b5549500e335.jpg"
 ---
 
 My git repos of docker containers is located [here](https://github.com/walchko/ultron)

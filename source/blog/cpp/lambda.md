@@ -1,6 +1,8 @@
 ---
 title: C++ Lambdas
 date: 3 Aug 2019
+image: "https://i.pinimg.com/564x/8a/5c/27/8a5c27e657eb29f380748dc2a37d6d40.jpg"
+image-height: "400px"
 ---
 
 A lambda is an anonomous function of the form: `[capture](parameters){definition}`.

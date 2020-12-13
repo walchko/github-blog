@@ -1,5 +1,7 @@
 ---
-title: KiCad
+title: KiCad Tips
+image: "kicad.png"
+image-height: "200px"
 ---
 
 ## Adding Libraries
@@ -22,13 +24,13 @@ title: KiCad
 [PCBWay tutorial](https://www.pcbway.com/blog/help_center/Generate_Gerber_file_from_Kicad.html)
 
 1. From the project, open the pcb editor
-    ![](pics/project.jpg)
+    ![](project.jpg)
 1. In the pcb editor, select the plotter
-    ![](pics/pcb-editor.jpg)
+    ![](pcb-editor.jpg)
 1. Select the following layers
-    ![](pics/plotter.jpg)
+    ![](plotter.jpg)
 1. Then generate a drill file
-    ![](pics/drill.jpg)
+    ![](drill.jpg)
 1. Now take all of the files and zip them up. You can use a gerber viewer
 to double check everything looks ok
 

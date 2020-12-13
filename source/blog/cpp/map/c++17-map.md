@@ -1,7 +1,8 @@
 ---
 title: C++17 Map
 date: 4 Aug 2019
-author: Kevin Walchko
+image: "https://i.pinimg.com/564x/ed/c6/41/edc64167e9dc95d205f3fbcfb484c5ea.jpg"
+image-height: "400px"
 ---
 
 - **begin():** Returns an iterator to the first element in the map
@@ -31,7 +32,7 @@ int main(){
     map<char, int> pack = {{'a',3},{'b',55},{'n',66}};
     pack['f'] = 234;
     db.erase('n');
-    
+
     return 0;
 }
 ```

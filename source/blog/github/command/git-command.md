@@ -1,19 +1,11 @@
-Git
-===
+---
+title: Git Command
+date:   2013-08-17
+modified:   2017-01-12
+summary:   Using `git`
+image: "github.png"
+---
 
-date
-
-:   2013-08-17
-
-modified
-
-:   2017-01-12
-
-summary
-
-:   Using `git`
-
-![](pics/github.png){.align-center width="200px"}
 
 Git is a version control system (VCS).
 

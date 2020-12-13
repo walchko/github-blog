@@ -3,12 +3,12 @@ title: Logic Level Shifting
 ---
 
 ## Tech Document References
-- [Phillips](static/phillips-level-shifting.pdf)
-- [NXP](static/NXP-level-shifting.pdf)
+- [Phillips](phillips-level-shifting.pdf)
+- [NXP](NXP-level-shifting.pdf)
 
 ## NXP Operation of the level shifter
 
-![](pics/level-shifting.png)
+![](level-shifting.png)
 
 The following three states should be considered during the operation of the level shifter:
 

@@ -1,6 +1,8 @@
 ---
 title: Secure Shell (ssh)
 date: 2012-09-10
+image: "ssh.jpg"
+image-height: "200px"
 ---
 
 
@@ -16,9 +18,9 @@ date: 2012-09-10
 ```
 kevin@dalek ~ $ ssh-keygen -t ed25519 -a 100
 Generating public/private ed25519 key pair.
-Enter file in which to save the key (/home/kevin/.ssh/id_ed25519): 
-Enter passphrase (empty for no passphrase): 
-Enter same passphrase again: 
+Enter file in which to save the key (/home/kevin/.ssh/id_ed25519):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
 Your identification has been saved in /home/kevin/.ssh/id_ed25519.
 Your public key has been saved in /home/kevin/.ssh/id_ed25519.pub.
 The key fingerprint is:
@@ -68,7 +70,7 @@ Then to update add key to SSH agent: `ssh-add -K ~/.ssh/id_ed25519`
 	- creates a pub/private key at `.ssh/id_ed25519[.pub]`
 	- New key, not every server will support
 	- Ed25519 is the EdDSA signature scheme using SHA-512 (SHA-2) and Curve25519
-- Else, use RSA, 4096 bits: `ssh-keygen -t rsa -b 4096 
+- Else, use RSA, 4096 bits: `ssh-keygen -t rsa -b 4096
 
 # Disabling Host Key Check
 

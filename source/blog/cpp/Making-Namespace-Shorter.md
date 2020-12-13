@@ -1,6 +1,8 @@
 ---
 title: Making C++ Namespaces Easier to Work With
 date: 4 Apr 2019
+image: "https://i.pinimg.com/564x/df/e1/5c/dfe15ce2dc32cac67d037455bceb241d.jpg"
+image-height: "300px"
 ---
 
 ```cpp
