@@ -1,0 +1,50 @@
+# curl -sL http://install.aieater.com/setup_opencv | bash -
+
+#pip3 install opencv-python
+
+
+
+# libav-tools
+mkdir -p ~/src
+cd ~/src
+rm -rf opencv*
+curl -o ~/src/opencv.zip http://install.aieater.com/opencv.zip
+unzip opencv.zip
+cd opencv-*
+mkdir build
+cd build
+
+cmake\
+ -D CMAKE_BUILD_TYPE=RELEASE\
+ -D CMAKE_INSTALL_PREFIX=/usr/local\
+ -D WITH_TBB=ON\
+ -D USE_V4L=ON\
+ -D USE_V4L2=ON\
+ -D WITH_V4L=ON\
+ -D WITH_V4L2=ON\
+ -D INSTALL_C_EXAMPLES=OFF\
+ -D INSTALL_PYTHON_EXAMPLES=OFF\
+ -D BUILD_EXAMPLES=OFF\
+ -D WITH_QT=OFF\
+ -D WITH_QUICKTIME=OFF\
+ -D WITH_QTKIT=OFF\
+ -D WITH_OPENGL=OFF\
+ -D WITH_OPENCL=OFF\
+ -D BUILD_TESTS=OFF\
+ -D BUILD_PERF_TESTS=OFF\
+ -D BUILD_EXAMPLES=OFF\
+ -D WITH_CUDA=OFF\
+ -D WITH_QUICKTIME=OFF\
+ -D WITH_GSTREAMER=OFF\
+ -D WITH_FFMPEG=ON\
+ -D BUILD_opencv_python2=ON\
+ -D BUILD_opencv_python3=ON\
+ ..
+
+
+make -j8
+sudo make install
+
+python -c "import cv2"
+python3 -c "import cv2"
+

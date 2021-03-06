@@ -1,0 +1,300 @@
+
+/*
+https://www.w3schools.com/cssref/css_units.asp
+
+Unit    Description
+--------------------------------------------
+em    Relative to the font-size of the element (2em means 2 times the size of the current font) Try it
+ex    Relative to the x-height of the current font (rarely used) Try it
+ch    Relative to width of the "0" (zero)
+rem    Relative to font-size of the root element
+vw    Relative to 1% of the width of the viewport* Try it
+vh    Relative to 1% of the height of the viewport* Try it
+vmin    Relative to 1% of viewport's* smaller dimension Try it
+vmax    Relative to 1% of viewport's* larger dimension
+*/
+
+/*
+KEY
+--------------------------------------------
+#wrapper -> <div id="wrapper">
+.wrapper -> <div class="wrapper">
+*/
+
+/* messing up bullets
+* {
+    margin: 0;
+    padding: 0;
+} */
+
+html, body {
+    height: 100%;
+    color: #424141;
+    background-color: #FFFFFF;
+}
+
+/* .author {
+    font-weight: bold;
+} */
+
+.small {
+    font-size: 80%;
+}
+
+.large {
+    font-size: 150%;
+}
+
+.xtralarge {
+    font-size: 250%;
+}
+
+.normal {
+    font-weight: normal;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.logo {
+    padding: 10px;
+}
+
+.title {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+.title a {
+    font-family: 'Source Serif Pro', serif;
+    text-align: center;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.title a:hover {
+    color: #CCCCCC;
+}
+
+/*Keep these -----*/
+#outer-wrapper {
+    position: relative;
+    width: 100%;
+    /*font: normal 17px/1.524 "Noto Sans";*/
+    font-family: 'Source Serif Pro', serif;
+    line-height: 140%;
+    min-height: 100%;
+}
+
+/* * html #outer-wrapper {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+} */
+
+/*------------------*/
+
+#header-wrapper {
+    color: #ffffff;
+    vertical-align: middle;
+    text-align: center;
+    background: #1a1a1a;
+    /* background: #888; */
+    height: 100px;
+    padding: 1em 1em 1em 1em;
+
+    margin: -10px; /* want header to go to the edges */
+}
+
+#header-wrapper .nav {
+    /* margin: 0 auto; */
+    max-width: 100%;
+    font-family: 'Source Serif Pro', serif;
+}
+
+#header-wrapper .nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 140%;
+}
+#header-wrapper .nav a:hover {
+    color: #CCCCCC;
+}
+
+
+
+/*Footer --------------------------------*/
+
+#footer-wrapper {
+    position: relative;
+    text-align: center;
+    background-color: #3399ff;
+    font-family: 'Source Serif Pro', serif;
+    bottom: 0;
+    height: 200px;
+    width: 110%;
+    margin: -10px; /* want footer to go to the edges */
+}
+#footer-wrapper a {
+    text-decoration: none;
+    color: #cce6ff;
+}
+#footer-wrapper a:hover {
+    color: #CCCCCC;
+}
+
+
+.push {
+    height: 600px;
+}
+
+/*Main handles all fo the body pages*/
+
+.border-radius, #main pre {
+  border-radius: 5px;
+}
+
+.round-radius, #main img {
+  border-radius: 10px;
+}
+
+#main {
+    width: 75%;
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 100%;
+}
+
+#main h1, #main h2, #main h3, #main h4, #main h5, #main h6 {
+  color: #4b4b4b;
+  font-family: "Noto Sans";
+  margin: 1em 0;
+  line-height: 140%;
+}
+#main h2 a {
+  display: inline-block;
+  text-decoration: none;
+  color: #4b4b4b;
+}
+#main h2 a:visited {
+  color: #4b4b4b;
+}
+#main h2:first-child {
+  margin: 1em 0;
+}
+#main p {
+  margin-bottom: 1em;
+}
+#main img {
+  display: block;
+  margin: 1em auto;
+  padding: .3em;
+  border: 1px none;
+  max-width: 100%;
+}
+#main a[href$=".png"], #main a[href$=".gif"], #main a[href$=".jpg"], #main a[href$=".jpeg"] {
+  cursor: pointer;
+  cursor: zoom-in;
+  cursor: -moz-zoom-in;
+  cursor: -webkit-zoom-in;
+}
+/* #main ul {
+  margin: 1em 0px;
+}
+#main ol, #main li {
+  margin-left: 1em;
+} */
+#main img[alt="many"] {
+  display: inline;
+  margin: 1em 0;
+}
+#main img[alt="none"] {
+  border: none;
+}
+#main img[alt="left"] {
+  float: left;
+  margin: .5em 1em .25em 0;
+}
+#main img[alt="right"] {
+  float: right;
+  margin: .5em 1em .25em 0;
+}
+#main .archive-date {
+  text-align: left;
+  float: right;
+  /*background: $img-border bottom left repeat-x*/
+  color: #8eb6cb;
+}
+#main .align-left {
+  display: block;
+  text-align: left;
+}
+#main .align-center {
+  display: block;
+  text-align: center;
+}
+#main .align-right {
+  display: block;
+  text-align: right;
+}
+#main blockquote {
+  margin-bottom: 0.5em;
+  padding: .5em;
+/*   border: 1px dashed #CCCCCC; */
+  font-style: italic;
+}
+#main a {
+    /*color: #8eb6cb;*/
+    color: #7e7e96;
+    text-decoration: none;
+}
+#main a:hover {
+  color: #688fad;
+  /*color: black;*/
+  text-decoration: underline;
+}
+#main a:visited {
+  color: #7e7e96;
+}
+
+#main pre {
+  line-height: 1.5;
+  font-size: 0.95rem;
+  margin-bottom: 1em;
+  padding: 0.313em;
+  overflow: auto;
+  background-color: #FBFBFB;
+  border: 1px solid #c9c9c9;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin: 2% 0;
+  border: #c9c9c9;
+}
+
+tr.header {
+  background-color: #3399ff;
+  color: #fff;
+}
+
+tr.odd {background-color: #f2f2f2;}
+tr.odd, tr.even {border: 1px solid #CCCCCC;}
+th, td {
+  text-align: left;
+  padding: 0.313em 0.625em;
+}
+dt {
+  color: #444;
+  font-weight: 700;
+}
+dd {
+  margin-left: 1em;
+}
+
+.pagination {
+  text-align: center;
+  margin: 1em 0;
+}
