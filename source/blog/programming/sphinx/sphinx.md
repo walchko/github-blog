@@ -14,13 +14,12 @@ sphinx-quickstart
 ```
 docs/
  |
- +- config.py
- +- index.rst
- +- _build/
- +- _templates/
- +- _static/
-      |
-      +- logo.jpg
+ ├── config.py
+ ├── index.rst
+ ├── _build/
+ ├── _templates/
+ └── _static/
+       └──logo.jpg
 ```
 
 ```
