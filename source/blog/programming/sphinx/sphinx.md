@@ -4,7 +4,7 @@ date: 7 Mar 2021
 ---
 
 ```
-pip install Sphinx m2r2
+pip install Sphinx m2r2 sphinx-autoapi
 ```
 
 ```
