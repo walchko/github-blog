@@ -1,6 +1,7 @@
 ---
 title: Install Atom.io
 date: 16 Mar 2021
+image: "atom.webp"
 ---
 
 
