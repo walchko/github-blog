@@ -1,5 +1,5 @@
 ---
-title: Software Setup
+title: Useful Software on Ubuntu
 date: 3 Aug 2019
 ---
 
