@@ -1,7 +1,6 @@
 ---
 title: KiCad Tips
-image: "kicad.png"
-image-height: "200px"
+image: "https://imgs.xkcd.com/comics/circuit_diagram.png"
 ---
 
 ## Adding Libraries
