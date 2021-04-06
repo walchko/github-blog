@@ -3,6 +3,9 @@ title: How To Design 3d Printer Parts for Mechanical Fasteners
 date: 24 Aug 2019
 ---
 
+![](socket-head.png)
+![](nut.jpg)
+
 ## Dimensions for Self Tapping Screws
 
 - **M3:** 2.5mm (tight) or 2.75mm hole
@@ -11,15 +14,13 @@ date: 24 Aug 2019
 
 ## 3d Printer Dimensions for Fasteners [mm]
 
-| Type | Screw Dia. | Print Dia. | CS Dia. | CS Depth |
-|---|---|---|---|---|
-| M2 Hex Socket | 2  | 2.5 |4 | 2 |
-| M3 Hex Socket | 3  | 3.5 | 6 | 3 |
-| 2-56 Pan | 2.18 | 2.5 | 6 | 2 |
-| 4-40 Pan | 2.845 | 3.5 | 8.5 | 2 |
+| Type | Screw Dia. (D) | Print Dia. | Socket Cap Dia. (A)  | Socket Cap Depth (H) | Nut Width (E) | Nut Depth (M) |
+|------|----------------|------------|----------------------|----------------------|---|---|
+| M2   | 2     | 2.2 | 4   | 2 | 4.65 | |
+| M3   | 3     | 3.3 | 6   | 3 | 6.4  | |
+| M4   | 4     | 4.3 | 7.5 | 4 | | |
+| M5   | 5     | 5.3 | 9   | 5 | | |
 
-- **CS:** Counter Sink, so machine screw head is flush with surface (well sort of)
-- **Pan:** Pan phillips head (+) screw
 
 ## OpenScad Code for Fasteners
 
