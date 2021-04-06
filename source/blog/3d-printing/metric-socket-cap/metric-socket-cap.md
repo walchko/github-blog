@@ -3,9 +3,6 @@ title: How To Design 3d Printer Parts for Mechanical Fasteners
 date: 24 Aug 2019
 ---
 
-![](socket-head.png)
-![](nut.jpg)
-
 ## Dimensions for Self Tapping Screws
 
 - **M3:** 2.5mm (tight) or 2.75mm hole
@@ -13,6 +10,9 @@ date: 24 Aug 2019
     - repeated removal loosens them up ... so 2.5mm might be best over time
 
 ## 3d Printer Dimensions for Fasteners [mm]
+
+![](socket-head.png)
+![](nut.jpg)
 
 | Type | Screw Dia. (D) | Print Dia. | Socket Cap Dia. (A)  | Socket Cap Depth (H) | Nut Width (E) | Nut Depth (M) |
 |------|----------------|------------|----------------------|----------------------|---|---|
