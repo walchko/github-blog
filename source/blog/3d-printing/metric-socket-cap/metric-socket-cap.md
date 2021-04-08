@@ -15,12 +15,11 @@ date: 24 Aug 2019
 ![](nut.jpg)
 
 | Type | Screw Dia. (D) | Print Dia. | Socket Cap Dia. (A)  | Socket Cap Depth (H) | Nut Width (E) | Nut Depth (M) |
-|------|----------------|------------|----------------------|----------------------|---|---|
-| M2   | 2     | 2.2 | 4   | 2 | 4.65 | |
-| M3   | 3     | 3.3 | 6   | 3 | 6.4  | |
-| M4   | 4     | 4.3 | 7.5 | 4 | | |
-| M5   | 5     | 5.3 | 9   | 5 | | |
-
+|------|----------------|------------|----------------------|----------------------|---------------|---------------|
+| M2   | 2              | 2.2        | 4                    | 2                    | 4.65          | 1.7 |
+| M3   | 3              | 3.3        | 6                    | 3                    | 6.4           | 2.5 |
+| M4   | 4              | 4.3        | 7.5                  | 4                    | 8.1           | 3.3 |
+| M5   | 5              | 5.3        | 9                    | 5                    | 9.3           | 4.8 |
 
 ## OpenScad Code for Fasteners
 
@@ -79,4 +78,5 @@ module M3(t){
 
 ## References
 
-- [engineersedge.com metric socket head screws](https://www.engineersedge.com/hardware/_metric_socket_head_cap_screws_14054.htm)
+- [metric socket cap screws](https://www.engineersedge.com/hardware/_metric_socket_head_cap_screws_14054.htm)
+- [metric nuts](https://www.engineersedge.com/hardware/standard_metric_hex_nuts_13728.htm)
