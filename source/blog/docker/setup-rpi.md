@@ -47,6 +47,28 @@ perforance lost by using docker compaired to either a VM or KVM.
     - `docker run --privileged -d mygreatimage`
     - `docker run --device /dev/gpiomem -d mygreatimage`
 
+## Non-Privileged User
+
+To run Docker as a non-privileged user, consider setting up the
+Docker daemon in rootless mode for your user:
+
+```
+dockerd-rootless-setuptool.sh install
+```
+
+Visit https://docs.docker.com/go/rootless/ to learn about rootless mode.
+
+## Fully Privileged Service
+
+To run the Docker daemon as a fully privileged service, but granting non-root
+users access, refer to https://docs.docker.com/go/daemon-access/
+
+
+**WARNING:** Access to the remote API on a privileged Docker daemon is equivalent
+         to root access on the host. Refer to the 'Docker daemon attack surface'
+         documentation for details: https://docs.docker.com/go/attack-surface/
+
+
 ## Buster Issue [fixed?]
 
 Docker hasn't created packages yet for buster, but you can use the stretch packages and
