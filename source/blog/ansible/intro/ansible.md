@@ -44,6 +44,10 @@ To see what ansible knows about your system:
 
 ```
 ansible -i inventory -u pi raspberrypi.local -m setup
+
+# if you setup a ansible.cfg with NVENTORY = inventory.yml
+ansible -u pi -m setup raspberrypi.local
+ansible -u pi -m ping raspberrypi.local
 ```
 
 A large dictionary of information will print to the screen. This info can also be 
@@ -56,6 +60,10 @@ used dynamically.
 | `-b`   | Elevate to root user  |
 | `-i <file>` | Use an inventory file which contains info about servers |
 | `-u <user>` | Specify what user to login as |
+
+> **WARNING:** If you get errors about `(publickey, password)`, make sure you have used
+`ssh-copy-id` so you can access the computer with `ssh` but without having to use
+a password.
 
 ## Ansible Vault
 
