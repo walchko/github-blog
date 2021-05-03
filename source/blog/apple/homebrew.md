@@ -1,7 +1,6 @@
 ---
 title: Homebrew
 date: 2017-04-18
-summary:   homebrew, the missing package manager for macOS
 ---
 
 Some useful [homebrew](http://brew.sh/) programs:
