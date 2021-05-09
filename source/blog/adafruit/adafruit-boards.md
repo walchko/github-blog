@@ -15,14 +15,6 @@ image-height: "400px"
 
 - FPU: floating point unit
 
-Adafruit and others are using low cost ARM processors for small, cheap
-Arduino boards. The SAMD models made by Adafruit have some differences:
-
-- Enable pull-up resistors: `pinMode(pin, INPUT_PULLUP)`
-- I2C speed: you can increase the default clock rate with `Wire.setClock(x)`
-where `x` can be 100000, 400000, 1000000, or 3400000
-    - SAMD is capabile of I2C clock of 3.4MHz ... you are really limited by the sensor
-
 ## SAMD21G
 
 - The SAMD21G uses an ARM Cortex M0+ microcontroller, which is about as small and simple as you get with 32-bit devices.
@@ -49,6 +41,17 @@ The SAMD51 is a new device family from Atmel-now-Microchip, built around a very 
 - includes a hardware floating-point math unit and digital signal processing array (one command applies a math operation to a whole block of data). 
 - It has 512K of Flash memory and 192K of RAM. 
 - It runs at 120MHz and has 51 GPIO pins.
+
+## Arduino Notes
+
+Adafruit and others are using low cost ARM processors for small, cheap
+Arduino boards. The SAMD models made by Adafruit have some differences:
+
+- Enable pull-up resistors: `pinMode(pin, INPUT_PULLUP)`
+- I2C speed: you can increase the default clock rate with `Wire.setClock(x)`
+where `x` can be 100000, 400000, 1000000, or 3400000
+    - SAMD is capabile of I2C clock of 3.4MHz ... you are really limited by the sensor
+
 
 # References
 
