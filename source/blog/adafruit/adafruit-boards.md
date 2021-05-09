@@ -1,5 +1,5 @@
 ---
-title: Adafruit Boards
+title: Adafruit SAMD21 and SAMD51 Boards
 date: 10 Jan 2021
 image: "https://i.pinimg.com/564x/92/99/24/929924c948f6ece51e9ea6782f2dbab1.jpg"
 image-height: "400px"
@@ -14,6 +14,14 @@ image-height: "400px"
 | [QTPy][4]         | ATSAMD21E18 32-bit Cortex M0+ | 48  | 32KB  | 256KB | No  | 11   | 9       | 9   | N/A       | $6     |
 
 - FPU: floating point unit
+
+Adafruit and others are using low cost ARM processors for small, cheap
+Arduino boards. The SAMD models made by Adafruit have some differences:
+
+- Enable pull-up resistors: `pinMode(pin, INPUT_PULLUP)`
+- I2C speed: you can increase the default clock rate with `Wire.setClock(x)`
+where `x` can be 100000, 400000, 1000000, or 3400000
+    - SAMD is capabile of I2C clock of 3.4MHz ... you are really limited by the sensor
 
 ## SAMD21G
 
@@ -45,6 +53,8 @@ The SAMD51 is a new device family from Atmel-now-Microchip, built around a very 
 # References
 
 - [The microcontrollers in Adafruit products](https://learn.adafruit.com/how-to-choose-a-microcontroller/the-microcontrollers-in-adafruit-products)
+- Arduino: [Changing the Wiring clock rate](https://www.arduino.cc/en/Reference/WireSetClock)
+- Microchip: [ATSAMD21E18 specs and I2C clock rate](https://www.microchip.com/wwwproducts/en/ATSAMD21E18#additional-features)
 
 [1]: https://www.adafruit.com/product/3500 "buy"
 [2]: https://www.adafruit.com/product/3727 "buy"
