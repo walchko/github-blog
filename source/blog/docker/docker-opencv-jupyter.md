@@ -7,7 +7,7 @@ date: 4 Mar 2017
 
 Here is a `Dockerfile` to build a container with opencv, python, and jupyter:
 
-```docker
+```dockerfile
 # Installs Jupyter Notebook and IPython kernel from the current branch
 # Another Docker container should inherit with `FROM jupyter/notebook`
 # to run actual services.
