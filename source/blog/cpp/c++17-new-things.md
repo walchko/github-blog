@@ -8,7 +8,69 @@ image-height: "300px"
 
 ## Various New Things
 
-<script src="https://gist.github.com/walchko/ae19f3cef040b70cfd8cfaa42502e75e.js"></script>
+```c++
+#include <iostream>
+#include <vector>
+#include <map>
+#include <stdint.h>
+#include <optional>
+#include <any>
+
+using namespace std;
+
+optional<int> convert(const string& s) {
+    try {
+        int res = stoi(s);
+        return res;
+    }
+    catch(exception&) {
+        return {};
+    }
+}
+
+int main(){
+    // optional return - succes
+    int v = convert("123").value_or(0);
+    cout << v << endl;
+    
+    // optional return - fail, uses default
+    int v1 = convert("abc").value_or(0);
+    cout << v1 << endl;
+
+    // vector with mixed data types
+    vector<any> vv { 1, 2.2, false, "hi!" };
+
+    auto& t = vv[1].type();  // What is being held in this any?
+    if (t == typeid(double))
+        cout << "We have a double" << "\n";
+    else
+        cout << "We have a problem!" << "\n";
+
+    cout << any_cast<double>(vv[1]) << endl;
+    
+    try {
+        cout << any_cast<int>(vv[1]) << endl;
+    } catch(bad_any_cast&) {
+        cout << "wrong type" << endl;
+    }
+    
+    // unpack arrays like python
+    std::array<int32_t, 6> arr{10, 11, 12, 13, 14, 15};
+    auto [i, j, k, l, _dummy1, _dummy2] = arr;
+    
+    // iterate through vectors
+    vector<int> v = {1, 2, 5, 2};
+    for (auto const& i: v) cout << i << ' ';
+    cout << '\n';
+    // prints "1 2 5 2"
+    
+    // iterate through maps
+    map<int,int> m = {{1,2},{3,4}};
+    for (const auto& [key, val]: m) cout << key << " " << value << endl;
+
+    return 0;
+}
+```
 
 ## List
 
