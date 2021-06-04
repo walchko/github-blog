@@ -1,6 +1,7 @@
 ---
 title: C++20 Modules
 date: 4 June 2021
+image: header.jpg
 ---
 
 With modules, you can finally create *one* file that holds
