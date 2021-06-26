@@ -39,10 +39,10 @@ and not standard aerospace definitions of the frame (x-forward, y-right wing, z-
 
 | Sensor       | bits | Sampling (Hz) | Abs Accuracy (Pa) | Rel Accuracy (Pa) | Range (hPa) | I2C (Hz) |
 |--------------|------|---------------|-------------------|-------------------|-------------|-----------|
-| [LPS22][p1]  | 24   | 75            | 100               | Unknown           | 260-1260 | 400k |
-| [DPS310][p2] | 24   | 128           | 100               | 6                 | 300-1200 | |
-| [BMP388][p4] | 24   | 200           | 50                | 8 (0.66m)         | 300-1100 | 3.4M |
-| [BMP390][p3] | 24   | 200           | 50                | 3 (0.25m)         | 300-1250 | 3.4M |
+| [LPS22][p1]  | 24   | 75            | 100               | Unknown           | 260-1260    | 400k |
+| [DPS310][p2] | 24   | 128           | 100               | 6 (0.55m)         | 300-1200    | 3.4M |
+| [BMP388][p4] | 24   | 200           | 50                | 8 (0.66m)         | 300-1100    | 3.4M |
+| [BMP390][p3] | 24   | 200           | 50                | 3 (0.25m)         | 300-1250    | 3.4M |
 
 [Altitude][peqn] can be calculated with:
 
@@ -94,7 +94,8 @@ where $bandwidth$ is half the Output Data Rate (ODR), $filter$ is a low pass fil
 - InvenSense Accel/Gyro [ICM-20649](icm-20649.pdf)
 - ST Magnetometer [LIS3MDL](lis3mdl.pdf)
 - ST Pressure [LPS22](https://www.st.com/resource/en/datasheet/dm00140895.pdf)
-- [BMP390](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp390-ds002.pdf)
+- Bosch [BMP390](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp390-ds002.pdf)
+- Infineon [DPS310](https://www.infineon.com/dgdl/Infineon-DPS310-DataSheet-v01_01-EN.pdf?fileId=5546d462576f34750157750826c42242)
 
 
 [i1]: https://www.adafruit.com/product/3463
