@@ -11,7 +11,7 @@ image: "https://i.pinimg.com/564x/16/dd/16/16dd16a698bde065bc803e8015a7fb00.jpg"
 | [NXP_FXOS8700CQ][i1] | 20         | 14   | 126           | 1.11636         | 0.244141    |
 | [LSM6DS33][i2]       | 40         | 16   | 90            | 0.797402        | 0.0610352
 | [LSM6DSOX][i3]       | 20         | 16   | 70            | 0.620202        | 0.0610352
-| [ISM330DHCX][i4]     | Unkn       | 16   | 60            | 0.531601        | 0.0610352
+| [ISM330DHCX][i4]     | Unknown    | 16   | 60            | 0.531601        | 0.0610352
 | [LSM9DS1][i5]        | 90         | 16   | 200           | 1.772           | 0.0610352
 | [ICM-20649][i6]      | Unkn       | 16   | 285           | 2.52511         | 0.0610352
 | [BNO055][i7]         | 80         | 14   | 150           | 1.329           | 0.244141
@@ -20,8 +20,11 @@ image: "https://i.pinimg.com/564x/16/dd/16/16dd16a698bde065bc803e8015a7fb00.jpg"
 
 | Sensor               | I2C  | Notes |
 |----------------------|------|---|
-| [BNO055][o1]         | 0x28 | |
-| [BNO085][o2]         | 0x4A | Broke on arrival |
+| [BNO055][o1]         | 0x28 |   |
+| [BNO085][o2]         | 0x4A | Vendor sold to new company |
+
+**WARNING:** these use Andriod/iOS definitions of coordinate systems 
+and not standard aerospace definitions of the frame (x-forward, y-right wing, z-down)
 
 # Gryoscope
 
@@ -34,11 +37,12 @@ image: "https://i.pinimg.com/564x/16/dd/16/16dd16a698bde065bc803e8015a7fb00.jpg"
 
 # Pressure
 
-| Sensor       | bits | Sampling (Hz) | Abs Accuracy (Pa) | Rel Accuracy (Pa) | Range (hPa) |
-|--------------|------|---------------|-------------------|-------------------|-------------|
-| [LPS22][p1]  |      |               | 100               |                   | 260-1260 |
-| [DPS310][p2] | 24   | 128           | 100               | 6                 | 300-1200 |
-| [BMP390][p3] | 24   | 200           | 50                | 3                 | 300-1250 |
+| Sensor       | bits | Sampling (Hz) | Abs Accuracy (Pa) | Rel Accuracy (Pa) | Range (hPa) | I2C (Hz) |
+|--------------|------|---------------|-------------------|-------------------|-------------|-----------|
+| [LPS22][p1]  | 24   | 75            | 100               | Unknown           | 260-1260 | 400k |
+| [DPS310][p2] | 24   | 128           | 100               | 6                 | 300-1200 | |
+| [BMP388][p4] | 24   | 200           | 50                | 8 (0.66m)         | 300-1100 | 3.4M |
+| [BMP390][p3] | 24   | 200           | 50                | 3 (0.25m)         | 300-1250 | 3.4M |
 
 [Altitude][peqn] can be calculated with:
 
@@ -106,3 +110,4 @@ where $bandwidth$ is half the Output Data Rate (ODR), $filter$ is a low pass fil
 [p1]: https://www.adafruit.com/product/4633
 [p2]: https://www.adafruit.com/product/4494
 [p3]: https://www.adafruit.com/product/4816
+[p4]: https://www.adafruit.com/product/3966
