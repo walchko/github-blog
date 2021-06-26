@@ -93,6 +93,8 @@ where $bandwidth$ is half the Output Data Rate (ODR), $filter$ is a low pass fil
 - ST Accel/Gyro [ISM330DHCX](ism330dhcx.pdf)
 - InvenSense Accel/Gyro [ICM-20649](icm-20649.pdf)
 - ST Magnetometer [LIS3MDL](lis3mdl.pdf)
+- ST Pressure [LPS22](https://www.st.com/resource/en/datasheet/dm00140895.pdf)
+- [BMP390](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp390-ds002.pdf)
 
 
 [i1]: https://www.adafruit.com/product/3463
