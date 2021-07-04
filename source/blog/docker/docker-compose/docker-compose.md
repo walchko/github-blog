@@ -16,10 +16,52 @@ docker-compose <cmd> <flag>
     - `stop` | `down`
     - `pause` | `unpause`
     - `ps`: print a container's stats
+    - `top`: show running containers
 - Flags
     - `-d`: detatch from the command line and run in the background
 
-## Basic Example
+## Basic Interactive `bash` Example
+
+- `docker-compose build`
+- `docker-compose run dev`
+    - You have to do `docker-compose run` instead of `docker-compose up` if you want an interactive session, because `up` is meant to run multiple containers.
+
+### `docker-compose.yml`
+
+```yaml
+version: '3'
+
+services:
+  dev:
+    build:
+      context: .
+    container_name: foo
+    volumes:
+      - ./foo:/src/foo
+    stdin_open: true
+```
+### `Dockerfile`
+
+```yaml
+FROM debian:buster
+
+RUN mkdir /src
+
+WORKDIR /src
+
+RUN apt-get update -qq \
+    && apt-get install -yq --no-install-recommends \
+        build-essential \
+        cmake \
+        git \
+    && apt-get purge -y --auto-remove \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+ENTRYPOINT /bin/bash
+```
+
+## Env File
 
 ```yaml
 # docker-compose.yml
@@ -44,6 +86,20 @@ services:
     image: redis
 ```
 
+## Non-Root
+
+You can create a user account:
+
+```yaml
+RUN useradd -ms /bin/bash bob \
+    && chsh --shell /bin/bash bob
+
+USER bob # now everything will be done as bob
+
+COPY --chown=bob:bob some.file .
+```
+
 # Refrences
 
 - devhints.io: [docker-compose cheatsheet](https://devhints.io/docker-compose)
+- github gist: [simple docker-compose setup](https://gist.github.com/margaret/ac79bbab2234143d08abf605e9eddad5)
