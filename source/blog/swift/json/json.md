@@ -8,3 +8,4 @@ It is more complicated than python, but works
 # References
 
 - [Encode/Decode JSON](https://www.raywenderlich.com/3418439-encoding-and-decoding-in-swift)
+- Apple Docs: [Archives and Serialization](https://developer.apple.com/documentation/foundation/archives_and_serialization)
