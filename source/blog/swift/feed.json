@@ -13,11 +13,11 @@
             "description": "Learn to compare key paths and pick the right one.",
             "contentIdentifier": "com.example.whimsicalswift.keypaths",
             "contentVersion": "1.0",
-            "url": "json/json.playgroundbook.zip",
+            "url": "json/json.playground.zip",
             "publishedDate": "2017-11-13T21:13:57+00:00",
             "lastUpdatedDate": "2017-11-13T21:13:57+00:00",
-            "thumbnailURL": "json/thumbnail.png",
-            "bannerImageURL": "json/banner.png",
+            "thumbnailURL": "json/thumbnail.jpg",
+            "bannerImageURL": "json/banner.jpg",
             "additionalInformation": [
                 {
                     "name": "Languages",
@@ -25,7 +25,7 @@
                 }
             ],
             "previewImageURLs": [
-                "json/preview-1.png"
+                "json/preview-1.jpg"
             ]
         }
     ]
