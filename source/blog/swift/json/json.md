@@ -1,6 +1,7 @@
 ---
 title: JSON
 date: 2 July 2021
+image: "banner.jpg"
 ---
 
 It is more complicated than python, but works. Here is a super basic example:
