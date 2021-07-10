@@ -1,0 +1,32 @@
+{
+    "title": "Whimsical Swift Syntax",
+    "subtitle": "A Collection of Swift Lessons",
+    "publisherName": "Company Name Inc.",
+    "feedIdentifier": "com.example.whimsicalswift",
+    "contactURL": "https://support.example.com",
+    "formatVersion": "1.2",
+    "documents": [
+        {
+            "title": "The Key Path Not Taken",
+            "overviewSubtitle": "Dynamically Choosing Among Key Paths",
+            "detailSubtitle": "Because key paths in Swift are applied at runtime, their behavior is dynamic.",
+            "description": "Learn to compare key paths and pick the right one.",
+            "contentIdentifier": "com.example.whimsicalswift.keypaths",
+            "contentVersion": "1.0",
+            "url": "keypaths/keypaths.playgroundbook.zip",
+            "publishedDate": "2017-11-13T21:13:57+00:00",
+            "lastUpdatedDate": "2017-11-13T21:13:57+00:00",
+            "thumbnailURL": "keypaths/thumbnail.png",
+            "bannerImageURL": "keypaths/banner.png",
+            "additionalInformation": [
+                {
+                    "name": "Languages",
+                    "value": "English"
+                }
+            ],
+            "previewImageURLs": [
+                "keypaths/preview-1.png"
+            ]
+        }
+    ]
+}
