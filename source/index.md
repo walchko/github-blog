@@ -19,8 +19,10 @@
 
 ## Career
 
+- **2021** AFRL Space Vehicles Directorate, Kirtland AFB
+    - Lead systems engineer for R&D flight programs
 - **2019** National Geospatial Intelligence Agency (NGA), Springfield, VA
-    - Test Director, integrating revolutionary NTM-L capabilities to the NSG
+    - Test Director, integrating revolutionary overhead capabilities to the NSG
 - **2016** Dean of Faculty, US Air Force Academy, Co Sprints, CO
     - Director of Operations, oversaw Electrical and Computer Engineering Dept's curriculum
 - **2014** Commandant of Cadets, US Air Force Academy, Co Springs, CO

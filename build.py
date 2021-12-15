@@ -24,11 +24,12 @@ root = path = str(pathlib.Path().absolute())
 
 SKIP_EXT = [
     ".bag", ".h5", ".pickle", ".gz", ".heic", ".old", ".old2",
-    ".caffemodel", ".pnm", ".ps", ".html", ".try"
+    ".caffemodel", ".pnm", ".ps", ".html", ".try", ".jinja2"
 ]
 
 SKIP_FOLDERS = ['old', 'do_not_backup', 'deleteme',
-    'large_dataset', 'draft', "__pycache__", ".ipynb_checkpoints", "archive"]
+    'large_dataset', 'draft', "__pycache__",
+    ".ipynb_checkpoints", "archive", "blog"]
 
 
 class Jupyter:
@@ -293,4 +294,4 @@ if __name__ == "__main__":
     mark = Markdown(template)
 
     build_pages(template)
-    build_toc2("html/blog",template)
+    # build_toc2("html/blog",template)
