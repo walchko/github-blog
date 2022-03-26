@@ -74,7 +74,7 @@ Since we will work remotely, we need to tell git who we are. Git stores
 that info in `~/.gitconfig` :
 
     git config --global user.name "walchko"
-    git config --global user.email kevin.walchko@hotmail.com
+    git config --global user.email walchko@users.noreply.github.com
 
 Working with Git
 ----------------
