@@ -1,9 +1,6 @@
----
-title: Adafruit SAMD21 and SAMD51 Boards
-date: 10 Jan 2021
-image: "https://i.pinimg.com/564x/92/99/24/929924c948f6ece51e9ea6782f2dbab1.jpg"
-image-height: "400px"
----
+![]("https://i.pinimg.com/564x/92/99/24/929924c948f6ece51e9ea6782f2dbab1.jpg)
+
+# Adafruit SAMD21 and SAMD51 Boards
 
 
 | Adafruit uC       | Processor                     | MHz | RAM   | ROM   | FPU | GPIO | 12b ADC | PWM | SPI FLASH | Price  |
