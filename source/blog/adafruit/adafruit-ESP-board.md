@@ -5,7 +5,7 @@
 
 | Adafruit QT Py   | Core      | Num Cores | MHz | RAM   | ROM   | FPU | WiFi | Bluetooth | Native USB | Price  |
 |------------------|-----------|-----------|-----|-------|-------|-----|------|-----------|------------|--------|
-| [ESP32-C3][1]    | RISC V    |  1        | ?   | 400KB | 4MB   | No  | Yes  | BLE       | No         | $9.95  |
+| [ESP32-C3][1]    | RISC V    |  1        | 160 | 400KB | 4MB   | No  | Yes  | BLE       | No         | $9.95  |
 | [ESP32-Pico][3]  | Tensilica |  2        | 240 | 2MB   | 8MB   | No  | Yes  | Classic/BLE | No       | $14.95 |
 | [ESP32-S2][4]    | Tensilica |  1        | 240 | 2MB   | 4MB   | No  | Yes  | none      | Yes        | $12.50 |
 | [ESP32-S3][2]    | Tensilica |  2        | 240 | 512KB | 8MB   | No  | Yes  | BLE       | Yes        | $12.50 |
