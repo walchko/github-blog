@@ -52,12 +52,12 @@ sudo systemctl restart nmbd
 - add user with: `sudo smbpasswd -a ubuntu`
 - add user home:
 ```
-[ubuntu]
+[homes]
    comment = Home Directories
-   browseable = yes
+   browseable = no
    read only = no
-   create mask = 0700
-   directory mask = 0700
+   create mask = 0755
+   directory mask = 0755
    valid users = %S
    path=/home/%S
 ```
