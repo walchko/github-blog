@@ -105,7 +105,7 @@ If there is boot delay, you can do: `systemctl mask systemd-networkd-wait-online
 - Install ROS packages:
     ```
     sudo apt update
-    sudo apt install ros-dashing-ros-base
+    sudo apt install ros-humble-ros-base
     ```
 
 
