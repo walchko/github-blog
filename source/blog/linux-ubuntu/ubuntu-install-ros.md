@@ -114,5 +114,5 @@ If there is boot delay, you can do: `systemctl mask systemd-networkd-wait-online
 - [turtlebot3 emanual](http://emanual.robotis.com/docs/en/platform/turtlebot3/ros2/#setup)
 - [ROS2 install dasing on linux](https://index.ros.org/doc/ros2/Installation/Dashing/Linux-Install-Debians/)
 - [Add samba server to ubuntu](https://linuxize.com/post/how-to-install-and-configure-samba-on-ubuntu-18-04/)
-
+- [Default `umask` permissions](https://www.computernetworkingnotes.com/linux-tutorials/how-to-change-default-umask-permission-in-linux.html)
 
