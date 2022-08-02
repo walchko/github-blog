@@ -1,20 +1,23 @@
 ---
 title: Adafruit Qwiic Sensors for Robotics
 date: 29 Nov 2020
-image: "https://i.pinimg.com/564x/16/dd/16/16dd16a698bde065bc803e8015a7fb00.jpg"
 ---
 
 # Accelerometer
 
-| Sensor               | Bias (mg)  | Bits | Noise Density | RMS(mg) @ 100Hz | mg/LSB @ 2G |
+| Sensor               | Bias (mg)  | Bits | Noise Density (2G) | RMS(mg) @ 100Hz | mg/LSB @ 2G |
 |----------------------|------------|------|---------------|-----------------|-------------|
 | [NXP_FXOS8700CQ][i1] | 20         | 14   | 126           | 1.11636         | 0.244141    |
 | [LSM6DS33][i2]       | 40         | 16   | 90            | 0.797402        | 0.0610352
 | [LSM6DSOX][i3]       | 20         | 16   | 70            | 0.620202        | 0.0610352
+| [LSM6DS3TR][i8]      | 40         |      | 90            | 1.7             | 0.061
 | [ISM330DHCX][i4]     | Unknown    | 16   | 60            | 0.531601        | 0.0610352
 | [LSM9DS1][i5]        | 90         | 16   | 200           | 1.772           | 0.0610352
 | [ICM-20649][i6]      | Unkn       | 16   | 285           | 2.52511         | 0.0610352
 | [BNO055][i7]         | 80         | 14   | 150           | 1.329           | 0.244141
+
+- Bias: Linear acceleration zero-g level offset accuracy
+- Noise Density: $\mu g / \sqrt{Hz}$
 
 # Orientation
 
@@ -33,7 +36,11 @@ and not standard aerospace definitions of the frame (x-forward, y-right wing, z-
 | [NXP_FXAS21002C][i1] | 16    | 25            | 0.02  | 223.607           | 30.5176            | 0.52 |
 | [LSM6DS33][i2]       | 16    | 7             | 0.05  | 62.6099           | 30.5176            | 1.3 |
 | [LSM6DSOX][i3]       | 16    | 3.8           | 0.01  | 33.9882           | 30.5176            | 0.26 |
+| [LSM6DS3TR][i8]      |       | 5             | 0.05  | 75                | 30                 | 0.05 |
 | [ISM330DHCX][i4]     | 16    | 5             | 0.005 | 44.7214           | 30.5176            | 0.13 |
+
+- Drift: Angular rate typical zero-rate level change vs. temperature (dps/C)
+- Noise Density: $mdps/ \sqrt{Hz}$
 
 # Pressure
 
@@ -105,6 +112,7 @@ where $bandwidth$ is half the Output Data Rate (ODR), $filter$ is a low pass fil
 [i5]: https://www.adafruit.com/product/4634
 [i6]: https://www.adafruit.com/product/4464
 [i7]: https://www.adafruit.com/product/4646
+[i8]: https://www.adafruit.com/product/4503
 
 [o1]: https://www.adafruit.com/product/4646
 [o2]: https://www.adafruit.com/product/4754
