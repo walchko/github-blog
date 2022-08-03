@@ -16,7 +16,7 @@ date: 29 Nov 2020
 | [ICM-20649][i6]      | Unkn       | 16   | 285           | 2.52511         | 0.0610352   | |
 | [ICM-20948][i10]     |            | 16   | 230 (10Hz)    |                 |             | 400 |
 | [BNO055][i7]         | 80         | 14   | 150           | 1.329           | 0.244141    | |
-| [MPU6050][i9]        |            |      | 400           |                 | 16.384      | 400 |
+| [MPU6050][i9]        | 50/80      | 16   | 400           |                 | 16.384      | 400 |
 
 - Bias: Linear acceleration zero-g level offset accuracy
 - Noise Density: $\mu g / \sqrt{Hz}$
