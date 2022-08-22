@@ -63,7 +63,7 @@ and not standard aerospace definitions of the frame (x-forward, y-right wing, z-
 
 # Magnetometer
 
-| Sensor | Bits | Scale($\pm$gauss) | RMS(mgauss) | I2C(Hz) | Addr |
+| Sensor | Bits | Scale( $\pm$ gauss) | RMS(mgauss) | I2C(Hz) | Addr |
 |--------|------|-------------------|-------------|---------|------|
 |[LIS3MDL][mag1]   | 16 | 4,8,12,16 | 3.2 (@ 12 gauss) | 400k |`0x1C`,`0x1E`|
 |[LIS2MDL][mag2]   | 16 | 50        | 3 (w/LPF)        | 3.4M |`0x1E`|
@@ -148,24 +148,24 @@ where $bandwidth$ is half the Output Data Rate (ODR), $filter$ is a low pass fil
 # Datasheets
 
 - Accels/Magnetometer
-         - NXP: [FXOS8700CQ](FXOS8700CQ.pdf)
+    - NXP: [FXOS8700CQ](FXOS8700CQ.pdf)
 - Gyros:
-         - NXP: [FXAS21002](FXAS21002.pdf)
+    - NXP: [FXAS21002](FXAS21002.pdf)
 - Accels/Gyros
-         - ST [LSM6DSOX](lsm6dsox.pdf)
-         - ST [LSM6DS33](lsm6ds33.pdf) (Discontinued)
-         - ST [LSM9DS1](lsm9ds1.pdf)
-                  - [LSM9DS1 tech notes](TA0343-LSM9DS1-IMU.pdf)
-         - ST [ISM330DHCX](ism330dhcx.pdf)
-         - InvenSense [ICM-20649](icm-20649.pdf)
+    - ST [LSM6DSOX](lsm6dsox.pdf)
+    - ST [LSM6DS33](lsm6ds33.pdf) (Discontinued)
+    - ST [LSM9DS1](lsm9ds1.pdf)
+        - [LSM9DS1 tech notes](TA0343-LSM9DS1-IMU.pdf)
+    - ST [ISM330DHCX](ism330dhcx.pdf)
+    - InvenSense [ICM-20649](icm-20649.pdf)
 - Magnetometer
-         - ST [LIS3MDL](lis3mdl.pdf)
-         - ST [LIS2MDL](https://www.st.com/resource/en/datasheet/lis2mdl.pdf)
-         - MEMSIC [MMC5603NJ](https://cdn-learn.adafruit.com/assets/assets/000/113/957/original/MMC5603NJ_RevB_7-12-18.pdf?1659554945)
+    - ST [LIS3MDL](lis3mdl.pdf)
+    - ST [LIS2MDL](https://www.st.com/resource/en/datasheet/lis2mdl.pdf)
+    - MEMSIC [MMC5603NJ](https://cdn-learn.adafruit.com/assets/assets/000/113/957/original/MMC5603NJ_RevB_7-12-18.pdf?1659554945)
 - Pressure
-         - ST [LPS22](https://www.st.com/resource/en/datasheet/dm00140895.pdf)
-         - Bosch [BMP390](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp390-ds002.pdf)
-         - Infineon [DPS310](https://www.infineon.com/dgdl/Infineon-DPS310-DataSheet-v01_01-EN.pdf?fileId=5546d462576f34750157750826c42242)
+    - ST [LPS22](https://www.st.com/resource/en/datasheet/dm00140895.pdf)
+    - Bosch [BMP390](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp390-ds002.pdf)
+    - Infineon [DPS310](https://www.infineon.com/dgdl/Infineon-DPS310-DataSheet-v01_01-EN.pdf?fileId=5546d462576f34750157750826c42242)
 
 
 
