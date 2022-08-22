@@ -64,7 +64,7 @@ and not standard aerospace definitions of the frame (x-forward, y-right wing, z-
 # Magnetometer
 
 | Sensor | Bits | Scale($\pm$gauss) | RMS(mgauss) | I2C(Hz) | Addr |
-|---|---|---|---|---|
+|--------|------|-------------------|-------------|---------|------|
 |[LIS3MDL][mag1]   | 16 | 4,8,12,16 | 3.2 (@ 12 gauss) | 400k |`0x1C`,`0x1E`|
 |[LIS2MDL][mag2]   | 16 | 50        | 3 (w/LPF)        | 3.4M |`0x1E`|
 |[MMC5603NJ][mag3] | 20 | 30        | 2 (@ 150Hz)      | 400k |`0x30`|
