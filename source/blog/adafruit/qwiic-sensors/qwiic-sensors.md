@@ -63,6 +63,8 @@ and not standard aerospace definitions of the frame (x-forward, y-right wing, z-
 
 # Magnetometer
 
+Earth's magnetic field ranges between 0.25 and 0.65 gauss (25 - 65 $\mu$T)
+
 | Sensor | Bits | Scale( $\pm$ gauss) | RMS(mgauss) | I2C(Hz) | Addr |
 |--------|------|-------------------|-------------|---------|------|
 |[LIS3MDL][mag1]   | 16 | 4,8,12,16 | 3.2 (@ 12 gauss) | 400k |`0x1C`,`0x1E`|
