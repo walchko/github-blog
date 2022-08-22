@@ -59,10 +59,24 @@ and not standard aerospace definitions of the frame (x-forward, y-right wing, z-
 [Altitude][peqn] can be calculated with:
 
 $$
-altitude = 44330 [1-\frac{p}{p_0}^{\frac{1}{5.255}}]
+\begin{align*}
+altitude &= \frac{T_0}{L} \left( \frac {p}{P_0} ^ {\frac{-R L}{g_0 M}} - 1.0 \right) \\
+         &= 44330 [1-\frac{p}{P_0}^{\frac{1}{5.255}}]
+\end{align*}
 $$
 
-where $p_0$ (sea level) is 101325 Pa.
+where 
+
+| Symbol | Description | Value |
+|--------|-------------|-------|
+| $P_0$ | Pressure at sea level     | 101325 Pa |
+| $T_0$ | Temperature at sea level  | 288.15 K |
+| $R$   | Universal gas constant    | 8.31446261815324 Nm/(mol K) |
+| $M$   | Molar mass of Earth's air | 0.0289644 kg/mol |
+| $g_0$ | Gravitational constant    | 9.80665 m/s^2 |
+| $L$   | Lapse rate                | -0.0065 K/m |
+
+[ref](https://www.mide.com/air-pressure-at-altitude-calculator)
 
 ## LED Matrix Displays
 
