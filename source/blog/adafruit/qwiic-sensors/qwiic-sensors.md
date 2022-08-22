@@ -78,10 +78,15 @@ where
 
 [ref](https://www.mide.com/air-pressure-at-altitude-calculator)
 
-## LED Matrix Displays
+## Miscellanious I2C (QWIIC) Parts
 
-- All HT16K33 LED backpacks support 400kHz per the [datasheet](https://cdn-shop.adafruit.com/datasheets/ht16K33v110.pdf)
+| Device | Part | I2C |
+|--------|------|-----|
+| LED backpack | [HT16K33][misc1]   | 400k |
+| NFC/RFID     | [ST25DV16K][misc2] | 1M   |
 
+[misc1]: https://cdn-shop.adafruit.com/datasheets/ht16K33v110.pdf
+[misc2]: https://cdn-learn.adafruit.com/assets/assets/000/093/906/original/st25dv04k.pdf?1596828496
 ## Terms
 
 Power Spectral Density:
