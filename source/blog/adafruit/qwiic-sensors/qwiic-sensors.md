@@ -22,7 +22,7 @@ date: 29 Nov 2020
 - Noise Density: $\mu g / \sqrt{Hz}$
 
 [id1]: h
-[id1]: https://www.st.com/resource/en/datasheet/lsm6dsox.pdf
+[id2]: https://www.st.com/resource/en/datasheet/lsm6dsox.pdf
 [id4]: https://www.st.com/resource/en/datasheet/ism330dhcx.pdf
 
 # Orientation
