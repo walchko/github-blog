@@ -28,6 +28,9 @@ date: 29 Nov 2020
 | [BNO055][o1]         | 0x28 |   |
 | [BNO085][o2]         | 0x4A | Vendor sold to new company |
 
+[o1]: https://www.adafruit.com/product/4646
+[o2]: https://www.adafruit.com/product/4754
+
 **WARNING:** these use Andriod/iOS definitions of coordinate systems 
 and not standard aerospace definitions of the frame (x-forward, y-right wing, z-down)
 
@@ -46,6 +49,30 @@ and not standard aerospace definitions of the frame (x-forward, y-right wing, z-
 - Drift: Angular rate typical zero-rate level change vs. temperature (dps/C)
 - Zero: Initial Zero Tolerance @ 25C
 - Noise Density: $mdps/ \sqrt{Hz}$
+
+[i1]: https://www.adafruit.com/product/3463
+[i2]: https://www.adafruit.com/product/4485
+[i3]: https://www.adafruit.com/product/4517
+[i4]: https://www.adafruit.com/product/4502
+[i5]: https://www.adafruit.com/product/4634
+[i6]: https://www.adafruit.com/product/4464
+[i7]: https://www.adafruit.com/product/4646
+[i8]: https://www.adafruit.com/product/4503
+[i9]: https://www.adafruit.com/product/3886
+[i10]: https://www.adafruit.com/product/4554
+
+# Magnetometer
+
+| Sensor | Bits | Scale($\pm$gauss) | RMS(mgauss) | I2C(Hz) | Addr |
+|---|---|---|---|---|
+|[LIS3MDL][mag1]   | 16 | 4,8,12,16 | 3.2 (@ 12 gauss) | 400k |`0x1C`,`0x1E`|
+|[LIS2MDL][mag2]   | 16 | 50        | 3 (w/LPF)        | 3.4M |`0x1E`|
+|[MMC5603NJ][mag3] | 20 | 30        | 2 (@ 150Hz)      | 400k |`0x30`|
+
+
+[mag1]: https://www.adafruit.com/product/4479
+[mag2]: https://www.adafruit.com/product/4488
+[mag3]: https://www.adafruit.com/product/5579
 
 # Pressure
 
@@ -77,6 +104,12 @@ where
 | $L$   | Lapse rate                | -0.0065 K/m |
 
 [ref](https://www.mide.com/air-pressure-at-altitude-calculator)
+
+[peqn]: https://cdn-shop.adafruit.com/datasheets/BST-BMP180-DS000-09.pdf
+[p1]: https://www.adafruit.com/product/4633
+[p2]: https://www.adafruit.com/product/4494
+[p3]: https://www.adafruit.com/product/4816
+[p4]: https://www.adafruit.com/product/3966
 
 ## Miscellanious I2C (QWIIC) Parts
 
@@ -112,39 +145,27 @@ where $bandwidth$ is half the Output Data Rate (ODR), $filter$ is a low pass fil
 - Blue: I2C SDA Data
 - Yellow: I2C SCL Clock
 
-# References
+# Datasheets
 
-- Mide: [Pressure/Altitude calculator](https://www.mide.com/air-pressure-at-altitude-calculator)
-- NXP Accel/Magnetometer: [FXOS8700CQ](FXOS8700CQ.pdf)
-- NXP Gyro: [FXAS21002](FXAS21002.pdf)
-- ST Accel/Gyro [LSM6DSOX](lsm6dsox.pdf)
-- ST Accel/Gyro [LSM6DS33](lsm6ds33.pdf)
-- ST Accel/Gyro [LSM9DS1 tech notes](TA0343-LSM9DS1-IMU.pdf)
-- ST Accel/Gyro [LSM9DS1](lsm9ds1.pdf)
-- ST Accel/Gyro [ISM330DHCX](ism330dhcx.pdf)
-- InvenSense Accel/Gyro [ICM-20649](icm-20649.pdf)
-- ST Magnetometer [LIS3MDL](lis3mdl.pdf)
-- ST Pressure [LPS22](https://www.st.com/resource/en/datasheet/dm00140895.pdf)
-- Bosch [BMP390](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp390-ds002.pdf)
-- Infineon [DPS310](https://www.infineon.com/dgdl/Infineon-DPS310-DataSheet-v01_01-EN.pdf?fileId=5546d462576f34750157750826c42242)
+- Accels/Magnetometer
+         - NXP: [FXOS8700CQ](FXOS8700CQ.pdf)
+- Gyros:
+         - NXP: [FXAS21002](FXAS21002.pdf)
+- Accels/Gyros
+         - ST [LSM6DSOX](lsm6dsox.pdf)
+         - ST [LSM6DS33](lsm6ds33.pdf) (Discontinued)
+         - ST [LSM9DS1](lsm9ds1.pdf)
+                  - [LSM9DS1 tech notes](TA0343-LSM9DS1-IMU.pdf)
+         - ST [ISM330DHCX](ism330dhcx.pdf)
+         - InvenSense [ICM-20649](icm-20649.pdf)
+- Magnetometer
+         - ST [LIS3MDL](lis3mdl.pdf)
+         - ST [LIS2MDL](https://www.st.com/resource/en/datasheet/lis2mdl.pdf)
+         - MEMSIC [MMC5603NJ](https://cdn-learn.adafruit.com/assets/assets/000/113/957/original/MMC5603NJ_RevB_7-12-18.pdf?1659554945)
+- Pressure
+         - ST [LPS22](https://www.st.com/resource/en/datasheet/dm00140895.pdf)
+         - Bosch [BMP390](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp390-ds002.pdf)
+         - Infineon [DPS310](https://www.infineon.com/dgdl/Infineon-DPS310-DataSheet-v01_01-EN.pdf?fileId=5546d462576f34750157750826c42242)
 
 
-[i1]: https://www.adafruit.com/product/3463
-[i2]: https://www.adafruit.com/product/4485
-[i3]: https://www.adafruit.com/product/4517
-[i4]: https://www.adafruit.com/product/4502
-[i5]: https://www.adafruit.com/product/4634
-[i6]: https://www.adafruit.com/product/4464
-[i7]: https://www.adafruit.com/product/4646
-[i8]: https://www.adafruit.com/product/4503
-[i9]: https://www.adafruit.com/product/3886
-[i10]: https://www.adafruit.com/product/4554
 
-[o1]: https://www.adafruit.com/product/4646
-[o2]: https://www.adafruit.com/product/4754
-
-[peqn]: https://cdn-shop.adafruit.com/datasheets/BST-BMP180-DS000-09.pdf
-[p1]: https://www.adafruit.com/product/4633
-[p2]: https://www.adafruit.com/product/4494
-[p3]: https://www.adafruit.com/product/4816
-[p4]: https://www.adafruit.com/product/3966
