@@ -50,7 +50,7 @@ date: 28 Dec 2019
 - Please. How stupid do I look to you? World Domination. I'll leave that to the religious nuts or the Republicans, thank you. - The Monarch
 - To prey on their fear, move like an animal, to feel the kill. - Brock Samson
 - Smurfs:
-    - *Henchmen 24:* Come on! They have on female servicing a large group of males. That implies a species that lays eggs.
+    - *Henchmen 24:* Come on! They have one female servicing a large group of males. That implies a species that lays eggs.
     - *Henchmen 21:* Oh my God, you're crazy! They're so obviously mamals!
     - *Henchmen 24:* Please! She'd be in estrus 24/7 if she didn't lay eggs.
     - *Henchmen 21:* Smurfs don't lay eggs! I won't tell you this again! Papa Smurf has a fucking beard! They're mamals!
