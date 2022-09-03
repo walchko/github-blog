@@ -16,6 +16,10 @@
 
 ![](trinket-m0.png)
 
+## QtPy SAMD21
+
+![](qtpy-samd21.png)
+
 ## SAMD21G
 
 - The SAMD21G uses an ARM Cortex M0+ microcontroller, which is about as small and simple as you get with 32-bit devices.
