@@ -1,18 +1,18 @@
 # Military Unit Sizes
 
 | Echelon | Amplifier | Size | Commanded by |
-|---------|-----------|---|---|
+|---------|-----------|------|--------------|
 | Army Group            | XXXXX  | 4-5 Field Armies (400,000) | <img src="rank/general.png" width="90px"> |
-| Field Army            | XXXX   | 4+ Divisions (90,000) | <img src="rank/general.png" width="90px"> |
-| Corps                 | XXX    | 2-5 Divisions (45,000) | <img src="rank/lieutenant-general.png" width="70px"> |
-| Division              | XX     | 3-4 Brigades (15,000) | <img src="rank/major-general.png" width="50px"> |
-| Brigade               | X      | 2-3 Battalions (5,000) | <img src="rank/colonel.png" width="50px"> |
-| Regement/Group        | \|\|\| | 2-3 Battalions (5,000) | <img src="rank/colonel.png" width="50px"> |
-| Battalion/Squadron    | \|\|   | 4-6 Companies (1000) | <img src="rank/lieutenant-colonel.png" width="40px"> |
-| Company/Battery/Troop | \|     | 3-4 Platoons (200) | <img src="rank/captain.png" width="40px"> |
-| Platoon               | ...    | 36 | <img src="rank/lieutenant.png" width="20px"> |
+| Field Army            | XXXX   | 4+ Divisions (90,000)      | <img src="rank/general.png" width="90px"> |
+| Corps                 | XXX    | 2-5 Divisions (45,000)     | <img src="rank/lieutenant-general.png" width="70px"> |
+| Division              | XX     | 3-4 Brigades (15,000)      | <img src="rank/major-general.png" width="50px"> |
+| Brigade               | X      | 2-3 Battalions (5,000)     | <img src="rank/colonel.png" width="50px"> |
+| Regement/Group        | \|\|\| | 2-3 Battalions (5,000)     | <img src="rank/colonel.png" width="50px"> |
+| Battalion/Squadron    | \|\|   | 4-6 Companies (1,000)      | <img src="rank/lieutenant-colonel.png" width="40px"> |
+| Company/Battery/Troop | \|     | 3-4 Platoons (200)         | <img src="rank/captain.png" width="40px"> |
+| Platoon               | ...    | 3-4 Squads (36)            | <img src="rank/lieutenant.png" width="20px"> |
 | Section               | ..     | | |
-| Squad                 | .      | 10 | <img src="rank/staff-sergeant.png" width="40px"> |
+| Squad                 | .      | 10                         | <img src="rank/staff-sergeant.png" width="40px"> |
 | Crew                  | $\emptyset$      | | |
 
 
