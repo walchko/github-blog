@@ -19,6 +19,10 @@
 [3]: https://www.adafruit.com/product/5395
 [4]: https://www.adafruit.com/product/5325
 
+## ESP32-S3
+
+![](esp32-s3.png)
+
 ## Multicore Programming
 
 ```cpp
