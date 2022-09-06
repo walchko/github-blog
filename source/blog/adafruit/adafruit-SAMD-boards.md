@@ -20,6 +20,12 @@
 
 ![](qtpy-samd21.png)
 
+## ItsyBitsy
+
+![](itsybitsy_m0.png)
+
+![](itsybitsy_m4.png)
+
 ## SAMD21G
 
 - The SAMD21G uses an ARM Cortex M0+ microcontroller, which is about as small and simple as you get with 32-bit devices.
