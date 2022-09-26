@@ -1,7 +1,9 @@
 # Fusion 360
 
+- Preferences
+    - General: :white_check_mark: Reverse zoom direction
 - 3D printing
-    - File -> Export -> save as a 3mf
+    - File -> Export -> save as a `*.3mf`
     - STL is old crap ... 3MF is a better format
 - Parameterize
     - modify -> fx Change Parameters
