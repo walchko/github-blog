@@ -18,4 +18,5 @@
 - Construction lines
     - keyboard shortcut: `x` while line is highlighted
     - sketch palette: toggle linetype `on`/`off`
+    - appearance: brown dashed line
     - This line type doesn't segment or cut a shape into in parts, but is used for reference 
