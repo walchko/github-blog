@@ -22,3 +22,7 @@
     - sketch palette: toggle linetype `on`/`off`
     - appearance: brown dashed line
     - This line type doesn't segment or cut a shape into in parts, but is used for reference 
+- Cross Section Inspection Analysis
+    - Select a plane or object surface
+    - Utilities -> Inspect -> Section analysis
+        - Adjust the cutting plane until you get the cross section you want and press Enter
