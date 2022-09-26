@@ -15,3 +15,7 @@
         - Using `shift`, select origin axis and then the line you want
         - Create -> Dimension
             - Should see and angular dimension arrow appear, click and set desired angle
+- Construction lines
+    - keyboard shortcut: `x` while line is highlighted
+    - sketch palette: toggle linetype `on`/`off`
+    - This line type doesn't segment or cut a shape into in parts, but is used for reference 
