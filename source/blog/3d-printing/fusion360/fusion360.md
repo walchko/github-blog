@@ -26,3 +26,10 @@
     - Select a plane or object surface
     - Utilities -> Inspect -> Section analysis
         - Adjust the cutting plane until you get the cross section you want and press Enter
+- [Global Parameters](https://productdesignonline.com/how-to-create-and-use-global-parameters-in-fusion-360/)
+    - Create new "Master Parameter" project with whatever parameters you need
+    - Favorite each parameter :star:
+    - Save project
+    - Create -> Derive -> select Favorites -> New / Existing Project
+    - In the derived project, you must scroll to the bottom of the parameter dialog and favorite what parameters you want to use
+    - Updating the "Master Parameter" project will show an update icon in the derived project (near the Save File icon)
