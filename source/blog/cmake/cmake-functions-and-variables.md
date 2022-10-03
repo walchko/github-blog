@@ -1,8 +1,6 @@
----
-title: Cmake Functions and Variables
-date: 27 Nov 2019
-image: "https://i.pinimg.com/564x/d9/7c/06/d97c066b78abc3f150bef932a16c726f.jpg"
----
+![](https://i.pinimg.com/564x/d9/7c/06/d97c066b78abc3f150bef932a16c726f.jpg)
+
+# Cmake Functions and Variables
 
 Here are some commonly use `cmake` things I use:
 
