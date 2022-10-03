@@ -1,16 +1,11 @@
----
-title: CMake Examples
-date: 15 Jun 2019
-iamge: "https://i.pinimg.com/564x/49/50/85/495085010a8d10d7dd1e2c048c0d34b3.jpg"
----
+![](https://i.pinimg.com/564x/49/50/85/495085010a8d10d7dd1e2c048c0d34b3.jpg)
 
-
-# Examples
+# CMake Examples
 
 ```cmake
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.14)
 project(test)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -30,24 +25,37 @@ endforeach()
 option(BUILD_MSGPACK "Build the message pack messages" ON)
 ```
 
-## Library
+## Simple Library
 
 ```cmake
 add_library(math SHARED lib.cpp)
+
+# OR
+
 add_library(math STATIC lib.cpp)
 ```
 
-Shared Library File Extensions:
+| OS      | Shared   | Static |
+|---------|----------|--------|
+| Windows | `.dll`   | `.lib` |
+| macOS   | `.dylib` | `.a`   |
+| Linux   | `.so`    | `.a`   |
 
-- Windows: `.dll`
-- Mac OS X: `.dylib`
-- Linux: `.so`
+## Static and Shared Library from Same Project
 
-Static Library File Extensions:
+```cmake
+# Library =====================================================================
+add_library(${PROJECT_NAME} SHARED $<TARGET_OBJECTS:objlib-gecko>)
+add_library(${PROJECT_NAME}-static STATIC $<TARGET_OBJECTS:objlib-gecko>)
+set_target_properties(${PROJECT_NAME}-static PROPERTIES OUTPUT_NAME ${PROJECT_NAME})
 
-- Windows: `.lib`
-- Mac OS X: `.a`
-- Linux: `.a`
+# if building STATIC library, an unimportant but annoying error appears about
+# no symbols
+SET(CMAKE_C_ARCHIVE_CREATE   "<CMAKE_AR> Scr <TARGET> <LINK_FLAGS> <OBJECTS>")
+SET(CMAKE_CXX_ARCHIVE_CREATE "<CMAKE_AR> Scr <TARGET> <LINK_FLAGS> <OBJECTS>")
+SET(CMAKE_C_ARCHIVE_FINISH   "<CMAKE_RANLIB> -no_warning_for_no_symbols -c <TARGET>")
+SET(CMAKE_CXX_ARCHIVE_FINISH "<CMAKE_RANLIB> -no_warning_for_no_symbols -c <TARGET>")
+```
 
 Run script during install
 
