@@ -46,7 +46,8 @@ print('====================')
 print('    git push')
 print('====================')
 
-run('git push --force {} master:{}'.format(REMOTE, BRANCH))
+run('git push --force {} main:{}'.format(REMOTE, BRANCH))
+#run('git push --force {}'.format(REMOTE))
 
 # from glob import glob
 # print(os.getcwd())
