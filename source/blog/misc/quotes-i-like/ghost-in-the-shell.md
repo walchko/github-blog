@@ -1,0 +1,5 @@
+# Ghost in the Shell
+
+![](https://i.pinimg.com/originals/92/ac/a5/92aca5c943f306aac225cd6f2839e0bb.gif){width=400px}
+
+- **Tachikoma:** And you know that "existence of God" thing that I had trouble understanding before? I think I am starting to understand it now. Maybe, just maybe, it's a concept that's similar to a zero in mathematics. In other words, it's a symbol that denies the absence of meaning, the meaning that's necessitated by the delineation of one system from another. In analog, that's God. In digital, it's zero. what do you think? Also, our basic construction is digital, right? So for the time being, no matter how much data we accumulate, we'll never have a Ghost. But analog-based people like you, Batou-san, no matter how many digital components you add through cyberization or prosthetics, your Ghost will never be damaged. Plus, you can even die 'cause you've got a Ghost. You're so lucky. Tell me, what's it feel like to have a Ghost?
