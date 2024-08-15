@@ -19,8 +19,11 @@
 
 ## Career
 
+- **2024**  National Reconnaissance Office, Chantilly, VA
+    - Chief, COMM Lifecycle Readiness
 - **2021** AFRL Space Vehicles Directorate, Kirtland AFB
-    - Lead systems engineer for R&D flight programs
+    - Chief Engineer, Oracle cislunar SSA mission
+    - Program Manager, UHF Demo Satellite
 - **2019** National Geospatial Intelligence Agency (NGA), Springfield, VA
     - Test Director, integrating revolutionary overhead capabilities to the NSG
 - **2016** Dean of Faculty, US Air Force Academy, Co Sprints, CO
@@ -41,7 +44,7 @@
 
 ### Publications
 
-* Thomas B., Bracamonte, M., Kim H., Talosaga A., and Walchko K., "R2D2 Capstone Project", 15th Annual CSURF, Colorado Springs, CO, 28 April 2019.  
+* Thomas B., Bracamonte, M., Kim H., Talosaga A., and Walchko K., "R2D2 Capstone Project", 15th Annual CSURF, Colorado Springs, CO, 28 April 2019.
 * [Hindman, C., Engberg, B., Hunt, J., and Walchko, K., "Optimal GEO Lasercomm Terminal Field of View for LEO Link Support";, SPIE Free-space Laser Communications Technologies XVIII, 2006.](Publications/Optimal-geo-lasercom.pdf)
 * [Hindman, C., Walchko, K., and Spratley, C., "Point-ahead Tracking for Space to Air Laser Pointing", MSS Active Electro-Optic Sensor Systems Conference, Columbia, MD, 2005.](Publications/unknown.pdf)
 * [Grzywna, J., Walchko, K., and Nechyba, M., Subjugator: A Reconfigurable AUV, 2nd AIAA Systems, Technologies, and Operations Aerospace, Land, and Sea Conference and Workshop & Exhibit, San Diego, CA, Sept 15-18, 2003.](Publications/AIAA-Reconfigurable-AUV.pdf)
